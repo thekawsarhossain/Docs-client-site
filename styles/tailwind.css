@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
+@layer components {
+  .btn {
+    @apply border-2 border-primary px-6 py-2 text-white duration-300 hover:bg-primary focus:ring-2;
+  }
+}
+
+/*  এখানে আমরা এইভাবে এইচটিএমএল এর কোনো ট্যাগ এর ডিফল্ট বিহেবিউর কেমন হবে সেটা আমরা সেট করে দিতে পারবো  */
+@layer base {
+  h1 {
+    @apply text-3xl sm:text-5xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h6 {
+    @apply text-lg;
+  }
+}
+
+/* এখানে আমরা আমাদের নিজস্য ক্লাস বানিয়ে কাস্টম সিএসএস দিয়ে দিতে পারবো এবং আমাদের পিসি তে যদি Tailwind CSS IntelliSense এই এক্সটেনশন থাকে তাহলে আমাদের কে এই কল সাজেস্ট করবে । */
+@layer utilities {
+  .hello {
+    background-color: #fff;
+  }
+}
+
+/* custom css will be here   */
