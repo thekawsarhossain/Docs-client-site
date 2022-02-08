@@ -39,3 +39,15 @@
 
 /* custom css will be here   */
 /* এখানে আমরা ফাইল বেইজড সিএসএস লিখবো */
+
+/*Video List CSS by Fahad */
+.video-List {
+  background-color: rgb(25, 26, 46);
+}
+.videoList-container {
+  @apply py-32;
+}
+.accordion {
+  background-color: #2c303a;
+  color: white;
+}
