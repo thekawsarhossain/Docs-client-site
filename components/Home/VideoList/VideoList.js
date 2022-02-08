@@ -1,9 +1,10 @@
 const VideoList = () => {
   return (
-    <div>
-     <h1>VideoList Page</h1>
+    <div className="container mx-auto">
+      <div className=""></div>
+      <div></div>
     </div>
-  );
+  )
 }
 
-export default VideoList;
+export default VideoList
