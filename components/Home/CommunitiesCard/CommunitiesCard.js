@@ -1,9 +1,9 @@
 const CommunitiesCard = () => {
   return (
-    <div>
-     <h1>CommunitiesCard Page</h1>
+    <div className="container mx-auto">
+      <h1>CommunitiesCard Page</h1>
     </div>
-  );
+  )
 }
 
-export default CommunitiesCard;
+export default CommunitiesCard
