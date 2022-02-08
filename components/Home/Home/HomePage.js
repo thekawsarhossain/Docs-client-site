@@ -1,11 +1,18 @@
+import Testimonial from '../Testimonial/Testimonial'
+import Navbar from '../Navbar/Navbar'
+import Questions from '../Questions/Questions'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-      <CommunitiesCard />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        <CommunitiesCard />
+        {/* <Testimonial />
+        <Questions /> */}
+      </div>
+    </>
   )
 }
 
