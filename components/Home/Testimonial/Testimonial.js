@@ -1,7 +1,9 @@
 const Testimonial = () => {
   return (
     <div>
-      <h1>Testimonial Page</h1>
+     <div className="container mx-auto">
+     <h1 >Testimonial Page</h1>
+     </div>
     </div>
   );
 }
