@@ -39,3 +39,16 @@
 
 /* custom css will be here   */
 /* এখানে আমরা ফাইল বেইজড সিএসএস লিখবো */
+
+/* Navbar css */
+.one:hover span:last-child {
+  width: 100%;
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
+}
