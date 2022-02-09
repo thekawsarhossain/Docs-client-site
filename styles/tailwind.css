@@ -17,8 +17,13 @@
   .title-btn {
     @apply ml-10 rounded-full border-2 border-sky-500 py-2 px-4 text-base font-bold hover:text-white;
   }
-
   /* naavbar regarding end here */
+
+  /* video section regarding start here  */
+  .videoList-container {
+    @apply py-32;
+  }
+  /* video section regarding end here  */
 }
 
 /*  এখানে আমরা এইভাবে এইচটিএমএল এর কোনো ট্যাগ এর ডিফল্ট বিহেবিউর কেমন হবে সেটা আমরা সেট করে দিতে পারবো  */
@@ -51,7 +56,6 @@
 
 /* custom css will be here   */
 /* এখানে আমরা ফাইল বেইজড সিএসএস লিখবো */
-
 /* Navbar css */
 .one:hover span:last-child {
   width: 100%;
@@ -63,4 +67,62 @@
 
 .three:hover span {
   height: 100%;
+}
+
+/*Video List CSS by Fahad */
+.video-List {
+  background-color: rgb(25, 26, 46);
+}
+.accordion {
+  background-color: #2c303a;
+  color: white;
+  margin-bottom: 7px;
+}
+
+/* slider css */
+.slider {
+  background: #131417;
+}
+.slick-slide img {
+  border-radius: 20px;
+  z-index: 11111;
+}
+.slick-dots {
+  text-align: left !important;
+}
+.slick-dots li button:before {
+  color: #3636f8 !important;
+  font-size: 10px !important;
+  margin-left: 50px;
+  margin-top: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+.rounded-one {
+  background-color: #3636f8;
+  width: 280px;
+  height: 280px;
+  margin-left: -170px;
+  margin-top: 120px !important;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rounded-tow {
+  background-color: #3636f8;
+  width: 100px;
+  height: 100px;
+  margin-left: -170px;
+  margin-top: 50px;
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
+  opacity: 0.5;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
