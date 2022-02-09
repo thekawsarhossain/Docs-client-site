@@ -94,11 +94,7 @@ const Navbar = () => {
   )
   return (
     <div>
-      <header
-        // style={{ backgroundColor: '#dc354500' }}
-        style={{ backgroundColor: '#1e1f26' }}
-        className="body-font absolute w-full text-gray-400"
-      >
+      <header className="body-font absolute z-10 w-full text-gray-400">
         <div className="container mx-auto flex justify-between p-5 ">
           <Link href="/">
             <a className="flex justify-center">
