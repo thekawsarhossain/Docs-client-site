@@ -1,8 +1,11 @@
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image'
+
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
+
+
 const Testimonial = () => {
   const [sliders, setSliders] = useState([])
 
@@ -10,6 +13,7 @@ const Testimonial = () => {
     fetch(`./slider.json`)
       .then((res) => res.json())
       .then((data) => setSliders(data))
+
   })
   const settings = {
     dots: true,
@@ -18,8 +22,8 @@ const Testimonial = () => {
     slidesToScroll: 1,
     speed: 2000,
     autoplay: true,
-    autoplaySpeed: 4000,
-  }
+    autoplaySpeed: 4000
+  };
   return (
     <div className="slider">
       <div className=" container mx-auto my-12">
@@ -57,9 +61,10 @@ const Testimonial = () => {
             </div>
           ))}
         </Slider>
-      </div>
+    </div>
     </div>
   )
 }
 
 export default Testimonial
+
