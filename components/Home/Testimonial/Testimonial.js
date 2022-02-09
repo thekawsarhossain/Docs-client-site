@@ -28,7 +28,7 @@ fetch(`./slider.json`)
         <Slider {...settings}>
           {
             sliders.map(slider=>
-              <div className="container px-5 py-24 lg:w-8/12 mx-auto flex flex-wrap">
+   <div className="container px-5 py-24 lg:w-8/12 mx-auto flex flex-wrap">
     <div className="flex flex-wrap -m-4  mx-auto justify-between">
       <div className=" p-4 lg:w-2/5 md:w-full ">
         <div className="flex  p-4 sm:flex-row flex-col">  
@@ -53,7 +53,7 @@ fetch(`./slider.json`)
 </Slider>
     </div>
     </div>
-  );
+  )
 }
 
-export default Testimonial;
+export default Testimonial
