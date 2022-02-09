@@ -63,9 +63,9 @@ const CommunitiesCard = () => {
   }, [showMore])
 
   return (
-    <div className="container mx-auto rounded-xl bg-darkBlue ">
+    <div className="container mx-auto my-6 rounded-xl bg-darkBlue">
       {/* grid system for the items here  */}
-      <div class="grid grid-cols-3 grid-rows-3">
+      <div class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3">
         {data?.map((item) => (
           <div className=" border-w-2 border-b border-r border-l border-secondary">
             <div className="flex items-center p-10">
