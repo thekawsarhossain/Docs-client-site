@@ -14,8 +14,8 @@ const HomePage = () => {
       <VideoList />
       <CommunitiesCard />
       <Testimonial />
-      <Questions />
-      <Footer/>
+      {/* <Questions /> */}
+      <Footer />
     </div>
   )
 }

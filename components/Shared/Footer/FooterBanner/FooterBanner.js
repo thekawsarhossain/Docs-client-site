@@ -1,17 +1,29 @@
 import { Search } from '@mui/icons-material'
-// import { Box, Grid, Typography } from "@mui/material";
 import Image from 'next/image'
+
+/* 
+
+.email-section {
+  width: 80%;
+  margin: auto;
+  background-color: #4c4cf1;
+  margin-bottom: 70px;
+  border-radius: 15px;
+}
+
+
+*/
 
 const FooterBanner = () => {
   return (
-    <div>
-      <div className="email-section">
+    <div className="container mx-auto">
+      <div className="relative mx-auto mb-8 rounded-xl bg-lightBlue shadow shadow-blue-700">
         <div className="overflow-hidden">
           <Image
-            className="rounded"
+            className="absolute top-0 left-0"
             src="/banner/shap-1.png"
-            width="500px"
-            height="100%"
+            width="480px"
+            height="135px"
           ></Image>
         </div>
         <section class="body-font text-gray-600">
@@ -36,7 +48,7 @@ const FooterBanner = () => {
                   />
                 </div>
                 <div className="ml-5 mt-4 md:mt-0">
-                  <button className="bg-buttons hover:text-buttons mt-2 rounded-full px-5 py-2 font-semibold text-white hover:bg-white">
+                  <button className="mt-2 rounded-full bg-buttons px-5 py-2 font-semibold text-white hover:bg-white hover:text-buttons">
                     Get Started
                   </button>
                 </div>
@@ -44,7 +56,12 @@ const FooterBanner = () => {
             </div>
           </div>
         </section>
-        <Image src="/banner/shap-2.png" width="1200px" height="100%"></Image>
+        <Image
+          className="absolute bottom-0 right-0 block"
+          src="/banner/shap-2.png"
+          width="680px"
+          height="95px"
+        ></Image>
       </div>
     </div>
   )

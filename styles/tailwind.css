@@ -24,6 +24,21 @@
     @apply py-32;
   }
   /* video section regarding end here  */
+
+  /* footer regarding style start here  */
+  .footer-parent {
+    @apply container mx-auto grid grid-cols-1 gap-6 py-16 lg:grid-cols-4;
+  }
+  .footer-icon {
+    @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
+  }
+  .quick-nav-title {
+    @apply mb-3 text-xl font-medium tracking-widest text-white;
+  }
+  .quick-nav-item {
+    @apply mb-5 block text-gray-600 hover:text-gray-800;
+  }
+  /* footer regarding style end here  */
 }
 
 /*  এখানে আমরা এইভাবে এইচটিএমএল এর কোনো ট্যাগ এর ডিফল্ট বিহেবিউর কেমন হবে সেটা আমরা সেট করে দিতে পারবো  */
@@ -49,28 +64,6 @@
 @layer utilities {
   .hello {
     background-color: #fff;
-  }
-  title {
-  }
-  .email-section{
-    width: 80%;
-    margin: auto;
-    background-color: #4C4CF1;
-    margin-bottom: 70px;
-    border-radius: 15px
-  }
-  .search-container{
-    border:1px solid black;
-    border-radius:20px;
-    display: flex;
-    margin-top:5px;
-    justify-content:space-between;
-}
-  .footer-icon{
-    margin: 10px;
-    background-color: #2C303A;
-    padding: 10px;
-    border-radius: 10px;
   }
 }
 
@@ -145,26 +138,4 @@
   opacity: 0.5;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-}
-
-/* footer  */
-.email-section {
-  width: 80%;
-  margin: auto;
-  background-color: #4c4cf1;
-  margin-bottom: 70px;
-  border-radius: 15px;
-}
-.search-container {
-  border: 1px solid black;
-  border-radius: 20px;
-  display: flex;
-  margin-top: 5px;
-  justify-content: space-between;
-}
-.footer-icon {
-  margin: 10px;
-  background-color: #2c303a;
-  padding: 10px;
-  border-radius: 10px;
 }
