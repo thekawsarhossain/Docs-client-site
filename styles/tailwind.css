@@ -17,8 +17,13 @@
   .title-btn {
     @apply ml-10 rounded-full border-2 border-sky-500 py-2 px-4 text-base font-bold hover:text-white;
   }
-
   /* naavbar regarding end here */
+
+  /* video section regarding start here  */
+  .videoList-container {
+    @apply py-32;
+  }
+  /* video section regarding end here  */
 }
 
 /*  এখানে আমরা এইভাবে এইচটিএমএল এর কোনো ট্যাগ এর ডিফল্ট বিহেবিউর কেমন হবে সেটা আমরা সেট করে দিতে পারবো  */
@@ -68,11 +73,8 @@
 .video-List {
   background-color: rgb(25, 26, 46);
 }
-.videoList-container {
-  @apply py-32;
-}
 .accordion {
   background-color: #2c303a;
   color: white;
   margin-bottom: 7px;
-  
+}

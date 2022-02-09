@@ -19,7 +19,7 @@ const VideoList = () => {
     <div className="video-List">
       <div className=" container mx-auto">
         <div className="videoList-container grid grid-cols-12 gap-5">
-          <div className="col-span-12  md:col-span-7">
+          <div className="col-span-12 md:col-span-7">
             <iframe
               // className="w-full"
               width="100%"
