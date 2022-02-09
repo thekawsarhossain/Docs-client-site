@@ -52,6 +52,26 @@
   }
   title {
   }
+  .email-section{
+    width: 80%;
+    margin: auto;
+    background-color: #4C4CF1;
+    margin-bottom: 70px;
+    border-radius: 15px
+  }
+  .search-container{
+    border:1px solid black;
+    border-radius:20px;
+    display: flex;
+    margin-top:5px;
+    justify-content:space-between;
+}
+  .footer-icon{
+    margin: 10px;
+    background-color: #2C303A;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 
 /* custom css will be here   */
@@ -125,4 +145,26 @@
   opacity: 0.5;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
+}
+
+/* footer  */
+.email-section {
+  width: 80%;
+  margin: auto;
+  background-color: #4c4cf1;
+  margin-bottom: 70px;
+  border-radius: 15px;
+}
+.search-container {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+.footer-icon {
+  margin: 10px;
+  background-color: #2c303a;
+  padding: 10px;
+  border-radius: 10px;
 }
