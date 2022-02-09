@@ -1,11 +1,18 @@
-import VideoList from '../VideoList/VideoList'
+import Testimonial from '../Testimonial/Testimonial'
+import Navbar from '../../Shared/Navbar/Navbar'
+import Questions from '../Questions/Questions'
+import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
+    import VideoList from '../VideoList/VideoList'
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-      <VideoList />
-    </div>
+      <div>
+        <Navbar />
+        <Testimonial />
+        <VideoList />
+        <CommunitiesCard />
+        <Questions />
+      </div>
   )
 }
 
