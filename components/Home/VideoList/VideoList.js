@@ -79,13 +79,13 @@ const VideoList = () => {
                         <div>
                           <img
                             className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
+                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-2-1.jpg"
                             alt=""
                           />
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
+                            Theme Settings – Docy Video Tutorial
                           </h5>
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
