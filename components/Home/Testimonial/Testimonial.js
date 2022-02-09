@@ -57,3 +57,4 @@ fetch(`./slider.json`)
 }
 
 export default Testimonial
+
