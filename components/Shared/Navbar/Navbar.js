@@ -32,7 +32,9 @@ const Navbar = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{
+        width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -92,59 +94,54 @@ const Navbar = () => {
   )
   return (
     <div>
-      <header
-        style={{ backgroundColor: '#dc354500' }}
-        className="body-font absolute w-full text-gray-400"
-      >
+      <header className="body-font absolute z-10 w-full text-gray-400">
         <div className="container mx-auto flex justify-between p-5 ">
           <Link href="/">
             <a className="flex justify-center">
               <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
             </a>
           </Link>
-          <nav className="flex hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block">
+          <nav className="navbar-parent">
             <Link href="/">
-              <a className="text-1xl two relative mr-5 w-max font-bold hover:text-white">
+              <a className="link-item">
                 <span>Home</span>
-                <span className="absolute -bottom-1 left-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
-                <span className="absolute -bottom-1 right-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
             <Link href="/">
-              <a className="text-1xl two relative mr-5 w-max font-bold hover:text-white">
+              <a className="link-item">
                 <span>Documentation</span>
-                <span className="absolute -bottom-1 left-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
-                <span className="absolute -bottom-1 right-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
             <Link href="/">
-              <a className="text-1xl two relative mr-5 w-max font-bold hover:text-white">
+              <a className="link-item">
                 <span>Forum</span>
-                <span className="absolute -bottom-1 left-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
-                <span className="absolute -bottom-1 right-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
             <Link href="/">
-              <a className="text-1xl two relative mr-5 w-max font-bold hover:text-white">
+              <a className="link-item">
                 <span>Pages</span>
-                <span className="absolute -bottom-1 left-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
-                <span className="absolute -bottom-1 right-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
             <Link href="/">
-              <a className="text-1xl two relative mr-5 w-max font-bold hover:text-white">
+              <a className="link-item">
                 <span>Blog</span>
-                <span className="absolute -bottom-1 left-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
-                <span className="absolute -bottom-1 right-1/2 h-1 w-0 bg-yellow-400 transition-all"></span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
             <Link href="/">
-              <a className="text-1xl ml-10 rounded-full border-2 border-sky-500 py-2 px-4 font-bold hover:text-white">
-                Get Docy
-              </a>
+              <a className="title-btn">Get Docy</a>
             </Link>
           </nav>
-          <div className="block flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
+          <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
             <React.Fragment key="left">
               <Button onClick={toggleDrawer('left', true)}>
                 <MenuIcon />
