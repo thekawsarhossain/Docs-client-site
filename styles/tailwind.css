@@ -114,3 +114,25 @@
   border-bottom-right-radius: 50%;
 
 }
+/* Online Doc */
+
+
+
+button#simple-tab-0, button#simple-tab-1, button#simple-tab-2, button#simple-tab-3 {
+  color: white;
+ 
+}
+span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator{
+  background-color: #5736fe;
+  
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background-color: #2C303A;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.docs-btn:hover{
+color: #3636f8;
+}
