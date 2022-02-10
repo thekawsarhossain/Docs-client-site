@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <HeroSection />
+      {/* <HeroSection /> */}
       <VideoList />
       <Questions />
       <CommunitiesCard />
