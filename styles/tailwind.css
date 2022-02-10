@@ -4,6 +4,11 @@
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
+  /* buttons here  */
+  .btn-1 {
+    @apply rounded-full bg-buttons px-5 py-3 font-semibold text-white duration-300 hover:bg-white hover:text-buttons focus:ring-2;
+  }
+
   /* navbar regarding start here  */
   .navbar-parent {
     @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
@@ -26,17 +31,20 @@
   /* video section regarding end here  */
 
   /* footer regarding style start here  */
-  .footer-parent {
-    @apply container mx-auto grid grid-cols-1 gap-6 py-16 lg:grid-cols-4;
-  }
   .footer-icon {
     @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
   }
-  .quick-nav-title {
+  .footer-nav-title {
     @apply mb-3 text-xl font-medium tracking-widest text-white;
   }
-  .quick-nav-item {
-    @apply mb-5 block text-gray-600 hover:text-gray-800;
+  .footer-nav-item {
+    @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
+  }
+  .footerBannerParent {
+    @apply relative mx-auto mb-6 rounded-2xl bg-lightBlue shadow shadow-blue-700;
+  }
+  .footerBannerContent {
+    @apply block items-center justify-around py-16 px-6 lg:flex lg:px-0;
   }
   /* footer regarding style end here  */
 }
@@ -47,7 +55,7 @@
     @apply text-3xl sm:text-5xl;
   }
   h2 {
-    @apply text-3xl;
+    @apply text-4xl;
   }
   h3 {
     @apply text-2xl;
@@ -140,24 +148,22 @@
   border-bottom-right-radius: 50%;
 }
 /* Online Doc */
-
-
-
-button#simple-tab-0, button#simple-tab-1, button#simple-tab-2, button#simple-tab-3 {
+button#simple-tab-0,
+button#simple-tab-1,
+button#simple-tab-2,
+button#simple-tab-3 {
   color: white;
- 
 }
-span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator{
+span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   background-color: #5736fe;
-  
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  background-color: #2C303A;
+  background-color: #2c303a;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-.docs-btn:hover{
-color: #3636f8;
+.docs-btn:hover {
+  color: #3636f8;
 }

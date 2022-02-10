@@ -1,44 +1,37 @@
 import { Search } from '@mui/icons-material'
+import { Container } from '@mui/material'
 import Image from 'next/image'
 
 const FooterBanner = () => {
   return (
-    <div className="container mx-auto">
-      <div className="relative mx-auto mb-8 rounded-xl bg-lightBlue shadow shadow-blue-700">
+    <Container>
+      <div className="footerBannerParent">
         {/* shape image  */}
         <img
           src="https://i.ibb.co/W5yb4Q4/subscribe-shap-1.png"
           alt="shape-1"
-          className='className="absolute block" top-0 left-0'
+          className="absolute top-0 left-0 block rounded-tl-2xl"
         />
         {/* content here  */}
-        <section class="py-12 text-gray-600">
-          <div class="container mx-auto flex flex-wrap px-5 py-5">
-            <h2 class="title-font mb-2 text-2xl font-bold text-white sm:text-4xl md:w-2/5">
+        <section class="py-24 text-gray-600">
+          <div class="footerBannerContent">
+            <h2 class="mb-2 font-bold text-white">
               {' '}
               Great Customer
               <br />
               Relationships start here
             </h2>
-            <div class=" md:pl-6">
-              <div className="flex flex-wrap">
-                <div className="search-container bg-white md:ml-8 md:w-80">
-                  <button className="text-black">
-                    <Search />
-                  </button>
-                  <input
-                    className="m-2 p-0.5"
-                    style={{ flex: '1', border: 'none' }}
-                    type="text"
-                    placeholder="Your Email"
-                  />
-                </div>
-                <div className="ml-5 mt-4 md:mt-0">
-                  <button className="mt-2 rounded-full bg-buttons px-5 py-2 font-semibold text-white hover:bg-white hover:text-buttons">
-                    Get Started
-                  </button>
-                </div>
+            <div className="flex items-center justify-start">
+              <div className="mx-4 rounded-full bg-white px-4	">
+                <Search />
+                <input
+                  className="rounded-full p-3 pr-20 focus:outline-none"
+                  style={{ flex: '1', border: 'none' }}
+                  type="text"
+                  placeholder="Your Email"
+                />
               </div>
+              <button className="btn-1">Get Started</button>
             </div>
           </div>
         </section>
@@ -46,10 +39,10 @@ const FooterBanner = () => {
         <img
           src="https://i.ibb.co/X48H8hb/subscribe-shap-two-1.png"
           alt="shape-2"
-          className="absolute bottom-0 right-0 block"
+          className="absolute bottom-0 right-0 block rounded-br-2xl"
         />
       </div>
-    </div>
+    </Container>
   )
 }
 
