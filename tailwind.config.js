@@ -12,6 +12,7 @@ module.exports = {
         primary: '#000',
         buttons: '#0000ff',
         lightBlue: '#4C4CF1',
+        lightDark: '#131417',
       },
     },
   },

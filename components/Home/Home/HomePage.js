@@ -4,7 +4,7 @@ import Questions from '../Questions/Questions'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
 import VideoList from '../VideoList/VideoList'
 import OnlineDoc from '../OnlineDoc/OnlineDoc'
-import Footer from '../Footer/Footer'
+import Footer from '../../Shared/Footer/Footer'
 import HeroSection from '../HeroSection/HeroSection'
 
 const HomePage = () => {
