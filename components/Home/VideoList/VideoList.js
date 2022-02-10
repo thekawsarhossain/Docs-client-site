@@ -24,7 +24,7 @@ const VideoList = () => {
               // className="w-full"
               width="100%"
               height="450"
-              src="https://www.youtube.com/embed/58hu-xkztm8"
+              src="https://www.youtube.com/embed/X7XbjwD6fVY"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -64,7 +64,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -90,7 +90,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -116,7 +116,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -163,7 +163,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -189,7 +189,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -215,7 +215,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -261,7 +261,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -287,7 +287,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -313,7 +313,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -360,7 +360,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -386,7 +386,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
@@ -412,7 +412,7 @@ const VideoList = () => {
                           <div className="flex gap-4 text-sm text-gray-500">
                             <div className="flex gap-2">
                               <PersonIcon className=" text-sm" />
-                              Jewel
+                              Fahad
                             </div>
                             <div className="flex gap-2">
                               <DateRangeIcon className="text-sm" />
