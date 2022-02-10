@@ -5,7 +5,6 @@ import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
 import VideoList from '../VideoList/VideoList'
 import OnlineDoc from '../OnlineDoc/OnlineDoc'
 
-
 const HomePage = () => {
   return (
       <div>
@@ -16,7 +15,6 @@ const HomePage = () => {
         <Questions />
         <Testimonial />
       </div>
-
   )
 }
 
