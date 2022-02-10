@@ -2,9 +2,9 @@ import Testimonial from '../Testimonial/Testimonial'
 import Navbar from '../../Shared/Navbar/Navbar'
 import Questions from '../Questions/Questions'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
-import HeroSection from '../HeroSection/HeroSection'
 import VideoList from '../VideoList/VideoList'
-import Footer from '../../Shared/Footer/Footer'
+import OnlineDoc from '../OnlineDoc/OnlineDoc'
+import Footer from '../Footer/Footer'
 
 const HomePage = () => {
   return (
@@ -14,8 +14,10 @@ const HomePage = () => {
       <VideoList />
       <Questions />
       <CommunitiesCard />
+      <OnlineDoc />
+      <VideoList />
+      <Questions />
       <Testimonial />
-      {/* <Questions /> */}
       <Footer />
     </div>
   )
