@@ -2,6 +2,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Container,
   Typography,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -17,7 +18,7 @@ const VideoList = () => {
   }
   return (
     <div className="video-List">
-      <div className=" container mx-auto">
+      <Container>
         <div className="videoList-container grid grid-cols-12 gap-5">
           <div className="col-span-12 md:col-span-7">
             <iframe
@@ -428,7 +429,7 @@ const VideoList = () => {
             </Accordion>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   )
 }

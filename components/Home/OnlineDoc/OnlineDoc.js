@@ -53,7 +53,7 @@ function a11yProps(index) {
   };
 
   return (
-<div className='slider text-white py-16 my-16'>
+<div className='slider text-white py-16 '>
 <Container>
 <div className='text-center mt-5 mb-20'>
   <div className="docs-info">
@@ -63,7 +63,7 @@ Forum & more!</p>
   </div>
 </div>
 
-      <Box sx={{ width: '100%'}}>
+      <Box sx={{ width: '100%', minHeight:'600px'}}>
       <Box sx={{ borderBottom: 2, borderColor: '#2C303A'}}>
         <Tabs   value={value} onChange={handleChange} >
           <Tab  label="Docy" {...a11yProps(0)} />
