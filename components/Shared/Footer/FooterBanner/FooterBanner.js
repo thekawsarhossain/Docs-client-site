@@ -1,34 +1,20 @@
 import { Search } from '@mui/icons-material'
 import Image from 'next/image'
 
-/* 
-
-.email-section {
-  width: 80%;
-  margin: auto;
-  background-color: #4c4cf1;
-  margin-bottom: 70px;
-  border-radius: 15px;
-}
-
-
-*/
-
 const FooterBanner = () => {
   return (
     <div className="container mx-auto">
       <div className="relative mx-auto mb-8 rounded-xl bg-lightBlue shadow shadow-blue-700">
-        <div className="overflow-hidden">
-          <Image
-            className="absolute top-0 left-0"
-            src="/banner/shap-1.png"
-            width="480px"
-            height="135px"
-          ></Image>
-        </div>
-        <section class="body-font text-gray-600">
+        {/* shape image  */}
+        <img
+          src="https://i.ibb.co/W5yb4Q4/subscribe-shap-1.png"
+          alt="shape-1"
+          className='className="absolute block" top-0 left-0'
+        />
+        {/* content here  */}
+        <section class="py-12 text-gray-600">
           <div class="container mx-auto flex flex-wrap px-5 py-5">
-            <h2 class="title-font mb-2 text-2xl font-bold font-medium text-white sm:text-4xl md:w-2/5">
+            <h2 class="title-font mb-2 text-2xl font-bold text-white sm:text-4xl md:w-2/5">
               {' '}
               Great Customer
               <br />
@@ -56,12 +42,12 @@ const FooterBanner = () => {
             </div>
           </div>
         </section>
-        <Image
+        {/* shape image  */}
+        <img
+          src="https://i.ibb.co/X48H8hb/subscribe-shap-two-1.png"
+          alt="shape-2"
           className="absolute bottom-0 right-0 block"
-          src="/banner/shap-2.png"
-          width="680px"
-          height="95px"
-        ></Image>
+        />
       </div>
     </div>
   )
