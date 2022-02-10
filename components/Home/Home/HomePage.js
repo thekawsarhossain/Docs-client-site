@@ -12,6 +12,7 @@ const HomePage = () => {
       <Navbar />
       <HeroSection />
       <VideoList />
+      <Questions />
       <CommunitiesCard />
       <Testimonial />
       {/* <Questions /> */}
