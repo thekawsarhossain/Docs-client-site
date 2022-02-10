@@ -15,9 +15,6 @@ const Docs4 = () => {
     .then(data=>setDocs(data))
   })
 
-  // https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/03/Lamp_idea-1.png
-
-  //https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2017/12/Logo-1.png
   return (
     <div>
          <Box sx={{ flexGrow: 1,mt:10 }}>
@@ -25,7 +22,7 @@ const Docs4 = () => {
       <Grid item   xs={12} sm={4} md={4} >
         <Image src='https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/03/Lamp_idea-1.png' width='38' height='62' alt='img' ></Image>
            <Typography variant='h5' sx={{mt:3,mb:2 }}>Sample User Guide</Typography>
-           <Typography variant='p' sx={{ lineHeight: 2, }}>Charles is a creative WordPress theme for saas, software, startup, mobile app, agency, and related</Typography>
+           <Typography variant='p' sx={{ lineHeight: 2, }}>Charles is a creative WordPress theme for saas, software, startup, mobile app, agency, and </Typography>
            <Button sx={{my:2}}>View All <ArrowForwardIcon sx={{ml:1}} /> </Button> 
 
       </Grid>
