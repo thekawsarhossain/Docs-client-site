@@ -53,7 +53,7 @@ function a11yProps(index) {
   };
 
   return (
-<div className='slider text-white py-16 my-16'>
+<div className='slider text-white py-16 '>
 <Container>
 <div className='text-center mt-5 mb-20'>
   <div className="docs-info">
