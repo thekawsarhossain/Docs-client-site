@@ -63,7 +63,7 @@ Forum & more!</p>
   </div>
 </div>
 
-      <Box sx={{ width: '100%'}}>
+      <Box sx={{ width: '100%', minHeight:'600px'}}>
       <Box sx={{ borderBottom: 2, borderColor: '#2C303A'}}>
         <Tabs   value={value} onChange={handleChange} >
           <Tab  label="Docy" {...a11yProps(0)} />
