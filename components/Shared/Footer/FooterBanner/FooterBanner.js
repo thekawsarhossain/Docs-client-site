@@ -22,7 +22,7 @@ const FooterBanner = () => {
               Relationships start here
             </h2>
             <div className="flex items-center justify-start">
-              <div className="mx-4 rounded-full bg-white px-4	">
+              <div className="mx-4 rounded-full bg-white px-4 ">
                 <Search />
                 <input
                   className="rounded-full p-3 pr-20 focus:outline-none"
