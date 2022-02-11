@@ -21,7 +21,7 @@ const FooterBanner = () => {
               <br />
               Relationships start here
             </h2>
-            <div className="flex items-center justify-start">
+            <div className="flex-none   md:flex items-center justify-start">
               <div className="mx-4 rounded-full bg-white px-4 ">
                 <Search />
                 <input
@@ -32,7 +32,7 @@ const FooterBanner = () => {
                  
                 />
               </div>
-              <button className="hidden  md:block btn-1">Get Started</button>
+              <button className=" btn-1  m-4 ">Get Started</button>
             </div>
           </div>
         </section>
