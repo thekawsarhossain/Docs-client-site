@@ -18,10 +18,10 @@
     @apply two relative mr-5 w-max text-base font-bold hover:text-white;
   }
   .link-hover {
-    @apply absolute -bottom-1 bg-yellow-400 transition-all;
+    @apply absolute -bottom-1 bg-white transition-all;
   }
   .title-btn {
-    @apply ml-10 rounded-full border-2 border-sky-500 py-2 px-4 text-base font-bold hover:text-white;
+    @apply ml-10 rounded-full border-2 border-gray-400 py-2 px-4 text-base font-bold hover:border-white hover:text-white;
   }
   /* naavbar regarding end here */
 
@@ -78,6 +78,7 @@
 
 /* custom css will be here   */
 /* এখানে আমরা ফাইল বেইজড সিএসএস লিখবো */
+
 /* Navbar css */
 .one:hover span:last-child {
   width: 100%;
@@ -150,13 +151,12 @@
 }
 
 /* Online Doc */
-/* button#simple-tab-0,
+button#simple-tab-0,
 button#simple-tab-1,
 button#simple-tab-2,
 button#simple-tab-3 {
-button#simple-tab-0, button#simple-tab-1, button#simple-tab-2, button#simple-tab-3 {
   color: white;
-} */
+}
 span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   background-color: #5736fe;
 }
@@ -169,9 +169,6 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
 
 .docs-btn:hover {
   color: #3636f8;
-  /* .docs-btn:hover{
-color: #3636f8;
-} */
 }
 
 /* Question section css */
