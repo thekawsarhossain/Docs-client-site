@@ -16,7 +16,7 @@ const HomePage = () => {
       <OnlineDoc />
       <VideoList />
       <Questions />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <Footer />
     </div>
   )
