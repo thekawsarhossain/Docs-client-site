@@ -133,8 +133,10 @@ const HeroSection = () => {
         <div>
           <div>
             <div>
-              <h1 className="text-center text-white">How can we help you?</h1>
-              <p className="text-center text-white">
+              <h1 className="text-center font-sans font-bold text-white">
+                How can we help you?
+              </h1>
+              <p className="pt-6 text-center text-lg font-bold text-white">
                 Search here to get answers to your questions
               </p>
             </div>
@@ -145,16 +147,17 @@ const HeroSection = () => {
                     <div class="w-full p-3">
                       <div class="relative flex">
                         <div>
-                          <i class="fa fa-search absolute top-5 left-4 text-gray-400"></i>
+                          <i class="fa fa-search absolute top-5 left-8 text-gray-400"></i>
                           <input
                             type="text"
-                            class="h-14 w-full rounded-lg bg-white px-12 hover:cursor-pointer focus:outline-none"
+                            class="h-14 w-96 rounded-tl-full rounded-bl-full bg-white pl-14 pr-4 hover:cursor-pointer focus:outline-none"
                             name=""
                           />
                         </div>
                         <div>
                           <div>
                             <Button
+                              className="right-2 h-14 rounded-tr-full rounded-br-full bg-gray-200 text-black hover:bg-gray-200"
                               id="demo-customized-button"
                               aria-controls={
                                 open ? 'demo-customized-menu' : undefined
