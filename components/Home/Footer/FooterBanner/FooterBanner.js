@@ -11,7 +11,7 @@ const FooterBanner = () => {
           </div>
           <section class="text-gray-600 body-font">
             <div class="container px-5 py-5 mx-auto flex flex-wrap">
-              <h2 class="sm:text-4xl text-2xl font-bold text-white font-medium title-font mb-2 md:w-2/5"> Great Customer 
+              <h2 class="sm:text-4xl text-2xl font-bold text-white title-font mb-2 md:w-2/5"> Great Customer 
                     <br />
                     Relationships start here</h2>
                 <div class=" md:pl-6">
