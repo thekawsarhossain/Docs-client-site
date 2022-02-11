@@ -148,17 +148,17 @@ const HeroSection = () => {
                       <div class="relative flex">
                         <div>
                           <i class="fa fa-search absolute top-5 left-8 text-gray-400"></i>
-                          <input
-                            type="text"
-                            class="h-14 w-96 rounded-tl-full rounded-bl-full bg-white pl-14 pr-4 hover:cursor-pointer focus:outline-none"
+       <input
+         type="text"
+         class="h-14 w-96 rounded-tl-full rounded-bl-full bg-white pl-14 pr-4 hover:cursor-pointer focus:outline-none"
                             name=""
                           />
                         </div>
                         <div>
                           <div>
-                            <Button
-                              className="right-2 h-14 rounded-tr-full rounded-br-full bg-gray-200 text-black hover:bg-gray-200"
-                              id="demo-customized-button"
+            <Button 
+              className="click"
+              id="demo-customized-button"
                               aria-controls={
                                 open ? 'demo-customized-menu' : undefined
                               }

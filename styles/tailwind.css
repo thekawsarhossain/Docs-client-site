@@ -91,6 +91,19 @@
 .three:hover span {
   height: 100%;
 }
+/* hero section */
+.click{
+  right: 8px;
+  height: 56px;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  background-color: #E5E7EB;
+  color: black;
+}
+
+.click:hover{
+  background-color: #E5E7EB;
+}
 
 /*Video List CSS by Fahad */
 .video-List {
