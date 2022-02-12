@@ -23,6 +23,7 @@ const FooterBanner = () => {
                         <input className='m-2 p-0.5'  style={{flex:'1',border:'none'}}  type="text" placeholder='Your Email'/>
                    </div>
                    <div className="ml-5 md:mt-0 mt-4">
+                     {/* buttons use for color config file */}
                    <button  className="rounded-full px-5 py-2 mt-2 bg-buttons font-semibold text-white hover:bg-white hover:text-buttons">Get Started</button>
                    </div>
                 </div>
