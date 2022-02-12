@@ -91,26 +91,26 @@ const HeroSection = () => {
               alt=""
             />
           </div>
-          <div className="shape-4 absolute top-60 left-60 hidden sm:block">
+          <div className="shape-5 absolute top-60 left-60 hidden sm:block">
             <img
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/plus1.png"
               alt=""
             />
           </div>
-          <div className="shape-4 absolute top-60 left-60 hidden sm:block">
+          <div className="shape-6 absolute top-60 left-60 hidden sm:block">
             <img
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/plus1.png"
               alt=""
             />
           </div>
-          <div className="shape-4 absolute bottom-60 right-96 hidden sm:block">
+          <div className="shape-7 absolute bottom-60 right-96 hidden sm:block">
             <img
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/plus2.png"
               alt=""
             />
           </div>
           <div
-            className="shape-4 absolute bottom-96 right-60 hidden sm:block"
+            className="shape-8 absolute bottom-96 right-60 hidden sm:block"
             style={{
               width: '30px',
               height: '30px',
@@ -120,7 +120,7 @@ const HeroSection = () => {
             }}
           ></div>
           <div
-            className="shape-4 absolute bottom-60 left-96 hidden sm:block"
+            className="shape-9 absolute bottom-60 left-96 hidden sm:block"
             style={{
               width: '15px',
               height: '15px',
