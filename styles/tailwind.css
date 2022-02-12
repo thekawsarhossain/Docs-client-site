@@ -4,9 +4,50 @@
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
-  .btn {
-    @apply border-2 border-primary px-6 py-2 text-white duration-300 hover:bg-primary focus:ring-2;
+  /* buttons here  */
+  .btn-1 {
+    @apply rounded-full bg-buttons px-5 py-3 font-semibold text-white duration-300 hover:bg-white 
+    hover:text-buttons focus:ring-2;
   }
+
+  /* navbar regarding start here  */
+  .navbar-parent {
+    @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
+  }
+  .link-item {
+    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
+  }
+  .link-hover {
+    @apply absolute -bottom-1 bg-white transition-all;
+  }
+  .title-btn {
+    @apply ml-10 rounded-full border-2 border-gray-400 py-2 px-4 text-base font-bold hover:border-white hover:text-white;
+  }
+  /* naavbar regarding end here */
+
+  /* video section regarding start here  */
+  .videoList-container {
+    @apply py-32;
+  }
+  /* video section regarding end here  */
+
+  /* footer regarding style start here  */
+  .footer-icon {
+    @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
+  }
+  .footer-nav-title {
+    @apply mb-3 text-xl font-medium tracking-widest text-white;
+  }
+  .footer-nav-item {
+    @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
+  }
+  .footerBannerParent {
+    @apply relative mx-auto mb-6 rounded-2xl bg-lightBlue shadow shadow-blue-700;
+  }
+  .footerBannerContent {
+    @apply block items-center justify-around py-16 px-6 lg:flex lg:px-0;
+  }
+  /* footer regarding style end here  */
 }
 
 /*  এখানে আমরা এইভাবে এইচটিএমএল এর কোনো ট্যাগ এর ডিফল্ট বিহেবিউর কেমন হবে সেটা আমরা সেট করে দিতে পারবো  */
@@ -15,7 +56,7 @@
     @apply text-3xl sm:text-5xl;
   }
   h2 {
-    @apply text-3xl;
+    @apply text-4xl;
   }
   h3 {
     @apply text-2xl;
@@ -33,29 +74,174 @@
   .hello {
     background-color: #fff;
   }
-  title {
-  }
-  .email-section{
-    width: 80%;
-    margin: auto;
-    background-color: #4C4CF1;
-    margin-bottom: 70px;
-    border-radius: 15px
-  }
-  .search-container{
-    border:1px solid black;
-    border-radius:20px;
-    display: flex;
-    margin-top:5px;
-    justify-content:space-between;
-}
-  .footer-icon{
-    margin: 10px;
-    background-color: #2C303A;
-    padding: 10px;
-    border-radius: 10px;
-  }
 }
 
 /* custom css will be here   */
 /* এখানে আমরা ফাইল বেইজড সিএসএস লিখবো */
+
+/* Navbar css */
+.one:hover span:last-child {
+  width: 100%;
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
+}
+/* hero section */
+.click{
+  right: 8px;
+  height: 56px;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  background-color: #E5E7EB;
+  color: black;
+}
+
+.click:hover{
+  background-color: #E5E7EB;
+}
+
+/*Video List CSS by Fahad */
+.video-List {
+  background-color: rgb(25, 26, 46);
+}
+.accordion {
+  background-color: #2c303a;
+  color: white;
+  margin-bottom: 7px;
+}
+
+/* slider css */
+.slider {
+  background: #131417;
+}
+.slick-slide img {
+  border-radius: 20px;
+  z-index: 11111;
+}
+.slick-dots {
+  text-align: left !important;
+}
+.slick-dots li button:before {
+  color: #3636f8 !important;
+  font-size: 10px !important;
+  margin-left: 50px;
+  margin-top: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+.rounded-one {
+  background-color: #3636f8;
+  width: 280px;
+  height: 280px;
+  margin-left: -205px;
+  margin-top: 120px !important;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rounded-tow {
+  background-color: #3636f8;
+  width: 100px;
+  height: 100px;
+  margin-left: -140px;
+  margin-top: 50px;
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
+  opacity: 0.5;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* Online Doc */
+button#simple-tab-0,
+button#simple-tab-1,
+button#simple-tab-2,
+button#simple-tab-3 {
+  color: white;
+}
+span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
+  background-color: #5736fe;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background-color: #2c303a;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.docs-btn:hover {
+  color: #3636f8;
+}
+
+/* Question section css */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.bloc-tabs {
+  display: flex;
+}
+.tabs {
+  padding: 8px 0;
+  margin-bottom: 5px;
+  width: 100%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: #2c303a;
+  border-bottom: 1px solid transparent;
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  flex-grow: 1;
+}
+.content {
+  background: #131417;
+  padding: 20px 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+}
+.active-content {
+  display: block;
+}
