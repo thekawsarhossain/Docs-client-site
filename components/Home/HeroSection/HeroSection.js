@@ -9,6 +9,7 @@ import ArchiveIcon from '@mui/icons-material/Archive'
 import FileCopyIcon from '@mui/icons-material/FileCopy'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import Example from './test'
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -147,58 +148,17 @@ const HeroSection = () => {
                     <div class="w-full p-3">
                       <div class="relative flex">
                         <div>
-                          <i class="fa fa-search absolute top-5 left-8 text-gray-400"></i>
-       <input
+                          <i class="fa fa-search absolute top-5 left-5 text-gray-400"></i>
+
+                          <input type="search" name="" id="search"  />
+       {/* <input
          type="text"
          class="h-14 w-96 rounded-tl-full rounded-bl-full bg-white pl-14 pr-4 hover:cursor-pointer focus:outline-none"
                             name=""
-                          />
+                          /> */}
                         </div>
                         <div>
-                          <div>
-            <Button 
-              className="click"
-              id="demo-customized-button"
-                              aria-controls={
-                                open ? 'demo-customized-menu' : undefined
-                              }
-                              aria-haspopup="true"
-                              aria-expanded={open ? 'true' : undefined}
-                              variant="contained"
-                              disableElevation
-                              onClick={handleClick}
-                              endIcon={<KeyboardArrowDownIcon />}
-                            >
-                              all
-                            </Button>
-                            <StyledMenu
-                              id="demo-customized-menu"
-                              MenuListProps={{
-                                'aria-labelledby': 'demo-customized-button',
-                              }}
-                              anchorEl={anchorEl}
-                              open={open}
-                              onClose={handleClose}
-                            >
-                              <MenuItem onClick={handleClose} disableRipple>
-                                <EditIcon />
-                                Edit
-                              </MenuItem>
-                              <MenuItem onClick={handleClose} disableRipple>
-                                <FileCopyIcon />
-                                Duplicate
-                              </MenuItem>
-                              <Divider sx={{ my: 0.5 }} />
-                              <MenuItem onClick={handleClose} disableRipple>
-                                <ArchiveIcon />
-                                Archive
-                              </MenuItem>
-                              <MenuItem onClick={handleClose} disableRipple>
-                                <MoreHorizIcon />
-                                More
-                              </MenuItem>
-                            </StyledMenu>
-                          </div>
+                          <Example/>
                         </div>
                       </div>
                     </div>

@@ -92,9 +92,19 @@
   height: 100%;
 }
 /* hero section */
+#search{
+  padding: 15px;
+  width:400px;
+  border-top-left-radius:50px;
+  border-bottom-left-radius: 50px;
+
+}
+#search:focus{
+  outline: none;
+}
 .click{
   right: 8px;
-  height: 56px;
+  padding: 17px 20px;
   border-top-right-radius: 9999px;
   border-bottom-right-radius: 9999px;
   background-color: #E5E7EB;
