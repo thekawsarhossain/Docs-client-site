@@ -35,12 +35,13 @@ const VideoList = () => {
           <div className="col-span-12 text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
             <Accordion
-              className="accordion"
+            sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
               expanded={expanded === 'panel1'}
               onChange={handleChange('panel1')}
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
+                sx={{ backgroundColor: '#2C303A', color: 'white' }}
                 aria-controls="panel1bh-content"
                 id="panel1bh-header"
               >
@@ -132,12 +133,14 @@ const VideoList = () => {
               </AccordionDetails>
             </Accordion>
             <Accordion
-              className="accordion"
+             sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
               expanded={expanded === 'panel2'}
               onChange={handleChange('panel2')}
+
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
+                sx={{ backgroundColor: '#2C303A', color: 'white' }}
                 aria-controls="panel2bh-content"
                 id="panel2bh-header"
               >
@@ -232,12 +235,14 @@ const VideoList = () => {
             </Accordion>
 
             <Accordion
-              className="accordion"
+            sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
               expanded={expanded === 'panel3'}
               onChange={handleChange('panel3')}
+            
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
+                sx={{ backgroundColor: '#2C303A', color: 'white' }}
                 aria-controls="panel3bh-content"
                 id="panel3bh-header"
               >
@@ -329,12 +334,13 @@ const VideoList = () => {
               </AccordionDetails>
             </Accordion>
             <Accordion
-              className="accordion"
+              sx={{backgroundColor: '#2C303A', color: 'white'}}
               expanded={expanded === 'panel4'}
               onChange={handleChange('panel4')}
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
+                sx={{ backgroundColor: '#2C303A', color: 'white' }}
                 aria-controls="panel4bh-content"
                 id="panel4bh-header"
               >

@@ -93,8 +93,8 @@
 }
 /* hero section */
 #search{
+  
   padding: 15px;
-  width:400px;
   border-top-left-radius:50px;
   border-bottom-left-radius: 50px;
 
@@ -119,10 +119,8 @@
 .video-List {
   background-color: rgb(25, 26, 46);
 }
-.accordion {
-  background-color: #2c303a;
-  color: white;
-  margin-bottom: 7px;
+.bshadow{
+  box-shadow: 0 20px 40px 0 rgb(4 73 89 / 10%)
 }
 
 /* slider css */
@@ -181,13 +179,13 @@ button#simple-tab-3 {
   color: white;
 }
 span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
-  background-color: #5736fe;
+  background-color: #5736fe !important;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  background-color: #2c303a;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  background-color: #2c303a !important;
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
 }
 
 .docs-btn:hover {
