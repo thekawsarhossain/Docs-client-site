@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -31,7 +32,7 @@ function classNames(...classes) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/documentation"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
                     'block px-4 py-2 text-sm font-medium'
@@ -44,7 +45,7 @@ function classNames(...classes) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/Forum"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
                     'block px-4 py-2 text-sm font-medium'
@@ -57,7 +58,7 @@ function classNames(...classes) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/blogs"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
                     'block px-4 py-2 text-sm font-medium'
@@ -70,7 +71,7 @@ function classNames(...classes) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/helpdesk"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
                     'block px-4 py-2 text-sm font-medium'
