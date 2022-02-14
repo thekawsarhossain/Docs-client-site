@@ -42,7 +42,8 @@ const ForumFooterBanner = () => {
                 </h2>
               </div>
               <a href="/" className="action_btn">
-                Join the community <i class="fa-regular fa-chevron-right"></i>
+                Join the community{' '}
+                <i className="fa-regular fa-chevron-right"></i>
               </a>
             </div>
           </div>
