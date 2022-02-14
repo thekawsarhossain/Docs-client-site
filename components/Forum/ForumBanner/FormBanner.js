@@ -10,10 +10,10 @@ const FormBanner = () => {
             padding: '190px 0 95px',
             position: 'relative',
           }}
-          class="breadcrumb_area overflow-hidden"
+          className="breadcrumb_area overflow-hidden"
         >
           <img
-            class="absolute"
+            className="absolute"
             style={{
               width: '150px',
               height: '145px',
@@ -32,7 +32,7 @@ const FormBanner = () => {
               bottom: '-7px',
               zIndex: '1',
             }}
-            class="absolute"
+            className="absolute"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/b_leaf.svg"
             alt=""
           />
@@ -45,24 +45,24 @@ const FormBanner = () => {
               right: '0',
               height: 'auto',
             }}
-            class="star absolute"
+            className="star absolute"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/banner_bg.png"
             alt=""
           />
           <img
             style={{ bottom: '0', zIndex: '0' }}
-            class="absolute"
+            className="absolute"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-classic/shap_01.png"
             alt=""
           />
           <img
             style={{ bottom: '0', zIndex: '0' }}
-            class="absolute"
+            className="absolute"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-classic/shap_02.png"
             alt=""
           />
           <img
-            class="absolute"
+            className="absolute"
             style={{
               right: '20%',
               bottom: '25px',
@@ -73,7 +73,7 @@ const FormBanner = () => {
             alt=""
           />
           <img
-            class="absolute"
+            className="absolute"
             data-wow-delay="0.2s"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/flower.png"
             alt=""
@@ -86,7 +86,7 @@ const FormBanner = () => {
             }}
           />
           <div
-            class="custom_container container"
+            className="custom_container container"
             style={{
               width: '100%',
               paddingRight: '15px',
@@ -95,18 +95,21 @@ const FormBanner = () => {
               marginLeft: 'auto',
             }}
           >
-            <form action="#" class="banner_search_form banner_search_form_two">
+            <form
+              action="#"
+              className="banner_search_form banner_search_form_two"
+            >
               <div
-                class="relative flex justify-center"
+                className="relative flex justify-center"
                 style={{ zIndex: '9999', flexWrap: 'wrap' }}
               >
-                <div class=" py-10 px-2">
+                <div className=" py-10 px-2">
                   <div>
-                    <div class="md:flex">
-                      <div class=" p-3">
-                        <div class="relative flex">
+                    <div className="md:flex">
+                      <div className=" p-3">
+                        <div className="relative flex">
                           <div>
-                            <i class="fa fa-search absolute top-5 left-5 text-gray-400"></i>
+                            <i className="fa fa-search absolute top-5 left-5 text-gray-400"></i>
                             <input
                               type="search"
                               name=""
@@ -124,10 +127,10 @@ const FormBanner = () => {
                 </div>
                 <div
                   style={{ marginLeft: '-1px' }}
-                  class="input-group-append flex"
+                  className="input-group-append flex"
                 ></div>
                 <button type="submit">
-                  <i class="icon_search"></i>
+                  <i className="icon_search"></i>
                 </button>
               </div>
             </form>

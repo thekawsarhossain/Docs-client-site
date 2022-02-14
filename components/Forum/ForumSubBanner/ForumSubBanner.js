@@ -99,7 +99,7 @@ const ForumSubBanner = () => {
                 {/* <FontAwesomeIcon icon="fa-regular fa-timer" /> */}
                 {/* <i
                   style={{ paddingRight: '10px' }}
-                  class="fa-regular fa-timer"
+                  className="fa-regular fa-timer"
                 ></i> */}
                 <AccessTimeIcon />
                 Updated on March 03, 2020

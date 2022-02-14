@@ -1,15 +1,14 @@
 import '../styles/tailwind.css'
 import { Provider } from 'react-redux'
-// import { PersistGate } from 'redux-persist/integration/react'
-// import { persistor, store } from '../Redux/store'
-import { store } from '../Redux/store'
+import { persistor, store } from '../Redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistor}> */}
-      <Component {...pageProps} />
-      {/* </PersistGate> */}
+      <PersistGate loading={null} persistor={persistor}>
+        <Component {...pageProps} />
+      </PersistGate>
     </Provider>
   )
 }
