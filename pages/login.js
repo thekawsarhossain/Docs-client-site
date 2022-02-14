@@ -1,7 +1,13 @@
+import Head from 'next/head'
+import Login from "../components/Authentication/Login";
 const login = () => {
   return (
     <div>
-      <h1>login page</h1>
+      <Head>
+      <title>Log in</title>
+      </Head>
+    
+      <Login/>
     </div>
   );
 }

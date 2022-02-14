@@ -1,7 +1,15 @@
+import Head from 'next/head'
+import Register from '../components/Authentication/Register'
+
 const register = () => {
   return (
     <div>
-     <h1>register page</h1>
+    <Head>
+      <title>
+        Register
+      </title>
+    </Head>
+  <Register/>
     </div>
   );
 }
