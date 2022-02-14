@@ -31,6 +31,11 @@
   }
   /* video section regarding end here  */
 
+  /* authentication || login || register components classes here  */
+  .auth-input {
+    @apply mt-1 w-full rounded-md border py-4 px-5 text-black shadow-lg;
+  }
+
   /* footer regarding style start here  */
   .footer-icon {
     @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
