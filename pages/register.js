@@ -4,14 +4,12 @@ import Register from '../components/Authentication/Register'
 const register = () => {
   return (
     <div>
-    <Head>
-      <title>
-        Register
-      </title>
-    </Head>
-  <Register/>
+      <Head>
+        <title>Register</title>
+      </Head>
+      <Register />
     </div>
-  );
+  )
 }
 
-export default register;
+export default register

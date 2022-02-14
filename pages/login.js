@@ -4,7 +4,7 @@ const login = () => {
   return (
     <div>
       <Head>
-        <title>Log in</title>
+        <title>Login</title>
       </Head>
       {/* login component called here  */}
       <Login />
