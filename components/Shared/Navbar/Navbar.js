@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const Navbar = () => {
+
   const [state, setState] = React.useState({
     left: false,
   })
@@ -54,38 +55,31 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/documentation">
           <ListItem button>
             <ListItemText>
               <span>Documentation</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/Forum">
           <ListItem button>
             <ListItemText>
               <span>Forum</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
-          <ListItem button>
-            <ListItemText>
-              <span>Pages</span>
-            </ListItemText>
-          </ListItem>
-        </Link>
-        <Link href="/">
+        <Link href="/blogs">
           <ListItem button>
             <ListItemText>
               <span>Blog</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/login">
           <ListItem button>
             <ListItemText>
-              <span>Get Docy</span>
+              <span>Log in</span>
             </ListItemText>
           </ListItem>
         </Link>
@@ -109,36 +103,29 @@ const Navbar = () => {
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/documentation">
               <a className="link-item">
                 <span>Documentation</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/Forum">
               <a className="link-item">
                 <span>Forum</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
-              <a className="link-item">
-                <span>Pages</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/">
+            <Link href="/blogs">
               <a className="link-item">
                 <span>Blog</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
-              <a className="title-btn">Get Docy</a>
+            <Link href="/login">
+              <a className="title-btn">Log in</a>
             </Link>
           </nav>
           <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">

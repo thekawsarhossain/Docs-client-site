@@ -59,7 +59,7 @@ const Questions = () => {
             <div className="grid grid-cols-12 md:gap-4 lg:gap-28">
               <div className="col-span-12 pb-28 md:col-span-4 lg:col-span-3">
                 <div
-                  className="my-5 rounded p-5 drop-shadow-[0_35px_35px_rgba(25,35,43,1)] md:w-64 lg:w-64"
+                  className="my-5 rounded p-5 bshadow md:w-64 lg:w-64"
                   style={{ backgroundColor: '#1e1f26' }}
                 >
                   <p className="pt-4 pb-7 text-2xl font-semibold">

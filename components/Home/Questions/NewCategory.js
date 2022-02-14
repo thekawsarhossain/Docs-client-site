@@ -55,7 +55,7 @@ export default function NewCategory() {
     <div>
       <Accordion
         className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
       >
@@ -73,8 +73,8 @@ export default function NewCategory() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+       
+        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
       >

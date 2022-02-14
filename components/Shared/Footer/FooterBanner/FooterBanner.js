@@ -15,23 +15,24 @@ const FooterBanner = () => {
         {/* content here  */}
         <section class="py-24 text-gray-600">
           <div class="footerBannerContent">
-            <h2 class="mb-2 font-bold text-white">
+            <h2 class="lg:mb-2 mb-4  font-bold text-white">
               {' '}
               Great Customer
               <br />
               Relationships start here
             </h2>
-            <div className="flex items-center justify-start">
-              <div className="mx-4 rounded-full bg-white px-4	">
+            <div className="flex-none   md:flex items-center justify-start">
+              <div className="mx-4 rounded-full bg-white px-4 ">
                 <Search />
                 <input
-                  className="rounded-full p-3 pr-20 focus:outline-none"
+                  className=" rounded-full py-3   lg:p-3  lg:pr-20 focus:outline-none"
                   style={{ flex: '1', border: 'none' }}
                   type="text"
                   placeholder="Your Email"
+                 
                 />
               </div>
-              <button className="btn-1">Get Started</button>
+              <button className=" btn-1  m-4 ">Get Started</button>
             </div>
           </div>
         </section>

@@ -73,7 +73,7 @@ export default function License() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
+        className="bshadow"
         sx={{ backgroundColor: '#1e1f26', color: 'white' }}
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
