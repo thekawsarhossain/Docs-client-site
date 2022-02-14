@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
-import { Container } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 
 const Testimonial = () => {
   const [sliders, setSliders] = useState([])
@@ -33,9 +33,15 @@ const Testimonial = () => {
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow ">
-                      <h2 className="mb-3 pr-16  text-4xl leading-normal text-white">
-                        {slider.title}
+                      <h2 className=" mb-3 pr-16 text-2xl 	
+                      	 md:text-4xl   
+                         text-white">
+                       
                       </h2>
+
+                      <Typography variant='h4' sx={{color:'white'}}>
+                      {slider.title}
+                      </Typography>
                       <h4 className="mt-6 font-bold text-white">
                         {slider.name}
                       </h4>
