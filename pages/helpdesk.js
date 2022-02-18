@@ -1,7 +1,9 @@
+import HelpDex from "../components/HelpDesk/HelpDex";
+
 const helpdesk = () => {
   return (
     <div>
-     <h1>helpdesk page</h1>
+     <HelpDex/>
     </div>
   );
 }

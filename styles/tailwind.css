@@ -88,6 +88,11 @@
 .one:hover span:last-child {
   width: 100%;
 }
+/* helpdesk banner imagee border */
+.community img{
+  border: 5px solid rgb(141, 138, 138);
+  border-radius: 50%;
+}
 
 .two:hover span {
   width: 50%;
