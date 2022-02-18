@@ -51,7 +51,7 @@ export default class TextEditor extends Component {
           >
             Send Data
           </button> */}
-          <button
+          {/* <button
             className="bg-gray-400"
             onClick={() =>
               blogData(
@@ -60,7 +60,7 @@ export default class TextEditor extends Component {
             }
           >
             Send Data
-          </button>
+          </button> */}
           <div
             className="text-white"
             dangerouslySetInnerHTML={{
