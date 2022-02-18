@@ -6,7 +6,7 @@ import { Container } from '@mui/material'
 const Footer = () => {
   return (
     <footer className=" bg-lightDark pt-10 text-white  lg:pt-32">
-      <FooterBanner />
+      {/* <FooterBanner /> */}
       <Container>
         <div class="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
           {/* footer logo & short description */}

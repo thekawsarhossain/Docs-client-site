@@ -1,14 +1,16 @@
-import { Container } from '@mui/material';
-import Navbar from '../components/Shared/Navbar/Navbar'
+import Head from 'next/head'
+import DocsField from "../components/Documentation/DocsField";
+
 
 const documentation = () => {
   return (
     <div>
-      <Navbar/>
-        <Container>
-          <h1>documentation</h1>
-       
-        </Container>
+      <Head>
+        <title>
+          Documentation
+        </title>
+      </Head>
+    <DocsField/>
     </div>
   );
 }

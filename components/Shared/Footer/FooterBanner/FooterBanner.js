@@ -4,7 +4,8 @@ import Image from 'next/image'
 
 const FooterBanner = () => {
   return (
-    <Container>
+   <div className='bg-lightDark'>
+      <Container>
       <div className="footerBannerParent">
         {/* shape image  */}
         <img
@@ -44,6 +45,7 @@ const FooterBanner = () => {
         />
       </div>
     </Container>
+   </div>
   )
 }
 

@@ -12,12 +12,9 @@ const Docs3 = () => {
   useEffect(()=>{
     fetch('./docs.json')
     .then(res=>res.json())
-    .then(data=>setDocs(data))
+    .then(data=>setDocs(data.slice(0,6)))
   })
 
-  // https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/03/Lamp_idea-1.png
-
-  //https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2017/12/Logo-1.png
   return (
     <div>
          <Box sx={{ flexGrow: 1,mt:10 }}>
@@ -38,9 +35,9 @@ const Docs3 = () => {
                <Image src={doc.docsImg} width='36' height='36'  alt='img'></Image></Box>
              <Box sx={{ml:3}}>
              <Link href="/">
-               <a className='docs-btn'>{doc.docsTitle}</a>
+             <h4 className='docs-btn'>{doc.docsTitle}</h4>
             </Link>
-            <p>{doc.description.slice(0,40)}</p>
+            <p>{doc.description}</p>
              </Box>
            </Box>
        </Grid>

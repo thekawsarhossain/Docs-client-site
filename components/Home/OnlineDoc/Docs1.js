@@ -14,7 +14,7 @@ const Docs1 = () => {
   useEffect(()=>{
     fetch('./docs.json')
     .then(res=>res.json())
-    .then(data=>setDocs(data))
+    .then(data=>setDocs(data.slice(0,6)))
   })
   return (
     <div>
@@ -37,9 +37,9 @@ const Docs1 = () => {
                <Image src={doc.docsImg} width='36' height='36'  alt='img'></Image></Box>
              <Box sx={{ml:3}}>
              <Link href="/">
-               <a className='docs-btn'>{doc.docsTitle}</a>
+             <h4 className='docs-btn'>{doc.docsTitle}</h4>
             </Link>
-            <p>{doc.description.slice(0,40)}</p>
+            <p>{doc.description}</p>
              </Box>
            </Box>
        </Grid>
