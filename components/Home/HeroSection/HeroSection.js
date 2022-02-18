@@ -2,7 +2,6 @@ import * as React from 'react'
 import Example from './test'
 
 const HeroSection = () => {
-  
   return (
     <div
       style={{ background: '#140B25', height: '750px' }}
@@ -64,17 +63,22 @@ const HeroSection = () => {
               </p>
             </div>
             <div>
-              <div class=" py-10 px-2">
-                <div >
-                  <div class="md:flex">
-                    <div class=" p-3">
-                      <div class="relative flex">
+              <div className=" py-10 px-2">
+                <div>
+                  <div className="md:flex">
+                    <div className=" p-3">
+                      <div className="relative flex">
                         <div>
-                          <i class="fa fa-search absolute top-5 left-5 text-gray-400"></i>
-                          <input type="search" name="" id="search" className='w-72 md:w-96'  />
+                          <i className="fa fa-search absolute top-5 left-5 text-gray-400"></i>
+                          <input
+                            type="search"
+                            name=""
+                            id="search"
+                            className="w-72 md:w-96"
+                          />
                         </div>
                         <div>
-                          <Example/>
+                          <Example />
                         </div>
                       </div>
                     </div>
