@@ -47,7 +47,7 @@
     @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
   }
   .footerBannerParent {
-    @apply relative mx-auto mb-6 rounded-2xl bg-lightBlue shadow shadow-blue-700;
+    @apply relative mx-auto  rounded-2xl bg-lightBlue shadow shadow-blue-700;
   }
   .footerBannerContent {
     @apply block items-center justify-around py-16 px-6 lg:flex lg:px-0;
@@ -190,7 +190,10 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   border-top-left-radius: 3px !important;
   border-top-right-radius: 3px !important;
 }
-
+.docs-btn{
+  font-size: 18px;
+  cursor: pointer;
+}
 .docs-btn:hover {
   color: #3636f8;
 }
@@ -257,6 +260,50 @@ button {
   display: block;
 }
 /* Forums */
+.Qu-btn a{
+  background-color: #10B3D6;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid #10b3d6;
+
+}
+.Qu-btn a:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid #10b3d6;
+}
+.Fimg img{
+  width: 40px;
+  height: 40px;
+  color: #acadad;
+}
+.uImg img{
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+}
+
+.boxs:hover{
+background-color: #2C303A;
+}
+.off-btn{
+  border: 2px solid #FFD06A;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+.off-btn:hover{
+  background-color: #FFD06A;
+}
+.ul li{
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.ul li:hover{
+  color: #10b3d6;
+}
+/*  */
 .breadcrumb_area {
   background-image: linear-gradient(60deg, #10b3d6 0%, #1d2746 100%);
   padding: 190px 0 95px;
@@ -271,17 +318,14 @@ button {
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
 }
-.call-to-action .overlay-bg {
-  position: absolute;
+.overlay-bg {
   background-image: url(https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/overlay_bg.png);
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  opacity: 0.5;
+  padding: 70px 0px;
+ 
 }
 .action_btn {
   border: 1px solid #10b3d6;
@@ -300,17 +344,64 @@ button {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.18s ease-in-out;
 }
-.w_tag_list li a {
-  color: #6b707f;
-  padding: 2px 18px;
-  display: inline-block;
-  background: #f3f8f9;
-  font-size: 14px;
-  border-radius: 4px;
-  transition: all 0.2s linear;
+
+/*Documentation  */
+#docSearch{
+  margin:  30px 0px;
+  width: 280px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #2C303A;
+  border:1px solid #d8d8d84b;
 }
-.w_tag_list.style-light li a:hover {
-  background: #e1f3f7;
-  color: #10b3d6;
-  box-shadow: none;
+#docSearch:focus{
+  outline: 0;
+}
+
+.text-title:hover{
+  color: #433ed8;
+}
+.text-list li{
+  list-style: none;
+  margin: 10px 0px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.text-list li:hover{
+  color: #4C47D0;
+}
+.tabImg{
+  width: 20px;
+  height: 20px;
+}
+
+.otp{
+  background-color: #2C303A;
+  width: 226px;
+  padding: 12px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+}
+
+.otp-drop{
+  background-color: #2C303A;
+  color: white;
+
+}
+
+.Mitems{
+  cursor: pointer;
+padding: 10px;
+}
+.Mitems:hover{
+  color: #3636f8;
+  background-color:#444857 ;
+}
+
+.ionicon{
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+
 }

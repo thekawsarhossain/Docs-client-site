@@ -1,0 +1,53 @@
+[
+  {
+  "img":"https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/rc1.png",
+  "title":"Announcements",
+  "description":"This forum is a special forum for general  announcements.",
+  "topics":"14",
+  "post":"1.9k",
+  "postDate":"2 day ago",
+  "userImg":"https://demo.egenslab.com/html/docbase/assets/images/topic/last-post1.png"
+
+},
+
+  {
+  "img":"https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/rc2.png",
+  "title":"Technology",
+  "description":"Latest technology news and updates from our community.",
+  "topics":"20",
+  "post":"2.1k",
+  "postDate":"1 day ago",
+  "userImg":"https://demo.egenslab.com/html/docbase/assets/images/topic/last-post2.png"
+
+},
+  {
+  "img":"https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/rc8.png",
+  "title":"TV & Movies",
+  "description":"Use this forum to share your opinion about films and TV Shows.",
+  "topics":"74",
+  "post":"3.5k",
+  "postDate":"5 day ago",
+  "userImg":"https://demo.egenslab.com/html/docbase/assets/images/topic/last-post3.png"
+
+},
+  {
+  "img":"https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/rc3.png",
+  "title":"Docs Support",
+  "description":"Get support for KbDoc knowledge-base and documentation template.",
+  "topics":"30",
+  "post":"2k",
+  "postDate":"2 day ago",
+  "userImg":"https://demo.egenslab.com/html/docbase/assets/images/topic/topic1.png"
+
+},
+  {
+  "img":"https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/rc13.png",
+  "title":"Marketplace",
+  "description":"This forum is a special forum for marketplace support.",
+  "topics":"50",
+  "post":"1k",
+  "postDate":"6 day ago",
+  "userImg":"https://demo.egenslab.com/html/docbase/assets/images/topic/topic2.png"
+
+}
+]
