@@ -31,7 +31,7 @@ function classNames(...classes) {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/documentation"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
@@ -39,12 +39,12 @@ function classNames(...classes) {
                   )}
                 >
                 Docs
-                </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/Forum"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
@@ -52,12 +52,12 @@ function classNames(...classes) {
                   )}
                 >
                  Forum
-                </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/blogs"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
@@ -65,12 +65,12 @@ function classNames(...classes) {
                   )}
                 >
                  Blog
-                </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/helpdesk"
                   className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
@@ -78,7 +78,7 @@ function classNames(...classes) {
                   )}
                 >
                  Help Desk
-                </a>
+                </Link>
               )}
             </Menu.Item>
           </div>

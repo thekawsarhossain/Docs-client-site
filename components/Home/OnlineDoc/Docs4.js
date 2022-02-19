@@ -18,7 +18,7 @@ const Docs4 = () => {
   return (
     <div>
          <Box sx={{ flexGrow: 1,mt:10 }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+      <Grid  container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
       <Grid item   xs={12} sm={4} md={4} >
         <Image src='https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/03/Lamp_idea-1.png' width='38' height='62' alt='img' ></Image>
            <Typography variant='h5' sx={{mt:3,mb:2 }}>Sample User Guide</Typography>
@@ -29,14 +29,16 @@ const Docs4 = () => {
       <Grid item   xs={12} sm={8} md={8} >  
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
      {docs.map(doc=>
-       <Grid item sx={{mb:3}} xs={12} sm={6} md={6} >
+       <Grid key={doc.docsTitle} item sx={{mb:3}} xs={12} sm={6} md={6} >
        <Box sx={{display:'flex',  alignItems: 'center'}}>
              <Box sx={{background:"#424345", p:'15px', borderRadius:'10px'}}>
                <Image src={doc.docsImg} width='36' height='36'  alt='img'></Image></Box>
              <Box sx={{ml:3}}>
-             <Link href="/">
-             <h4 className='docs-btn'>{doc.docsTitle}</h4>
+             <Box className='docs-btn'>
+             <Link  href="/documentation">
+            {doc.docsTitle}
             </Link>
+             </Box>
             <p>{doc.description}</p>
              </Box>
            </Box>

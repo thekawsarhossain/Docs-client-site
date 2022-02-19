@@ -43,7 +43,7 @@ const Navbar = () => {
     >
       <Link href="/">
         <a className="flex justify-center py-4">
-          <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
+          {/* <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" /> */}
         </a>
       </Link>
       <Divider style={{ backgroundColor: 'white' }} />

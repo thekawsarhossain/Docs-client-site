@@ -30,9 +30,11 @@ const DocsField2 = () => {
              <Box sx={{background:"#424345", p:'15px', borderRadius:'10px'}}>
                <Image src={doc.docsImg} width='36' height='36'  alt='img'></Image></Box>
              <Box sx={{ml:3}}>
-             <Link href="/">
-             <h4 className='docs-btn my-1'>{doc.docsTitle}</h4>
-              </Link>
+             <Box className='docs-btn '>
+             <Link  href="/documentation">
+            {doc.docsTitle}
+            </Link>
+             </Box>
             <p>{doc.description}</p>
              </Box>
            </Box>

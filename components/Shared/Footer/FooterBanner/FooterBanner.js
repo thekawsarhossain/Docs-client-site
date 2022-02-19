@@ -8,11 +8,11 @@ const FooterBanner = () => {
       <Container>
       <div className="footerBannerParent">
         {/* shape image  */}
-        <img
+        {/* <img
           src="https://i.ibb.co/W5yb4Q4/subscribe-shap-1.png"
           alt="shape-1"
           className="absolute top-0 left-0 block rounded-tl-2xl"
-        />
+        /> */}
         {/* content here  */}
         <section className="py-24 text-gray-600">
           <div className="footerBannerContent">
@@ -37,11 +37,11 @@ const FooterBanner = () => {
           </div>
         </section>
         {/* shape image  */}
-        <img
+        {/* <img
           src="https://i.ibb.co/X48H8hb/subscribe-shap-two-1.png"
           alt="shape-2"
           className="absolute bottom-0 right-0 block rounded-br-2xl"
-        />
+        /> */}
       </div>
     </Container>
    </div>

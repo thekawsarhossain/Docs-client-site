@@ -22,10 +22,10 @@ const ProfileBanner = () => {
         <Container>
           <div
             id="scisco-page-title"
-            class="scisco-profile-header relative z-10 flex flex-nowrap items-center py-16"
+            className="scisco-profile-header relative z-10 flex flex-nowrap items-center py-16"
           >
-            <div style={{ minWidth: '125px' }} class="scisco-profile-thumbnail">
-              <div class="scisco-verified relative">
+            <div style={{ minWidth: '125px' }} className="scisco-profile-thumbnail">
+              <div className="scisco-verified relative">
                 <i
                   style={{
                     fontSize: '16px',
@@ -45,7 +45,7 @@ const ProfileBanner = () => {
                     textAlign: 'center',
                     zIndex: '2',
                   }}
-                  class="fas fa-check"
+                  className="fas fa-check"
                   title="Verified user"
                 ></i>
                 <img
@@ -61,7 +61,7 @@ const ProfileBanner = () => {
                     border: '5px solid rgba(255,255,255,.1)',
                     background: 'none',
                   }}
-                  class="avatar"
+                  className="avatar"
                   src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
                   width="150"
                   height="150"
@@ -69,16 +69,16 @@ const ProfileBanner = () => {
                 />
               </div>
             </div>
-            <div class="scisco-profile-info">
-              <h1 class="scisco-ap-title text-white">
+            <div className="scisco-profile-info">
+              <h1 className="scisco-ap-title text-white">
                 {' '}
                 John Doe
-                <span class="scisco-title-count scisco-title-rep text-white">
+                <span className="scisco-title-count scisco-title-rep text-white">
                   64
                 </span>
               </h1>
-              <div class="scisco-description text-white">
-                I'm a Web Developer and Designer
+              <div className="scisco-description text-white">
+                I m a Web Developer and Designer
               </div>
             </div>
           </div>

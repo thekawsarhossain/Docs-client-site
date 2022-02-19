@@ -1,10 +1,13 @@
+import { Box } from '@mui/material'
+import Link from 'next/link'
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 const ProfileSubbanner = () => {
   return (
     <div>
-      <script
+      {/* <script
         src="https://kit.fontawesome.com/66b88de5ab.js"
         crossorigin="anonymous"
-      ></script>
+      ></script> */}
       <section
         style={{
           background: '#f0f5f7',
@@ -48,16 +51,19 @@ const ProfileSubbanner = () => {
                     }}
                     className="breadcrumb-item"
                   >
-                    <a style={{ color: '#878EA6' }} href="/">
+                    <Box sx={{ color: '#878EA6' }}>
+                    <Link href='/'>
                       Home
-                    </a>
+                    </Link>
+                    </Box>
+                   
                   </li>
-                  {/* <ArrowForwardIosIcon
+                  <ArrowForwardIosRoundedIcon
                     sx={{ color: ' #878EA6', fontSize: '14px' }}
-                  /> */}
+                  />
                   <i
                     style={{ color: ' #878EA6', fontSize: '14px' }}
-                    class="fa-solid fa-right"
+                    className="fa-solid fa-right"
                   ></i>
                   <li
                     style={{
@@ -67,16 +73,19 @@ const ProfileSubbanner = () => {
                     }}
                     className="breadcrumb-item"
                   >
-                    <a style={{ color: '#878EA6' }} href="/">
+                   <Box sx={{ color: '#878EA6' }}>
+                    <Link href='/'>
                       Blog
-                    </a>
+                    </Link>
+                    </Box>
+                   
                   </li>
-                  {/* <ArrowForwardIosIcon
+                  <ArrowForwardIosRoundedIcon
                     sx={{ color: ' #878EA6', fontSize: '14px' }}
-                  /> */}
+                  />
                   <i
                     style={{ color: ' #878EA6', fontSize: '14px' }}
-                    class="fa-solid fa-right"
+                    className="fa-solid fa-right"
                   ></i>
                   <li
                     style={{
@@ -96,7 +105,7 @@ const ProfileSubbanner = () => {
               style={{ flex: '0 0 41.666667%', maxWidth: ' 41.666667%' }}
               className="col-sm-5"
             >
-              <a
+              {/* <Link
                 style={{
                   color: '#878EA6',
                   float: 'right',
@@ -108,10 +117,21 @@ const ProfileSubbanner = () => {
               >
                 <i
                   style={{ paddingRight: '10px' }}
-                  class="fa-regular fa-timer"
+                  className="fa-regular fa-timer"
                 ></i>
-                Updated on March 03, 2020
-              </a>
+               
+              </Link> */}
+
+              <Box sx={{
+                  color: '#878EA6',
+                  float: 'right',
+                  fontSize: '14px',
+                  paddingRight: '10px',
+                }}>
+              <Link href="/">
+              Updated on March 03, 2020
+              </Link>
+              </Box>
             </div>
           </div>
         </div>

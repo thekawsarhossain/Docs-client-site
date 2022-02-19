@@ -62,7 +62,7 @@ const ProfileBody = () => {
                               minWidth: '1.75rem',
                               color: '#FFF',
                             }}
-                            class="fa-solid fa-user"
+                            className="fa-solid fa-user"
                           ></i>
                           About
                         </a>
@@ -92,7 +92,7 @@ const ProfileBody = () => {
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            class="fa-solid fa-trophy"
+                            className="fa-solid fa-trophy"
                           ></i>
                           Reputations
                         </a>
@@ -122,7 +122,7 @@ const ProfileBody = () => {
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            class="fa-brands fa-facebook-f"
+                            className="fa-brands fa-facebook-f"
                           ></i>
                           Blog
                           <span
@@ -165,7 +165,7 @@ const ProfileBody = () => {
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            class="fa-solid fa-user-group"
+                            className="fa-solid fa-user-group"
                           ></i>
                           Followers
                           <span
@@ -208,7 +208,7 @@ const ProfileBody = () => {
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            class="fa-solid fa-eye"
+                            className="fa-solid fa-eye"
                           ></i>
                           Following
                           <span

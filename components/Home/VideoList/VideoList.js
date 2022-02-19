@@ -29,7 +29,7 @@ const VideoList = () => {
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              
             ></iframe>
           </div>
           <div className="col-span-12 text-white md:col-span-5">
@@ -53,11 +53,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -79,11 +79,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-2-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -105,11 +105,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -153,11 +153,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -179,11 +179,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -205,11 +205,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -252,11 +252,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -278,11 +278,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -304,11 +304,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -352,11 +352,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt="img"
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -378,10 +378,10 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img className="h-12 w-14 rounded"
+                          {/* <img className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
@@ -403,11 +403,11 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
+                          {/* <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
-                          />
+                          /> */}
                         </div>
                         <div>
                           <h5 className="pb-2 text-gray-300">
