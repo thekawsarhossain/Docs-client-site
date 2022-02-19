@@ -4,10 +4,10 @@ import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRound
 const ProfileSubbanner = () => {
   return (
     <div>
-      {/* <script
+      <script
         src="https://kit.fontawesome.com/66b88de5ab.js"
         crossorigin="anonymous"
-      ></script> */}
+      ></script>
       <section
         style={{
           background: '#f0f5f7',
