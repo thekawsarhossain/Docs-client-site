@@ -17,7 +17,7 @@ const Error = () => {
             animation: 'spin2 2s infinite alternate',
             borderRadius: '50%',
           }}
-          class="error_dot one absolute"
+          className="error_dot one absolute"
         ></div>
         <div
           style={{
@@ -30,7 +30,7 @@ const Error = () => {
             position: 'absolute',
             borderRadius: '50%',
           }}
-          class="error_dot two"
+          className="error_dot two"
         ></div>
         <div
           style={{
@@ -42,7 +42,7 @@ const Error = () => {
             top: '370px',
             borderRadius: '50%',
           }}
-          class="error_dot three absolute"
+          className="error_dot three absolute"
         ></div>
         <div
           style={{
@@ -54,13 +54,13 @@ const Error = () => {
             animation: 'spin2 2s infinite alternate',
             borderRadius: '50%',
           }}
-          class="error_dot four absolute"
+          className="error_dot four absolute"
         ></div>
         <Container>
-          <div class="container">
+          <div className="container">
             <div
               style={{ maxWidth: '970px', margin: '0 auto' }}
-              class="error_content_two text-center"
+              className="error_content_two text-center"
             >
               <div
                 style={{
@@ -68,7 +68,7 @@ const Error = () => {
                   position: 'relative',
                   zIndex: '1',
                 }}
-                class="error_img"
+                className="error_img"
               >
                 <img
                   style={{
@@ -76,7 +76,7 @@ const Error = () => {
                     transform: 'translateX(-50%)',
                     zIndex: '-1',
                   }}
-                  class="absolute"
+                  className="absolute"
                   src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/404_bg.png"
                   alt="404 page background shape."
                 />
@@ -87,12 +87,12 @@ const Error = () => {
                     top: '-50px',
                     animationName: 'clipInDown',
                   }}
-                  class="one wow clipInDown"
+                  className="one wow clipInDown"
                   data-wow-delay="1s"
                 >
                   <img
                     style={{ animation: 'customUp 1.5s infinite alternate' }}
-                    class="img_one"
+                    className="img_one"
                     src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/404_two.png"
                     alt="4 illustration"
                   />
@@ -105,12 +105,12 @@ const Error = () => {
                     position: 'relative',
                     animationName: 'clipInDown',
                   }}
-                  class="two wow clipInDown"
+                  className="two wow clipInDown"
                   data-wow-delay="1.5s"
                 >
                   <img
                     style={{ animation: 'customUp 1.8s infinite alternate' }}
-                    class="img_two"
+                    className="img_two"
                     src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/404_three.png"
                     alt="0 illustration"
                   />
@@ -122,12 +122,12 @@ const Error = () => {
                     position: 'relative',
                     animationName: 'clipInDown',
                   }}
-                  class="three wow clipInDown"
+                  className="three wow clipInDown"
                   data-wow-delay="1.8s"
                 >
                   <img
                     style={{ animation: 'customUp 2s infinite alternate' }}
-                    class="img_three"
+                    className="img_three"
                     src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/404_one.png"
                     alt="4 illustration"
                   />
@@ -156,7 +156,7 @@ const Error = () => {
               <form
                 style={{ marginBottom: '40px', paddingTop: '25px' }}
                 action="https://wordpress-theme.spider-themes.net/docy/"
-                class="error_search"
+                className="error_search"
               >
                 <input
                   style={{
@@ -180,14 +180,14 @@ const Error = () => {
                   }}
                   type="text"
                   name="s"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Search"
                 />
               </form>
               <a
                 style={{ background: '#4c4cf1' }}
                 href="/"
-                class="action_btn box_shadow_none mb-10"
+                className="action_btn box_shadow_none mb-10"
               >
                 Back to Home Page <ArrowForwardIcon />
               </a>
