@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className=" bg-lightDark pt-10 text-white  lg:pt-32">
       {/* <FooterBanner /> */}
       <Container>
-        <div class="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
           {/* footer logo & short description */}
           <div>
             <Link href="/">

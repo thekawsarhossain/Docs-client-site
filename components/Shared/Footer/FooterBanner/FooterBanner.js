@@ -14,9 +14,9 @@ const FooterBanner = () => {
           className="absolute top-0 left-0 block rounded-tl-2xl"
         />
         {/* content here  */}
-        <section class="py-24 text-gray-600">
-          <div class="footerBannerContent">
-            <h2 class="lg:mb-2 mb-4  font-bold text-white">
+        <section className="py-24 text-gray-600">
+          <div className="footerBannerContent">
+            <h2 className="lg:mb-2 mb-4  font-bold text-white">
               {' '}
               Great Customer
               <br />

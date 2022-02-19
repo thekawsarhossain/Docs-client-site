@@ -9,15 +9,15 @@ const DocsBanner = () => {
   <Box sx={{height:"400px",background:"#2C303A"}}>
      
        <div>
-            <form action="#" class=" pt-32">
-              <div  class="relative flex justify-center">
-                <div class=" py-10 px-2">
+            <form action="#" className=" pt-32">
+              <div  className="relative flex justify-center">
+                <div className=" py-10 px-2">
                   <div>
-                    <div class="md:flex">
-                      <div class=" p-3">
-                        <div class="relative flex">
+                    <div className="md:flex">
+                      <div className=" p-3">
+                        <div className="relative flex">
                           <div>
-                            <i class="fa fa-search absolute top-5 left-5 text-gray-400"></i>
+                            <i className="fa fa-search absolute top-5 left-5 text-gray-400"></i>
                             <input
                               type="search"
                               name=""

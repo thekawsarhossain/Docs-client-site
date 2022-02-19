@@ -28,7 +28,7 @@ const ForumFooterBanner = () => {
          </Grid>
          <Grid item xs={12} sm={6} md={4}>
          <a href="/" className="action_btn mt-8">
-                Join the community <i class="fa-regular fa-chevron-right"></i>
+                Join the community <i className="fa-regular fa-chevron-right"></i>
               </a>
          </Grid>
          

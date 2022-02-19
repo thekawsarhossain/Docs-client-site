@@ -9,12 +9,12 @@ const FooterBanner = () => {
           <div className="overflow-hidden">
             <Image className="rounded"  src="/banner/shap-1.png" width="500px" height="100%"></Image>
           </div>
-          <section class="text-gray-600 body-font">
-            <div class="container px-5 py-5 mx-auto flex flex-wrap">
-              <h2 class="sm:text-4xl text-2xl font-bold text-white title-font mb-2 md:w-2/5"> Great Customer 
+          <section className="text-gray-600 body-font">
+            <div className="container px-5 py-5 mx-auto flex flex-wrap">
+              <h2 className="sm:text-4xl text-2xl font-bold text-white title-font mb-2 md:w-2/5"> Great Customer 
                     <br />
                     Relationships start here</h2>
-                <div class=" md:pl-6">
+                <div className=" md:pl-6">
                 <div className="flex flex-wrap">
                    <div className='md:w-80 search-container md:ml-8 bg-white' >
                         <button className="text-black">
