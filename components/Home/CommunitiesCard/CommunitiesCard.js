@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Box, Container } from '@mui/material'
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
+import Link from 'next/link'
 
 const fakeData = [
   {
@@ -71,13 +72,13 @@ const CommunitiesCard = () => {
           {/* grid system for the items here  */}
           <div className="grid grid-cols-1 lg:grid-cols-3">
             {data?.map((item) => (
-              <div className=" border-w-1 border-b border-secondary">
+              <div key={item.title} className=" border-w-1 border-b border-secondary">
                 <div className="flex items-center p-8">
-                  <Image src={item?.icon} width="50px" height="50px" />
+                  <Image src={item?.icon} width="50px" height="50px" alt='img' />
                   <span className="ml-4">
-                    <a href="/">
+                    <Link href="/home">
                       <h6 className="font-bold text-white">{item?.title}</h6>
-                    </a>
+                    </Link>
                     <p className="text-secondary">{item?.info}</p>
                   </span>
                 </div>

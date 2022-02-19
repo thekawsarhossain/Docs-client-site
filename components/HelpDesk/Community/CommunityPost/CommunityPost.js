@@ -51,10 +51,10 @@ const CommunityPost = () => {
                 <Box sx={{ flexGrow: 1 }}>
                     <div>
                         {fakeData.map((item) => (
-                        <div>
+                        <div key={item.title}>
                             <div className='flex flex-wrap justify-between items-center text-center my-12 py-8 drop-shadow-2xl bg-white rounded-3xl px-4'>
                               <div className='flex '>
-                                <img src={item?.icon} width="50px" height="50px" />
+                                <img src={item?.icon} width="50px" height="50px" alt='img'/>
                                   <div className='ml-3'>
                                   <h3 className='font-bold'>{item?.title}</h3>
                                   <p className=''>{item?.info}</p>

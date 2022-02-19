@@ -355,7 +355,7 @@ const VideoList = () => {
                           <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
+                            alt="img"
                           />
                         </div>
                         <div>
@@ -378,8 +378,7 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
-                            className="h-12 w-14 rounded"
+                          <img className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
                           />

@@ -25,14 +25,14 @@ const DocsField2 = () => {
    <div className="mt-16">
    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
      {docs.map(doc=>
-       <Grid item sx={{mb:3}} xs={12} sm={6} md={6} >
+       <Grid key={doc.docsTitle} item sx={{mb:3}} xs={12} sm={6} md={6} >
        <Box sx={{display:'flex',  alignItems: 'center'}}>
              <Box sx={{background:"#424345", p:'15px', borderRadius:'10px'}}>
                <Image src={doc.docsImg} width='36' height='36'  alt='img'></Image></Box>
              <Box sx={{ml:3}}>
              <Link href="/">
              <h4 className='docs-btn my-1'>{doc.docsTitle}</h4>
-            </Link>
+              </Link>
             <p>{doc.description}</p>
              </Box>
            </Box>
