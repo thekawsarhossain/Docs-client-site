@@ -28,7 +28,7 @@ const Testimonial = () => {
       <Container>
         <Slider {...settings}>
           {sliders.map((slider) => (
-            <div className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12">
+            <div key={slider.title} className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12">
               <div className="-m-4 mx-auto flex  flex-wrap justify-between">
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">

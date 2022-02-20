@@ -32,6 +32,11 @@
   }
   /* video section regarding end here  */
 
+  /* authentication || login || register components classes here  */
+  .auth-input {
+    @apply mt-1 w-full rounded-md border py-4 px-5 text-black shadow-lg;
+  }
+
   /* footer regarding style start here  */
   .footer-icon {
     @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
@@ -83,6 +88,11 @@
 /* Navbar css */
 .one:hover span:last-child {
   width: 100%;
+}
+/* helpdesk banner imagee border */
+.community img{
+  border: 5px solid rgb(141, 138, 138);
+  border-radius: 50%;
 }
 
 .two:hover span {
@@ -186,7 +196,7 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   border-top-left-radius: 3px !important;
   border-top-right-radius: 3px !important;
 }
-.docs-btn{
+.docs-btn {
   font-size: 18px;
   cursor: pointer;
 }
@@ -256,48 +266,46 @@ button {
   display: block;
 }
 /* Forums */
-
-.Qu-btn a{
-  background-color: #10B3D6;
+.Qu-btn a {
+  background-color: #10b3d6;
   padding: 12px 20px;
   color: white;
   font-weight: 600;
   border-radius: 5px;
   border: 1px solid #10b3d6;
-
 }
-.Qu-btn a:hover{
+.Qu-btn a:hover {
   background-color: white;
   color: black;
   border: 1px solid #10b3d6;
 }
-.Fimg img{
+.Fimg img {
   width: 40px;
   height: 40px;
   color: #acadad;
 }
-.uImg img{
+.uImg img {
   height: 44px;
   width: 44px;
   border-radius: 50%;
 }
 
-.boxs:hover{
-background-color: #2C303A;
+.boxs:hover {
+  background-color: #2c303a;
 }
-.off-btn{
-  border: 2px solid #FFD06A;
+.off-btn {
+  border: 2px solid #ffd06a;
   padding: 5px 15px;
   border-radius: 3px;
 }
-.off-btn:hover{
-  background-color: #FFD06A;
+.off-btn:hover {
+  background-color: #ffd06a;
 }
-.ul li{
+.ul li {
   margin-bottom: 10px;
   cursor: pointer;
 }
-.ul li:hover{
+.ul li:hover {
   color: #10b3d6;
 }
 /*  */
@@ -322,7 +330,6 @@ background-color: #2C303A;
   background-size: cover;
   background-position: center center;
   padding: 70px 0px;
- 
 }
 .action_btn {
   border: 1px solid #10b3d6;
@@ -343,71 +350,154 @@ background-color: #2C303A;
 }
 
 /*Documentation  */
-#docSearch{
-  margin:  30px 0px;
+#docSearch {
+  margin: 30px 0px;
   width: 280px;
   padding: 5px 10px;
   border-radius: 5px;
-  background-color: #2C303A;
-  border:1px solid #d8d8d84b;
+  background-color: #2c303a;
+  border: 1px solid #d8d8d84b;
 }
-#docSearch:focus{
+#docSearch:focus {
   outline: 0;
 }
 
-.text-title:hover{
+.text-title:hover {
   color: #433ed8;
 }
-.text-list li{
+.text-list li {
   list-style: none;
   margin: 10px 0px;
   cursor: pointer;
   font-size: 15px;
 }
-.text-list li:hover{
-  color: #4C47D0;
+.text-list li:hover {
+  color: #4c47d0;
 }
-.tabImg{
+.tabImg {
   width: 20px;
   height: 20px;
 }
 
-.otp{
-  background-color: #2C303A;
+.otp {
+  background-color: #2c303a;
   width: 226px;
   padding: 12px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
- 
 }
 
-.otp-drop{
-  background-color: #2C303A;
+.otp-drop {
+  background-color: #2c303a;
   color: white;
-
 }
 
-.Mitems{
+.Mitems {
   cursor: pointer;
-padding: 10px;
+  padding: 10px;
 }
-.Mitems:hover{
+.Mitems:hover {
   color: #3636f8;
-  background-color:#444857 ;
+  background-color: #444857;
 }
 
-.ionicon{
+.ionicon {
   width: 15px;
   height: 15px;
   margin-right: 10px;
-
 }
+/* Animation Area css
+============================================================================================ */
 
 /* Contact css */
 .contactIcon{
   width: 45px !important;
   height: 45px !important;
   border-radius: 50%;
-  @apply bg-emerald-600; color:white;
+  color: #08beab;
+  background: rgba(8,190,171,.1);
   padding: 10px;
+ 
+}
+.c-btn{
+  background-color: #08beab;
+}
+
+.iconHover:hover .contactIcon{
+ background-color: #08beab;
+ color: white;
+}
+@keyframes customUp {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes spin2 {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(40px);
+  }
+}
+@keyframes spin1 {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+/* End Animation Area css
+============================================================================================ */
+.clearfix:before,
+.clearfix:after,
+.clearfix:after,
+.ap-row:before,
+.ap-row:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+#ap-user-nav .ap-tab-nav li.active {
+  background: #0a48b3;
+}
+#ap-user-nav .ap-tab-nav li:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.profile-btn {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  display: block;
+  margin-bottom: 0;
+  padding: 0.75rem 1rem;
+  line-height: 1.7;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #101e36;
+}
+.scisco-user-table-left {
+  min-width: 150px;
+  font-weight: 500;
+  border-right: 0;
+  padding: 1.25rem;
+  color: #101e36;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.scisco-user-table-right {
+  padding: 1.25rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+
 }

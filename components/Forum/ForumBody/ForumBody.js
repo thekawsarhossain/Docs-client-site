@@ -49,7 +49,7 @@ const ForumBody = () => {
       </Box>
       {
         forums.map(forum=>
-      <Box className="boxs" sx={{display:'flex',justifyContent:'space-between',p:3,border:'1px solid #424345'}}>
+      <Box key={forum.topics} className="boxs" sx={{display:'flex',justifyContent:'space-between',p:3,border:'1px solid #424345'}}>
         <div className="div-1 flex items-center	">
           <div className="Fimg">
           <img 
@@ -70,7 +70,7 @@ const ForumBody = () => {
        <div className="div-3 hidden ml-5 md:block ">
           <p>{forum?.postDate}</p>
           <p className="flex justify-center	uImg">
-            <img src={forum?.userImg} alt="" />
+            <img src={forum?.userImg} alt="img" />
           </p>
         </div>
       </Box>

@@ -31,56 +31,53 @@ function classNames(...classes) {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/documentation"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                Docs
-                </a>
+                <Link
+                href="/documentation"
+              >
+              <a  className={classNames(
+                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
+                  'block px-4 py-2 text-sm font-medium'
+                )}> Docs</a>
+              </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/Forum"
-                  className={classNames(
+                >
+                <a  className={classNames(
                     active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
                     'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                 Forum
-                </a>
+                  )}> Forum</a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/blogs"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                 Blog
-                </a>
+                <Link
+                href="/blogs"
+              >
+              <a  className={classNames(
+                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
+                  'block px-4 py-2 text-sm font-medium'
+                )}> Blog</a>
+              </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/helpdesk"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                 Help Desk
-                </a>
+                <Link
+                href="/helpdesk"
+              >
+              <a  className={classNames(
+                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
+                  'block px-4 py-2 text-sm font-medium'
+                )}> HelpDesk</a>
+              </Link>
               )}
             </Menu.Item>
+           
           </div>
         
         </Menu.Items>

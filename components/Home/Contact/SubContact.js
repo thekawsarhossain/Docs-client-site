@@ -8,7 +8,7 @@ const SubContact = () => {
     <Box sx={{background:"#1F3341",color:"white",py:1.5}}>
       <Container>
       <div className="flex 	items-center	">
-       <><p className='text-gray-300'><Link href='/'> 
+       <><p className='text-gray-400'><Link href='/'> 
        Home
        </Link></p> <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/></> 
        <>Contact </>

@@ -2,8 +2,9 @@ import { useForm } from 'react-hook-form';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import { Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import SubContact from './SubContact';
+import ContactBanner from './ContactBanner';
 
 const Contact = () => {
 
@@ -18,15 +19,15 @@ const Contact = () => {
   }
 
   return (
-    <div >
-    <div className="bg-[url('https://demo.egenslab.com/html/docbase/assets/images/breadcrumb-img.png')] py-64 bg-cover bg-no-repeat  bg-center ">
-    </div>
+    <>
+  <ContactBanner/>
     <SubContact/>
-    <Container >
- <div className="grid grid-cols-12 gap-4">
-   <div className="col-span-12 lg:col-span-6">
-     <h2>Let’s get in touch</h2>
-    <p>
+      <Box sx={{background:"#131417",color:"white",py:10}} >
+    <Container sx={{background:"#2C303A",p:5}}>
+ <div className="grid grid-cols-12 gap-4 ">
+   <div className="col-span-12 lg:col-span-6 p-3">
+     <h2 >Let’s get in touch</h2>
+    <p className='my-6'>
     I have world-class, flexible support via live chat, email & phone. I guar antee that you’ll be able to have any issue resolved within 24/7
     </p>
      <form  onSubmit={handleSubmit(submitHandler)}>
@@ -139,7 +140,7 @@ const Contact = () => {
          <span className="">
            <input
              type="submit"
-             className="px-6 py-3 mt-5 font-bold text-gray-900 rounded bg-emerald-500 btn-brand hover:bg-gray-900 hover:text-white"
+             className="c-btn px-6 py-3 mt-5 font-bold text-gray-900 rounded  btn-brand hover:bg-white hover:text-black"
              value="Send Message"
            />
          </span>
@@ -147,7 +148,7 @@ const Contact = () => {
   
    </div>
    <div className="col-span-12 lg:col-span-6">
-     <div className='p-5 mb-4 rounded-sm hover:shadow-lg'>
+     <div className='iconHover p-5 mb-4 rounded-sm hover:shadow-lg'>
      <PhoneOutlinedIcon className='contactIcon'  />
        <h3>Phone</h3>
  <p className='pb-3'>Our customer care is open from Mon-Fri, 10:00 am to 6:00 pm</p>
@@ -155,7 +156,7 @@ const Contact = () => {
  <span className='text-lg font-bold'>+880 122 4333 444</span>
  </a>
      </div>
-     <div className='p-5 mb-4 hover:shadow-lg'>
+     <div className='iconHover p-5 mb-4 hover:shadow-lg'>
        < MailOutlineIcon className='contactIcon' />
        <h3>Email</h3>
  <p  className='pb-3'>Our support team will be reply in 48-h during your Question.</p>
@@ -163,7 +164,7 @@ const Contact = () => {
  <span className='text-lg font-bold'>programmingfolks@gmail.com</span>
  </a>
      </div>
-     <div className='p-5 mb-4 hover:shadow-lg'>
+     <div className='iconHover p-5 mb-4 hover:shadow-lg'>
        <LocationOnOutlinedIcon className='contactIcon' />
  <h3  className='pb-3'>Location</h3>
  <span className='text-lg font-bold'>168/170, Ave 01, Dhanmondi, Bangladesh</span>
@@ -172,7 +173,9 @@ const Contact = () => {
    </div>
  </div>
     </Container>
-     </div>
+     </Box>
+    </>
+  
  
   );
 }
