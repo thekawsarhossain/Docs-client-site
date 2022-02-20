@@ -1,9 +1,9 @@
-import DocsBanner from "./DocsBanner";
+import DocsBanner from './DocsBanner'
 import DocsSubBanner from './DocsSubBanner'
-import { Box, Grid} from '@mui/material'
-import DocsField1 from "./DocsField1";
-import DocsField2 from "./DocsField2";
-import DocsField3 from "./DocsField3";
+import { Box, Grid } from '@mui/material'
+import DocsField1 from './DocsField1'
+import DocsField2 from './DocsField2'
+import DocsField3 from './DocsField3'
 const DocsField = () => {
   return (
     <Box sx={{background:"#131417",color:"white"}}>
@@ -22,8 +22,9 @@ const DocsField = () => {
        </Grid>
      </Grid>
     </div>
+
     </Box>
-  );
+  )
 }
 
-export default DocsField;
+export default DocsField
