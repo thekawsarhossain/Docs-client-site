@@ -76,6 +76,13 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
+        <Link href="/contact">
+          <ListItem button>
+            <ListItemText>
+              <span>Contact</span>
+            </ListItemText>
+          </ListItem>
+        </Link>
         <Link href="/login">
           <ListItem button>
             <ListItemText>
@@ -120,6 +127,13 @@ const Navbar = () => {
             <Link href="/blogs">
               <a className="link-item">
                 <span>Blog</span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="link-item">
+                <span>Contact</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>

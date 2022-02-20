@@ -1,10 +1,9 @@
-
 const FooterBanner = () => {
   return (
-<div>
-  Conflict
-</div>
-  )
+    <div>
+     <h1>FooterBanner</h1>
+    </div>
+  );
 }
 
-export default FooterBanner
+export default FooterBanner;

@@ -6,10 +6,9 @@ const DocsBanner = () => {
   return (
     <div>
   <Navbar/>
-  <Box sx={{height:"400px",background:"#2C303A"}}>
-     
-       <div>
-            <form action="#" className=" pt-32">
+  <div className="bg-[url('https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2022/02/3261838-scaled.jpg')]  bg-cover bg-no-repeat  bg-center ">
+  <div>
+            <form action="#" className=" py-32">
               <div  className="relative flex justify-center">
                 <div className=" py-10 px-2">
                   <div>
@@ -37,8 +36,8 @@ const DocsBanner = () => {
               </div>
             </form>
           </div>
-       
-    </Box>
+    </div>
+ 
     </div>
   );
 }
