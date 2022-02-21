@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <Link href="/">
               <a>
-                {/* <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" /> */}
+                <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
               </a>
             </Link>
             <p className="mt-2 text-lg text-secondary">

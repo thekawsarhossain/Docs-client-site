@@ -95,11 +95,8 @@ const FormBanner = () => {
               marginLeft: 'auto',
             }}
           >
-            <form action="#" className="banner_search_form banner_search_form_two">
-              <div
-                className="relative flex justify-center"
-                
-              >
+          <form action="#" className=" pb-7">
+              <div  className="relative flex justify-center">
                 <div className=" py-10 px-2">
                   <div>
                     <div className="md:flex">
@@ -122,13 +119,7 @@ const FormBanner = () => {
                     </div>
                   </div>
                 </div>
-                <div
-                  style={{ marginLeft: '-1px' }}
-                  className="input-group-append flex"
-                ></div>
-                <button type="submit">
-                  <i className="icon_search"></i>
-                </button>
+               
               </div>
             </form>
           </div>
