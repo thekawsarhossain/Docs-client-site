@@ -15,17 +15,13 @@ const AboutContent = () => {
         <Container>
           <div className="minimal-header-text ">
             <h1>About Us</h1>
-            <ul className="flex justify-center gap-3 mt-3">
-              <li>
-                <Link href="/">
-                  <a>
-                    Home
-                    <ArrowForwardIosRoundedIcon sx={{ fontSize: '15px' }} />
-                  </a>
-                </Link>
-              </li>
-              <li>About Us</li>
-            </ul>
+            <div className="flex justify-center gap-3 mt-3">
+            <p >
+        <Link href='/'>
+        <a>Home</a>
+        </Link> 
+       <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/> Contact</p>
+            </div>
           </div>
         </Container>
       </div>

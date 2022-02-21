@@ -7,7 +7,6 @@ import ProfileSubbanner from './ProfileSubBanner/ProfileSubbanner'
 const ProfileM = () => {
   return (
     <div>
-   
       <Navbar />
       <ProfileBanner />
       <ProfileSubbanner />
