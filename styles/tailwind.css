@@ -498,7 +498,28 @@ button {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* about  */
+/*============================================ about ================================================= */
+.minimal-content {
+  padding: 19px 0 70px;
+}
+.minimal-header {
+  @apply relative text-center text-white;
+  padding: 170px 0 200px;
+}
+.minimal-header::before {
+  @apply absolute left-0 w-full h-full bg-no-repeat bg-cover;
+  top: -17%;
+  content: '';
+  z-index: -1;
+  background-position: 0 50%;
+  transform: skewY(-2.5deg);
+  background: #1e0d3d;
+}
+
+.minimal-header-text h1 {
+  @apply m-0 font-normal text-center text-white;
+}
+
 .text-block .heading-sm {
   @apply relative text-sm font-bold text-blue-700 uppercase;
   padding-left: 45px;

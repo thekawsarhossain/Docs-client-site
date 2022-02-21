@@ -3,6 +3,7 @@ import React from 'react'
 import AboutContent from '../components/AboutPage/AboutContent';
 import TeamContent from '../components/AboutPage/TeamContent';
 import Footer from '../components/Shared/Footer/Footer';
+import Navbar from '../components/Shared/Navbar/Navbar';
 
 const about = () => {
   return (
@@ -10,6 +11,7 @@ const about = () => {
       <Head>
         <title>About Us</title>
       </Head>
+      <Navbar />
       <AboutContent />
       <TeamContent />
       <Footer />

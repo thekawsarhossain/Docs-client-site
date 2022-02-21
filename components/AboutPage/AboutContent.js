@@ -2,12 +2,33 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Container } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import aboutImage from '../../Images/about.png'
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded'
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded'
 
 const AboutContent = () => {
   return (
     <>
+      <div className="pt-12 minimal-header">
+        <Container>
+          <div className="minimal-header-text ">
+            <h1>About Us</h1>
+            <ul className="flex justify-center gap-3 mt-3">
+              <li>
+                <Link href="/">
+                  <a>
+                    Home
+                    <ArrowForwardIosRoundedIcon sx={{ fontSize: '15px' }} />
+                  </a>
+                </Link>
+              </li>
+              <li>About Us</li>
+            </ul>
+          </div>
+        </Container>
+      </div>
       <div className="mb-16">
         <Container>
           <div className="grid items-center grid-cols-12 gap-4">
@@ -54,7 +75,7 @@ const AboutContent = () => {
                     infancy.”
                   </p>
                   <cite className="quote-attribution">
-                   Jhankar Mahabub, Owner & CEO, Programming Hero.
+                    Jhankar Mahabub, Owner & CEO, Programming Hero.
                   </cite>
                 </blockquote>
               </div>
@@ -66,4 +87,4 @@ const AboutContent = () => {
   )
 }
 
-export default AboutContent;
+export default AboutContent

@@ -2,12 +2,12 @@
 import { Container } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
-import avatar5 from '../../Images/avatar-5.png'
+import santo from '../../Images/santo.jpg'
+import fahad from '../../Images/fahad.jpg'
+import shihab from '../../Images/shihab.jpg'
+import kawser from '../../Images/kawsar.jpg'
+import rashidul from '../../Images/rashidul.png'
 import avatar6 from '../../Images/avatar-6.png'
-import avatar7 from '../../Images/avatar-7.png'
-import avatar8 from '../../Images/avatar-8.png'
-import avatar9 from '../../Images/avatar-9.png'
-import avatar10 from '../../Images/avatar-10.png'
 
 const TeamContent = () => {
   return (
@@ -39,75 +39,75 @@ const TeamContent = () => {
         <div className="grid justify-center grid-cols-12 gap-4">
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-              <Image width="" height="" src={avatar5} className="mb-4" alt="" />
+            <Image width="300" height="300" src={santo} className="mb-4" alt="" />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Tanjil Ahmed</h5>
-                <p className="text-sm text-gray-500">Software Engineering</p>
+                <h5 className="m-0 text-base member-name">Rakibul Hasan</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-              <Image width="" height=""
+              <Image width="300" height="300"
+                src={fahad}
+                className="mb-4"
+                alt=""
+              />
+              <div className="member-info">
+                <h5 className="m-0 text-base member-name">Monirul Islam</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
+              </div>
+            </article>
+          </div>
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
+            <article className="mb-8">
+            <Image width="300" height="300"
+                src={shihab}
+                className="mb-4"
+                alt=""
+              />
+              <div className="member-info">
+                <h5 className="m-0 text-base member-name">Shajibul Alam</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
+              </div>
+            </article>
+          </div>
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
+            <article className="mb-8">
+            <Image width="300" height="300"
+                src={kawser}
+                className="mb-4"
+                alt=""
+              />
+              <div className="member-info">
+                <h5 className="m-0 text-base member-name">Kawsar Hossain</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
+              </div>
+            </article>
+          </div>
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
+            <article className="mb-8">
+            <Image width="300" height="300"
+                src={rashidul}
+                className="mb-4"
+                alt=""
+              />
+              <div className="member-info">
+                <h5 className="m-0 text-base member-name">Rashedul Islam</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
+              </div>
+            </article>
+          </div>
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
+            <article className="mb-8">
+            <Image width="300" height="300"
                 src={avatar6}
                 className="mb-4"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Mubin Vai</h5>
-                <p className="text-sm text-gray-500">Software Engineering</p>
-              </div>
-            </article>
-          </div>
-          <div className="col-span-6 md:col-span-3 lg:col-span-2">
-            <article className="mb-8">
-              <Image width="" height=""
-                src={avatar7}
-                className="mb-4"
-                alt=""
-              />
-              <div className="member-info">
-                <h5 className="m-0 text-base member-name">Tuhin Sorker</h5>
-                <p className="text-sm text-gray-500">People Operations</p>
-              </div>
-            </article>
-          </div>
-          <div className="col-span-6 md:col-span-3 lg:col-span-2">
-            <article className="mb-8">
-              <Image width="" height=""
-                src={avatar8}
-                className="mb-4"
-                alt=""
-              />
-              <div className="member-info">
-                <h5 className="m-0 text-base member-name">Alamin Vai</h5>
-                <p className="text-sm text-gray-500">Design</p>
-              </div>
-            </article>
-          </div>
-          <div className="col-span-6 md:col-span-3 lg:col-span-2">
-            <article className="mb-8">
-              <Image width="" height=""
-                src={avatar9}
-                className="mb-4"
-                alt=""
-              />
-              <div className="member-info">
-                <h5 className="m-0 text-base member-name">Tuhin Sorker</h5>
-                <p className="text-sm text-gray-500">Support</p>
-              </div>
-            </article>
-          </div>
-          <div className="col-span-6 md:col-span-3 lg:col-span-2">
-            <article className="mb-8">
-              <Image width="" height=""
-                src={avatar10}
-                className="mb-4"
-                alt=""
-              />
-              <div className="member-info">
-                <h5 className="m-0 text-base member-name">Alamin Vai</h5>
-                <p className="text-sm text-gray-500">Dog Squad Leader</p>
+                <h5 className="m-0 text-base member-name">Abu Bakker</h5>
+                <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
