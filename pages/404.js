@@ -1,6 +1,7 @@
 import { Container } from '@mui/material'
 import Navbar from '../components/Shared/Navbar/Navbar'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import Link from 'next/link'
 
 const Error = () => {
   return (
@@ -184,13 +185,13 @@ const Error = () => {
                   placeholder="Search"
                 />
               </form>
-              <a
-                style={{ background: '#4c4cf1' }}
-                href="/"
-                className="action_btn box_shadow_none mb-10"
-              >
-                Back to Home Page <ArrowForwardIcon />
+              <Link   href="/">
+              <a  style={{ background: '#4c4cf1' }}
+              className="action_btn box_shadow_none mb-10">
+                 Back to Home Page <ArrowForwardIcon />
               </a>
+               
+              </Link>
             </div>
           </div>
         </Container>

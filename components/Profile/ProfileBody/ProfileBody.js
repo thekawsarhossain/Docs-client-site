@@ -5,10 +5,7 @@ import ProfileAbout from './ProfileAbout'
 const ProfileBody = () => {
   return (
     <div>
-      <script
-        src="https://kit.fontawesome.com/66b88de5ab.js"
-        crossorigin="anonymous"
-      ></script>
+     
       <main
         style={{
           padding: '5rem 0',
@@ -239,10 +236,7 @@ const ProfileBody = () => {
           <div className="clearfix"></div>
         </Container>
       </main>
-      <script
-        src="https://kit.fontawesome.com/66b88de5ab.js"
-        crossorigin="anonymous"
-      ></script>
+  
     </div>
   )
 }

@@ -7,10 +7,7 @@ import ProfileSubbanner from './ProfileSubBanner/ProfileSubbanner'
 const ProfileM = () => {
   return (
     <div>
-      <script
-        src="https://kit.fontawesome.com/66b88de5ab.js"
-        crossorigin="anonymous"
-      ></script>
+     
       <Navbar />
       <ProfileBanner />
       <ProfileSubbanner />
