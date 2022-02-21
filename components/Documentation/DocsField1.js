@@ -35,7 +35,7 @@ const DocsField1 = () => {
                   alt="img "
                   className="tabImg"
                 />
-                <Typography className="text-title ml-2">Elements</Typography>
+                <Typography className="text-title">Elements</Typography>
               </Box>
             </AccordionSummary>
             <AccordionDetails>
