@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
-import About from '../components/AboutPage/About'
+import AboutContent from '../components/AboutPage/AboutContent';
+import TeamContent from '../components/AboutPage/TeamContent';
+import Footer from '../components/Shared/Footer/Footer';
 
 const about = () => {
   return (
@@ -8,7 +10,9 @@ const about = () => {
       <Head>
         <title>About Us</title>
       </Head>
-      <About />
+      <AboutContent />
+      <TeamContent />
+      <Footer />
     </div>
   )
 }

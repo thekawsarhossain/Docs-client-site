@@ -5,11 +5,11 @@ import Image from 'next/image'
 import React from 'react'
 import aboutImage from '../../Images/about.png'
 
-const About = () => {
+const AboutContent = () => {
   return (
     <>
-      <div className="about-content">
-        <Container className="container">
+      <div className="mb-16">
+        <Container>
           <div className="grid items-center grid-cols-12 gap-4">
             <div className="col-span-12 md:col-span-7">
               <div className="mb-8 md:mb-0">
@@ -66,4 +66,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutContent;

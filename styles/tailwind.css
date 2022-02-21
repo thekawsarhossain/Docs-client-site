@@ -528,3 +528,19 @@ button {
   @apply text-base font-bold;
   color: #253858;
 }
+.o-separator {
+  @apply flex items-center mb-12;
+  display: -ms-flexbox;
+  flex-wrap: no-wrap;
+}
+.o-separator hr {
+  @apply h-px border-0;
+  background: #ebebeb;
+  flex-grow: 1;
+}
+.o-separator-text {
+  @apply block font-semibold;
+  font-size: 18px;
+  margin: 0 20px;
+  color: #253858;
+}
