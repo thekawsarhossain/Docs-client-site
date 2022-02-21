@@ -15,6 +15,8 @@ export default function Home() {
         />
       </Head>
       <HomePage />
+      {/* <HomePage />
+      <HomePage /> */}
     </>
   )
 }
