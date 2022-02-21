@@ -1,12 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 body{
   font-family: 'Arimo', sans-serif;}
-=======
->>>>>>> f8a93437cf93a32e26f58355d8500b707efca427
+
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
