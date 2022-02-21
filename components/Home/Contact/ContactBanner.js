@@ -1,10 +1,10 @@
-import Example from '../../Home/HeroSection/test'
+import { Box, Container } from '@mui/material';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import Link from 'next/link';
 
-const FormBanner = () => {
+const ContactBanner = () => {
   return (
-    <div>
-      <div>
-        <div
+    <div
           style={{
             background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
             padding: '190px 0 95px',
@@ -85,49 +85,17 @@ const FormBanner = () => {
               animationName: 'fadeInUp',
             }}
           />
-          <div
-            className="custom_container container"
-            style={{
-              width: '100%',
-              paddingRight: '15px',
-              paddingLeft: '15px',
-              marginRight: 'auto',
-              marginLeft: 'auto',
-            }}
-          >
-          <form action="#" className=" pb-7">
-              <div  className="relative flex justify-center">
-                <div className=" py-10 px-2">
-                  <div>
-                    <div className="md:flex">
-                      <div className=" p-3">
-                        <div className="relative flex">
-                          <div>
-                            <i className="fa fa-search absolute top-5 left-5 text-gray-400"></i>
-                            <input
-                              type="search"
-                              name=""
-                              id="search"
-                              className="w-72 md:w-96"
-                            />
-                          </div>
-                          <div>
-                            <Example />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-               
-              </div>
-            </form>
-          </div>
-        </div>
+       
+      <div className='text-center pb-24 text-white relative'>
+      <h1 className='font-bold '>Contact</h1>
+      <p className='mt-4'>
+        <Link href='/'>
+        <a>Home</a>
+        </Link> 
+       <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/> Contact</p>
       </div>
-    </div>
-  )
+        </div>
+  );
 }
 
-export default FormBanner
-
+export default ContactBanner;

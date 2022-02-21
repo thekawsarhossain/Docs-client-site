@@ -185,13 +185,15 @@ const Error = () => {
                   placeholder="Search"
                 />
               </form>
-              <Link   href="/">
-              <a  style={{ background: '#4c4cf1' }}
-              className="action_btn box_shadow_none mb-10">
-                 Back to Home Page <ArrowForwardIcon />
+             <Link href='/'>
+             <a
+                style={{ background: '#4c4cf1' }}
+                className="action_btn box_shadow_none mb-10"
+              >
+                Back to Home Page <ArrowForwardIcon />
               </a>
-               
-              </Link>
+             </Link>
+
             </div>
           </div>
         </Container>

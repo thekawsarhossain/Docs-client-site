@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/link-passhref */
 import * as React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -76,6 +78,13 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
+        <Link href="/contact">
+          <ListItem button>
+            <ListItemText>
+              <span>Contact</span>
+            </ListItemText>
+          </ListItem>
+        </Link>
         <Link href="/login">
           <ListItem button>
             <ListItemText>
@@ -88,8 +97,8 @@ const Navbar = () => {
   )
   return (
     <div>
-      <header className="body-font absolute z-10 w-full text-gray-400">
-        <div className="container mx-auto flex justify-between p-5 ">
+      <header className="absolute z-10 w-full text-gray-400 body-font">
+        <div className="container flex justify-between p-5 mx-auto ">
           <Link href="/">
             <a className="flex justify-center">
               <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
@@ -120,6 +129,20 @@ const Navbar = () => {
             <Link href="/blogs">
               <a className="link-item">
                 <span>Blog</span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              </a>
+            </Link>
+            <Link href="/about">
+              <a className="link-item">
+                <span>About</span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="link-item">
+                <span>Contact</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>

@@ -1,4 +1,5 @@
 import {Box, Container, Grid } from '@mui/material'
+import Link from 'next/link'
 
 const ForumFooterBanner = () => {
   return (
@@ -27,9 +28,11 @@ const ForumFooterBanner = () => {
               </div>
          </Grid>
          <Grid item xs={12} sm={6} md={4}>
-         <a href="/" className="action_btn mt-8">
+        <Link href='/'>
+        <a className="action_btn mt-8">
                 Join the community <i className="fa-regular fa-chevron-right"></i>
               </a>
+        </Link>
          </Grid>
          
          </Grid>

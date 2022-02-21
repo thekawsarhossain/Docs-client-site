@@ -64,13 +64,17 @@ const HeroSection = () => {
             </div>
             <div>
               <div className=" py-10 px-2">
+
+                <div >
+
                 <div>
+
                   <div className="md:flex">
                     <div className=" p-3">
                       <div className="relative flex">
                         <div>
                           <i className="fa fa-search absolute top-5 left-5 text-gray-400"></i>
-                          <input
+ <input
                             type="search"
                             name=""
                             id="search"
@@ -89,6 +93,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

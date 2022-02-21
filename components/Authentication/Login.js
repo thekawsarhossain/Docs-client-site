@@ -49,7 +49,7 @@ const Login = () => {
               <h2>Login your account</h2>
               <h5 className="mt-3">
                 <span className="mr-2 text-gray-400">
-                  Don't have an account?
+                  Don`t have an account?
                 </span>
                 <Link href="/register">
                   <span className="cursor-pointer text-lightBlue underline">

@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+body{
+  font-family: 'Arimo', sans-serif;
+}
+
+
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
   /* buttons here  */
   .btn-1 {
-    @apply rounded-full bg-buttons px-5 py-3 font-semibold text-white duration-300 hover:bg-white 
-    hover:text-buttons focus:ring-2;
+    @apply px-5 py-3 font-semibold text-white duration-300 rounded-full bg-buttons hover:bg-white hover:text-buttons focus:ring-2;
   }
 
   /* navbar regarding start here  */
   .navbar-parent {
-    @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
+    @apply flex-wrap items-center justify-center hidden text-base md:ml-auto lg:block;
   }
   .link-item {
-    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
+    @apply relative mr-5 text-base font-bold two w-max hover:text-white;
   }
   .link-hover {
-    @apply absolute -bottom-1 bg-white transition-all;
+    @apply absolute transition-all bg-white -bottom-1;
   }
   .title-btn {
-    @apply ml-10 rounded-full border-2 border-gray-400 py-2 px-4 text-base font-bold hover:border-white hover:text-white;
+    @apply px-4 py-2 ml-10 text-base font-bold border-2 border-gray-400 rounded-full hover:border-white hover:text-white;
   }
   /* naavbar regarding end here */
 
@@ -33,24 +38,24 @@
 
   /* authentication || login || register components classes here  */
   .auth-input {
-    @apply mt-1 w-full rounded-md border py-4 px-5 text-black shadow-lg;
+    @apply w-full px-5 py-4 mt-1 text-black border rounded-md shadow-lg;
   }
 
   /* footer regarding style start here  */
   .footer-icon {
-    @apply mr-4 mt-5 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
+    @apply p-2 mt-5 mr-4 duration-200 rounded-md cursor-pointer bg-slate-800 hover:text-lightBlue;
   }
   .footer-nav-title {
     @apply mb-3 text-xl font-medium tracking-widest text-white;
   }
   .footer-nav-item {
-    @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
+    @apply block my-4 text-gray-600 cursor-pointer hover:text-gray-800;
   }
   .footerBannerParent {
-    @apply relative mx-auto  rounded-2xl bg-lightBlue shadow shadow-blue-700;
+    @apply relative mx-auto shadow rounded-2xl bg-lightBlue shadow-blue-700;
   }
   .footerBannerContent {
-    @apply block items-center justify-around py-16 px-6 lg:flex lg:px-0;
+    @apply items-center justify-around block px-6 py-16 lg:flex lg:px-0;
   }
   /* footer regarding style end here  */
 }
@@ -89,7 +94,7 @@
   width: 100%;
 }
 /* helpdesk banner imagee border */
-.community img{
+.community img {
   border: 5px solid rgb(141, 138, 138);
   border-radius: 50%;
 }
@@ -376,6 +381,7 @@ button {
 .tabImg {
   width: 20px;
   height: 20px;
+  margin-right: 15px;
 }
 
 .otp {
@@ -408,6 +414,23 @@ button {
 /* Animation Area css
 ============================================================================================ */
 
+/* Contact css */
+.contactIcon {
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  color: #08beab;
+  background: rgba(8, 190, 171, 0.1);
+  padding: 10px;
+}
+.c-btn {
+  background-color: #08beab;
+}
+
+.iconHover:hover .contactIcon {
+  background-color: #08beab;
+  color: white;
+}
 @keyframes customUp {
   0% {
     transform: translateY(8px);
@@ -480,4 +503,72 @@ button {
 .scisco-user-table-right {
   padding: 1.25rem;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*============================================ about ================================================= */
+.minimal-content {
+  padding: 19px 0 70px;
+}
+.minimal-header {
+  @apply relative text-center text-white;
+  padding: 170px 0 200px;
+}
+.minimal-header::before {
+  @apply absolute left-0 w-full h-full bg-no-repeat bg-cover;
+  top: -17%;
+  content: '';
+  z-index: -1;
+  background-position: 0 50%;
+  transform: skewY(-2.5deg);
+  background: #1e0d3d;
+}
+
+.minimal-header-text h1 {
+  @apply m-0 font-normal text-center text-white;
+}
+
+.text-block .heading-sm {
+  @apply relative text-sm font-bold text-blue-700 uppercase;
+  padding-left: 45px;
+  letter-spacing: 1px;
+}
+.text-block .heading-sm::before {
+  @apply absolute left-0 w-8 bg-blue-700 top-1/2;
+  margin-top: -1px;
+  height: 2px;
+  content: '';
+}
+.text-block h3 {
+  @apply mb-4 text-3xl font-bold;
+}
+.text-block ul {
+  @apply pl-4;
+}
+.text-block ul li {
+  @apply mb-4 text-gray-500;
+}
+.text-block .quote-text p {
+  @apply italic text-gray-500;
+  font-size: 1.25rem;
+  font-family: 'Noto Serif', serif;
+}
+.quote-attribution {
+  @apply text-base font-bold;
+  color: #253858;
+}
+.o-separator {
+  @apply flex items-center mb-12;
+  display: -ms-flexbox;
+  flex-wrap: no-wrap;
+}
+.o-separator hr {
+  @apply h-px border-0;
+  background: #ebebeb;
+  flex-grow: 1;
+}
+.o-separator-text {
+  @apply block font-semibold;
+  font-size: 18px;
+  margin: 0 20px;
+  color: #253858;
 }
