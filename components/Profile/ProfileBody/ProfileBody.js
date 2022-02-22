@@ -5,7 +5,6 @@ import ProfileAbout from './ProfileAbout'
 const ProfileBody = () => {
   return (
     <div>
-      
       <main
         style={{
           padding: '5rem 0',
@@ -236,7 +235,6 @@ const ProfileBody = () => {
           <div className="clearfix"></div>
         </Container>
       </main>
-     
     </div>
   )
 }

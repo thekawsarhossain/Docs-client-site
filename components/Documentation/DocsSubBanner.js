@@ -1,4 +1,4 @@
-import { Box} from "@mui/material";
+import { Box, Container} from "@mui/material";
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import Link from 'next/link';
@@ -6,8 +6,8 @@ import Link from 'next/link';
 const DocsSubBanner = () => {
   return (
     <Box sx={{background:'#1F3341'}}>
-     <div className="container mx-auto text-white py-3">
-      <div className="flex justify-between mx-4">
+     <Container sx={{py:2}}>
+      <div className="flex justify-between ">
       <div className="flex text-sm	items-center	">
        <>
        <Link href='/'> 
@@ -27,7 +27,7 @@ const DocsSubBanner = () => {
         <p> <AccessTimeRoundedIcon  sx={{fontSize:'17px'}}/> Updated on Jan 10, 2022</p>
       </div>
       </div>
-     </div>
+     </Container>
     </Box>
   );
 }

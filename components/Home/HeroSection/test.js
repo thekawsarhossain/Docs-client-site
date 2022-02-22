@@ -34,10 +34,7 @@ function classNames(...classes) {
                 <Link
                 href="/documentation"
               >
-              <a  className={classNames(
-                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                  'block px-4 py-2 text-sm font-medium'
-                )}> Docs</a>
+              <a className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800 '> Docs</a>
               </Link>
               )}
             </Menu.Item>
@@ -46,10 +43,8 @@ function classNames(...classes) {
                 <Link
                   href="/Forum"
                 >
-                <a  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}> Forum</a>
+                <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'
+                 > Forum</a>
                 </Link>
               )}
             </Menu.Item>
@@ -58,10 +53,7 @@ function classNames(...classes) {
                 <Link
                 href="/blogs"
               >
-              <a  className={classNames(
-                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                  'block px-4 py-2 text-sm font-medium'
-                )}> Blog</a>
+              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> Blog</a>
               </Link>
               )}
             </Menu.Item>
@@ -70,10 +62,7 @@ function classNames(...classes) {
                 <Link
                 href="/helpdesk"
               >
-              <a  className={classNames(
-                  active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                  'block px-4 py-2 text-sm font-medium'
-                )}> HelpDesk</a>
+              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> HelpDesk</a>
               </Link>
               )}
             </Menu.Item>

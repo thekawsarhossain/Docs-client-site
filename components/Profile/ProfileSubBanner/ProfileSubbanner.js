@@ -4,7 +4,6 @@ import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRound
 const ProfileSubbanner = () => {
   return (
     <div>
-   
       <section
         style={{
           background: '#f0f5f7',
