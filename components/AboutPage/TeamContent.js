@@ -7,7 +7,7 @@ import fahad from '../../Images/fahad.jpg'
 import shihab from '../../Images/shihab.jpg'
 import kawser from '../../Images/kawsar.jpg'
 import rashidul from '../../Images/rashidul.png'
-import avatar6 from '../../Images/avatar-6.png'
+import abuBakker from '../../Images/abu-bakker.jpg'
 
 const TeamContent = () => {
   return (
@@ -101,7 +101,7 @@ const TeamContent = () => {
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
             <Image width="300" height="300"
-                src={avatar6}
+                src={abuBakker}
                 className="mb-4"
                 alt=""
               />
