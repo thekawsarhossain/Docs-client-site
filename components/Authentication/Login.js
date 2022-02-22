@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/link-passhref */
+/* eslint-disable @next/next/no-img-element */
 import { Box } from '@mui/material'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -24,7 +26,7 @@ const Login = () => {
 
       {/* images here  */}
       <div className="grid grid-cols-12 gap-4">
-        <div className="relative col-span-12 min-h-screen bg-blue-700 md:col-span-4">
+        <div className="relative col-span-12 h-screen bg-blue-700 md:col-span-4 flex justify-center items-center">
           <img
             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/top_ornamate.png"
             className="absolute"
@@ -35,10 +37,9 @@ const Login = () => {
             className="absolute bottom-0 right-0"
             alt="bottom ornament"
           />
-          <div className="flex justify-center">
+          <div>
             <img
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/door.png"
-              className="absolute top-24"
               alt="man image with lock"
             />
           </div>
