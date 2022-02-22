@@ -565,3 +565,250 @@ button {
   margin: 0 20px;
   color: #253858;
 }
+
+
+/*=========================== Help Desk ================================== */
+/*================ Help Desk Banner =============== */
+.hd-banner-support {
+  @apply py-48 relative px-0;
+  height: 945px;
+  /* background-image: linear-gradient(30deg, #feefec 0%, #f5fdff 100%); */
+  background-color: #1e0d3d;
+}
+
+@media (max-width: 768px) {
+  .hd-banner-support {
+    padding: 100px 0;
+    height: 820px;
+  }
+}
+.hd-banner-support .banner-content-wrapper {
+  @apply relative mx-auto my-0;
+  max-width: 770px;
+  z-index: 2;
+}
+
+.hd-banner-support .banner-content-wrapper .banner-title {
+  @apply font-medium text-white mb-3 text-5xl;
+}
+@media (max-width: 768px) {
+  .hd-banner-support .banner-content-wrapper .banner-title {
+    font-size: 34px;
+  }
+}
+.hd-banner-support .banner-content-wrapper p {
+  @apply text-lg text-gray-200 mb-10;
+}
+
+.hd-banner-support .banner-content-wrapper .banner-search-form {
+  @apply shadow-lg my-0 mx-auto flex bg-white;
+  max-width: 770px;
+  border-radius: 30px;
+}
+
+.hd-banner-support .bottom-shape {
+  @apply absolute w-full left-0;
+  bottom: -1px;
+}
+.hd-banner-support .bottom-shape img {
+  @apply w-full;
+}
+
+.people-image {
+  @apply absolute w-full left-1/2;
+  height: 320px;
+  max-width: 1250px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 165px;
+  z-index: 3;
+}
+@media (max-width: 767px) {
+  .people-image {
+    height: 280px;
+  }
+}
+@media (max-width: 576px) {
+  .people-image {
+    bottom: 80px;
+  }
+}
+.people-image li {
+  @apply absolute rounded-full overflow-hidden border-4 border-white shadow-xl;
+}
+.people-image li img {
+  @apply w-full;
+}
+.people-image li:nth-child(1) {
+  @apply left-1/2 top-4;
+  transform: translateX(-50%);
+  border: 6px solid #fff;
+  height: 130px;
+  width: 130px;
+  box-shadow: 0px 50px 80px 0px rgba(59, 14, 3, 0.12);
+}
+.people-image li:nth-child(2) {
+  @apply top-0 h-20 w-20;
+  left: 29.4%;
+}
+.people-image li:nth-child(3) {
+  right: 26.4%;
+  top: -5px;
+  height: 70px;
+  width: 70px;
+}
+.people-image li:nth-child(4) {
+  @apply left-40 top-20 h-20 w-20;
+}
+.people-image li:nth-child(5) {
+  @apply bottom-10 h-20 w-20;
+  left: 26.4%;
+}
+.people-image li:nth-child(6) {
+  right: 38%;
+  bottom: -20px;
+  height: 100px;
+  width: 100px;
+}
+.people-image li:nth-child(7) {
+  right: 85px;
+  bottom: 5px;
+  width: 90px;
+  height: 90px;
+}
+.people-image li:nth-child(8) {
+  left: 0;
+  bottom: 0;
+  border: 2px solid #fff;
+}
+.people-image li:nth-child(9) {
+  right: 22.3%;
+  bottom: 35%;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #fff;
+}
+.people-image li:nth-child(10) {
+  right: 0;
+  bottom: 145px;
+  height: 60px;
+  width: 60px;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .people-image li:nth-child(4) {
+    left: 95px;
+  }
+}
+@media (max-width: 576px) {
+  .people-image li:nth-child(2) {
+    left: 13%;
+  }
+  .people-image li:nth-child(3) {
+    right: 18%;
+  }
+}
+@media (max-width: 440px) {
+  .people-image li:nth-child(1) {
+    height: 100px;
+    width: 100px;
+  }
+  .people-image li:nth-child(4) {
+    left: 20px;
+  }
+  .people-image li:nth-child(5) {
+    left: 22.4%;
+    bottom: 55px;
+  }
+  .people-image li:nth-child(7) {
+    right: 25px;
+  }
+  .people-image li:nth-child(8) {
+    left: 10px;
+  }
+  .people-image li:nth-child(10) {
+    right: 20px;
+  }
+}
+
+.partical-animation {
+  @apply w-full bottom-0 left-0 absolute;
+  width: 100%;
+  height: 550px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.partical-animation li {
+  @apply rounded-full absolute;
+}
+.partical-animation li:nth-child(1) {
+  left: 165px;
+  top: 120px;
+}
+.partical-animation li:nth-child(2) {
+  @apply top-20 h-2 w-2;
+  left: 19%;
+  background: #fd9382;
+}
+.partical-animation li:nth-child(3) {
+  left: 19%;
+  bottom: 30%;
+  height: 10px;
+  width: 10px;
+  background: #fe97f3;
+}
+.partical-animation li:nth-child(3) {
+  left: 28%;
+  top: 35%;
+  height: 35px;
+  width: 35px;
+  background: #f3d5de;
+}
+.partical-animation li:nth-child(4) {
+  @apply h-3 w-3;
+  left: 27%;
+  bottom: 30%;
+  background: #83daed;
+}
+.partical-animation li:nth-child(5) {
+  @apply left-1/3 bottom-1/2 h-3 w-3 bg-yellow-500;
+}
+.partical-animation li:nth-child(6) {
+  @apply left-1/2 top-1/3 h-12 w-12;
+  background: #4edfda;
+}
+.partical-animation li:nth-child(7) {
+  right: 46%;
+  bottom: 27%;
+  height: 22px;
+  width: 22px;
+  background: #f39ab2;
+}
+.partical-animation li:nth-child(8) {
+  right: 46%;
+  bottom: 27%;
+  height: 22px;
+  width: 22px;
+  background: #f39ab2;
+}
+.partical-animation li:nth-child(9) {
+  @apply w-2 h-2 bg-red-300;
+  right: 40%;
+  bottom: 60%;
+}
+.partical-animation li:nth-child(10) {
+  @apply w-7 h-7;
+  right: 22%;
+  bottom: 30%;
+  background: #bff8c6;
+}
+.partical-animation li:nth-child(11) {
+  @apply w-4 h-4 bg-red-300;
+  right: 10%;
+  bottom: 55%;
+}
+.partical-animation li:nth-child(12) {
+  @apply right-16 bottom-40;
+}

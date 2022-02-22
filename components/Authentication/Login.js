@@ -29,7 +29,7 @@ const Login = () => {
         <div className="relative col-span-12 h-screen bg-blue-700 md:col-span-4 flex justify-center items-center">
           <img
             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/top_ornamate.png"
-            className="absolute"
+            className="absolute top-0 left-0"
             alt="top ornament"
           />
           <img
