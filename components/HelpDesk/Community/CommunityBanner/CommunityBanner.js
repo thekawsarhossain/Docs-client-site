@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search'
 
 const CommunityBanner = () => {
   return (
-    <section className="hd-banner-support">
+    <div className="hd-banner-support">
       <div className="text-center banner-content">
         <div className="banner-content-wrapper">
           <h1
@@ -130,7 +130,7 @@ const CommunityBanner = () => {
         </li>
       </ul>
 
-    </section>
+    </div>
   )
 }
 

@@ -812,3 +812,8 @@ button {
 .partical-animation li:nth-child(12) {
   @apply right-16 bottom-40;
 }
+
+.related-doc-title {
+  font-size: 30px;
+  font-weight: bold;
+}
