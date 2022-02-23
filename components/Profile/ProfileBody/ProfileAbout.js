@@ -1,6 +1,13 @@
+import SmsIcon from '@mui/icons-material/Sms'
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import MailIcon from '@mui/icons-material/Mail'
 const ProfileAbout = () => {
   return (
-    <>
+    <div>
       <div className="scisco-user-boxes mb-8">
         <div className="grid grid-cols-12">
           <div className="col-md mt-md-0 col-span-12 mt-3 pr-4 lg:col-span-4">
@@ -18,7 +25,7 @@ const ProfileAbout = () => {
                 }}
                 className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
               >
-                <i className="fas fa-comment"></i>
+                <SmsIcon />
               </div>
               <div
                 className="scisco-user-box-info flex p-4"
@@ -47,7 +54,7 @@ const ProfileAbout = () => {
                 }}
                 className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
               >
-                <i className="fas fa-question-circle"></i>
+                <QuestionMarkIcon />
               </div>
               <div
                 style={{
@@ -76,7 +83,7 @@ const ProfileAbout = () => {
                 }}
                 className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
               >
-                <i className="fas fa-trophy"></i>
+                <EmojiEventsIcon />
               </div>
               <div
                 style={{
@@ -94,9 +101,10 @@ const ProfileAbout = () => {
       </div>
       <div
         style={{
-          background: '#fff',
+          background: '#2C303A',
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
           borderRadius: '0.25rem',
+          color: '#fff',
         }}
         className="scisco-user-table-wrapper"
       >
@@ -157,7 +165,7 @@ const ProfileAbout = () => {
               href="#"
               target="_blank"
             >
-              <span aria-hidden="true" className="fab fa-facebook"></span>
+              <FacebookOutlinedIcon />
             </a>
           </li>
           <li
@@ -184,7 +192,7 @@ const ProfileAbout = () => {
               href="#"
               target="_blank"
             >
-              <span aria-hidden="true" className="fab fa-twitter"></span>
+              <TwitterIcon />
             </a>
           </li>
           <li
@@ -211,7 +219,7 @@ const ProfileAbout = () => {
               href="#"
               target="_blank"
             >
-              <span aria-hidden="true" className="fab fa-instagram"></span>
+              <MailIcon />
             </a>
           </li>
           <li
@@ -238,13 +246,13 @@ const ProfileAbout = () => {
               href="#"
               target="_blank"
             >
-              <span aria-hidden="true" className="fab fa-vimeo-v"></span>
+              <InstagramIcon />
             </a>
           </li>
         </ul>
         <div className="clearfix"></div>
       </div>
-    </>
+    </div>
   )
 }
 

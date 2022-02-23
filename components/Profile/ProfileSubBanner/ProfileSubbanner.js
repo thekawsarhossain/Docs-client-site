@@ -1,6 +1,8 @@
 import { Box } from '@mui/material'
 import Link from 'next/link'
-import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import WatchLaterIcon from '@mui/icons-material/WatchLater'
+
 const ProfileSubbanner = () => {
   return (
     <div>
@@ -47,20 +49,13 @@ const ProfileSubbanner = () => {
                     }}
                     className="breadcrumb-item"
                   >
-                    <Box sx={{ color: '#878EA6' }}>
-                    <Link href='/'>
+                    <Link style={{ color: '#878EA6' }} href="/">
                       Home
                     </Link>
-                    </Box>
-                   
                   </li>
-                  <ArrowForwardIosRoundedIcon
+                  <ChevronRightIcon
                     sx={{ color: ' #878EA6', fontSize: '14px' }}
                   />
-                  <i
-                    style={{ color: ' #878EA6', fontSize: '14px' }}
-                    className="fa-solid fa-right"
-                  ></i>
                   <li
                     style={{
                       color: ' #878EA6',
@@ -69,20 +64,13 @@ const ProfileSubbanner = () => {
                     }}
                     className="breadcrumb-item"
                   >
-                   <Box sx={{ color: '#878EA6' }}>
-                    <Link href='/'>
+                    <Link style={{ color: '#878EA6' }} href="/">
                       Blog
                     </Link>
-                    </Box>
-                   
                   </li>
-                  <ArrowForwardIosRoundedIcon
+                  <ChevronRightIcon
                     sx={{ color: ' #878EA6', fontSize: '14px' }}
                   />
-                  <i
-                    style={{ color: ' #878EA6', fontSize: '14px' }}
-                    className="fa-solid fa-right"
-                  ></i>
                   <li
                     style={{
                       color: ' #1d2746',
@@ -101,32 +89,24 @@ const ProfileSubbanner = () => {
               style={{ flex: '0 0 41.666667%', maxWidth: ' 41.666667%' }}
               className="col-sm-5"
             >
-              {/* <Link
+              <Box
                 style={{
                   color: '#878EA6',
                   float: 'right',
                   fontSize: '14px',
                   paddingRight: '10px',
                 }}
-                href="/"
-                className="date"
               >
-                <i
-                  style={{ paddingRight: '10px' }}
-                  className="fa-regular fa-timer"
-                ></i>
-               
-              </Link> */}
-
-              <Box sx={{
-                  color: '#878EA6',
-                  float: 'right',
-                  fontSize: '14px',
-                  paddingRight: '10px',
-                }}>
-              <Link href="/">
-              Updated on March 03, 2020
-              </Link>
+                <WatchLaterIcon />
+                <Link href="/" className="date">
+                  <a>
+                    <i
+                      style={{ paddingRight: '10px' }}
+                      className="fa-regular fa-timer"
+                    ></i>
+                    Updated on March 03, 2020
+                  </a>
+                </Link>
               </Box>
             </div>
           </div>
