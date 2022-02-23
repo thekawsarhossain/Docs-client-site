@@ -833,3 +833,24 @@ button {
 .fun-fact5-counter {
   color: #9360fc;
 }
+
+
+
+.community-post {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(2, 47, 57, 0.1);
+  padding: 23px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.community-post:hover {
+  box-shadow: 0 24px 40px 0 rgba(2, 47, 57, 0.12);
+  border-color: #eef3f6;
+  transform: translateX(10px);
+}
