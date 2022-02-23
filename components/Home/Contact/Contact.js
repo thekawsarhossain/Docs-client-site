@@ -3,9 +3,8 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Box, Container } from '@mui/material';
-import SubContact from './SubContact';
 import ContactBanner from './ContactBanner';
-
+import Footer from '../../Shared/Footer/Footer'
 const Contact = () => {
 
   const {
@@ -21,7 +20,6 @@ const Contact = () => {
   return (
     <>
   <ContactBanner/>
-    <SubContact/>
       <Box sx={{background:"#131417",color:"white",py:10}} >
     <Container sx={{background:"#2C303A",p:5}}>
  <div className="grid grid-cols-12 gap-4 ">
@@ -173,6 +171,7 @@ const Contact = () => {
    </div>
  </div>
     </Container>
+    <Footer/>
      </Box>
     </>
   
