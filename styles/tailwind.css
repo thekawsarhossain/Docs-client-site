@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
   /* buttons here  */
@@ -90,7 +89,7 @@
   width: 100%;
 }
 /* helpdesk banner imagee border */
-.community img{
+.community img {
   border: 5px solid rgb(141, 138, 138);
   border-radius: 50%;
 }
@@ -410,22 +409,21 @@ button {
 ============================================================================================ */
 
 /* Contact css */
-.contactIcon{
+.contactIcon {
   width: 45px !important;
   height: 45px !important;
   border-radius: 50%;
   color: #08beab;
-  background: rgba(8,190,171,.1);
+  background: rgba(8, 190, 171, 0.1);
   padding: 10px;
- 
 }
-.c-btn{
+.c-btn {
   background-color: #08beab;
 }
 
-.iconHover:hover .contactIcon{
- background-color: #08beab;
- color: white;
+.iconHover:hover .contactIcon {
+  background-color: #08beab;
+  color: white;
 }
 @keyframes customUp {
   0% {
@@ -499,5 +497,9 @@ button {
 .scisco-user-table-right {
   padding: 1.25rem;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
 
+.clock {
+  margin: 0;
+  padding: 0;
 }
