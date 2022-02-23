@@ -2,18 +2,24 @@ import Testimonial from '../Testimonial/Testimonial'
 import Navbar from '../../Shared/Navbar/Navbar'
 import Questions from '../Questions/Questions'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
-import HeroSection from '../HeroSection/HeroSection'
 import VideoList from '../VideoList/VideoList'
+import OnlineDoc from '../OnlineDoc/OnlineDoc'
+import Footer from '../../Shared/Footer/Footer'
+import HeroSection from '../HeroSection/HeroSection'
+import FooterBanner from '../../Shared/Footer/FooterBanner/FooterBanner'
 
 const HomePage = () => {
   return (
     <div>
       <Navbar />
       <HeroSection />
-      <VideoList />
       <CommunitiesCard />
-      <Testimonial />
+      <OnlineDoc />
+      <VideoList />
       <Questions />
+      <Testimonial />
+      <FooterBanner/>
+      <Footer />
     </div>
   )
 }

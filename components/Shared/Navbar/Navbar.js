@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/link-passhref */
 import * as React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -15,6 +17,7 @@ import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const Navbar = () => {
+
   const [state, setState] = React.useState({
     left: false,
   })
@@ -42,7 +45,7 @@ const Navbar = () => {
     >
       <Link href="/">
         <a className="flex justify-center py-4">
-          <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
+          {/* <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" /> */}
         </a>
       </Link>
       <Divider style={{ backgroundColor: 'white' }} />
@@ -54,38 +57,38 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/documentation">
           <ListItem button>
             <ListItemText>
               <span>Documentation</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/Forum">
           <ListItem button>
             <ListItemText>
               <span>Forum</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
-          <ListItem button>
-            <ListItemText>
-              <span>Pages</span>
-            </ListItemText>
-          </ListItem>
-        </Link>
-        <Link href="/">
+        <Link href="/blogs">
           <ListItem button>
             <ListItemText>
               <span>Blog</span>
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/">
+        <Link href="/contact">
           <ListItem button>
             <ListItemText>
-              <span>Get Docy</span>
+              <span>Contact</span>
+            </ListItemText>
+          </ListItem>
+        </Link>
+        <Link href="/login">
+          <ListItem button>
+            <ListItemText>
+              <span>Log in</span>
             </ListItemText>
           </ListItem>
         </Link>
@@ -94,8 +97,8 @@ const Navbar = () => {
   )
   return (
     <div>
-      <header className="body-font absolute z-10 w-full text-gray-400">
-        <div className="container mx-auto flex justify-between p-5 ">
+      <header className="absolute z-10 w-full text-gray-400 body-font">
+        <div className="container flex justify-between p-5 mx-auto ">
           <Link href="/">
             <a className="flex justify-center">
               <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
@@ -109,36 +112,43 @@ const Navbar = () => {
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/documentation">
               <a className="link-item">
                 <span>Documentation</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/Forum">
               <a className="link-item">
                 <span>Forum</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
-              <a className="link-item">
-                <span>Pages</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/">
+            <Link href="/blogs">
               <a className="link-item">
                 <span>Blog</span>
                 <span className="link-hover left-1/2 h-0.5 w-0"></span>
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/">
-              <a className="title-btn">Get Docy</a>
+            <Link href="/about">
+              <a className="link-item">
+                <span>About</span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="link-item">
+                <span>Contact</span>
+                <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              </a>
+            </Link>
+            <Link href="/login">
+              <a className="title-btn">Log in</a>
             </Link>
           </nav>
           <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">

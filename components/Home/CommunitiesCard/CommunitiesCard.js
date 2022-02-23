@@ -1,6 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import { Box, Container } from '@mui/material'
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
+import Link from 'next/link'
 
 const fakeData = [
   {
@@ -63,34 +66,42 @@ const CommunitiesCard = () => {
   }, [showMore])
 
   return (
-    <div className="container mx-auto my-6 rounded-xl bg-darkBlue">
-      {/* grid system for the items here  */}
-      <div class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3">
-        {data?.map((item) => (
-          <div className=" border-w-2 border-b border-r border-l border-secondary">
-            <div className="flex items-center p-10">
-              <Image src={item?.icon} width="50px" height="50px" />
-              <span className="ml-4">
-                <a href="/">
-                  <h6 className="font-bold text-white">{item?.title}</h6>
-                </a>
-                <p className="text-secondary">{item?.info}</p>
-              </span>
+    <Box sx={{ background: '#131417', py: 10 }}>
+      <Container>
+        <div className="  rounded-xl bg-darkBlue  ">
+          {/* grid system for the items here  */}
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {data?.map((item) => (
+              <div key={item.title} className=" border-w-1 border-b border-secondary">
+                <div className="flex items-center p-8">
+                  <Image src={item?.icon} width="50px" height="50px" alt='img' />
+                  <span className="ml-4">
+                    <Link href="/home">
+                      <h6 className="font-bold text-white">{item?.title}</h6>
+                    </Link>
+                    <p className="text-secondary">{item?.info}</p>
+                  </span>
+                </div>
+              </div>
+            ))}
+            {/* buuton here  */}
+            <div className="my-4 text-center">
+              <button
+                className="rounded-md p-1 font-bold text-blue-800 duration-300 focus:ring-2"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? (
+                  <ArrowCircleUpIcon className="animate-bounce" />
+                ) : (
+                  <ArrowCircleDownIcon className="animate-bounce" />
+                )}{' '}
+                More Communities{' '}
+              </button>
             </div>
           </div>
-        ))}
-        {/* buuton here  */}
-        <div className="my-4 text-center">
-          <button
-            className="rounded-md p-1 font-bold text-blue-800 duration-300 focus:ring-2"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {' '}
-            <ArrowCircleDownIcon /> More Communities{' '}
-          </button>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Box>
   )
 }
 

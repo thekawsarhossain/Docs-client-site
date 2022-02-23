@@ -1,0 +1,40 @@
+[
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2019/12/calendar.png",
+  "docsTitle":"Elements",
+  "description":"James Bond knackered cup of char show off"
+  },
+
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/05/edition.png",
+  "docsTitle":"Code Syntax Highlight",
+  "description":"We used Prism JS in the Code widget."
+  },
+
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/05/notes-1.png",
+  "docsTitle":"Footnotes",
+  "description":"Footnote is an additional piece of information printed"
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/04/148.png",
+  "docsTitle":"Contents",
+  "description":"Video, Table, Tooltips, List Items, Keyboard and others"
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/04/pin.png",
+  "docsTitle":"Layouts",
+  "description":"Display documentation page layout variations."
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2019/04/notes.png",
+  "docsTitle":"Changelog",
+  "description":"Welcome to docbuzz ! Get familiar with the Stripe"
+  },
+
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"Frequently asked questions and answers."
+  }
+]
