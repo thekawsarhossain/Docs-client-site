@@ -1,9 +1,15 @@
+import Footer from '../Shared/Footer/Footer'
+import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
+import BlogMainBody from './BlogMainBody/BlogMainBody'
+
 const Blog = () => {
   return (
     <div>
-     <h1>Blog Page</h1>
+      <BlogHeroSection></BlogHeroSection>
+      <BlogMainBody></BlogMainBody>
+      <Footer></Footer>
     </div>
-  );
+  )
 }
 
-export default Blog;
+export default Blog

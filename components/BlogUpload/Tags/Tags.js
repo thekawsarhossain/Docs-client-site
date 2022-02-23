@@ -11,6 +11,7 @@ const Tags = (props) => {
           return
         }
         setTags([...tags, e.target.value])
+        props.allTags([...tags, e.target.value])
         e.target.value = ''
       }
     }
@@ -30,6 +31,10 @@ const Tags = (props) => {
           ...tags,
           e.target.value.substring(0, e.target.value.length - 1),
         ])
+        props.allTags([
+          ...tags,
+          e.target.value.substring(0, e.target.value.length - 1),
+        ])
         e.target.value = ''
       }
     }
@@ -37,6 +42,7 @@ const Tags = (props) => {
   const removeTag = (removedTag) => {
     const newTags = tags.filter((tag) => tag !== removedTag)
     setTags(newTags)
+    props.allTags(newTags)
   }
   return (
     <Container>

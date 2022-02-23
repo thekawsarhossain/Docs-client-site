@@ -1,9 +1,11 @@
+import Blog from '../components/Bolg/Blog'
+
 const blogs = () => {
   return (
     <div>
-     <h1>blogs</h1>
+      <Blog></Blog>
     </div>
-  );
+  )
 }
 
-export default blogs;
+export default blogs
