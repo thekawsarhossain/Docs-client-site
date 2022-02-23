@@ -817,3 +817,19 @@ button {
   font-size: 30px;
   font-weight: bold;
 }
+
+.fun-fact1-counter {
+  color: #10b3d6;
+}
+.fun-fact2-counter {
+  color: #fbb631;
+}
+.fun-fact3-counter {
+  color: #fd5baf;
+}
+.fun-fact4-counter {
+  color: #11c296;
+}
+.fun-fact5-counter {
+  color: #9360fc;
+}
