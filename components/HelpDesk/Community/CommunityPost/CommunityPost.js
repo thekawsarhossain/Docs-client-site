@@ -5,6 +5,7 @@ import Box from '@mui/material/Box'
 import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded'
 import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded'
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import Link from 'next/link'
 import { Container } from '@mui/material'
 
@@ -58,12 +59,11 @@ const CommunityPost = () => {
               {fakeData.map((item) => (
                 <div key={item.title}>
                   <div className="community-post">
-                    <div className="flex ">
+                    <div className="flex">
                       <img
                         src={item?.icon}
-                        width="50px"
-                        height="50px"
-                        alt="img"
+                        className="w-12 h-12"
+                        alt={item.title}
                       />
                       <div className="ml-3">
                         <h3 className="text-lg font-medium">
@@ -73,10 +73,10 @@ const CommunityPost = () => {
                             </a>
                           </Link>
                         </h3>
-                        <p className="text-base  text-gray-500">{item?.info}</p>
+                        <p className="text-base text-gray-500">{item?.info}</p>
                       </div>
                     </div>
-                    <div className="flex text-gray-500">
+                    <div className="flex mt-4 text-gray-500 ml-14 md:ml-0 md:mt-0">
                       <ul className="flex items-center gap-6">
                         <li className="flex items-center gap-2">
                           <RemoveRedEyeRoundedIcon />
@@ -96,6 +96,14 @@ const CommunityPost = () => {
               ))}
             </div>
           </Box>
+        </div>
+        <div className="flex justify-center inline-block mt-10 text-center">
+          <Link href="#">
+            <a className="flex items-center justify-center gap-2 px-10 py-2 font-medium text-blue-400 duration-500 border border-blue-400 rounded-full hover:bg-theme-500 hover:text-white">
+              All sestems currently operational
+              <ArrowRightAltIcon />
+            </a>
+          </Link>
         </div>
       </Container>
     </div>
