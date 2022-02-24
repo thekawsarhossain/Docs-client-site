@@ -1,29 +1,15 @@
-import { Container } from '@mui/material'
+/* eslint-disable @next/next/no-img-element */
+import {Box, Container, Grid } from '@mui/material'
+import Link from 'next/link'
 
 const ForumFooterBanner = () => {
   return (
     <div>
-      <div
-        style={{
-          padding: '55px 0',
-          background: '#1d2746',
-          position: 'relative',
-        }}
-        className="call-to-action"
-      >
-        <div className="overlay-bg"></div>
+     <div className="overlay-bg">
         <Container>
-          <div className="container relative">
-            <div
-              style={{
-                margin: '0 auto',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-              className="action-content-wrapper"
-            >
-              <div className="action-title-wrap title-img flex items-center">
+        <Grid  container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+         <Grid item xs={12} sm={6} md={8} >
+         <div className="action-title-wrap title-img flex items-center">
                 <img
                   style={{ paddingRight: '45px' }}
                   src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/chat-smile.png"
@@ -41,13 +27,18 @@ const ForumFooterBanner = () => {
                   New to Communities?
                 </h2>
               </div>
-              <a href="/" className="action_btn">
-                Join the community <i class="fa-regular fa-chevron-right"></i>
+         </Grid>
+         <Grid item xs={12} sm={6} md={4}>
+        <Link href='/'>
+        <a className="action_btn mt-8">
+                Join the community <i className="fa-regular fa-chevron-right"></i>
               </a>
-            </div>
-          </div>
+        </Link>
+         </Grid>
+         
+         </Grid>
         </Container>
-      </div>
+        </div>
     </div>
   )
 }

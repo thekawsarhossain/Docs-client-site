@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Facebook, LinkedIn, Twitter } from '@mui/icons-material'
 import FooterBanner from './FooterBanner/FooterBanner'
 import Link from 'next/link'
@@ -6,9 +7,9 @@ import { Container } from '@mui/material'
 const Footer = () => {
   return (
     <footer className=" bg-lightDark pt-10 text-white  lg:pt-32">
-      <FooterBanner />
+      {/* <FooterBanner /> */}
       <Container>
-        <div class="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
           {/* footer logo & short description */}
           <div>
             <Link href="/">

@@ -31,56 +31,42 @@ function classNames(...classes) {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/documentation"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                Docs
-                </a>
+                <Link
+                href="/documentation"
+              >
+              <a className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800 '> Docs</a>
+              </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
+                <Link
                   href="/Forum"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
                 >
-                 Forum
-                </a>
+                <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'
+                 > Forum</a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/blogs"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                 Blog
-                </a>
+                <Link
+                href="/blogs"
+              >
+              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> Blog</a>
+              </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/helpdesk"
-                  className={classNames(
-                    active ? 'bg-slate-200 text-violet-600' : 'text-gray-700',
-                    'block px-4 py-2 text-sm font-medium'
-                  )}
-                >
-                 Help Desk
-                </a>
+                <Link
+                href="/helpdesk"
+              >
+              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> HelpDesk</a>
+              </Link>
               )}
             </Menu.Item>
+           
           </div>
         
         </Menu.Items>

@@ -24,22 +24,16 @@ const Testimonial = () => {
     autoplaySpeed: 4000,
   }
   return (
-    <div className="slider">
+    <div className="slider pb-24">
       <Container>
         <Slider {...settings}>
           {sliders.map((slider) => (
-            <div className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12">
+            <div key={slider.title} className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12">
               <div className="-m-4 mx-auto flex  flex-wrap justify-between">
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow ">
-                      <h2 className=" mb-3 pr-16 text-2xl 	
-                      	 md:text-4xl   
-                         text-white">
-                       
-                      </h2>
-
-                      <Typography variant='h4' sx={{color:'white'}}>
+                    <Typography variant='h4' sx={{color:'white'}}>
                       {slider.title}
                       </Typography>
                       <h4 className="mt-6 font-bold text-white">

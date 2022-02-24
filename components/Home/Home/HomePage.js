@@ -6,6 +6,7 @@ import VideoList from '../VideoList/VideoList'
 import OnlineDoc from '../OnlineDoc/OnlineDoc'
 import Footer from '../../Shared/Footer/Footer'
 import HeroSection from '../HeroSection/HeroSection'
+import FooterBanner from '../../Shared/Footer/FooterBanner/FooterBanner'
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <VideoList />
       <Questions />
       <Testimonial />
+      <FooterBanner/>
       <Footer />
     </div>
   )

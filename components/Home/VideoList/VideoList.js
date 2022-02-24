@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Accordion,
   AccordionDetails,
@@ -27,15 +28,15 @@ const VideoList = () => {
               height="450"
               src="https://www.youtube.com/embed/X7XbjwD6fVY"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              
             ></iframe>
           </div>
           <div className="col-span-12 text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
             <Accordion
-            sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
+              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
               expanded={expanded === 'panel1'}
               onChange={handleChange('panel1')}
             >
@@ -133,10 +134,9 @@ const VideoList = () => {
               </AccordionDetails>
             </Accordion>
             <Accordion
-             sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
+              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
               expanded={expanded === 'panel2'}
               onChange={handleChange('panel2')}
-
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
@@ -235,10 +235,9 @@ const VideoList = () => {
             </Accordion>
 
             <Accordion
-            sx={{mb:1,backgroundColor: '#2C303A', color: 'white'}}
+              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
               expanded={expanded === 'panel3'}
               onChange={handleChange('panel3')}
-            
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon className="text-white" />}
@@ -334,7 +333,7 @@ const VideoList = () => {
               </AccordionDetails>
             </Accordion>
             <Accordion
-              sx={{backgroundColor: '#2C303A', color: 'white'}}
+              sx={{ backgroundColor: '#2C303A', color: 'white' }}
               expanded={expanded === 'panel4'}
               onChange={handleChange('panel4')}
             >
@@ -357,7 +356,7 @@ const VideoList = () => {
                           <img
                             className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
+                            alt="img"
                           />
                         </div>
                         <div>
@@ -380,8 +379,7 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img
-                            className="h-12 w-14 rounded"
+                          <img className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
                           />
