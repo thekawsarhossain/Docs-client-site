@@ -7,7 +7,7 @@ const CeoTalk = () => {
     <section className="about-journalism">
       <Container>
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 lg:col-span-7">
+          <div className="order-2 col-span-12 md:order-none lg:col-span-7">
             <div className="journalism-content-wrapper">
               <div className="quote wow fadeIn">
                 <img
@@ -42,8 +42,9 @@ const CeoTalk = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-5">
-            <div className="flex items-center justify-between journalism-feature-image">
+            <div className="journalism-feature-image">
               <img
+              className="w-full h-full"
                 src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/journalism.png"
                 alt="journalism"
               />

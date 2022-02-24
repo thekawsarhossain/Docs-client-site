@@ -929,9 +929,31 @@ button {
     height: 300px;
   }
 }
+/* ================== Search Community======================= */
 
-@media (max-width: 992px) {
-  .md-order-two {
-    order: 2;
-  }
+.community-box {
+  @apply px-16 py-10 mb-8 overflow-hidden text-center bg-white border-gray-100 rounded-lg;
+  box-shadow: 0px 2px 3px 0px rgba(2, 47, 57, 0.14);
+  transition: all 0.3s ease-in-out;
 }
+.community-box:before {
+  @apply absolute top-0 left-0 w-full h-1 bg-transparent;
+  content: "";
+  transition: all 0.3s ease-in-out;
+}
+
+.community-box .community-content .com-title {
+  @apply font-normal text-gray-500 mb-7;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.community-box:hover {
+  box-shadow: 0px 40px 30px 0px rgba(2, 47, 57, 0.1);
+  transform: translateY(-5px);
+}
+.community-box:hover:before {
+  background: #10b3d6;
+}
+
+
