@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Box, Container, Grid } from '@mui/material';
 import Navbar from '../Shared/Navbar/Navbar';
 

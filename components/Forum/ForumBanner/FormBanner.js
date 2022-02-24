@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Example from '../../Home/HeroSection/test'
 
 const FormBanner = () => {
@@ -95,8 +96,8 @@ const FormBanner = () => {
               marginLeft: 'auto',
             }}
           >
-          <form action="#" className=" pb-7">
-              <div  className="relative flex justify-center">
+            <form action="#" className=" pb-7">
+              <div className="relative flex justify-center">
                 <div className=" py-10 px-2">
                   <div>
                     <div className="md:flex">
@@ -119,7 +120,6 @@ const FormBanner = () => {
                     </div>
                   </div>
                 </div>
-               
               </div>
             </form>
           </div>
@@ -130,4 +130,3 @@ const FormBanner = () => {
 }
 
 export default FormBanner
-

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
 import {
   Button,

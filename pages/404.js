@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Container } from '@mui/material'
 import Navbar from '../components/Shared/Navbar/Navbar'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'

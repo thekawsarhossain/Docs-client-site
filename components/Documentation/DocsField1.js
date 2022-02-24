@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/link-passhref */
+/* eslint-disable @next/next/no-img-element */
 import {
   Accordion,
   AccordionDetails,
@@ -40,19 +42,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -82,19 +84,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -126,19 +128,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -168,19 +170,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -210,19 +212,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -252,19 +254,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>
@@ -294,19 +296,19 @@ const DocsField1 = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography className="text-list">
-                <Link href="/#">
+                <Link href="#">
                   <li>Tabs Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Notice / Message Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Accordions Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Cheatsheet Widget</li>
                 </Link>
-                <Link href="/#">
+                <Link href="#">
                   <li>Image Hotspots Widget</li>
                 </Link>
               </Typography>

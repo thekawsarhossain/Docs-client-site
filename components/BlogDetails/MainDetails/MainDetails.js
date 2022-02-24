@@ -1,9 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { Avatar, Container } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
-import DetailsView from './DetailsView'
 import DemoBlog from './DemoBlog'
 
 const MainDetails = () => {
@@ -12,15 +12,11 @@ const MainDetails = () => {
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            {/* video section  */}
             <video
-              // style={{ maxWidth: "500px" }}
               src="https://res.cloudinary.com/dkbgqzl1e/video/upload/v1644901083/sas/1.1_Priori_Analysis_and_Posteriori_Testing_hozkij.mp4"
               controls
             ></video>
-            {/* Detail view  */}
             <DemoBlog></DemoBlog>
-            {/* Bloggers summary  */}
             <div
               style={{ minHeight: '200px' }}
               className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
@@ -41,7 +37,6 @@ const MainDetails = () => {
                 </p>
               </div>
             </div>
-            {/* related post  */}
             <div>
               <h1 className="pb-4 text-2xl font-bold text-white">
                 Related Post
