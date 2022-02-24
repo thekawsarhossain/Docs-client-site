@@ -23,11 +23,38 @@ const InfoInput = (props) => {
 
   const handleChange = (event) => {
     setAge(event.target.value)
+    switch (event.target.value) {
+      case 1:
+        console.log('Creative')
+        break
+      case 2:
+        console.log('Inspiration')
+        break
+      case 3:
+        console.log('Lifestyle')
+        break
+      case 4:
+        console.log('News')
+        break
+      case 5:
+        console.log('Photography')
+        break
+      case 6:
+        console.log('Skill')
+        break
+      case 7:
+        console.log('Tourist Tours')
+        break
+      case 8:
+        console.log('Inspire')
+        break
+    }
   }
 
   const [loading, setLoading] = useState(false)
   const [image, setImage] = useState('')
   const [video, setVideo] = useState('')
+  const [blogData, setBlogData] = useState({})
 
   const uploadImage = async (e) => {
     const files = e.target.files
@@ -35,6 +62,7 @@ const InfoInput = (props) => {
     data.append('file', files[0])
     data.append('upload_preset', 'ml_default')
     setLoading(true)
+    console.log(e.target.name)
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dkbgqzl1e/image/upload',
@@ -45,6 +73,12 @@ const InfoInput = (props) => {
     )
     const file = await res.json()
     // console.log(file.public_id);
+    const field = e.target.name
+    const value = file.secure_url
+    const newBlogData = { ...blogData }
+    newBlogData[field] = value
+    setBlogData(newBlogData)
+    console.log(blogData)
 
     console.log('something')
     setImage(file.secure_url)
@@ -88,7 +122,7 @@ const InfoInput = (props) => {
                 <input
                   className="hidden"
                   type="file"
-                  name="file"
+                  name="video"
                   placeholder="upload"
                   onChange={uploadVideo}
                 />
@@ -121,7 +155,7 @@ const InfoInput = (props) => {
                 <input
                   className="hidden"
                   type="file"
-                  name="file"
+                  name="thumbnail"
                   placeholder="upload"
                   onChange={uploadImage}
                 />
