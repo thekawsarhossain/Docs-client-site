@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Container } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
 // import Image from 'next/image'
@@ -9,22 +10,7 @@ const ProfileBanner = () => {
         style={{ background: '#2c303a', padding: '80px 0 80px 80px' }}
         className="relative "
       >
-        {/* <img
-          style={{ top: '0', left: '35px' }}
-          src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/Image/leaf_left.png"
-          className="one absolute"
-          alt="leaf left"
-          // width=""
-          // height=""
-        />
-        <img
-          style={{ right: '0', bottom: '0' }}
-          src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/Image/leaf_right.png"
-          className="four absolute"
-          alt="leaf right"
-          // width=""
-          // height=""
-        /> */}
+     
         <Container>
           <div
             id="scisco-page-title"

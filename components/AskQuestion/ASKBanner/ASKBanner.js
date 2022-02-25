@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { Container } from '@mui/material'
 
 const ASKBanner = () => {

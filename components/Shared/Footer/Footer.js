@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Facebook, LinkedIn, Twitter } from '@mui/icons-material'
 import FooterBanner from './FooterBanner/FooterBanner'
 import Link from 'next/link'

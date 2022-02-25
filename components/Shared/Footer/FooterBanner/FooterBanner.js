@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Search } from '@mui/icons-material'
 import { Container } from '@mui/material'
 import Image from 'next/image'

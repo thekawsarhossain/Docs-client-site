@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Box, Container } from '@mui/material';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import Link from 'next/link';
