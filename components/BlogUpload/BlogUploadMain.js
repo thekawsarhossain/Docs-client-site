@@ -41,7 +41,7 @@ const BlogUploadMain = () => {
       documentation: documentation,
       tags: tags,
     }
-    fetch('http://localhost:5000/blogs', {
+    fetch('https://enigmatic-atoll-27842.herokuapp.com/blogs', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
