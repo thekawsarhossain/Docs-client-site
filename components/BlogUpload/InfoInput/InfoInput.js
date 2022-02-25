@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
 import {
   Button,
@@ -23,11 +24,46 @@ const InfoInput = (props) => {
 
   const handleChange = (event) => {
     setAge(event.target.value)
+    switch (event.target.value) {
+      case 1:
+        console.log('Creative')
+        props.category('Creative')
+        break
+      case 2:
+        console.log('Inspiration')
+        props.category('Inspiration')
+        break
+      case 3:
+        console.log('Lifestyle')
+        props.category('Lifestyle')
+        break
+      case 4:
+        console.log('News')
+        props.category('News')
+        break
+      case 5:
+        console.log('Photography')
+        props.category('Photography')
+        break
+      case 6:
+        console.log('Skill')
+        props.category('Skill')
+        break
+      case 7:
+        console.log('Tourist Tours')
+        props.category('Tourist Tours')
+        break
+      case 8:
+        console.log('Inspire')
+        props.category('Inspire')
+        break
+    }
   }
 
   const [loading, setLoading] = useState(false)
   const [image, setImage] = useState('')
   const [video, setVideo] = useState('')
+  const [blogData, setBlogData] = useState({})
 
   const uploadImage = async (e) => {
     const files = e.target.files
@@ -35,6 +71,7 @@ const InfoInput = (props) => {
     data.append('file', files[0])
     data.append('upload_preset', 'ml_default')
     setLoading(true)
+    console.log(e.target.name)
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dkbgqzl1e/image/upload',
@@ -45,6 +82,12 @@ const InfoInput = (props) => {
     )
     const file = await res.json()
     // console.log(file.public_id);
+    const field = e.target.name
+    const value = file.secure_url
+    const newBlogData = { ...blogData }
+    newBlogData[field] = value
+    setBlogData(newBlogData)
+    console.log(blogData)
 
     console.log('something')
     setImage(file.secure_url)
@@ -70,6 +113,7 @@ const InfoInput = (props) => {
 
     props.imgLink(file.secure_url)
     setVideo(file.secure_url)
+    props.videoLink(file.secure_url)
     console.log(video)
     setLoading(false)
   }
@@ -88,7 +132,7 @@ const InfoInput = (props) => {
                 <input
                   className="hidden"
                   type="file"
-                  name="file"
+                  name="video"
                   placeholder="upload"
                   onChange={uploadVideo}
                 />
@@ -121,7 +165,7 @@ const InfoInput = (props) => {
                 <input
                   className="hidden"
                   type="file"
-                  name="file"
+                  name="thumbnail"
                   placeholder="upload"
                   onChange={uploadImage}
                 />

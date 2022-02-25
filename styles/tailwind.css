@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
 body{
   font-family: 'Arimo', sans-serif;}
-
 
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
   /* buttons here  */
   .btn-1 {
-    @apply px-5 py-3 font-semibold text-white duration-300 rounded-full bg-buttons hover:bg-white hover:text-buttons focus:ring-2;
+    @apply rounded-full bg-buttons px-5 py-3 font-semibold text-white duration-300 hover:bg-white hover:text-buttons focus:ring-2;
   }
 
   /* navbar regarding start here  */
   .navbar-parent {
-    @apply flex-wrap items-center justify-center hidden text-base md:ml-auto lg:block;
+    @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
   }
   .link-item {
-    @apply relative mr-5 text-base font-bold two w-max hover:text-white;
+    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
   }
   .link-hover {
-    @apply absolute transition-all bg-white -bottom-1;
+    @apply absolute -bottom-1 bg-white transition-all;
   }
   .title-btn {
-    @apply px-4 py-2 ml-10 text-base font-bold border-2 border-gray-400 rounded-full hover:border-white hover:text-white;
+    @apply ml-10 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
   }
   /* naavbar regarding end here */
 
@@ -38,24 +38,24 @@ body{
 
   /* authentication || login || register components classes here  */
   .auth-input {
-    @apply w-full px-5 py-4 mt-1 text-black border rounded-md shadow-lg;
+    @apply mt-1 w-full rounded-md border px-5 py-4 text-black shadow-lg;
   }
 
   /* footer regarding style start here  */
   .footer-icon {
-    @apply p-2 mt-5 mr-4 duration-200 rounded-md cursor-pointer bg-slate-800 hover:text-lightBlue;
+    @apply mt-5 mr-4 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
   }
   .footer-nav-title {
     @apply mb-3 text-xl font-medium tracking-widest text-white;
   }
   .footer-nav-item {
-    @apply block my-4 text-gray-600 cursor-pointer hover:text-gray-800;
+    @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
   }
   .footerBannerParent {
-    @apply relative mx-auto shadow rounded-2xl bg-lightBlue shadow-blue-700;
+    @apply relative mx-auto rounded-2xl bg-lightBlue shadow shadow-blue-700;
   }
   .footerBannerContent {
-    @apply items-center justify-around block px-6 py-16 lg:flex lg:px-0;
+    @apply block items-center justify-around px-6 py-16 lg:flex lg:px-0;
   }
   /* footer regarding style end here  */
 }
@@ -381,7 +381,6 @@ button {
 .tabImg {
   width: 20px;
   height: 20px;
-  margin-right: 15px;
 }
 
 .otp {
@@ -496,15 +495,19 @@ button {
   font-weight: 500;
   border-right: 0;
   padding: 1.25rem;
-  color: #101e36;
+  color: rgb(0, 255, 255);
   text-transform: uppercase;
   font-size: 0.9rem;
 }
 .scisco-user-table-right {
   padding: 1.25rem;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgb(255, 255, 255);
 }
 
+.clock {
+  margin: 0;
+  padding: 0;
+}
 /*============================================ about ================================================= */
 .minimal-content {
   padding: 19px 0 70px;
@@ -514,7 +517,7 @@ button {
   padding: 170px 0 200px;
 }
 .minimal-header::before {
-  @apply absolute left-0 w-full h-full bg-no-repeat bg-cover;
+  @apply absolute left-0 h-full w-full bg-cover bg-no-repeat;
   top: -17%;
   content: '';
   z-index: -1;
@@ -524,16 +527,16 @@ button {
 }
 
 .minimal-header-text h1 {
-  @apply m-0 font-normal text-center text-white;
+  @apply m-0 text-center font-normal text-white;
 }
 
 .text-block .heading-sm {
-  @apply relative text-sm font-bold text-blue-700 uppercase;
+  @apply relative text-sm font-bold uppercase text-blue-700;
   padding-left: 45px;
   letter-spacing: 1px;
 }
 .text-block .heading-sm::before {
-  @apply absolute left-0 w-8 bg-blue-700 top-1/2;
+  @apply absolute left-0 top-1/2 w-8 bg-blue-700;
   margin-top: -1px;
   height: 2px;
   content: '';
@@ -557,7 +560,7 @@ button {
   color: #253858;
 }
 .o-separator {
-  @apply flex items-center mb-12;
+  @apply mb-12 flex items-center;
   display: -ms-flexbox;
   flex-wrap: no-wrap;
 }
@@ -595,3 +598,409 @@ All docs css
   margin: 25px 0px 5px 0px;
   font-weight: 600;
 }
+
+.option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+  line-height: 1.5;
+  color: #525f7f;
+}
+legend + * {
+  clear: left;
+  }
+
+/*=========================== Help Desk ================================== */
+/*================ Help Desk Banner =============== */
+.hd-banner-support {
+  @apply relative px-0 py-48;
+  height: 945px;
+  /* background-image: linear-gradient(30deg, #feefec 0%, #f5fdff 100%); */
+  background-color: #1e0d3d;
+}
+
+@media (max-width: 768px) {
+  .hd-banner-support {
+    padding: 100px 0;
+    height: 820px;
+  }
+}
+.hd-banner-support .banner-content-wrapper {
+  @apply relative mx-auto my-0;
+  max-width: 770px;
+  z-index: 2;
+}
+
+.hd-banner-support .banner-content-wrapper .banner-title {
+  @apply mb-3 text-5xl font-medium text-white;
+}
+@media (max-width: 768px) {
+  .hd-banner-support .banner-content-wrapper .banner-title {
+    font-size: 34px;
+  }
+}
+.hd-banner-support .banner-content-wrapper p {
+  @apply mb-10 text-lg text-gray-200;
+}
+
+.hd-banner-support .banner-content-wrapper .banner-search-form {
+  @apply flex mx-auto my-0 bg-white shadow-lg;
+  max-width: 770px;
+  border-radius: 30px;
+}
+
+.hd-banner-support .bottom-shape {
+  @apply absolute left-0 w-full;
+  bottom: -1px;
+}
+.hd-banner-support .bottom-shape img {
+  @apply w-full;
+}
+
+.people-image {
+  @apply absolute w-full left-1/2;
+  height: 320px;
+  max-width: 1250px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 165px;
+  z-index: 3;
+}
+@media (max-width: 767px) {
+  .people-image {
+    height: 280px;
+  }
+}
+@media (max-width: 576px) {
+  .people-image {
+    bottom: 80px;
+  }
+}
+.people-image li {
+  @apply absolute overflow-hidden border-4 border-white rounded-full shadow-xl;
+}
+.people-image li img {
+  @apply w-full;
+}
+.people-image li:nth-child(1) {
+  @apply left-1/2 top-4;
+  transform: translateX(-50%);
+  border: 6px solid #fff;
+  height: 130px;
+  width: 130px;
+  box-shadow: 0px 50px 80px 0px rgba(59, 14, 3, 0.12);
+}
+.people-image li:nth-child(2) {
+  @apply top-0 w-20 h-20;
+  left: 29.4%;
+}
+.people-image li:nth-child(3) {
+  right: 26.4%;
+  top: -5px;
+  height: 70px;
+  width: 70px;
+}
+.people-image li:nth-child(4) {
+  @apply w-20 h-20 left-40 top-20;
+}
+.people-image li:nth-child(5) {
+  @apply w-20 h-20 bottom-10;
+  left: 26.4%;
+}
+.people-image li:nth-child(6) {
+  right: 38%;
+  bottom: -20px;
+  height: 100px;
+  width: 100px;
+}
+.people-image li:nth-child(7) {
+  right: 85px;
+  bottom: 5px;
+  width: 90px;
+  height: 90px;
+}
+.people-image li:nth-child(8) {
+  left: 0;
+  bottom: 0;
+  border: 2px solid #fff;
+}
+.people-image li:nth-child(9) {
+  right: 22.3%;
+  bottom: 35%;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #fff;
+}
+.people-image li:nth-child(10) {
+  right: 0;
+  bottom: 145px;
+  height: 60px;
+  width: 60px;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .people-image li:nth-child(4) {
+    left: 95px;
+  }
+}
+@media (max-width: 576px) {
+  .people-image li:nth-child(2) {
+    left: 13%;
+  }
+  .people-image li:nth-child(3) {
+    right: 18%;
+  }
+}
+@media (max-width: 440px) {
+  .people-image li:nth-child(1) {
+    height: 100px;
+    width: 100px;
+  }
+  .people-image li:nth-child(4) {
+    left: 20px;
+  }
+  .people-image li:nth-child(5) {
+    left: 22.4%;
+    bottom: 55px;
+  }
+  .people-image li:nth-child(7) {
+    right: 25px;
+  }
+  .people-image li:nth-child(8) {
+    left: 10px;
+  }
+  .people-image li:nth-child(10) {
+    right: 20px;
+  }
+}
+
+.partical-animation {
+  @apply absolute bottom-0 left-0 w-full;
+  width: 100%;
+  height: 550px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.partical-animation li {
+  @apply absolute rounded-full;
+}
+.partical-animation li:nth-child(1) {
+  left: 165px;
+  top: 120px;
+}
+.partical-animation li:nth-child(2) {
+  @apply w-2 h-2 top-20;
+  left: 19%;
+  background: #fd9382;
+}
+.partical-animation li:nth-child(3) {
+  left: 19%;
+  bottom: 30%;
+  height: 10px;
+  width: 10px;
+  background: #fe97f3;
+}
+.partical-animation li:nth-child(3) {
+  left: 28%;
+  top: 35%;
+  height: 35px;
+  width: 35px;
+  background: #f3d5de;
+}
+.partical-animation li:nth-child(4) {
+  @apply w-3 h-3;
+  left: 27%;
+  bottom: 30%;
+  background: #83daed;
+}
+.partical-animation li:nth-child(5) {
+  @apply w-3 h-3 bg-yellow-500 left-1/3 bottom-1/2;
+}
+.partical-animation li:nth-child(6) {
+  @apply w-12 h-12 left-1/2 top-1/3;
+  background: #4edfda;
+}
+.partical-animation li:nth-child(7) {
+  right: 46%;
+  bottom: 27%;
+  height: 22px;
+  width: 22px;
+  background: #f39ab2;
+}
+.partical-animation li:nth-child(8) {
+  right: 46%;
+  bottom: 27%;
+  height: 22px;
+  width: 22px;
+  background: #f39ab2;
+}
+.partical-animation li:nth-child(9) {
+  @apply w-2 h-2 bg-red-300;
+  right: 40%;
+  bottom: 60%;
+}
+.partical-animation li:nth-child(10) {
+  @apply h-7 w-7;
+  right: 22%;
+  bottom: 30%;
+  background: #bff8c6;
+}
+.partical-animation li:nth-child(11) {
+  @apply w-4 h-4 bg-red-300;
+  right: 10%;
+  bottom: 55%;
+}
+.partical-animation li:nth-child(12) {
+  @apply right-16 bottom-40;
+}
+
+.related-doc-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.fun-fact1-counter {
+  color: #10b3d6;
+}
+.fun-fact2-counter {
+  color: #fbb631;
+}
+.fun-fact3-counter {
+  color: #fd5baf;
+}
+.fun-fact4-counter {
+  color: #11c296;
+}
+.fun-fact5-counter {
+  color: #9360fc;
+}
+
+.community-post {
+  @apply items-center justify-between block mb-5 bg-white md:flex;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px 0 rgba(2, 47, 57, 0.1);
+  padding: 23px 30px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.community-post:hover {
+  box-shadow: 0 24px 40px 0 rgba(2, 47, 57, 0.12);
+  border-color: #eef3f6;
+  transform: translateX(10px);
+}
+
+.about-journalism {
+  @apply relative overflow-hidden;
+  background: #fafcfd;
+}
+
+.light-header {
+  @apply absolute left-0 w-full text-center;
+  bottom: -23px;
+}
+
+.light-header .title-light {
+  @apply m-0 font-bold leading-none;
+  color: #eff4f7;
+  font-size: 60px;
+}
+@media (max-width: 768px) {
+  .light-header .title-light {
+    font-size: 30px;
+    bottom: -10px;
+  }
+}
+
+.journalism-content-wrapper {
+  max-width: 550px;
+  padding: 113px 0 65px;
+}
+
+.journalism-content-wrapper .quote {
+  margin-left: -20px;
+}
+
+.journalism-content-wrapper .journalism-title {
+  @apply mb-5 text-3xl font-bold leading-10;
+  color: #1d2746;
+}
+.journalism-content-wrapper p {
+  @apply mb-10 text-xl leading-9 text-gray-500;
+}
+.journalism-content-wrapper .journalism-info .name {
+  @apply m-0 text-base;
+  color: #1d2746;
+}
+.journalism-content-wrapper .journalism-info .designation {
+  font-size: 14px;
+  color: #6b707f;
+}
+
+.journalism-feature-image {
+  @apply relative mt-5;
+}
+@media (max-width: 992px) {
+  .journalism-feature-image {
+    @apply ml-5;
+  }
+}
+.journalism-feature-image:before {
+  @apply absolute font-semibold rounded-full left-5 top-16;
+  content: '';
+  height: 600px;
+  width: 600px;
+  background-image: linear-gradient(45deg, #ecf9fc 0%, #feefec 100%);
+  z-index: 1;
+}
+
+.journalism-feature-image img {
+  margin-left: -27px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 576px) {
+  .journalism-feature-image img {
+    max-width: 300px;
+  }
+}
+@media (max-width: 576px) {
+  .journalism-feature-image:before {
+    width: 300px;
+    height: 300px;
+  }
+}
+/* ================== Search Community======================= */
+
+.community-box {
+  @apply px-16 py-10 mb-8 overflow-hidden text-center bg-white border-gray-100 rounded-lg;
+  box-shadow: 0px 2px 3px 0px rgba(2, 47, 57, 0.14);
+  transition: all 0.3s ease-in-out;
+}
+.community-box:before {
+  @apply absolute top-0 left-0 w-full h-1 bg-transparent;
+  content: "";
+  transition: all 0.3s ease-in-out;
+}
+
+.community-box .community-content .com-title {
+  @apply font-normal text-gray-500 mb-7;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.community-box:hover {
+  box-shadow: 0px 40px 30px 0px rgba(2, 47, 57, 0.1);
+  transform: translateY(-5px);
+}
+.community-box:hover:before {
+  background: #10b3d6;
+}
+
+
+

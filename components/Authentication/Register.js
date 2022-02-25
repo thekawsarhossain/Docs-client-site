@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import Box from '@mui/material/Box'
@@ -33,10 +34,10 @@ const Register = () => {
             className="absolute bottom-0 right-0"
             alt="bottom ornament"
           />
-          <div className="flex justify-center ">
+          <div className=" ">
             <img
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/man_image.png"
-              className="absolute md:bottom-1/3"
+              className="absolute bottom-0 md:bottom-1/3"
               alt="man image with lock"
             />
           </div>
@@ -50,9 +51,9 @@ const Register = () => {
                   Already have an account?
                 </span>
                 <Link href="/login">
-                  <span className="cursor-pointer text-lightBlue underline">
+                  <a className="cursor-pointer text-lightBlue underline">
                     Login
-                  </span>
+                  </a>
                 </Link>
               </h5>
             </div>

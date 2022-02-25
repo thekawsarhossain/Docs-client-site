@@ -70,7 +70,7 @@ const AllDocs = () => {
                   className="tabImg"
                 />
                 <button onClick={() => toggleTab(1)} >
-                <span className="float-left hover:text-indigo-600">Elements</span>
+                <span className="float-left hover:text-indigo-600 ml-3">Elements</span>
                 </button>
               </Box>
             </AccordionSummary>
@@ -115,7 +115,7 @@ const AllDocs = () => {
                   className="tabImg"
                 />
                 <button onClick={() => toggleTab(5)} >
-                      <span className="float-left ">Content</span>
+                      <span className="float-left ml-3">Content</span>
                      
                     </button>
               </Box>
@@ -156,7 +156,7 @@ const AllDocs = () => {
                   className="tabImg"
                 />
                 <button onClick={() => toggleTab(8)} >
-                 <span className="float-left ">Shortcodes</span>
+                 <span className="float-left ml-3">Shortcodes</span>
                  </button>
               </Box>
             </AccordionSummary>
@@ -167,11 +167,11 @@ const AllDocs = () => {
                 <span className="float-left hover:text-indigo-600">Conditional Content</span>
                 </button>
                 </li>
-                {/* <li>
+                <li>
                 <button onClick={() => toggleTab(10)} >
                 <span className="float-left hover:text-indigo-600">Direction</span>
                 </button>
-                </li> */}
+                </li>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -196,13 +196,13 @@ const AllDocs = () => {
                   className="tabImg"
                 />
                 <button onClick={() => toggleTab(11)} >
-                      <span className="float-left ">Tips</span>
+                      <span className="float-left ml-3">Tips</span>
                      
                     </button>
               </Box>
             </AccordionSummary>
             <AccordionDetails>
-            {/* <Typography className="text-list">
+            <Typography className="text-list">
                 <li>
                 <button onClick={() => toggleTab(12)} >
                 <span className="float-left hover:text-indigo-600">Language Translations</span>
@@ -213,7 +213,7 @@ const AllDocs = () => {
                 <span className="float-left hover:text-indigo-600">Optimize Images</span>
                 </button>
                 </li>
-              </Typography> */}
+              </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -237,9 +237,8 @@ const AllDocs = () => {
                   className="tabImg"
                 />
                 <button onClick={() => toggleTab(14)} >
-                      <span className="float-left ">FAQ</span>
-                     
-                    </button>
+                 <span className="float-left ml-3">FAQ</span>
+                 </button>
               </Box>
             </AccordionSummary>
           </Accordion>
