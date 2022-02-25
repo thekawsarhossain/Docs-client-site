@@ -29,7 +29,9 @@ const BlogUploadMain = () => {
     setDocumentation(e)
   }
   const allTags = (e) => {
-    setTags(...e)
+    setTags(e)
+    console.log(...e)
+    console.log(tags)
   }
   const handleUpload = () => {
     const uploadData = {
@@ -49,9 +51,7 @@ const BlogUploadMain = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          window.alert(
-            'Thank you for your feedback. Your review have been submitted.'
-          )
+          window.alert('Your blog have been submitted.')
         }
       })
   }

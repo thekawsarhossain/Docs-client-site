@@ -6,17 +6,19 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import DemoBlog from './DemoBlog'
 
-const MainDetails = () => {
+const MainDetails = (props) => {
   return (
     <div style={{ backgroundColor: '#21242c' }}>
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            <video
-              src="https://res.cloudinary.com/dkbgqzl1e/video/upload/v1644901083/sas/1.1_Priori_Analysis_and_Posteriori_Testing_hozkij.mp4"
-              controls
-            ></video>
-            <DemoBlog></DemoBlog>
+            <video src={props.data.video} controls></video>
+            {/* <DemoBlog data={props.data}></DemoBlog> */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `${props.data.documentation}`,
+              }}
+            ></div>
             <div
               style={{ minHeight: '200px' }}
               className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
