@@ -572,3 +572,26 @@ button {
   margin: 0 20px;
   color: #253858;
 }
+
+/* ===================== Docs Footer css ================ */
+.footers-icon li {
+  margin-left: 25px;
+  color: #8d93a4;
+   border: 2px solid;
+   padding: 10px;
+   border-radius: 50%;
+}
+.footers-icon li:hover{
+  color: white;
+  background-color: #3636f8;
+  border: 2px solid #3636f8;
+}
+
+/* =================
+All docs css
+=================== */
+.description-list li{
+  list-style:decimal;
+  margin: 25px 0px 5px 0px;
+  font-weight: 600;
+}
