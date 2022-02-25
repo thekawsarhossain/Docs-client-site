@@ -11,6 +11,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+import blogSlice from './Slices/blogSlice'
 
 const persistConfig = {
   key: 'root',
@@ -18,11 +19,11 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, testingSlice)
+const persistedReducer = persistReducer(persistConfig, blogSlice)
 
 export const store = configureStore({
   reducer: {
-    testing: persistedReducer,
+    blogs: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
