@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
-body {
-  font-family: 'Arimo', sans-serif;
-}
+
+body{
+  font-family: 'Arimo', sans-serif;}
+
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
@@ -574,6 +575,30 @@ button {
   margin: 0 20px;
   color: #253858;
 }
+
+/* ===================== Docs Footer css ================ */
+.footers-icon li {
+  margin-left: 25px;
+  color: #8d93a4;
+   border: 2px solid;
+   padding: 10px;
+   border-radius: 50%;
+}
+.footers-icon li:hover{
+  color: white;
+  background-color: #3636f8;
+  border: 2px solid #3636f8;
+}
+
+/* =================
+All docs css
+=================== */
+.description-list li{
+  list-style:decimal;
+  margin: 25px 0px 5px 0px;
+  font-weight: 600;
+}
+
 .option {
   font-weight: normal;
   display: block;
@@ -976,5 +1001,6 @@ legend + * {
 .community-box:hover:before {
   background: #10b3d6;
 }
+
 
 
