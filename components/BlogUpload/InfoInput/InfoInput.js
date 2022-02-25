@@ -27,27 +27,35 @@ const InfoInput = (props) => {
     switch (event.target.value) {
       case 1:
         console.log('Creative')
+        props.category('Creative')
         break
       case 2:
         console.log('Inspiration')
+        props.category('Inspiration')
         break
       case 3:
         console.log('Lifestyle')
+        props.category('Lifestyle')
         break
       case 4:
         console.log('News')
+        props.category('News')
         break
       case 5:
         console.log('Photography')
+        props.category('Photography')
         break
       case 6:
         console.log('Skill')
+        props.category('Skill')
         break
       case 7:
         console.log('Tourist Tours')
+        props.category('Tourist Tours')
         break
       case 8:
         console.log('Inspire')
+        props.category('Inspire')
         break
     }
   }
@@ -105,6 +113,7 @@ const InfoInput = (props) => {
 
     props.imgLink(file.secure_url)
     setVideo(file.secure_url)
+    props.videoLink(file.secure_url)
     console.log(video)
     setLoading(false)
   }
