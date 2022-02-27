@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import testingSlice from './Slices/testingSlice'
+import { combineReducers } from 'redux'
 import storage from 'redux-persist/lib/storage'
 import {
   persistStore,
@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import blogSlice from './Slices/blogSlice'
+import userSlice from './Slices/userSlice'
 
 const persistConfig = {
   key: 'root',
@@ -19,11 +20,13 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, blogSlice)
+const rootReducer = combineReducers({ user: userSlice, blogs: blogSlice })
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
   reducer: {
-    blogs: persistedReducer,
+    reducers: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,10 +1,16 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
 import { Box } from '@mui/material'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
+import useFirebase from '../../Firebase/useFirebase'
 
 const Login = () => {
+  // router nextjs hook for routing
+  const router = useRouter()
+
+  // getting register function from use firebase here
+  const { signIn } = useFirebase()
+
   const {
     handleSubmit,
     register,
@@ -12,7 +18,7 @@ const Login = () => {
     formState: { errors },
   } = useForm()
   const submitHandler = (data) => {
-    console.log(data)
+    signIn(data?.email, data?.password, router)
     reset()
   }
 
@@ -26,7 +32,7 @@ const Login = () => {
 
       {/* images here  */}
       <div className="grid grid-cols-12 gap-4">
-        <div className="relative col-span-12 h-screen bg-blue-700 md:col-span-4 flex justify-center items-center">
+        <div className="relative col-span-12 flex h-screen items-center justify-center bg-blue-700 md:col-span-4">
           <img
             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/top_ornamate.png"
             className="absolute top-0 left-0"
