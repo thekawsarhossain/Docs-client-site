@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/link-passhref */
 import * as React from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -10,13 +8,39 @@ import Button from '@mui/material/Button'
 import List from '@mui/material/List'
 import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
-
+// import { useTheme } from 'next-themes'
+// import LightModeIcon from '@mui/icons-material/LightMode'
+// import DarkModeIcon from '@mui/icons-material/DarkMode'
+// import { useTheme } from '@emotion/react'
 const Navbar = () => {
+  // const { systemTheme, theme, setTheme } = useTheme()
+  // const [mounted, setMounted] = React.useState(false)
+  // React.useEffect(() => {
+  //   setMounted(true)
+  // }, [])
+  // const renderThemeChange = () => {
+  //   if (!mounted) return null
+
+  //   const curentTheme = theme === 'system' ? systemTheme : theme
+
+  //   if (current === 'dark') {
+  //     return (
+  //       <LightModeIcon
+  //         className="h-7 w-7"
+  //         role="button"
+  //         onClick={() => setTheme('light')}
+  //       />
+  //     )
+  //   } else {
+  //     ;<DarkModeIcon
+  //       className="h-7 w-7"
+  //       role="button"
+  //       onClick={() => setTheme('dark')}
+  //     />
+  //   }
+  // }
 
   const [state, setState] = React.useState({
     left: false,
@@ -97,8 +121,8 @@ const Navbar = () => {
   )
   return (
     <div>
-      <header className="absolute z-10 w-full text-gray-400 body-font">
-        <div className="container flex justify-between p-5 mx-auto ">
+      <header className="body-font absolute z-10 w-full text-gray-400">
+        <div className="container mx-auto flex justify-between p-5 ">
           <Link href="/">
             <a className="flex justify-center">
               <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
@@ -150,6 +174,7 @@ const Navbar = () => {
             <Link href="/login">
               <a className="title-btn">Log in</a>
             </Link>
+            {/* <div>{renderThemeChange()}</div> */}
           </nav>
           <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
             <React.Fragment key="left">

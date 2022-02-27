@@ -3,6 +3,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,jsx}',
     './components/**/*.{js,ts,jsx,jsx}',
   ],
+  darkMode: 'class',
   theme: {
     // এখানে এই extend এর ভিতরে আমরা আমাদের নিজেদের কোনো কালার বা ব্যাকগ্রাউন্ড কারার বা আরো কিছু ক্লাস কে মডিফাই করতে এখানে আমরা লিখবো ভুলেও আমরা আমরা extend এর বাইরে লিখবো না এতে আমাদের tailwind এর মেইন যেটাকে চেইঞ্জ করবো সেটা চলে যাবে মানে আমরা ব্যাবহার করতে পারবো না ।
     extend: {
@@ -27,6 +28,19 @@ module.exports = {
         lightBlue: '#4C4CF1',
         lightDark: '#131417',
         offwhite: '#F7F5F5',
+        Docy: {
+          Midnight: '#140b25',
+          Dark: '#2c303a',
+          AlmostBlack: '#131417',
+          White: '#FFF',
+          DarkLight: '#191a2e',
+          DarkGray: '#1d1e25',
+          Blurple: '#2d2dc0',
+          PrimaryBlue: '0000ff',
+          DarkM: '#1e293b',
+          CharcoalGray: '#635d5d',
+          DarkBlueGray: '#1f3341',
+        },
       },
     },
   },
