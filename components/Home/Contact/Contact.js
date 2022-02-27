@@ -19,8 +19,8 @@ const Contact = () => {
   return (
     <>
       <ContactBanner />
-      <Box sx={{ background: '#131417', color: 'white', py: 10 }}>
-        <Container sx={{ background: '#2C303A', p: 5 }}>
+      <Box sx={{ background: '#FFFFF', color: 'black', py: 10 }}>
+        <Container sx={{ background: '#fffff', p: 5 }}>
           <div className="grid grid-cols-12 gap-4 ">
             <div className="col-span-12 p-3 lg:col-span-6">
               <h2>Let’s get in touch</h2>
