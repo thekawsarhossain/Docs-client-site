@@ -24,7 +24,7 @@ const ForumSubBanner = () => {
        </Link> <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/></>
        <>Forums Communities</>
       </div>
-      <div className="time text-sm	">
+      <div className="time text-sm	hidden md:block">
         <p> <AccessTimeRoundedIcon  sx={{fontSize:'17px'}}/> Updated on Jan 10, 2022</p>
       </div>
       </div>

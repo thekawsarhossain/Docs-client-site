@@ -7,7 +7,7 @@ import fahad from '../../Images/fahad.jpg'
 import shihab from '../../Images/shihab.jpg'
 import kawser from '../../Images/kawsar.jpg'
 import rashidul from '../../Images/rashidul.png'
-import avatar6 from '../../Images/avatar-6.png'
+import abuBakker from '../../Images/abu-bakker.jpg'
 
 const TeamContent = () => {
   return (
@@ -36,77 +36,93 @@ const TeamContent = () => {
             </div>
           </div>
         </div>
-        <div className="grid justify-center grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 justify-center gap-4">
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-            <Image width="300" height="300" src={santo} className="mb-4" alt="" />
+              <Image
+                width="300"
+                height="300"
+                src={santo}
+                className="mb-4 object-cover"
+                alt=""
+              />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Rakibul Hasan</h5>
+                <h5 className="member-name m-0 text-base">Rakibul Hasan</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-              <Image width="300" height="300"
+              <Image
+                width="300"
+                height="300"
                 src={fahad}
-                className="mb-4"
+                className="mb-4 object-cover"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Monirul Islam</h5>
+                <h5 className="member-name m-0 text-base">Monirul Islam</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-            <Image width="300" height="300"
+              <Image
+                width="300"
+                height="300"
                 src={shihab}
-                className="mb-4"
+                className="mb-4 object-cover"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Shajibul Alam</h5>
+                <h5 className="member-name m-0 text-base">Shajibul Alam</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-            <Image width="300" height="300"
+              <Image
+                width="300"
+                height="300"
                 src={kawser}
-                className="mb-4"
+                className="mb-4 object-cover"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Kawsar Hossain</h5>
+                <h5 className="member-name m-0 text-base">Kawsar Hossain</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-            <Image width="300" height="300"
+              <Image
+                width="300"
+                height="300"
                 src={rashidul}
-                className="mb-4"
+                className="mb-4 object-cover"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Rashedul Islam</h5>
+                <h5 className="member-name m-0 text-base">Rashedul Islam</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>
           </div>
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <article className="mb-8">
-            <Image width="300" height="300"
-                src={avatar6}
-                className="mb-4"
+              <Image
+                width="300"
+                height="300"
+                src={abuBakker}
+                className="mb-4 object-cover"
                 alt=""
               />
               <div className="member-info">
-                <h5 className="m-0 text-base member-name">Abu Bakker</h5>
+                <h5 className="member-name m-0 text-base">Abu Bakker</h5>
                 <p className="text-sm text-gray-500">MERN-Stack Developer</p>
               </div>
             </article>

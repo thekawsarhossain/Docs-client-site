@@ -1,6 +1,8 @@
+import Image from 'next/image'
+
 const ProfileBlogs = () => {
   return (
-    <div>
+    <div style={{ background: '#2C303A' }}>
       <div className="scisco-masonry-grid" style={{ opacity: '1' }}>
         <div className="scisco-two-columns" data-columns="2">
           <div className="scisco-column size-1of2">
@@ -8,11 +10,11 @@ const ProfileBlogs = () => {
               <div className="card-masonry">
                 <div className="card">
                   <a
-                    className="card-featured-img"
+                    className="card-featured-Image"
                     href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards/"
                   >
-                    <img
-                      className="card-img-top"
+                    <Image
+                      className="card-Image-top"
                       src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/9-1024x683.jpg"
                       alt="How Can My Business Win Awards?"
                     />
@@ -34,7 +36,7 @@ const ProfileBlogs = () => {
                       <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                         <div className="scisco-verified">
                           <i className="fas fa-check" title="Verified user"></i>
-                          <img
+                          <Image
                             className="avatar"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
                             width="80"
@@ -69,11 +71,11 @@ const ProfileBlogs = () => {
               <div className="card-masonry">
                 <div className="card">
                   <a
-                    className="card-featured-img"
+                    className="card-featured-Image"
                     href="https://wordpress-288344-1596643.cloudwaysapps.com/gdpr-misconceptions-explained/"
                   >
-                    <img
-                      className="card-img-top"
+                    <Image
+                      className="card-Image-top"
                       src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/7-1024x683.jpg"
                       alt="GDPR Misconceptions Explained"
                     />
@@ -95,7 +97,7 @@ const ProfileBlogs = () => {
                       <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                         <div className="scisco-verified">
                           <i className="fas fa-check" title="Verified user"></i>
-                          <img
+                          <Image
                             className="avatar"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
                             width="80"
@@ -132,11 +134,11 @@ const ProfileBlogs = () => {
               <div className="card-masonry">
                 <div className="card">
                   <a
-                    className="card-featured-img"
+                    className="card-featured-Image"
                     href="https://wordpress-288344-1596643.cloudwaysapps.com/a-new-era-of-technology/"
                   >
-                    <img
-                      className="card-img-top"
+                    <Image
+                      className="card-Image-top"
                       src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/4-1024x683.jpg"
                       alt="A New Era of Technology"
                     />
@@ -158,7 +160,7 @@ const ProfileBlogs = () => {
                       <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                         <div className="scisco-verified">
                           <i className="fas fa-check" title="Verified user"></i>
-                          <img
+                          <Image
                             className="avatar"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
                             width="80"
@@ -193,11 +195,11 @@ const ProfileBlogs = () => {
               <div className="card-masonry">
                 <div className="card">
                   <a
-                    className="card-featured-img"
+                    className="card-featured-Image"
                     href="https://wordpress-288344-1596643.cloudwaysapps.com/heres-which-commerce-markets-to-watch/"
                   >
-                    <img
-                      className="card-img-top"
+                    <Image
+                      className="card-Image-top"
                       src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/2-1024x683.jpg"
                       alt="Commerce Markets to Watch"
                     />
@@ -219,7 +221,7 @@ const ProfileBlogs = () => {
                       <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                         <div className="scisco-verified">
                           <i className="fas fa-check" title="Verified user"></i>
-                          <img
+                          <Image
                             className="avatar"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
                             width="80"

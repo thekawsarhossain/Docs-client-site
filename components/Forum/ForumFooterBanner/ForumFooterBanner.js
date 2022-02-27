@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {Box, Container, Grid } from '@mui/material'
 import Link from 'next/link'
 
@@ -21,7 +22,7 @@ const ForumFooterBanner = () => {
                     lineHeight: '1.2',
                     fontWeight: '500',
                   }}
-                  className="action-title"
+                  className="action-title hidden md:block"
                 >
                   New to Communities?
                 </h2>

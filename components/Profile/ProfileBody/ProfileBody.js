@@ -1,6 +1,13 @@
 import { Container, Grid } from '@mui/material'
 import ProfileAbout from './ProfileAbout'
 // import ProfileBlogs from './ProfileBlogs'
+import PersonIcon from '@mui/icons-material/Person'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded'
+import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded'
+import ProfileFllowers from './ProfileFllowers'
+import ProfileFllowing from './ProfileFllowing'
 
 const ProfileBody = () => {
   return (
@@ -9,7 +16,7 @@ const ProfileBody = () => {
         style={{
           padding: '5rem 0',
           overflow: 'hidden',
-          // background: 'rgb(44, 48, 58)',
+          background: '#131417',
         }}
         id="scisco-main-wrapper"
       >
@@ -25,7 +32,7 @@ const ProfileBody = () => {
                         listStyle: 'none',
                         padding: '0',
                         margin: '0',
-                        background: '#fff',
+                        background: '#2C303A',
                         border: '0',
                         borderRadius: '0.25rem',
                         boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
@@ -52,14 +59,13 @@ const ProfileBody = () => {
                           }}
                           className="profile-btn"
                         >
-                          <i
-                            style={{
+                          <PersonIcon
+                            sx={{
                               margin: '0',
                               minWidth: '1.75rem',
                               color: '#FFF',
                             }}
-                            className="fa-solid fa-user"
-                          ></i>
+                          />
                           About
                         </a>
                       </li>
@@ -82,14 +88,13 @@ const ProfileBody = () => {
                           }}
                           className="profile-btn"
                         >
-                          <i
-                            style={{
+                          <EmojiEventsIcon
+                            sx={{
                               margin: '0',
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            className="fa-solid fa-trophy"
-                          ></i>
+                          />
                           Reputations
                         </a>
                       </li>
@@ -112,14 +117,13 @@ const ProfileBody = () => {
                           }}
                           className="profile-btn"
                         >
-                          <i
-                            style={{
+                          <FacebookRoundedIcon
+                            sx={{
                               margin: '0',
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            className="fa-brands fa-facebook-f"
-                          ></i>
+                          />
                           Blog
                           <span
                             style={{
@@ -155,14 +159,13 @@ const ProfileBody = () => {
                           }}
                           className="profile-btn"
                         >
-                          <i
-                            style={{
+                          <PeopleAltRoundedIcon
+                            sx={{
                               margin: '0',
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            className="fa-solid fa-user-group"
-                          ></i>
+                          />
                           Followers
                           <span
                             style={{
@@ -198,14 +201,13 @@ const ProfileBody = () => {
                           }}
                           className="profile-btn"
                         >
-                          <i
-                            style={{
+                          <RemoveRedEyeRoundedIcon
+                            sx={{
                               margin: '0',
                               minWidth: '1.75rem',
                               color: '#0a48b3',
                             }}
-                            className="fa-solid fa-eye"
-                          ></i>
+                          />{' '}
                           Following
                           <span
                             style={{
@@ -226,8 +228,10 @@ const ProfileBody = () => {
                   </div>
                 </div>
                 <div className="col-span-12 pl-8 lg:col-span-9">
-                  <ProfileAbout />
+                  {/* <ProfileAbout /> */}
                   {/* <ProfileBlogs /> */}
+                  {/* <ProfileFllowers /> */}
+                  <ProfileFllowing />
                 </div>
               </div>
             </div>

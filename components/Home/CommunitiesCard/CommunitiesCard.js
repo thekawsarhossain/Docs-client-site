@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React from 'react'
 import Image from 'next/image'
 import { Box, Container } from '@mui/material'
