@@ -13,7 +13,8 @@ const Testimonial = () => {
     fetch(`./slider.json`)
       .then((res) => res.json())
       .then((data) => setSliders(data))
-  })
+  }, [])
+
   const settings = {
     dots: true,
     infinite: true,
@@ -28,13 +29,16 @@ const Testimonial = () => {
       <Container>
         <Slider {...settings}>
           {sliders.map((slider) => (
-            <div key={slider.title} className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12">
+            <div
+              key={slider.title}
+              className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12"
+            >
               <div className="-m-4 mx-auto flex  flex-wrap justify-between">
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow ">
-                    <Typography variant='h4' sx={{color:'white'}}>
-                      {slider.title}
+                      <Typography variant="h4" sx={{ color: 'white' }}>
+                        {slider.title}
                       </Typography>
                       <h4 className="mt-6 font-bold text-white">
                         {slider.name}

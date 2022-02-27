@@ -17,7 +17,7 @@ const MainDetails = () => {
   const dispatch = useDispatch()
 
   // getting the match blog with id
-  const blog = useSelector((state) => state?.blogs?.blog)
+  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   // demo user here
   const name = 'Kawsar Hossain'
@@ -153,10 +153,10 @@ const MainDetails = () => {
             {/* comments section start from here   */}
             <div className="py-8 text-white">
               <h2 className="py-6 text-3xl font-bold">
-                {blog?.comments.length === 0 ? (
+                {blog?.comments?.length === 0 ? (
                   'There is no comments'
                 ) : (
-                  <span> Total comments - {blog?.comments.length}</span>
+                  <span> Total comments - {blog?.comments?.length}</span>
                 )}
               </h2>
               {blog?.comments?.map((comment) => (
