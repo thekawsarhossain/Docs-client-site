@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Avatar } from '@mui/material'
 import avatar from '../../../Images/avatar.png'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   // getting user info here
