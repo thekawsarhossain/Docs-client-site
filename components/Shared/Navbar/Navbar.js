@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/link-passhref */
+/* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
