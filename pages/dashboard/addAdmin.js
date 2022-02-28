@@ -1,4 +1,5 @@
 import React from 'react'
+import AddAdmin from '../../components/Dashboard/AddAdmin'
 import Sidebar from '../../components/Dashboard/Sidebar'
 
 const addAdmin = () => {
@@ -7,7 +8,7 @@ const addAdmin = () => {
     <div className="flex w-full items-stretch bg-gray-200">
       <Sidebar />
       <div className="manageCourses__items section-padding page-content__body m-5 min-h-screen w-full bg-white p-5 transition-all">
-      <h2>This is new admin</h2>
+      <AddAdmin />
       </div>
     </div>
   </div>
