@@ -11,8 +11,7 @@ const BlogList = () => {
   const dispatch = useDispatch()
 
   // getting all blogs from redux here
-  const blogs = useSelector((state) => state?.blogs?.blogs[1])
-  console.log(blogs)
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs[2])
 
   return (
     <div className="grid grid-cols-12 gap-6">

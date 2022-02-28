@@ -34,35 +34,41 @@ const useFirebase = () => {
   const facebookProvider = new FacebookAuthProvider()
 
   // create a new user using  email and password
-  const createUser = (email, password, name, navigate) => {
+  const createUser = (email, password, name, router) => {
     updateUserProfile(name)
-    return createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        updateUserProfile(name)
+        dispatch(ADD_USER(result.user))
+        router.replace('/')
+      })
+      .catch((error) => dispatch(ADD_ERROR(error.message)))
+      .finally(() => dispatch(SET_STATUS(false)))
   }
 
   // sign in existing user here
-  const signIn = (email, password, navigate) => {
+  const signIn = (email, password, router) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         dispatch(ADD_USER(result.user))
-        dispatch(ADD_ERROR(''))
-        // navigate('/home')
+        router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
 
   // getting the current user here
-  //   useEffect(() => {
-  //     onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         dispatch(ADD_USER(user))
-  //         dispatch(ADD_ERROR(''))
-  //       } else {
-  //         dispatch(REMOVE_USER({}))
-  //       }
-  //       dispatch(SET_STATUS(false))
-  //     })
-  //   }, [auth])
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(ADD_USER(user))
+        // dispatch(ADD_ERROR(''))
+      } else {
+        dispatch(REMOVE_USER({}))
+      }
+      dispatch(SET_STATUS(false))
+    })
+  }, [auth, dispatch])
 
   // update user profile || name here
   const updateUserProfile = (name) => {
@@ -89,30 +95,17 @@ const useFirebase = () => {
   //   }
 
   // google sign in here
-  //   const signInWithGoogle = (navigate) => {
-  //     setLoading(true)
-  //     signInWithPopup(auth, googleProvider)
-  //       .then((result) => {
-  //         setUser(result.user)
-  //         setError('')
-  //         navigate('/home')
-  //       })
-  //       .catch((error) => setError(error.message))
-  //       .finally(() => setLoading(false))
-  //   }
-
-  // facebook sign in here
-  //   const signInWithFacebook = (navigate) => {
-  //     setLoading(true)
-  //     signInWithPopup(auth, facebookProvider)
-  //       .then((result) => {
-  //         setUser(result.user)
-  //         setError('')
-  //         navigate('/home')
-  //       })
-  //       .catch((error) => setError(error.message))
-  //       .finally(() => setLoading(false))
-  //   }
+  const signInWithGoogle = (router) => {
+    setLoading(true)
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        setUser(result.user)
+        dispatch(ADD_USER(result.user))
+        router.replace('/')
+      })
+      .catch((error) => dispatch(ADD_ERROR(error.message)))
+      .finally(() => dispatch(SET_STATUS(false)))
+  }
 
   // log out user here
   const logoutUser = () => {
@@ -126,6 +119,7 @@ const useFirebase = () => {
     createUser,
     signIn,
     logoutUser,
+    signInWithGoogle,
   }
 }
 
