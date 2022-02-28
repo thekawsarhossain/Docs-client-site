@@ -16,21 +16,20 @@ const ProfileAbout = () => {
                 backgroundColor: '#2dce89',
                 boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
               }}
-              className="scisco-user-box flex items-stretch overflow-hidden rounded p-0 text-white"
+              className="flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Blurple"
             >
               <div
                 style={{
                   minWidth: '65px',
                   borderRight: '1px solid rgba(255,255,255,.2)',
                 }}
-                className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
+                className="flex items-center justify-center p-0 text-2xl"
               >
                 <SmsIcon />
               </div>
               <div
-                className="scisco-user-box-info flex p-4"
+                className="flex flex-col p-4"
                 style={{
-                  flexDirection: 'column',
                   flexBasis: 'auto',
                 }}
               >
@@ -45,23 +44,22 @@ const ProfileAbout = () => {
                 backgroundColor: '#d62828',
                 boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
               }}
-              className="scisco-user-box flex items-stretch overflow-hidden rounded p-0 text-white"
+              className=" flex items-stretch overflow-hidden rounded p-0 text-white"
             >
               <div
                 style={{
                   minWidth: '65px',
                   borderRight: '1px solid rgba(255,255,255,.2)',
                 }}
-                className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
+                className="flex items-center justify-center p-0 text-2xl"
               >
                 <QuestionMarkIcon />
               </div>
               <div
                 style={{
-                  flexDirection: 'column',
                   flexBasis: 'auto',
                 }}
-                className="scisco-user-box-info flex p-4"
+                className="flex flex-col p-4"
               >
                 <span className="font-bold">3 Questions</span>{' '}
                 <span className="text-sm">0 Unanswered</span>
@@ -87,10 +85,9 @@ const ProfileAbout = () => {
               </div>
               <div
                 style={{
-                  flexDirection: 'column',
                   flexBasis: 'auto',
                 }}
-                className="scisco-user-box-info flex p-4"
+                className="scisco-user-box-info flex flex-col p-4"
               >
                 <span className="font-bold">64 Reputation</span>{' '}
                 <span className="text-sm">Member since: Nov 2020</span>
@@ -101,18 +98,15 @@ const ProfileAbout = () => {
       </div>
       <div
         style={{
-          background: '#2C303A',
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
-          borderRadius: '0.25rem',
-          color: '#fff',
         }}
-        className="scisco-user-table-wrapper"
+        className="rounded bg-Docy-Dark text-white"
       >
-        <div className="scisco-user-table user-name-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className=" flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
           <div className="scisco-user-table-right">John Doe</div>
         </div>
-        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 dark:border-Docy-Blurple">
           <div className="scisco-user-table-left">Age</div>
           <div className="scisco-user-table-right">34</div>
         </div>
@@ -150,18 +144,10 @@ const ProfileAbout = () => {
           >
             <a
               style={{
-                color: '#fff',
                 backgroundColor: '#3b5998',
-                width: '36px',
-                height: '36px',
-                lineHeight: '36px',
-                display: ' block',
-                textAlign: 'center',
-                fontSize: '18px',
-                borderRadius: '100%',
                 transition: 'transform .2s ease-in-out',
               }}
-              className="scisco-social-btn btn-facebook"
+              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
               href="#"
               target="_blank"
             >
@@ -177,18 +163,10 @@ const ProfileAbout = () => {
           >
             <a
               style={{
-                color: '#fff',
                 backgroundColor: '#1da1f2',
-                width: '36px',
-                height: '36px',
-                lineHeight: '36px',
-                display: ' block',
-                textAlign: 'center',
-                fontSize: '18px',
-                borderRadius: '100%',
                 transition: 'transform .2s ease-in-out',
               }}
-              className="scisco-social-btn btn-twitter"
+              className=" block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
               href="#"
               target="_blank"
             >
@@ -204,18 +182,10 @@ const ProfileAbout = () => {
           >
             <a
               style={{
-                color: '#fff',
                 backgroundColor: '#e1306c',
-                width: '36px',
-                height: '36px',
-                lineHeight: '36px',
-                display: ' block',
-                textAlign: 'center',
-                fontSize: '18px',
-                borderRadius: '100%',
                 transition: 'transform .2s ease-in-out',
               }}
-              className="scisco-social-btn btn-instagram"
+              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
               href="#"
               target="_blank"
             >
@@ -231,18 +201,10 @@ const ProfileAbout = () => {
           >
             <a
               style={{
-                color: '#fff',
                 backgroundColor: '#1da1f2',
-                width: '36px',
-                height: '36px',
-                lineHeight: '36px',
-                display: ' block',
-                textAlign: 'center',
-                fontSize: '18px',
-                borderRadius: '100%',
                 transition: 'transform .2s ease-in-out',
               }}
-              className="scisco-social-btn btn-vimeo-v"
+              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
               href="#"
               target="_blank"
             >

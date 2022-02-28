@@ -11,37 +11,42 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { Avatar } from '@mui/material'
 import avatar from '../../../Images/avatar.png'
 import { useSelector } from 'react-redux'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { useTheme } from 'next-themes'
 
 const Navbar = () => {
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
-  // const { systemTheme, theme, setTheme } = useTheme()
-  // const [mounted, setMounted] = React.useState(false)
-  // React.useEffect(() => {
-  //   setMounted(true)
-  // }, [])
-  // const renderThemeChange = () => {
-  //   if (!mounted) return null
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+  const renderThemeChange = () => {
+    if (!mounted) return null
 
-  //   const curentTheme = theme === 'system' ? systemTheme : theme
+    const curentTheme = theme === 'system' ? systemTheme : theme
 
-  //   if (current === 'dark') {
-  //     return (
-  //       <LightModeIcon
-  //         className="h-7 w-7"
-  //         role="button"
-  //         onClick={() => setTheme('light')}
-  //       />
-  //     )
-  //   } else {
-  //     ;<DarkModeIcon
-  //       className="h-7 w-7"
-  //       role="button"
-  //       onClick={() => setTheme('dark')}
-  //     />
-  //   }
-  // }
+    if (curentTheme === 'dark') {
+      return (
+        <LightModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('light')}
+        />
+      )
+    } else {
+      return (
+        <DarkModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('dark')}
+        />
+      )
+    }
+  }
 
   const [state, setState] = React.useState({
     left: false,
@@ -186,7 +191,7 @@ const Navbar = () => {
                 <a className="title-btn">Login</a>
               </Link>
             )}
-
+            {renderThemeChange()}
           </nav>
           <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
             <React.Fragment key="left">
