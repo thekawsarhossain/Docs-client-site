@@ -57,8 +57,8 @@ const Sidebar = () => {
                 alt="Admin logo"
               />
             </div>
-            <h3 className="text-lg font-bold">SH Shakib</h3>
-            <p>shshakib7969@gmail.com</p>
+            <h3 className="text-lg font-bold">Admin</h3>
+            <p>admin@gmail.com</p>
           </div>
           <Navigation
             activeItemId={router.pathname}

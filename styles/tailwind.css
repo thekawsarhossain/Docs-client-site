@@ -3,9 +3,31 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
 body {
   font-family: 'Arimo', sans-serif;
 }
+
+/* selection Start */
+*::selection {
+  background: linear-gradient(#140b25, #1f3341);
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#140b25, #1f3341);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+/* selection End */
 
 /* এখানে আমরা এইভাবে একটা ক্লাস নেইম দিয়ে এর ভিতরে আমরা অ্যাপ্লাই দিয়ে আমাদের টাইলওয়িন্দ ক্লাস গুলা দিয়ে দিব পরে ওইখানে মানে যেখানে আমরা  ক্লাস গুলা ব্যাবহার করতে ছিলাম সেখানে শুধু এখানের যে কাস্টম একটা কল দিব সেইটা দিয়ে দিলেই হবে  */
 @layer components {
@@ -574,6 +596,30 @@ button {
   margin: 0 20px;
   color: #253858;
 }
+
+/* ===================== Docs Footer css ================ */
+.footers-icon li {
+  margin-left: 25px;
+  color: #8d93a4;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 50%;
+}
+.footers-icon li:hover {
+  color: white;
+  background-color: #3636f8;
+  border: 2px solid #3636f8;
+}
+
+/* =================
+All docs css
+=================== */
+.description-list li {
+  list-style: decimal;
+  margin: 25px 0px 5px 0px;
+  font-weight: 600;
+}
+
 .option {
   font-weight: normal;
   display: block;
@@ -585,7 +631,7 @@ button {
 }
 legend + * {
   clear: left;
-  }
+}
 
 /*=========================== Help Desk ================================== */
 /*================ Help Desk Banner =============== */
@@ -621,7 +667,7 @@ legend + * {
 }
 
 .hd-banner-support .banner-content-wrapper .banner-search-form {
-  @apply flex mx-auto my-0 bg-white shadow-lg;
+  @apply mx-auto my-0 flex bg-white shadow-lg;
   max-width: 770px;
   border-radius: 30px;
 }
@@ -635,7 +681,7 @@ legend + * {
 }
 
 .people-image {
-  @apply absolute w-full left-1/2;
+  @apply absolute left-1/2 w-full;
   height: 320px;
   max-width: 1250px;
   left: 50%;
@@ -654,7 +700,7 @@ legend + * {
   }
 }
 .people-image li {
-  @apply absolute overflow-hidden border-4 border-white rounded-full shadow-xl;
+  @apply absolute overflow-hidden rounded-full border-4 border-white shadow-xl;
 }
 .people-image li img {
   @apply w-full;
@@ -668,7 +714,7 @@ legend + * {
   box-shadow: 0px 50px 80px 0px rgba(59, 14, 3, 0.12);
 }
 .people-image li:nth-child(2) {
-  @apply top-0 w-20 h-20;
+  @apply top-0 h-20 w-20;
   left: 29.4%;
 }
 .people-image li:nth-child(3) {
@@ -678,10 +724,10 @@ legend + * {
   width: 70px;
 }
 .people-image li:nth-child(4) {
-  @apply w-20 h-20 left-40 top-20;
+  @apply left-40 top-20 h-20 w-20;
 }
 .people-image li:nth-child(5) {
-  @apply w-20 h-20 bottom-10;
+  @apply bottom-10 h-20 w-20;
   left: 26.4%;
 }
 .people-image li:nth-child(6) {
@@ -768,7 +814,7 @@ legend + * {
   top: 120px;
 }
 .partical-animation li:nth-child(2) {
-  @apply w-2 h-2 top-20;
+  @apply top-20 h-2 w-2;
   left: 19%;
   background: #fd9382;
 }
@@ -787,16 +833,16 @@ legend + * {
   background: #f3d5de;
 }
 .partical-animation li:nth-child(4) {
-  @apply w-3 h-3;
+  @apply h-3 w-3;
   left: 27%;
   bottom: 30%;
   background: #83daed;
 }
 .partical-animation li:nth-child(5) {
-  @apply w-3 h-3 bg-yellow-500 left-1/3 bottom-1/2;
+  @apply left-1/3 bottom-1/2 h-3 w-3 bg-yellow-500;
 }
 .partical-animation li:nth-child(6) {
-  @apply w-12 h-12 left-1/2 top-1/3;
+  @apply left-1/2 top-1/3 h-12 w-12;
   background: #4edfda;
 }
 .partical-animation li:nth-child(7) {
@@ -814,7 +860,7 @@ legend + * {
   background: #f39ab2;
 }
 .partical-animation li:nth-child(9) {
-  @apply w-2 h-2 bg-red-300;
+  @apply h-2 w-2 bg-red-300;
   right: 40%;
   bottom: 60%;
 }
@@ -825,7 +871,7 @@ legend + * {
   background: #bff8c6;
 }
 .partical-animation li:nth-child(11) {
-  @apply w-4 h-4 bg-red-300;
+  @apply h-4 w-4 bg-red-300;
   right: 10%;
   bottom: 55%;
 }
@@ -855,7 +901,7 @@ legend + * {
 }
 
 .community-post {
-  @apply items-center justify-between block mb-5 bg-white md:flex;
+  @apply mb-5 block items-center justify-between bg-white md:flex;
   border-radius: 6px;
   box-shadow: 0 2px 8px 0 rgba(2, 47, 57, 0.1);
   padding: 23px 30px;
@@ -925,7 +971,7 @@ legend + * {
   }
 }
 .journalism-feature-image:before {
-  @apply absolute font-semibold rounded-full left-5 top-16;
+  @apply absolute left-5 top-16 rounded-full font-semibold;
   content: '';
   height: 600px;
   width: 600px;
@@ -953,18 +999,18 @@ legend + * {
 /* ================== Search Community======================= */
 
 .community-box {
-  @apply px-16 py-10 mb-8 overflow-hidden text-center bg-white border-gray-100 rounded-lg;
+  @apply mb-8 overflow-hidden rounded-lg border-gray-100 bg-white px-16 py-10 text-center;
   box-shadow: 0px 2px 3px 0px rgba(2, 47, 57, 0.14);
   transition: all 0.3s ease-in-out;
 }
 .community-box:before {
-  @apply absolute top-0 left-0 w-full h-1 bg-transparent;
-  content: "";
+  @apply absolute top-0 left-0 h-1 w-full bg-transparent;
+  content: '';
   transition: all 0.3s ease-in-out;
 }
 
 .community-box .community-content .com-title {
-  @apply font-normal text-gray-500 mb-7;
+  @apply mb-7 font-normal text-gray-500;
   font-size: 18px;
   line-height: 28px;
 }
@@ -976,4 +1022,3 @@ legend + * {
 .community-box:hover:before {
   background: #10b3d6;
 }
-

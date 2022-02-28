@@ -22,7 +22,7 @@ const ForumFooterBanner = () => {
                     lineHeight: '1.2',
                     fontWeight: '500',
                   }}
-                  className="action-title"
+                  className="action-title hidden md:block"
                 >
                   New to Communities?
                 </h2>

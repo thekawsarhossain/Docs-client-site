@@ -4,17 +4,13 @@ const ProfileFllowers = () => {
     <div>
       <form
         style={{
-          position: 'relative',
-          padding: '1.5rem',
-          border: '0',
-          marginBottom: '2.5rem',
           backgroundColor: '#2C303A',
-          borderRadius: '0.25rem',
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
         role="search"
         method="get"
         id="scisco-user-search-form"
+        className="relative mb-10 rounded-md border-0 p-6"
       >
         <div
           style={{ marginRight: '-10px', marginLeft: '-10px' }}
