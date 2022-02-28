@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @next/next/link-passhref */
 import * as React from 'react'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
@@ -10,37 +8,45 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
-// import { useTheme } from 'next-themes'
-// import LightModeIcon from '@mui/icons-material/LightMode'
-// import DarkModeIcon from '@mui/icons-material/DarkMode'
-// import { useTheme } from '@emotion/react'
+import { Avatar } from '@mui/material'
+import avatar from '../../../Images/avatar.png'
+import { useSelector } from 'react-redux'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { useTheme } from 'next-themes'
+
 const Navbar = () => {
-  // const { systemTheme, theme, setTheme } = useTheme()
-  // const [mounted, setMounted] = React.useState(false)
-  // React.useEffect(() => {
-  //   setMounted(true)
-  // }, [])
-  // const renderThemeChange = () => {
-  //   if (!mounted) return null
+  // getting user info here
+  const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
-  //   const curentTheme = theme === 'system' ? systemTheme : theme
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+  const renderThemeChange = () => {
+    if (!mounted) return null
 
-  //   if (current === 'dark') {
-  //     return (
-  //       <LightModeIcon
-  //         className="h-7 w-7"
-  //         role="button"
-  //         onClick={() => setTheme('light')}
-  //       />
-  //     )
-  //   } else {
-  //     ;<DarkModeIcon
-  //       className="h-7 w-7"
-  //       role="button"
-  //       onClick={() => setTheme('dark')}
-  //     />
-  //   }
-  // }
+    const curentTheme = theme === 'system' ? systemTheme : theme
+
+    if (curentTheme === 'dark') {
+      return (
+        <LightModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('light')}
+        />
+      )
+    } else {
+      return (
+        <DarkModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('dark')}
+        />
+      )
+    }
+  }
 
   const [state, setState] = React.useState({
     left: false,
@@ -109,13 +115,17 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/login">
-          <ListItem button>
-            <ListItemText>
-              <span>Log in</span>
-            </ListItemText>
-          </ListItem>
-        </Link>
+        {user?.email ? (
+          <Avatar alt="avatar" src={user?.photoURL ? user?.photoURL : avatar} />
+        ) : (
+          <Link href="/login">
+            <ListItem button>
+              <ListItemText>
+                <span>Log in</span>
+              </ListItemText>
+            </ListItem>
+          </Link>
+        )}
       </List>
     </Box>
   )
@@ -171,10 +181,17 @@ const Navbar = () => {
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
-            <Link href="/login">
-              <a className="title-btn">Log in</a>
-            </Link>
-            {/* <div>{renderThemeChange()}</div> */}
+            {user?.email ? (
+              <Avatar
+                alt="avatar"
+                src={user?.photoURL ? user?.photoURL : avatar}
+              />
+            ) : (
+              <Link href="/login">
+                <a className="title-btn">Login</a>
+              </Link>
+            )}
+            {renderThemeChange()}
           </nav>
           <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
             <React.Fragment key="left">

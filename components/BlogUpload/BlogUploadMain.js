@@ -16,6 +16,10 @@ const BlogUploadMain = () => {
   const [categoryName, setCategoryName] = useState('')
   const [documentation, setDocumentation] = useState('')
   const [tags, setTags] = useState([])
+  const [title, setTitle] = useState('')
+  const blogTitle = (e) => {
+    setTitle(e)
+  }
   const imgLink = (e) => {
     setImageLink(e)
   }
@@ -34,12 +38,20 @@ const BlogUploadMain = () => {
     console.log(tags)
   }
   const handleUpload = () => {
+    if (!title || !imageLink || !categoryName || !documentation || !tags) {
+      alert(
+        'Title, Thumbnail image, Category selection, Documentation or description writing, Tags giving are required. If any of those missing you can not submit you blog or documentation. Please enter the date if anyone is missing. Thank you.'
+      )
+      return
+    }
     const uploadData = {
+      title: title,
       image: imageLink,
       video: video,
       category: categoryName,
       documentation: documentation,
       tags: tags,
+      comment: [],
     }
     fetch('https://enigmatic-atoll-27842.herokuapp.com/blogs', {
       method: 'POST',
@@ -59,6 +71,7 @@ const BlogUploadMain = () => {
     <div>
       <HeadSection></HeadSection>
       <InfoInput
+        blogTitle={blogTitle}
         imgLink={imgLink}
         videoLink={videoLink}
         category={category}
