@@ -12,6 +12,7 @@ const BlogList = () => {
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.blogs?.blogs[1])
+  console.log(blogs)
 
   return (
     <div className="grid grid-cols-12 gap-6">
