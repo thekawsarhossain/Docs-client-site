@@ -8,8 +8,20 @@ import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded'
 import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded'
 import ProfileFllowers from './ProfileFllowers'
 import ProfileFllowing from './ProfileFllowing'
+import { useState } from 'react'
+import ProfileBlogs from './ProfileBlogs'
 
 const ProfileBody = () => {
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+  const [toggleState, setToggleState] = useState(1)
+
+  const toggleTab = (index) => {
+    setToggleState(index)
+  }
   return (
     <div>
       <main
@@ -25,40 +37,17 @@ const ProfileBody = () => {
             <div id="ap-user" className="ap-row m-0 p-0">
               <div className="grid grid-cols-12">
                 <div id="ap-user-nav" className="col-span-12 lg:col-span-3">
-                  <div className="mb-8" id="scisco-user-menu-wrapper">
-                    <div className="clearfix"></div>
-                    <ul
-                      style={{
-                        listStyle: 'none',
-                        padding: '0',
-                        margin: '0',
-                        background: '#2C303A',
-                        border: '0',
-                        borderRadius: '0.25rem',
-                        boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
-                        display: 'block',
-                      }}
-                      className="ap-tab-nav clearfix "
-                    >
-                      <li className="ap-menu-about active">
-                        <a
-                          style={{
-                            background: 'none',
-                            border: '0',
-                            borderBottom: '1px solid rgba(0,0,0,.1)',
-                            borderRadius: '0',
-                            display: 'block',
-                            marginBottom: '0',
-                            padding: '0.75rem 1rem',
-                            lineHeight: '1.7',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexWrap: 'wrap',
-                            color: '#FFF',
-                          }}
-                          className="profile-btn"
-                        >
+                  <div className="my-5 rounded-md bg-slate-700 md:w-64 lg:w-64">
+                    <div className="flex flex-col">
+                      <button
+                        className={
+                          toggleState === 1
+                            ? 'mb-1 rounded-t-md bg-blue-700 py-3 text-white'
+                            : 'text-whitebg-blue-700 mb-1 rounded-t-md bg-gray-800 py-3'
+                        }
+                        onClick={() => toggleTab(1)}
+                      >
+                        <span className="float-left pl-3">
                           <PersonIcon
                             sx={{
                               margin: '0',
@@ -67,27 +56,18 @@ const ProfileBody = () => {
                             }}
                           />
                           About
-                        </a>
-                      </li>
-                      <li className="ap-menu-reputations">
-                        <a
-                          style={{
-                            background: 'none',
-                            border: '0',
-                            borderBottom: '1px solid rgba(0,0,0,.1)',
-                            borderRadius: '0',
-                            display: 'block',
-                            marginBottom: '0',
-                            padding: '0.75rem 1rem',
-                            lineHeight: '1.7',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexWrap: 'wrap',
-                            color: '#101e36',
-                          }}
-                          className="profile-btn"
-                        >
+                        </span>
+                        {/* <span className="float-right pr-3">{'>'}</span> */}
+                      </button>
+                      <button
+                        className={
+                          toggleState === 2
+                            ? 'mb-1 bg-blue-700 py-3 text-white'
+                            : 'mb-1 bg-gray-800 py-3 text-white'
+                        }
+                        onClick={() => toggleTab(2)}
+                      >
+                        <span className="float-left pl-3">
                           <EmojiEventsIcon
                             sx={{
                               margin: '0',
@@ -96,27 +76,18 @@ const ProfileBody = () => {
                             }}
                           />
                           Reputations
-                        </a>
-                      </li>
-                      <li className="ap-menu-blog">
-                        <a
-                          style={{
-                            background: 'none',
-                            border: '0',
-                            borderBottom: '1px solid rgba(0,0,0,.1)',
-                            borderRadius: '0',
-                            display: 'block',
-                            marginBottom: '0',
-                            padding: '0.75rem 1rem',
-                            lineHeight: '1.7',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexWrap: 'wrap',
-                            color: '#101e36',
-                          }}
-                          className="profile-btn"
-                        >
+                        </span>
+                        {/* <span className="float-right pr-3">{'>'}</span> */}
+                      </button>
+                      <button
+                        className={
+                          toggleState === 3
+                            ? 'mb-1 bg-blue-700 py-3 text-white'
+                            : 'mb-1 bg-gray-800 py-3 text-white'
+                        }
+                        onClick={() => toggleTab(3)}
+                      >
+                        <span className="float-left pl-3">
                           <FacebookRoundedIcon
                             sx={{
                               margin: '0',
@@ -125,40 +96,20 @@ const ProfileBody = () => {
                             }}
                           />
                           Blog
-                          <span
-                            style={{
-                              fontSize: '70%',
-                              padding: '4px 8px',
-                              background: '#2dce89',
-                              lineHeight: '1.2',
-                              margin: '0 0 0 auto',
-                              borderRadius: '0.25rem',
-                              color: '#fff',
-                            }}
-                          >
-                            4
-                          </span>
-                        </a>
-                      </li>
-                      <li className="ap-menu-followers">
-                        <a
-                          style={{
-                            background: 'none',
-                            border: '0',
-                            borderBottom: '1px solid rgba(0,0,0,.1)',
-                            borderRadius: '0',
-                            display: 'block',
-                            marginBottom: '0',
-                            padding: '0.75rem 1rem',
-                            lineHeight: '1.7',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexWrap: 'wrap',
-                            color: '#101e36',
-                          }}
-                          className="profile-btn"
-                        >
+                        </span>
+                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                          4
+                        </span>
+                      </button>
+                      <button
+                        className={
+                          toggleState === 4
+                            ? 'mb-1 bg-blue-700 py-3 text-white'
+                            : 'mb-1 bg-gray-800 py-3 text-white'
+                        }
+                        onClick={() => toggleTab(4)}
+                      >
+                        <span className="float-left pl-3">
                           <PeopleAltRoundedIcon
                             sx={{
                               margin: '0',
@@ -167,40 +118,20 @@ const ProfileBody = () => {
                             }}
                           />
                           Followers
-                          <span
-                            style={{
-                              fontSize: '70%',
-                              padding: '4px 8px',
-                              background: '#2dce89',
-                              lineHeight: '1.2',
-                              margin: '0 0 0 auto',
-                              borderRadius: '0.25rem',
-                              color: '#fff',
-                            }}
-                          >
-                            4
-                          </span>
-                        </a>
-                      </li>
-                      <li className="ap-menu-following">
-                        <a
-                          style={{
-                            background: 'none',
-                            border: '0',
-                            borderBottom: '1px solid rgba(0,0,0,.1)',
-                            borderRadius: '0',
-                            display: 'block',
-                            marginBottom: '0',
-                            padding: '0.75rem 1rem',
-                            lineHeight: '1.7',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexWrap: 'wrap',
-                            color: '#101e36',
-                          }}
-                          className="profile-btn"
-                        >
+                        </span>
+                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                          4
+                        </span>
+                      </button>
+                      <button
+                        className={
+                          toggleState === 5
+                            ? 'rounded-t-md bg-blue-700 py-3 text-white'
+                            : 'rounded-b-md bg-gray-800 py-3 text-white'
+                        }
+                        onClick={() => toggleTab(5)}
+                      >
+                        <span className="float-left pl-3">
                           <RemoveRedEyeRoundedIcon
                             sx={{
                               margin: '0',
@@ -209,29 +140,51 @@ const ProfileBody = () => {
                             }}
                           />{' '}
                           Following
-                          <span
-                            style={{
-                              fontSize: '70%',
-                              padding: '4px 8px',
-                              background: '#2dce89',
-                              lineHeight: '1.2',
-                              margin: '0 0 0 auto',
-                              borderRadius: '0.25rem',
-                              color: '#fff',
-                            }}
-                          >
-                            4
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
+                        </span>
+                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                          4
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="col-span-12 pl-8 lg:col-span-9">
-                  {/* <ProfileAbout /> */}
-                  {/* <ProfileBlogs /> */}
-                  {/* <ProfileFllowers /> */}
-                  <ProfileFllowing />
+                  {/* <ProfileFllowing /> */}
+                  <div
+                    className={
+                      toggleState === 1 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileAbout></ProfileAbout>
+                  </div>
+                  {/* <div
+                    className={
+                      toggleState === 2 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileAbout></ProfileAbout>
+                  </div> */}
+                  {/* <div
+                    className={
+                      toggleState === 3 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileBlogs></ProfileBlogs>
+                  </div> */}
+                  <div
+                    className={
+                      toggleState === 4 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileFllowers></ProfileFllowers>
+                  </div>
+                  <div
+                    className={
+                      toggleState === 5 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileFllowing></ProfileFllowing>
+                  </div>
                 </div>
               </div>
             </div>

@@ -2,8 +2,16 @@
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import Box from '@mui/material/Box'
+import useFirebase from '../../Firebase/useFirebase'
+import { useRouter } from 'next/router'
 
 const Register = () => {
+  // router nextjs hook for routing
+  const router = useRouter()
+
+  // getting register function from use firebase here
+  const { createUser } = useFirebase()
+
   const {
     handleSubmit,
     register,
@@ -11,7 +19,7 @@ const Register = () => {
     formState: { errors },
   } = useForm()
   const submitHandler = (data) => {
-    console.log(data)
+    createUser(data.email, data.password, data.name, router)
     reset()
   }
 

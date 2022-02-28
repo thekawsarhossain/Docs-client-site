@@ -5,18 +5,66 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import DemoBlog from './DemoBlog'
+import { useForm } from 'react-hook-form'
+import { useSelector, useDispatch } from 'react-redux'
+import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
+import { useState } from 'react'
 
 const MainDetails = () => {
+  const [comment, setComment] = useState({})
+
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // getting the match blog with id
+  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+
+  // demo user here
+  const name = 'Kawsar Hossain'
+  const email = 'demo@gmail.com'
+  let time = new Date()
+  const date = new Date().toLocaleDateString()
+  const currentTime = time.toLocaleString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  })
+
+  // react hook form for comment
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm()
+  const submitHandler = (data) => {
+    const randomNumber = (((1 + Math.random() + 10000000) * 0x10000) | 0)
+      .toString(16)
+      .substring(1)
+    const payload = {
+      _id: randomNumber,
+      name: name,
+      email: email,
+      time: currentTime,
+      date: date,
+      comment: data.comment,
+    }
+    dispatch(ADD_COMMENT(payload))
+    reset()
+  }
+
   return (
     <div style={{ backgroundColor: '#21242c' }}>
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            <video
-              src="https://res.cloudinary.com/dkbgqzl1e/video/upload/v1644901083/sas/1.1_Priori_Analysis_and_Posteriori_Testing_hozkij.mp4"
-              controls
-            ></video>
-            <DemoBlog></DemoBlog>
+            <video src={blog?.video} controls></video>
+            {/* <DemoBlog data={props.data}></DemoBlog> */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `${blog?.documentation}`,
+              }}
+            ></div>
             <div
               style={{ minHeight: '200px' }}
               className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
@@ -101,95 +149,81 @@ const MainDetails = () => {
                 </div>
               </div>
             </div>
-            {/* comments section  */}
+
+            {/* comments section start from here   */}
             <div className="py-8 text-white">
-              <h2 className="py-6 text-3xl font-bold">3 Comments</h2>
-              <div>
-                <div className="my-4 flex flex-col sm:flex-row">
-                  <div>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
-                      sx={{ width: 56, height: 56 }}
-                    />
-                  </div>
-                  <div className="pl-4">
-                    <h1 className="text-2xl font-bold">Fletch Skinner</h1>
-                    <p>Date and time</p>
-                    <p className="py-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Inventore quia veniam corporis consequatur dolores,
-                      laudantium numquam temporibus cupiditate quas facilis
-                      repudiandae minima alias saepe praesentium magnam soluta
-                      delectus earum dolorem. Error repudiandae suscipit atque
-                      hic repellendus eligendi magnam labore iusto!
-                    </p>
-                    <div className="pb-5">
-                      <ThumbDownAltIcon />
-                      <ThumbUpIcon />
-                      <ThumbDownAltOutlinedIcon />
-                      <ThumbUpOutlinedIcon />
+              <h2 className="py-6 text-3xl font-bold">
+                {blog?.comments?.length === 0 ? (
+                  'There is no comments'
+                ) : (
+                  <span> Total comments - {blog?.comments?.length}</span>
+                )}
+              </h2>
+              {blog?.comments?.map((comment) => (
+                <div key={comment?._id}>
+                  <div className="my-4 flex flex-col sm:flex-row">
+                    <div>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
+                        sx={{ width: 56, height: 56 }}
+                      />
                     </div>
-                    <hr />
+                    <div className="pl-4">
+                      <h1 className="text-2xl font-bold">{comment?.name}</h1>
+                      <p>
+                        {comment?.time} - {comment?.date}
+                      </p>
+                      <p className="py-4">{comment?.comment}</p>
+                      {/* <div className="pb-5">
+                        <ThumbDownAltIcon />
+                        <ThumbUpIcon />
+                        <ThumbDownAltOutlinedIcon />
+                        <ThumbUpOutlinedIcon />
+                      </div> */}
+                      <hr />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div>
-                <div className="my-4 flex flex-col sm:flex-row">
-                  <div>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
-                      sx={{ width: 56, height: 56 }}
-                    />
-                  </div>
-                  <div className="pl-4">
-                    <h1 className="text-2xl font-bold">Fletch Skinner</h1>
-                    <p>Date and time</p>
-                    <p className="py-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Inventore quia veniam corporis consequatur dolores,
-                      laudantium numquam temporibus cupiditate quas facilis
-                      repudiandae minima alias saepe praesentium magnam soluta
-                      delectus earum dolorem. Error repudiandae suscipit atque
-                      hic repellendus eligendi magnam labore iusto!
-                    </p>
-                    <div className="pb-5">
-                      <ThumbDownAltIcon />
-                      <ThumbUpIcon />
-                      <ThumbDownAltOutlinedIcon />
-                      <ThumbUpOutlinedIcon />
-                    </div>
-                    <hr />
-                  </div>
-                </div>
-              </div>
+              ))}
+              <div></div>
             </div>
+
             {/* submit comments  */}
             <div className="py-3">
               <div className="pb-4 text-white">
                 <h2 className="text-3xl font-bold">Leave a Comment</h2>
-                <p>
+                {/* <p>
                   Your email address will not be published. You can not change
                   your name and email*
-                </p>
+                </p> */}
               </div>
-              <form action="">
+              <form onSubmit={handleSubmit(submitHandler)}>
                 <div className="grid grid-cols-12 gap-4">
-                  <input
+                  {/* <input
                     type="text"
                     className="col-span-6 rounded-lg p-2"
                     placeholder="Name"
+                    {...register('email', {
+                      required: {
+                        value: true,
+                      },
+                    })}
                   />
                   <input
                     type="text"
                     className="col-span-6 rounded-lg p-2"
                     placeholder="Email"
-                  />
+                  /> */}
                   <textarea
                     rows="5"
                     className="col-span-12 rounded-lg p-2"
-                    placeholder="Comment"
+                    placeholder="Write your comment here "
+                    {...register('comment', {
+                      required: {
+                        value: true,
+                      },
+                    })}
                   />
                 </div>
                 <button
@@ -200,6 +234,7 @@ const MainDetails = () => {
                 </button>
               </form>
             </div>
+            {/*  comment block end here   */}
           </div>
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
