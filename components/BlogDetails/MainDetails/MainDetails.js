@@ -153,13 +153,13 @@ const MainDetails = () => {
             {/* comments section start from here   */}
             <div className="py-8 text-white">
               <h2 className="py-6 text-3xl font-bold">
-                {blog?.comments?.length === 0 ? (
+                {blog?.comment?.length === 0 ? (
                   'There is no comments'
                 ) : (
-                  <span> Total comments - {blog?.comments?.length}</span>
+                  <span> Total comments - {blog?.comment?.length}</span>
                 )}
               </h2>
-              {blog?.comments?.map((comment) => (
+              {blog?.comment?.map((comment) => (
                 <div key={comment?._id}>
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>

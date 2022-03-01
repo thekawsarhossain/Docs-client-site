@@ -16,16 +16,19 @@ import { useSelector } from 'react-redux'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import { useTheme } from 'next-themes'
+import useFirebase from '../../../Firebase/useFirebase'
 
 const Navbar = () => {
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
+  console.log(user)
 
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   React.useEffect(() => {
     setMounted(true)
   }, [])
+  const { logoutUser } = useFirebase()
   const renderThemeChange = () => {
     if (!mounted) return null
 
@@ -118,7 +121,18 @@ const Navbar = () => {
           </ListItem>
         </Link>
         {user?.email ? (
-          <Avatar alt="avatar" src={user?.photoURL ? user?.photoURL : avatar} />
+          <div>
+            <Avatar
+              alt="avatar"
+              src={user?.photoURL ? user?.photoURL : avatar}
+            />
+            <button
+              className="bg-white p-4 text-white"
+              onClick={() => logoutUser()}
+            >
+              logout
+            </button>
+          </div>
         ) : (
           <Link href="/login">
             <ListItem button>
@@ -183,6 +197,44 @@ const Navbar = () => {
                 <span className="link-hover right-1/2 h-0.5 w-0"></span>
               </a>
             </Link>
+            <div className="group relative inline-block">
+              <button className="link-item inline-flex items-center">
+                <span className="mr-1">Pages</span>
+                <svg
+                  className="h-4 w-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </button>
+              <ul className="absolute hidden pt-1 text-gray-700 group-hover:block">
+                <li className="">
+                  <a
+                    className="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400"
+                    href="#"
+                  >
+                    One
+                  </a>
+                </li>
+                <li className="">
+                  <a
+                    className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"
+                    href="#"
+                  >
+                    Two
+                  </a>
+                </li>
+                <li className="">
+                  <a
+                    className="whitespace-no-wrap block rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400"
+                    href="#"
+                  >
+                    Three is the magic number
+                  </a>
+                </li>
+              </ul>
+            </div>
             {user?.email ? (
               <Avatar
                 alt="avatar"
