@@ -11,17 +11,11 @@ const Id = () => {
   const router = useRouter()
   const id = router.query.id
 
-  // react redux hook here
-  const dispatch = useDispatch()
-
-  // getting the match blog with id
-  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
-
   return (
     <div>
       <div className="font-serif">
-        <DetailsHeroSection blog={blog} />
-        <MainDetails blog={blog} />
+        <DetailsHeroSection />
+        <MainDetails />
       </div>
       <Footer></Footer>
     </div>
