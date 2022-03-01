@@ -34,7 +34,6 @@ const blogsSlice = createSlice({
       state.status = 'success'
     })
     builder.addCase(fetchBlogs.pending, (state, action) => {
-      state.blogs.push(action.payload)
       state.status = 'pending'
     })
   },
