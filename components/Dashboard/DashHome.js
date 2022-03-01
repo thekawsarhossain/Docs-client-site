@@ -233,7 +233,7 @@ const DashHome = () => {
             className="flex items-center rounded-md p-1 font-bold text-blue-800 duration-300"
             onClick={() => setShowMoreBlogs(!showMoreBlogs)}
           >
-            More Communities
+            More Reported Blogs
             {showMoreBlogs ? <RemoveRoundedIcon /> : <AddRounded />}
           </button>
         </div>
@@ -318,7 +318,7 @@ const DashHome = () => {
             className="flex items-center rounded-md p-1 font-bold text-blue-800 duration-300"
             onClick={() => setShowMoreUsers(!showMoreUsers)}
           >
-            More Communities
+            More Reported Users
             {showMoreUsers ? <RemoveRoundedIcon /> : <AddRounded />}
           </button>
         </div>
