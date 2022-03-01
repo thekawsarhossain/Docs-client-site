@@ -236,6 +236,7 @@ const MainDetails = () => {
             </div>
             {/*  comment block end here   */}
           </div>
+          {/* Side bar  */}
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
             <div className="pb-3">
