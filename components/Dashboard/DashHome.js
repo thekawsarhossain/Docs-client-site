@@ -62,6 +62,19 @@ const reportedBlogs = [
     reporterName: 'SH Sakib',
     date: 'February 27, 2022',
   },
+  {
+    img: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg',
+    blogName: 'Balance & Uses of Technology',
+    reporterName: 'SH Sakib',
+    date: 'February 27, 2022',
+  },
+  {
+    img: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-6-1.jpg',
+    blogName: 'My learning process of Next.js',
+    reporterName: 'Shajibul Shihab',
+    date: 'June 27, 2022',
+  },
+
 ]
 const reportedUsers = [
   {
@@ -117,6 +130,18 @@ const reportedUsers = [
     userName: 'Mohammad Jaffy',
     email: 'jaffywing@gmail.com',
     reporterName: 'Shihab',
+  },
+  {
+    img: 'https://i.ibb.co/z5P6r9X/user4.jpg',
+    userName: 'Riman wings',
+    email: 'rimanwings@gmail.com',
+    reporterName: 'Alexay',
+  },
+  {
+    img: 'https://i.ibb.co/N2DKz39/usr3.jpg',
+    userName: 'Tasnuvai Hridi',
+    email: 'hridi202@gmail.com',
+    reporterName: 'Nazmus Sakib',
   },
 ]
 
