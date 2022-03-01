@@ -7,8 +7,19 @@ import OnlineDoc from '../OnlineDoc/OnlineDoc'
 import Footer from '../../Shared/Footer/Footer'
 import HeroSection from '../HeroSection/HeroSection'
 import FooterBanner from '../../Shared/Footer/FooterBanner/FooterBanner'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchBlogs } from '../../../Redux/Slices/blogSlice'
 
 const HomePage = () => {
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data here
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
+
   return (
     <div>
       <Navbar />
@@ -18,7 +29,7 @@ const HomePage = () => {
       <VideoList />
       <Questions />
       <Testimonial />
-      <FooterBanner/>
+      <FooterBanner />
       <Footer />
     </div>
   )
