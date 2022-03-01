@@ -21,7 +21,6 @@ import useFirebase from '../../../Firebase/useFirebase'
 const Navbar = () => {
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
-  console.log(user)
 
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
