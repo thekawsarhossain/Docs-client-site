@@ -6,18 +6,18 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import DemoBlog from './DemoBlog'
 import { useForm } from 'react-hook-form'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
 import { useState } from 'react'
 
-const MainDetails = (props) => {
+const MainDetails = () => {
   const [comment, setComment] = useState({})
 
-  // // react redux hook here
-  // const dispatch = useDispatch()
+  // react redux hook here
+  const dispatch = useDispatch()
 
-  // // getting the match blog with id
-  // const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+  // getting the match blog with id
+  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   // demo user here
   const name = 'Kawsar Hossain'
@@ -58,13 +58,11 @@ const MainDetails = (props) => {
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            {props.blog?.video && (
-              <video src={props.blog?.video} controls></video>
-            )}
-            {/* <DemoBlog data={props.data}></DemoBlog> */}
+            {blog?.video && <video src={blog?.video} controls></video>}
+            {/* <DemoBlog data={.data}></DemoBlog> */}
             <div
               dangerouslySetInnerHTML={{
-                __html: `${props.blog?.documentation}`,
+                __html: `${blog?.documentation}`,
               }}
             ></div>
             <div
@@ -155,13 +153,13 @@ const MainDetails = (props) => {
             {/* comments section start from here   */}
             <div className="py-8 text-white">
               <h2 className="py-6 text-3xl font-bold">
-                {props.blog?.comment?.length === 0 ? (
+                {blog?.comment?.length === 0 ? (
                   'There is no comments'
                 ) : (
                   <span> Total comments - {blog?.comment?.length}</span>
                 )}
               </h2>
-              {props.blog?.comment?.map((comment) => (
+              {blog?.comment?.map((comment) => (
                 <div key={comment?._id}>
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>
