@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import { Avatar, Box, Container } from '@mui/material'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
-import { ADD_TO_BLOG } from '../../../Redux/Slices/blogSlice'
+import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
 import { useDispatch } from 'react-redux'
 
 const BlogList = (props) => {
+  // react redux hook here
   const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data here
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
 
   return (
     <div>
