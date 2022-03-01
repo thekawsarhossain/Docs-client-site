@@ -6,6 +6,7 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
     'https://enigmatic-atoll-27842.herokuapp.com/blogs'
   )
   const data = await response.json()
+  console.log(data.reverse())
   return data
 })
 
@@ -23,7 +24,7 @@ const blogsSlice = createSlice({
       state.blog = action.payload
     },
     ADD_COMMENT: (state, action) => {
-      state.blog.comments.push(action.payload)
+      state.blog.comment.push(action.payload)
     },
   },
   //   extra reducers here for api
@@ -33,7 +34,6 @@ const blogsSlice = createSlice({
       state.status = 'success'
     })
     builder.addCase(fetchBlogs.pending, (state, action) => {
-      state.blogs.push(action.payload)
       state.status = 'pending'
     })
   },
