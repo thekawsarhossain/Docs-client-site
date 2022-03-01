@@ -6,18 +6,18 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import DemoBlog from './DemoBlog'
 import { useForm } from 'react-hook-form'
-import { useSelector, useDispatch } from 'react-redux'
-import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
 import { useState } from 'react'
 
-const MainDetails = () => {
+const MainDetails = (props) => {
   const [comment, setComment] = useState({})
 
-  // react redux hook here
-  const dispatch = useDispatch()
+  // // react redux hook here
+  // const dispatch = useDispatch()
 
-  // getting the match blog with id
-  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+  // // getting the match blog with id
+  // const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   // demo user here
   const name = 'Kawsar Hossain'
@@ -58,11 +58,13 @@ const MainDetails = () => {
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            <video src={blog?.video} controls></video>
+            {props.blog?.video && (
+              <video src={props.blog?.video} controls></video>
+            )}
             {/* <DemoBlog data={props.data}></DemoBlog> */}
             <div
               dangerouslySetInnerHTML={{
-                __html: `${blog?.documentation}`,
+                __html: `${props.blog?.documentation}`,
               }}
             ></div>
             <div
@@ -153,13 +155,13 @@ const MainDetails = () => {
             {/* comments section start from here   */}
             <div className="py-8 text-white">
               <h2 className="py-6 text-3xl font-bold">
-                {blog?.comment?.length === 0 ? (
+                {props.blog?.comment?.length === 0 ? (
                   'There is no comments'
                 ) : (
                   <span> Total comments - {blog?.comment?.length}</span>
                 )}
               </h2>
-              {blog?.comment?.map((comment) => (
+              {props.blog?.comment?.map((comment) => (
                 <div key={comment?._id}>
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>
@@ -236,6 +238,7 @@ const MainDetails = () => {
             </div>
             {/*  comment block end here   */}
           </div>
+          {/* Side bar  */}
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
             <div className="pb-3">

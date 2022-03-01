@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Avatar } from '@mui/material'
+import { Avatar, Container } from '@mui/material'
 import avatar from '../../../Images/avatar.png'
 import { useSelector } from 'react-redux'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
@@ -147,120 +147,155 @@ const Navbar = () => {
   return (
     <div>
       <header className="body-font absolute z-10 w-full text-gray-400">
-        <div className="container mx-auto flex justify-between p-5 ">
-          <Link href="/">
-            <a className="flex justify-center">
-              <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
-            </a>
-          </Link>
-          <nav className="navbar-parent">
+        <Container>
+          <div className="flex justify-between p-5 ">
             <Link href="/">
-              <a className="link-item">
-                <span>Home</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
+              <a className="flex justify-center">
+                <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
               </a>
             </Link>
-            <Link href="/documentation">
-              <a className="link-item">
-                <span>Documentation</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/Forum">
-              <a className="link-item">
-                <span>Forum</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/blogs">
-              <a className="link-item">
-                <span>Blog</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/about">
-              <a className="link-item">
-                <span>About</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="link-item">
-                <span>Contact</span>
-                <span className="link-hover left-1/2 h-0.5 w-0"></span>
-                <span className="link-hover right-1/2 h-0.5 w-0"></span>
-              </a>
-            </Link>
-            <div className="group relative inline-block">
-              <button className="link-item inline-flex items-center">
-                <span className="mr-1">Pages</span>
-                <svg
-                  className="h-4 w-4 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </button>
-              <ul className="absolute hidden pt-1 text-gray-700 group-hover:block">
-                <li className="">
-                  <a
-                    className="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400"
-                    href="#"
-                  >
-                    One
-                  </a>
-                </li>
-                <li className="">
-                  <a
-                    className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"
-                    href="#"
-                  >
-                    Two
-                  </a>
-                </li>
-                <li className="">
-                  <a
-                    className="whitespace-no-wrap block rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400"
-                    href="#"
-                  >
-                    Three is the magic number
-                  </a>
-                </li>
-              </ul>
-            </div>
-            {user?.email ? (
-              <Avatar
-                alt="avatar"
-                src={user?.photoURL ? user?.photoURL : avatar}
-              />
-            ) : (
-              <Link href="/login">
-                <a className="title-btn">Login</a>
+            <nav className="navbar-parent">
+              <Link href="/">
+                <a className="link-item">
+                  <span>Home</span>
+                  <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                  <span className="link-hover right-1/2 h-0.5 w-0"></span>
+                </a>
               </Link>
-            )}
-            {renderThemeChange()}
-          </nav>
-          <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
-            <React.Fragment key="left">
-              <Button onClick={toggleDrawer('left', true)}>
-                <MenuIcon />
-              </Button>
-              <Drawer
-                anchor="left"
-                open={state['left']}
-                onClose={toggleDrawer('left', false)}
-              >
-                {list('left')}
-              </Drawer>
-            </React.Fragment>
+              <Link href="/documentation">
+                <a className="link-item">
+                  <span>Documentation</span>
+                  <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                  <span className="link-hover right-1/2 h-0.5 w-0"></span>
+                </a>
+              </Link>
+              <Link href="/Forum">
+                <a className="link-item">
+                  <span>Forum</span>
+                  <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                  <span className="link-hover right-1/2 h-0.5 w-0"></span>
+                </a>
+              </Link>
+              <Link href="/blogs">
+                <a className="link-item">
+                  <span>Blog</span>
+                  <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                  <span className="link-hover right-1/2 h-0.5 w-0"></span>
+                </a>
+              </Link>
+              {/* Dropdown button  */}
+              <div className="group relative inline-block">
+                <button className="link-item inline-flex items-center">
+                  <span className="mr-1 pr-6">Pages</span>
+                  <svg
+                    className="h-4 w-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </button>
+                <ul className="absolute hidden pt-1 text-gray-700 group-hover:block">
+                  <li className="">
+                    <Link href="/about">
+                      <a className="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        About
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/dashboard">
+                      <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        Dashboard
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/Profile">
+                      <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        Profile
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/contact">
+                      <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        Contact
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/ask">
+                      <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        Ask
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/helpdesk">
+                      <a className="whitespace-no-wrap block rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                        Help desk
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              {user?.email ? (
+                <div className="relative inline-block">
+                  <div className="group relative inline-block">
+                    <button className="link-item inline-flex items-center">
+                      <span className="">
+                        <Avatar
+                          alt="avatar"
+                          src={user?.photoURL ? user?.photoURL : avatar}
+                        />
+                      </span>
+                    </button>
+                    <ul
+                      style={{ minWidth: '120px' }}
+                      className="absolute hidden pt-1 text-gray-700 group-hover:block"
+                    >
+                      <li className="">
+                        <Link href="/profile">
+                          <a className="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400">
+                            My Profile
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="">
+                        <button
+                          className="whitespace-no-wrap block w-full rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400"
+                          onClick={() => logoutUser()}
+                        >
+                          logout
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <Link href="/login">
+                  <a className="title-btn">Login</a>
+                </Link>
+              )}
+              {renderThemeChange()}
+            </nav>
+            <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
+              <React.Fragment key="left">
+                <Button onClick={toggleDrawer('left', true)}>
+                  <MenuIcon />
+                </Button>
+                <Drawer
+                  anchor="left"
+                  open={state['left']}
+                  onClose={toggleDrawer('left', false)}
+                >
+                  {list('left')}
+                </Drawer>
+              </React.Fragment>
+            </div>
           </div>
-        </div>
+        </Container>
       </header>
     </div>
   )

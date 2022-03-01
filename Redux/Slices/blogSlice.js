@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // getting all blogs api called here
 export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
-  const response = await fetch('http://localhost:5000/blogs')
+  const response = await fetch(
+    'https://enigmatic-atoll-27842.herokuapp.com/blogs'
+  )
   const data = await response.json()
   console.log(data.reverse())
   return data

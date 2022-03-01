@@ -47,7 +47,7 @@ body {
     @apply absolute -bottom-1 bg-white transition-all;
   }
   .title-btn {
-    @apply ml-10 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
+    @apply ml-5 mr-5 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
   }
   /* naavbar regarding end here */
 
