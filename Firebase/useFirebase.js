@@ -40,6 +40,7 @@ const useFirebase = () => {
       .then((result) => {
         updateUserProfile(name)
         dispatch(ADD_USER(result.user))
+        saveUserDB(email, name, 'POST')
         router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
@@ -101,10 +102,35 @@ const useFirebase = () => {
       .then((result) => {
         setUser(result.user)
         dispatch(ADD_USER(result.user))
+        saveUserDB(
+          result.user.email,
+          result.user.displayName,
+          result?.photoURL,
+          'PUT'
+        )
         router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
+  }
+
+  // save user to the DB
+  const saveUserDB = (
+    email,
+    displayName,
+    method,
+    image = 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
+  ) => {
+    const user = { email, displayName, image }
+    fetch('http://localhost:5000/users', {
+      method: method,
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user),
+    })
+      .then(() => {})
+      .catch((e) => console.log(e))
+    // .catch((error) => dispatch(ADD_ERROR(error.message)))
+    // .finally(() => dispatch(SET_STATUS(false)))
   }
 
   // log out user here

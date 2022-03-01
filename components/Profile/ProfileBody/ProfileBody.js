@@ -156,20 +156,6 @@ const ProfileBody = () => {
                   >
                     <ProfileAbout></ProfileAbout>
                   </div>
-                  {/* <div
-                    className={
-                      toggleState === 2 ? 'content  active-content' : 'content'
-                    }
-                  >
-                    <ProfileAbout></ProfileAbout>
-                  </div> */}
-                  {/* <div
-                    className={
-                      toggleState === 3 ? 'content  active-content' : 'content'
-                    }
-                  >
-                    <ProfileBlogs></ProfileBlogs>
-                  </div> */}
                   <div
                     className={
                       toggleState === 4 ? 'content  active-content' : 'content'
