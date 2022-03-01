@@ -6,64 +6,45 @@ const ProfileFllowing = () => {
       <div>
         <form
           style={{
-            position: 'relative',
-            padding: '1.5rem',
-            border: '0',
-            marginBottom: '2.5rem',
-            backgroundColor: '#2C303A',
-            borderRadius: '0.25rem',
             boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
           }}
           role="search"
           method="get"
           id="scisco-user-search-form"
+          className="relative mb-10 rounded border-0 bg-Docy-Dark p-6"
         >
           <div
             style={{ marginRight: '-10px', marginLeft: '-10px' }}
-            className="form-row grid grid-cols-12"
+            className="grid grid-cols-12"
           >
             <div className="col-span-12 lg:col-span-8">
               <div
                 style={{
                   boxShadow: '0 3px 2px rgb(233 236 239 / 5%)',
-                  borderRadius: '0.25rem',
                   transition: 'all .15s ease-in-out',
-                  position: 'relative',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'stretch',
-                  width: '100%',
                 }}
-                className="input-group"
+                className="relative flex w-full flex-wrap items-stretch rounded-md"
               >
                 <input
                   type="text"
-                  className="form-control"
+                  className="block w-full rounded-md bg-white font-normal"
                   minLength="3"
                   placeholder="Search by name..."
                   name="qa_user"
                   value=""
                   style={{
-                    display: ' block',
-                    width: '100%',
                     height: 'calc(1.5em + 1.25rem + 2px)',
                     padding: '0.625rem 0.85rem',
                     fontSize: '.9rem',
-                    fontWeight: '400',
                     lineHeight: '1.5',
                     color: '#525f7f',
-                    backgroundColor: '#fff',
                     backgroundClip: ' padding-box',
                     border: ' 1px solid rgba(0,0,0,0.1)',
-                    borderRadius: '0.25rem',
                     boxShadow: '0 3px 2px rgb(233 236 239 / 5%)',
                     transition: 'all .2s ease-in-out',
                   }}
                 />
-                <div
-                  style={{ marginleft: '-1px' }}
-                  className="input-group-append"
-                >
+                <div style={{ marginleft: '-1px' }}>
                   <button
                     style={{
                       borderTopLeftRadius: '0',
@@ -87,14 +68,11 @@ const ProfileFllowing = () => {
               <select
                 name="qa_orderby"
                 id="qa_orderby"
-                className="custom-select w-100"
+                className="w-100 inline-block font-normal"
                 style={{
-                  display: 'inline-block',
-                  width: '100%',
                   height: 'calc(1.5em + 1.25rem + 2px)',
                   padding: '0.625rem 1.75rem 0.625rem 0.75rem',
                   fontSize: '.9rem',
-                  fontWeight: '400',
                   lineHeight: '1.5',
                   color: '#525f7f',
                   verticalAlign: 'middle',

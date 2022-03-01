@@ -27,10 +27,9 @@ const ProfileBody = () => {
       <main
         style={{
           padding: '5rem 0',
-          overflow: 'hidden',
-          background: '#131417',
         }}
         id="scisco-main-wrapper"
+        className="overflow-hidden bg-Docy-AlmostBlack dark:bg-Docy-White"
       >
         <Container>
           <div id="anspress" className="anspress">

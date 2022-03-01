@@ -26,35 +26,27 @@ const InfoInput = (props) => {
     setAge(event.target.value)
     switch (event.target.value) {
       case 1:
-        console.log('Creative')
         props.category('Creative')
         break
       case 2:
-        console.log('Inspiration')
         props.category('Inspiration')
         break
       case 3:
-        console.log('Lifestyle')
         props.category('Lifestyle')
         break
       case 4:
-        console.log('News')
         props.category('News')
         break
       case 5:
-        console.log('Photography')
         props.category('Photography')
         break
       case 6:
-        console.log('Skill')
         props.category('Skill')
         break
       case 7:
-        console.log('Tourist Tours')
         props.category('Tourist Tours')
         break
       case 8:
-        console.log('Inspire')
         props.category('Inspire')
         break
     }
@@ -65,6 +57,9 @@ const InfoInput = (props) => {
   const [video, setVideo] = useState('')
   const [blogData, setBlogData] = useState({})
 
+  const title = (e) => {
+    props.blogTitle(e.target.value)
+  }
   const uploadImage = async (e) => {
     const files = e.target.files
     const data = new FormData()
@@ -122,6 +117,21 @@ const InfoInput = (props) => {
     <div>
       <Container>
         <div className="py-10">
+          {/* Blog Title Input  */}
+          <div>
+            <h2 className="mb-2 pb-1 text-2xl text-white">
+              Please enter a suitable title for your blog or documentation.
+            </h2>
+            <div>
+              <input
+                required
+                placeholder="Please enter your blog title"
+                className="mb-5 w-full rounded-md p-3 text-lg"
+                type="text"
+                onBlur={title}
+              />
+            </div>
+          </div>
           {/* Video Upload Handling  */}
           <div>
             <h2 className="mb-3 pb-3 text-2xl text-white">
