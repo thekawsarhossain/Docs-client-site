@@ -54,13 +54,14 @@ const MainDetails = () => {
   }
 
   return (
-    <div style={{ backgroundColor: '#21242c' }}>
+    <div style={{ backgroundColor: '#21242c' }} className="text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            <video src={blog?.video} controls></video>
-            {/* <DemoBlog data={props.data}></DemoBlog> */}
+            {blog?.video && <video src={blog?.video} controls></video>}
+            {/* <DemoBlog data={.data}></DemoBlog> */}
             <div
+              id="documentation"
               dangerouslySetInnerHTML={{
                 __html: `${blog?.documentation}`,
               }}

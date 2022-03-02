@@ -1023,6 +1023,7 @@ legend + * {
   background: #10b3d6;
 }
 
+
 /* User board css */
 .user-icon li{
   background-color: rgba(36, 105, 92, 0.1);
@@ -1040,3 +1041,19 @@ legend + * {
 background: #24695c;
 color: white;
 }
+
+/* Blog Detail Page  */
+#documentation img {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+#documentation h1,
+#documentation h2,
+#documentation h3,
+#documentation h4,
+#documentation h5,
+#documentation h6,
+#documentation p {
+  margin-bottom: 30px;
+}
+

@@ -21,7 +21,6 @@ import useFirebase from '../../../Firebase/useFirebase'
 const Navbar = () => {
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
-  console.log(user)
 
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
@@ -149,10 +148,14 @@ const Navbar = () => {
     <div>
       <header className="body-font absolute z-10 w-full text-gray-400">
         <Container>
-          <div className="flex justify-between p-5 ">
+          <div className="mt-5 flex justify-between">
             <Link href="/">
               <a className="flex justify-center">
-                <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
+                <img
+                  style={{ height: 'fit-content' }}
+                  src="https://i.ibb.co/KspLSX3/docy-logo.png"
+                  alt=""
+                />
               </a>
             </Link>
             <nav className="navbar-parent">
