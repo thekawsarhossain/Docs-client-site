@@ -11,6 +11,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WifiIcon from '@mui/icons-material/Wifi';
 
+
 const fakeData = [
   {
     name: 'Morjina Begum',
