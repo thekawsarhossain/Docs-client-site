@@ -53,6 +53,8 @@ module.exports = {
           DarkM: '#1e293b',
           CharcoalGray: '#635d5d',
           DarkBlueGray: '#1f3341',
+          GrayBlue:'#2E3243',
+          BlackGray:"#252830"
         },
       },
     },

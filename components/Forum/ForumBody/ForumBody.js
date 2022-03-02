@@ -14,12 +14,12 @@ const ForumBody = () => {
     .then(data=>setForums(data))
   })
   return (
-    <div className="md:mt-6 mt-4 text-white" style={{ background:"#131417" }}>
+    <div className="md:mt-6 mt-4 bg-emerald-50 dark:bg-Docy-AlmostBlack text-black dark:text-white">
   <Container>
    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
    <Grid item xs={12} sm={6} md={8} >
     <Box>
-    <Box sx={{background:"#2C303A",display:'flex' ,justifyContent:'space-between',alignItems:'center',my:3, py:'12px',px:'20px',borderRadius:'5px'}}>
+    <Box sx={{display:'flex' ,justifyContent:'space-between',alignItems:'center',my:3, py:'12px',px:'20px',borderRadius:'5px'}} className="dark:bg-Docy-Dark dark:text-white bg-gray-200 text-black">
       <img src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_support/answer.png"
         alt="answer action"/>
         <div className="ml-6 md:m-0">
@@ -34,7 +34,7 @@ const ForumBody = () => {
       </Box>
 
       <Box sx={{boxShadow:'0px 3px 6px 0px rgb(4 73 89 / 20%)', mb:5}}>
-      <Box sx={{border:'1px solid #424345',background:"#2C303A",display:'flex',justifyContent:'space-between',p:2.5, mt:10,borderTopLeftRadius:'5px',borderTopRightRadius:'5px'}}>
+      <Box sx={{display:'flex',justifyContent:'space-between',p:2.5, mt:10,borderTopLeftRadius:'5px',borderTopRightRadius:'5px'}} className="dark:bg-Docy-GrayBlue  border border-gray-300 dark:border-gray-500 dark:text-white bg-slate-200 text-black">
         <div className="div-1 ">
           <p>Forum</p>
         </div>
@@ -50,12 +50,12 @@ const ForumBody = () => {
       </Box>
       {
         forums.map(forum=>
-      <Box key={forum.topics} className="boxs" sx={{display:'flex',justifyContent:'space-between',p:3,border:'1px solid #424345'}}>
+      <Box key={forum.topics} className="bg-white dark:bg-darkBlue  hover:bg-slate-100 border  dark:border-gray-700 dark:hover:bg-Docy-BlackGray" sx={{display:'flex',justifyContent:'space-between',p:3}}>
         <div className="div-1 flex items-center	">
           <div className="Fimg">
           <img 
            src={forum?.img}
-                          alt="community"/>
+            alt="community"/>
           </div>
           <div className="F-info ml-5">
           <h5 className="font-bold cursor-pointer hover:text-sky-500">{forum?.title}</h5>

@@ -44,7 +44,7 @@ const AllDocs = () => {
       <Box sx={{color:"white",overflow:"hidden"}}>
         <Container >
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              <Grid sx={{background:"#1E1F26",pb:3,height:"auto"}} item xs={12} sm={6} md={4}>
+        <Grid className=" bg-white text-black dark:bg-gray-800 dark:text-white pb-6 h-full " item xs={12} sm={6} md={4}>
                 <div className=" md:mx-8 mt-16 ">
                  <h3>Docy Documentation</h3>
                   <input type="search" name="" id="docSearch" placeholder="Filter" />

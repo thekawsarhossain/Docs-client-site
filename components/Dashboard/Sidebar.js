@@ -91,18 +91,18 @@ const Sidebar = () => {
 
           <div className="logout__wrapper mt-20 justify-center border-t-2 pt-20">
             <Link href="/">
-              <button className="mx-auto mb-4 flex rounded bg-theme-500 px-8 py-2 text-white hover:bg-gray-700">
+              <button className="mx-auto mb-4 flex rounded bg-blue-500 px-8 py-2 text-white hover:bg-gray-700">
                 <BiHome
-                  className="mr-2 h-5 w-5 text-blue-400"
+                  className="mr-2 h-5 w-5 text-white"
                   aria-hidden="true"
                 />
                 Home
               </button>
             </Link>
 
-            <button className="mx-auto flex rounded bg-red-800 px-8 py-2 text-white hover:bg-gray-700">
+            <button className="mx-auto flex rounded bg-red-700 px-8 py-2 text-white hover:bg-gray-700">
               <BiLogOutCircle
-                className="mr-2 h-5 w-5 text-blue-400"
+                className="mr-2 h-5 w-5  text-white "
                 aria-hidden="true"
               />
               Log out
