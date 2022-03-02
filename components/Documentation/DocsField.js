@@ -5,14 +5,14 @@ import DocsFooter from './DocsFooter'
 import AllDocs from './AllDocs'
 const DocsField = () => {
   return (
-    <Box sx={{background:"#131417",color:"white"}}>
+    <div className='bg-white dark:bg-Docy-AlmostBlack dark:text-white '>
       <DocsBanner/>
       <DocsSubBanner/>
     <Container>
    <AllDocs/>
     </Container>
    <DocsFooter/>
-    </Box>
+    </div>
   )
 }
 
