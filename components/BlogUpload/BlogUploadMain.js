@@ -10,6 +10,12 @@ const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
 })
 
 const BlogUploadMain = () => {
+  // user info from data base
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+  console.log(userInfoFromDB)
+
   const [data, setData] = useState('')
   const [imageLink, setImageLink] = useState('')
   const [video, setVideo] = useState('')

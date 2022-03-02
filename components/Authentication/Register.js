@@ -4,8 +4,12 @@ import { useForm } from 'react-hook-form'
 import Box from '@mui/material/Box'
 import useFirebase from '../../Firebase/useFirebase'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 
 const Register = () => {
+  // getting user slce status  data
+  const status = useSelector((state) => state?.reducers?.user.status)
+
   // router nextjs hook for routing
   const router = useRouter()
 
@@ -158,6 +162,7 @@ const Register = () => {
                 <button
                   type="submit"
                   className="mb-6 w-full  rounded bg-indigo-600 py-3 px-7 text-white"
+                  disabled={status ? true : false}
                 >
                   Register
                 </button>

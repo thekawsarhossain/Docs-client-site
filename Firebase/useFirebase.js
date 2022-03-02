@@ -18,6 +18,7 @@ import {
   ADD_USER,
   REMOVE_USER,
   SET_STATUS,
+  REMOVE_DATA,
 } from '../Redux/Slices/userSlice'
 import initializeAuthentication from './firebase.init'
 
@@ -35,6 +36,7 @@ const useFirebase = () => {
 
   // create a new user using  email and password
   const createUser = (email, password, name, router) => {
+    dispatch(SET_STATUS(true))
     updateUserProfile(name)
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -49,6 +51,7 @@ const useFirebase = () => {
 
   // sign in existing user here
   const signIn = (email, password, router) => {
+    dispatch(SET_STATUS(true))
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         dispatch(ADD_USER(result.user))
@@ -60,6 +63,7 @@ const useFirebase = () => {
 
   // getting the current user here
   useEffect(() => {
+    dispatch(SET_STATUS(true))
     onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(ADD_USER(user))
@@ -73,6 +77,7 @@ const useFirebase = () => {
 
   // update user profile || name here
   const updateUserProfile = (name) => {
+    dispatch(SET_STATUS(true))
     updateProfile(auth.currentUser, {
       displayName: name,
     })
@@ -97,7 +102,7 @@ const useFirebase = () => {
 
   // google sign in here
   const signInWithGoogle = (router) => {
-    setLoading(true)
+    dispatch(SET_STATUS(true))
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user)
@@ -122,7 +127,7 @@ const useFirebase = () => {
     image = 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
   ) => {
     const user = { email, displayName, image }
-    fetch('http://localhost:5000/users', {
+    fetch('https://enigmatic-atoll-27842.herokuapp.com/users', {
       method: method,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
@@ -137,6 +142,7 @@ const useFirebase = () => {
   const logoutUser = () => {
     signOut(auth)
       .then(() => dispatch(REMOVE_USER({})))
+      .then(() => dispatch(REMOVE_DATA({})))
       .catch((error) => dispatch(ADD_ERROR(error.message)))
   }
 
