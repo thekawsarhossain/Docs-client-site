@@ -13,7 +13,7 @@ const BlogMainBody = () => {
   const dispatch = useDispatch()
 
   // getting all blogs from redux here
-  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs[1])
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
   console.log(blogs)
   const [filter, setFilter] = useState('')
   const searchText = (event) => {
