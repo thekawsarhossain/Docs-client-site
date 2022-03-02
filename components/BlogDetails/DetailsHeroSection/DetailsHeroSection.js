@@ -11,12 +11,12 @@ const DetailsHeroSection = () => {
       <div style={{ backgroundColor: '#223044', minHeight: '310px' }}>
         <Container>
           <div
-            style={{ minHeight: '310px' }}
-            className="flex w-full text-white "
+            style={{ minHeight: '300px' }}
+            className="flex w-full pt-12 text-white"
           >
             <div className="self-center">
-              <h1 className="font-serif text-4xl">{blog.title}</h1>
-              <p className="pt-2 font-mono">Category: {blog.category}</p>
+              <h1 className="font-serif text-4xl">{blog?.title}</h1>
+              <p className="pt-2 font-mono">Category: {blog?.category}</p>
               <div className="mt-3 flex">
                 <Avatar
                   alt="Remy Sharp"
