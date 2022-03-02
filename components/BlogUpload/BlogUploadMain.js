@@ -11,7 +11,6 @@ const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
 })
 
 const BlogUploadMain = () => {
-
   // user data
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
   console.log(user)
@@ -21,7 +20,6 @@ const BlogUploadMain = () => {
     (state) => state?.reducers?.user?.userInfoFromDB
   )
   console.log(userInfoFromDB)
-
 
   const [data, setData] = useState('')
   const [imageLink, setImageLink] = useState('')
@@ -74,6 +72,8 @@ const BlogUploadMain = () => {
       documentation: documentation,
       tags: tags,
       uploadTime: currentTime,
+      uploadDate: date,
+      blogger: userInfoFromDB,
       comment: [],
     }
     fetch('https://enigmatic-atoll-27842.herokuapp.com/blogs', {
