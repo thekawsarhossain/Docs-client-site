@@ -18,6 +18,7 @@ import {
   ADD_USER,
   REMOVE_USER,
   SET_STATUS,
+  REMOVE_DATA,
 } from '../Redux/Slices/userSlice'
 import initializeAuthentication from './firebase.init'
 
@@ -35,11 +36,13 @@ const useFirebase = () => {
 
   // create a new user using  email and password
   const createUser = (email, password, name, router) => {
+    dispatch(SET_STATUS(true))
     updateUserProfile(name)
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         updateUserProfile(name)
         dispatch(ADD_USER(result.user))
+        saveUserDB(email, name, 'POST')
         router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
@@ -48,6 +51,7 @@ const useFirebase = () => {
 
   // sign in existing user here
   const signIn = (email, password, router) => {
+    dispatch(SET_STATUS(true))
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         dispatch(ADD_USER(result.user))
@@ -59,6 +63,7 @@ const useFirebase = () => {
 
   // getting the current user here
   useEffect(() => {
+    dispatch(SET_STATUS(true))
     onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(ADD_USER(user))
@@ -72,6 +77,7 @@ const useFirebase = () => {
 
   // update user profile || name here
   const updateUserProfile = (name) => {
+    dispatch(SET_STATUS(true))
     updateProfile(auth.currentUser, {
       displayName: name,
     })
@@ -96,21 +102,47 @@ const useFirebase = () => {
 
   // google sign in here
   const signInWithGoogle = (router) => {
-    setLoading(true)
+    dispatch(SET_STATUS(true))
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user)
         dispatch(ADD_USER(result.user))
+        saveUserDB(
+          result.user.email,
+          result.user.displayName,
+          result?.photoURL,
+          'PUT'
+        )
         router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
 
+  // save user to the DB
+  const saveUserDB = (
+    email,
+    displayName,
+    method,
+    image = 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
+  ) => {
+    const user = { email, displayName, image }
+    fetch('https://enigmatic-atoll-27842.herokuapp.com/users', {
+      method: method,
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user),
+    })
+      .then(() => {})
+      .catch((e) => console.log(e))
+    // .catch((error) => dispatch(ADD_ERROR(error.message)))
+    // .finally(() => dispatch(SET_STATUS(false)))
+  }
+
   // log out user here
   const logoutUser = () => {
     signOut(auth)
       .then(() => dispatch(REMOVE_USER({})))
+      .then(() => dispatch(REMOVE_DATA({})))
       .catch((error) => dispatch(ADD_ERROR(error.message)))
   }
 

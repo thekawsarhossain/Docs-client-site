@@ -54,13 +54,14 @@ const MainDetails = () => {
   }
 
   return (
-    <div style={{ backgroundColor: '#21242c' }}>
+    <div style={{ backgroundColor: '#21242c' }} className="text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
-            <video src={blog?.video} controls></video>
-            {/* <DemoBlog data={props.data}></DemoBlog> */}
+            {blog?.video && <video src={blog?.video} controls></video>}
+            {/* <DemoBlog data={.data}></DemoBlog> */}
             <div
+              id="documentation"
               dangerouslySetInnerHTML={{
                 __html: `${blog?.documentation}`,
               }}
@@ -153,13 +154,13 @@ const MainDetails = () => {
             {/* comments section start from here   */}
             <div className="py-8 text-white">
               <h2 className="py-6 text-3xl font-bold">
-                {blog?.comments?.length === 0 ? (
+                {blog?.comment?.length === 0 ? (
                   'There is no comments'
                 ) : (
-                  <span> Total comments - {blog?.comments?.length}</span>
+                  <span> Total comments - {blog?.comment?.length}</span>
                 )}
               </h2>
-              {blog?.comments?.map((comment) => (
+              {blog?.comment?.map((comment) => (
                 <div key={comment?._id}>
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>
@@ -236,6 +237,7 @@ const MainDetails = () => {
             </div>
             {/*  comment block end here   */}
           </div>
+          {/* Side bar  */}
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
             <div className="pb-3">

@@ -12,7 +12,7 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
 const blogsSlice = createSlice({
   name: 'blogs',
   initialState: {
-    blogs: [],
+    blogs: null,
     blog: null,
     status: 'idle',
   },
@@ -23,17 +23,16 @@ const blogsSlice = createSlice({
       state.blog = action.payload
     },
     ADD_COMMENT: (state, action) => {
-      state.blog.comments.push(action.payload)
+      state.blog.comment.push(action.payload)
     },
   },
   //   extra reducers here for api
   extraReducers: (builder) => {
     builder.addCase(fetchBlogs.fulfilled, (state, action) => {
-      state.blogs.push(action.payload)
+      state.blogs = action.payload
       state.status = 'success'
     })
     builder.addCase(fetchBlogs.pending, (state, action) => {
-      state.blogs.push(action.payload)
       state.status = 'pending'
     })
   },

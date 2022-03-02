@@ -47,7 +47,7 @@ body {
     @apply absolute -bottom-1 bg-white transition-all;
   }
   .title-btn {
-    @apply ml-10 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
+    @apply ml-5 mr-5 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
   }
   /* naavbar regarding end here */
 
@@ -1021,4 +1021,19 @@ legend + * {
 }
 .community-box:hover:before {
   background: #10b3d6;
+}
+
+/* Blog Detail Page  */
+#documentation img {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+#documentation h1,
+#documentation h2,
+#documentation h3,
+#documentation h4,
+#documentation h5,
+#documentation h6,
+#documentation p {
+  margin-bottom: 30px;
 }
