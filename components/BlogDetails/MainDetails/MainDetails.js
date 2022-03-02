@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Avatar, Container } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
@@ -18,10 +17,9 @@ const MainDetails = () => {
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+  // getting user info here
+  const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
-  // demo user here
-  const name = 'Kawsar Hossain'
-  const email = 'demo@gmail.com'
   let time = new Date()
   const date = new Date().toLocaleDateString()
   const currentTime = time.toLocaleString('en-US', {
@@ -37,18 +35,42 @@ const MainDetails = () => {
     reset,
     formState: { errors },
   } = useForm()
-  const submitHandler = (data) => {
+
+  const submitHandler = async (data) => {
     const randomNumber = (((1 + Math.random() + 10000000) * 0x10000) | 0)
       .toString(16)
       .substring(1)
     const payload = {
       _id: randomNumber,
-      name: name,
-      email: email,
+      image: user?.photoURL,
+      name: user?.displayName,
+      email: user?.email,
       time: currentTime,
       date: date,
       comment: data.comment,
     }
+    // adding the comment into the db
+    // try {
+    //   const response = await fetch(`http://localhost:5000/blog/${blog?._id}`, {
+    //     method: 'PUT',
+    //     headers: { 'content-type': 'application/json' },
+    //     body: JSON.stringify(payload),
+    //   })
+    //   const result = await response.json()
+    //   console.log(result)
+    // } catch (e) {
+    //   alert('there is an error')
+    // }
+
+    fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result))
+      .catch((e) => console.log(e))
+
     dispatch(ADD_COMMENT(payload))
     reset()
   }
@@ -96,7 +118,7 @@ const MainDetails = () => {
                     <img
                       className="rounded-lg"
                       src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
+                      alt="blogImage"
                     />
                   </div>
                   <div>
@@ -166,7 +188,11 @@ const MainDetails = () => {
                     <div>
                       <Avatar
                         alt="Remy Sharp"
-                        src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
+                        src={
+                          comment?.image
+                            ? comment?.image
+                            : 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
+                        }
                         sx={{ width: 56, height: 56 }}
                       />
                     </div>
