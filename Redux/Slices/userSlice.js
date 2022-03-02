@@ -50,6 +50,6 @@ const userSlice = createSlice({
   },
 })
 
-export const { ADD_USER, ADD_ERROR, SET_STATUS, REMOVE_USER } =
+export const { ADD_USER, ADD_ERROR, SET_STATUS, REMOVE_USER, REMOVE_DATA } =
   userSlice.actions
 export default userSlice.reducer

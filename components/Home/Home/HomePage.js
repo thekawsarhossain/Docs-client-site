@@ -20,8 +20,8 @@ const HomePage = () => {
 
   // calling the redux thunk blogs api for data here
   useEffect(() => {
-    dispatch(fetchBlogs())
     dispatch(fetchUserData(userInfo?.email))
+    dispatch(fetchBlogs())
   }, [dispatch, userInfo])
 
   return (
