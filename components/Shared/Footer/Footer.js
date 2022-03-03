@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Facebook, LinkedIn, Twitter } from '@mui/icons-material'
-import FooterBanner from './FooterBanner/FooterBanner'
 import Link from 'next/link'
 import { Container } from '@mui/material'
 
 const Footer = () => {
   return (
-    <footer className=" bg-black pt-10 text-white dark:bg-slate-100 dark:text-black  lg:pt-32">
+    <footer className=" bg-slate-100 pt-10 text-white dark:bg-black dark:text-black  lg:pt-32">
       {/* <FooterBanner /> */}
       <Container>
         <div className="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
@@ -15,12 +14,12 @@ const Footer = () => {
             <Link href="/">
               <a>
                 <img
-                  className="block w-40 dark:hidden"
+                  className="hidden w-40 dark:block"
                   src="https://i.ibb.co/KspLSX3/docy-logo.png"
                   alt=""
                 />
                 <img
-                  className="hidden w-40 dark:block"
+                  className="block w-40 dark:hidden"
                   src="https://i.ibb.co/Zx7g8yW/logo-2x-1.png"
                   alt=""
                 />

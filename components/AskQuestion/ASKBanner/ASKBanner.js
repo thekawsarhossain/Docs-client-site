@@ -9,7 +9,7 @@ const ASKBanner = () => {
         style={{
           padding: '170px 0 70px',
         }}
-        className="breadcrumb_area_three relative  bg-Docy-Dark dark:bg-Docy-paleGeen dark:text-Docy-Dark"
+        className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white"
       >
         <img
           src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_left.png"
@@ -33,7 +33,7 @@ const ASKBanner = () => {
                 style={{
                   lineHeight: '66px',
                 }}
-                className="mb-4 text-center text-5xl font-bold text-white dark:text-Docy-Dark"
+                className="mb-4 text-center text-5xl font-bold text-Docy-Dark dark:text-white"
               >
                 Ask Question
               </h1>

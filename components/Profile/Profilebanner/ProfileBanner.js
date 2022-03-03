@@ -6,11 +6,29 @@ import CheckIcon from '@mui/icons-material/Check'
 const ProfileBanner = () => {
   return (
     <div>
+      {/* <div
+        style={{
+          padding: '170px 0 70px',
+        }}
+        className="breadcrumb_area_three relative  bg-Docy-Dark dark:bg-Docy-paleGeen dark:text-Docy-Dark"
+      > */}
+
       <div
-        style={{ background: '#2c303a', padding: '80px 0 80px 80px' }}
-        className="relative "
+        style={{ padding: '80px 0 80px 80px' }}
+        className="relative bg-Docy-paleGeen dark:bg-Docy-Dark"
       >
-     
+        <img
+          src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_left.png"
+          className="one absolute"
+          alt="leaf left"
+          style={{ top: '0', left: '35px' }}
+        />
+        <img
+          src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_right.png"
+          className="four absolute"
+          alt="leaf right"
+          style={{ right: '0', bottom: '0' }}
+        />
         <Container>
           <div
             id="scisco-page-title"
@@ -21,26 +39,6 @@ const ProfileBanner = () => {
               className="scisco-profile-thumbnail"
             >
               <div className="scisco-verified relative">
-                <CheckIcon
-                  sx={{
-                    fontSize: '16px',
-                    width: ' 26px',
-                    height: '26px',
-                    lineHeight: '26px',
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    color: '#fff',
-                    background: '#2dce89',
-                    borderRadius: '100%',
-                    fontSize: '10px',
-                    width: '16px',
-                    height: '16px',
-                    lineHeight: '16px',
-                    textAlign: 'center',
-                    zIndex: '2',
-                  }}
-                />
                 <img
                   style={{
                     color: '#fff',
@@ -52,7 +50,7 @@ const ProfileBanner = () => {
                     border: '5px solid rgba(255,255,255,.1)',
                     background: 'none',
                     width: 'auto',
-                    height: '105',
+                    height: '105px',
                   }}
                   className="avatar"
                   src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
@@ -62,13 +60,13 @@ const ProfileBanner = () => {
               </div>
             </div>
             <div className="scisco-profile-info">
-              <h1 className="scisco-ap-title text-white">
+              <h1 className="scisco-ap-title text-Docy-Dark dark:text-white">
                 John Doe
-                <span className="scisco-title-count scisco-title-rep text-white">
+                <span className="scisco-title-count scisco-title-rep dark:text-whitetext-Docy-Dark">
                   64
                 </span>
               </h1>
-              <div className="scisco-description text-white">
+              <div className="scisco-description text-Docy-Dark dark:text-white">
                 Im a Web Developer and Designer
               </div>
             </div>

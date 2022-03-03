@@ -45,7 +45,6 @@ const BlogList = (props) => {
                     <div className="flex justify-between p-4">
                       <div className="flex">
                         <div className="self-center">
-                          {' '}
                           <div className="scisco-verified">
                             <Avatar
                               alt="Bloggers image"

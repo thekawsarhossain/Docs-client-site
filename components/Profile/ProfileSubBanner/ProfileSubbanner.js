@@ -8,12 +8,9 @@ const ProfileSubbanner = () => {
     <div>
       <section
         style={{
-          background: '#f0f5f7',
-          padding: '16px 0',
-          position: 'relative',
           zIndex: '1',
         }}
-        className="page_breadcrumb"
+        className="bg-Docy-PaleGrey relative py-4 px-0 dark:bg-Docy-DarkM"
       >
         <div
           style={{
@@ -73,11 +70,10 @@ const ProfileSubbanner = () => {
                   />
                   <li
                     style={{
-                      color: ' #1d2746',
                       fontSize: ' 14px',
                       lineHeight: '21px',
                     }}
-                    className="breadcrumb-item active"
+                    className="breadcrumb-item active dark:text-white"
                     aria-current="page"
                   >
                     Blog with sidebar

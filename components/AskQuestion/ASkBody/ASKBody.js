@@ -19,7 +19,7 @@ const ASKBody = () => {
     <div>
       <div
         style={{ padding: '100px 0' }}
-        className="bg-Docy-AlmostBlack px-24 py-0 dark:bg-white"
+        className="bg-white px-24 py-0 dark:bg-Docy-AlmostBlack"
       >
         <Container>
           <div
@@ -74,10 +74,9 @@ const ASKBody = () => {
                 </ul>
               </div>
               <>
-                {/* <ContactBanner /> */}
-                <div className="pb-4 text-white dark:text-Docy-Dark">
+                <div className="pb-4 text-Docy-Dark dark:text-white">
                   <Container>
-                    <div className="darkshadow-black grid grid-cols-12 gap-4 bg-Docy-AlmostBlack shadow-lg shadow-white dark:bg-white">
+                    <div className="darkshadow-black grid grid-cols-12 gap-4 bg-white shadow-sm shadow-black dark:bg-Docy-AlmostBlack">
                       <div className="col-span-12 p-3 lg:col-span-6">
                         <h2>Let’s get in touch</h2>
                         <p className="my-6">
