@@ -4,21 +4,29 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
-import DemoBlog from './DemoBlog'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
-import { useState } from 'react'
+import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const MainDetails = () => {
-  const [comment, setComment] = useState({})
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // next js hooks for dynamic routuing
+  const router = useRouter()
+  const id = router.query.id
+
+  // calling specfic blog depend on id here using redux
+  useEffect(() => {
+    dispatch(fetchBlog(id))
+  }, [dispatch, id])
+
+  // getting user info from db here
   const userInfoFromDB = useSelector(
     (state) => state?.reducers?.user?.userInfoFromDB
   )
-  console.log(userInfoFromDB)
-
-  // react redux hook here
-  const dispatch = useDispatch()
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
@@ -54,18 +62,6 @@ const MainDetails = () => {
       date: date,
       comment: data.comment,
     }
-    // adding the comment into the db
-    // try {
-    //   const response = await fetch(`http://localhost:5000/blog/${blog?._id}`, {
-    //     method: 'PUT',
-    //     headers: { 'content-type': 'application/json' },
-    //     body: JSON.stringify(payload),
-    //   })
-    //   const result = await response.json()
-    //   console.log(result)
-    // } catch (e) {
-    //   alert('there is an error')
-    // }
 
     fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
       method: 'PUT',

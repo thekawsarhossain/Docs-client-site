@@ -42,7 +42,12 @@ const useFirebase = () => {
       .then((result) => {
         updateUserProfile(name)
         dispatch(ADD_USER(result.user))
-        saveUserDB(email, name, 'POST')
+        saveUserDB(
+          email,
+          name,
+          'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg',
+          'POST'
+        )
         router.replace('/')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
@@ -101,39 +106,34 @@ const useFirebase = () => {
   //   }
 
   // google sign in here
-  const signInWithGoogle = () => {
+  const signInWithGoogle = (router) => {
     dispatch(SET_STATUS(true))
-   return signInWithPopup(auth, googleProvider)
-      // .then((result) => {
-      //   setUser(result.user)
-      //   dispatch(ADD_USER(result.user))
-      //   saveUserDB(
-      //     result.user.email,
-      //     result.user.displayName,
-      //     result?.photoURL,
-      //     'PUT'
-      //   )
-      //   router.replace('/')
-      // })
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        saveUserDB(
+          result.user.email,
+          result.user.displayName,
+          result?.photoURL,
+          'PUT'
+        )
+        dispatch(ADD_USER(result.user))
+        router.replace('/')
+      })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
 
   // save user to the DB
-  const saveUserDB = (
-    email,
-    displayName,
-    method,
-    image = 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
-  ) => {
+  const saveUserDB = async (email, displayName, image, method) => {
     const user = { email, displayName, image }
+    SET_STATUS(true)
     fetch('https://enigmatic-atoll-27842.herokuapp.com/users', {
-      method: method,
+      method,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
     })
-      .then(() => {})
-      .catch((e) => console.log(e))
+      .then((res) => res.json())
+      .then((result) => console.log(result))
     // .catch((error) => dispatch(ADD_ERROR(error.message)))
     // .finally(() => dispatch(SET_STATUS(false)))
   }
@@ -142,7 +142,6 @@ const useFirebase = () => {
   const logoutUser = () => {
     signOut(auth)
       .then(() => dispatch(REMOVE_USER({})))
-      .then(() => dispatch(REMOVE_DATA({})))
       .catch((error) => dispatch(ADD_ERROR(error.message)))
   }
 
