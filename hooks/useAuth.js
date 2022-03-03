@@ -24,13 +24,13 @@
 // 	const value = { user, error, loginWithGoogle, logout, setUser };
 
 // 	return <authContext.Provider value={value} {...props} />;
-// }
+
 const useAuth = () => {
-  return (
-    <div>
-      Enter
-    </div>
-  );
+	return (
+		<div>
+			Enter
+		</div>
+	);
 }
 
 export default useAuth;

@@ -21,7 +21,7 @@ const DetailsHeroSection = () => {
                 <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
                 <p className="self-center pl-2">
                   {' '}
-                  {blog?.blogger.displayName} | {blog?.uploadDate} |{' '}
+                  {blog?.blogger?.displayName} | {blog?.uploadDate} |{' '}
                   {blog?.uploadTime}
                 </p>
               </div>
