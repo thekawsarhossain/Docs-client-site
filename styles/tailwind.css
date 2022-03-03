@@ -9,11 +9,7 @@ body {
   transition: all 0.8s ease-in-out;
 }
 
-/* selection Start */
-*::selection {
-  background: linear-gradient(#140b25, #1f3341);
-  color: #fff;
-}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -206,6 +202,9 @@ body {
   border-bottom-right-radius: 50%;
 }
 
+ .loGo{
+   margin-left:30em;
+ }
 /* Online Doc */
 button#simple-tab-0,
 button#simple-tab-1,
