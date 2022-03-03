@@ -101,20 +101,20 @@ const useFirebase = () => {
   //   }
 
   // google sign in here
-  const signInWithGoogle = (router) => {
+  const signInWithGoogle = () => {
     dispatch(SET_STATUS(true))
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        setUser(result.user)
-        dispatch(ADD_USER(result.user))
-        saveUserDB(
-          result.user.email,
-          result.user.displayName,
-          result?.photoURL,
-          'PUT'
-        )
-        router.replace('/')
-      })
+   return signInWithPopup(auth, googleProvider)
+      // .then((result) => {
+      //   setUser(result.user)
+      //   dispatch(ADD_USER(result.user))
+      //   saveUserDB(
+      //     result.user.email,
+      //     result.user.displayName,
+      //     result?.photoURL,
+      //     'PUT'
+      //   )
+      //   router.replace('/')
+      // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
