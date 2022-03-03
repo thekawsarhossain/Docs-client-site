@@ -45,15 +45,13 @@ const BlogList = (props) => {
                     <div className="flex justify-between p-4">
                       <div className="flex">
                         <div className="self-center">
-                          <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                            <div className="scisco-verified">
-                              <Avatar
-                                alt="Bloggers image"
-                                src={blog?.blogger?.image}
-                                sx={{ width: 40, height: 40 }}
-                              />
-                            </div>
-                          </a>
+                          <div className="scisco-verified">
+                            <Avatar
+                              alt="Bloggers image"
+                              src={blog?.blogger?.image}
+                              sx={{ width: 40, height: 40 }}
+                            />
+                          </div>
                         </div>
                         <div className="self-center pl-2">
                           <p>
