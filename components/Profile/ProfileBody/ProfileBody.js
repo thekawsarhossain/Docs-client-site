@@ -1,6 +1,5 @@
 import { Container, Grid } from '@mui/material'
 import ProfileAbout from './ProfileAbout'
-// import ProfileBlogs from './ProfileBlogs'
 import PersonIcon from '@mui/icons-material/Person'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
@@ -25,12 +24,8 @@ const ProfileBody = () => {
   return (
     <div>
       <main
-        style={{
-          padding: '5rem 0',
-          overflow: 'hidden',
-          background: '#131417',
-        }}
         id="scisco-main-wrapper"
+        className="overflow-hidden px-20 py-0 dark:bg-Docy-AlmostBlack"
       >
         <Container>
           <div id="anspress" className="anspress">
@@ -149,13 +144,19 @@ const ProfileBody = () => {
                   </div>
                 </div>
                 <div className="col-span-12 pl-8 lg:col-span-9">
-                  {/* <ProfileFllowing /> */}
                   <div
                     className={
                       toggleState === 1 ? 'content  active-content' : 'content'
                     }
                   >
                     <ProfileAbout></ProfileAbout>
+                  </div>
+                  <div
+                    className={
+                      toggleState === 3 ? 'content  active-content' : 'content'
+                    }
+                  >
+                    <ProfileBlogs />
                   </div>
                   <div
                     className={

@@ -16,7 +16,7 @@ const ProfileAbout = () => {
                 backgroundColor: '#2dce89',
                 boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
               }}
-              className="flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Blurple"
+              className="flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
             >
               <div
                 style={{
@@ -44,7 +44,7 @@ const ProfileAbout = () => {
                 backgroundColor: '#d62828',
                 boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
               }}
-              className=" flex items-stretch overflow-hidden rounded p-0 text-white"
+              className=" flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
             >
               <div
                 style={{
@@ -72,7 +72,7 @@ const ProfileAbout = () => {
                 backgroundColor: '#F28900',
                 boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
               }}
-              className="scisco-user-box flex items-stretch overflow-hidden rounded p-0 text-white"
+              className="scisco-user-box flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
             >
               <div
                 style={{
@@ -100,13 +100,13 @@ const ProfileAbout = () => {
         style={{
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
-        className="rounded bg-Docy-Dark text-white"
+        className="rounded bg-slate-100 text-Docy-Dark dark:bg-Docy-Dark dark:text-white "
       >
         <div className=" flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
           <div className="scisco-user-table-right">John Doe</div>
         </div>
-        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 dark:border-Docy-Blurple">
+        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Age</div>
           <div className="scisco-user-table-right">34</div>
         </div>

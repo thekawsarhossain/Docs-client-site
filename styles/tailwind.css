@@ -68,7 +68,7 @@ body {
     @apply mt-5 mr-4 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue dark:text-Docy-White;
   }
   .footer-nav-title {
-    @apply mb-3 text-xl font-medium tracking-widest text-white dark:text-Docy-Dark;
+    @apply mb-3 text-xl font-medium tracking-widest text-Docy-Dark dark:text-white;
   }
   .footer-nav-item {
     @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
@@ -133,6 +133,7 @@ body {
   padding: 15px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
+  @apply bg-slate-100 dark:bg-Docy-Dark;
 }
 #search:focus {
   outline: none;
@@ -152,7 +153,7 @@ body {
 
 /*Video List CSS by Fahad */
 .video-List {
-  @apply bg-Docy-DarkLight dark:bg-Docy-BlueyPurple dark:text-Docy-Dark;
+  @apply bg-Docy-BlueyPurple dark:bg-Docy-DarkLight dark:text-Docy-Dark;
 }
 .bshadow {
   box-shadow: 0 20px 40px 0 #0449591a;
@@ -160,7 +161,7 @@ body {
 
 /* slider css */
 .slider {
-  @apply bg-Docy-AlmostBlack text-white dark:bg-slate-100 dark:text-Docy-Dark;
+  @apply bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white;
 }
 .slick-slide img {
   border-radius: 20px;
@@ -269,11 +270,11 @@ button {
   flex-grow: 1;
 }
 .content {
-  background: #131417;
   padding: 20px 0px;
   width: 100%;
   height: 100%;
   display: none;
+  @apply dark:bg-Docy-AlmostBlack;
 }
 .content h2 {
   padding: 0px 0 5px 0px;
@@ -517,9 +518,10 @@ button {
   font-weight: 500;
   border-right: 0;
   padding: 1.25rem;
-  color: rgb(0, 255, 255);
   text-transform: uppercase;
   font-size: 0.9rem;
+  font-weight: 700;
+  @apply text-Docy-Dark dark:text-white;
 }
 .scisco-user-table-right {
   padding: 1.25rem;
@@ -539,17 +541,16 @@ button {
   padding: 170px 0 200px;
 }
 .minimal-header::before {
-  @apply absolute left-0 h-full w-full bg-cover bg-no-repeat;
+  @apply absolute left-0 h-full w-full bg-slate-300 bg-cover bg-no-repeat dark:bg-theme;
   top: -17%;
   content: '';
   z-index: -1;
   background-position: 0 50%;
   transform: skewY(-2.5deg);
-  background: #1e0d3d;
 }
 
 .minimal-header-text h1 {
-  @apply m-0 text-center font-normal text-white;
+  @apply m-0 text-center font-normal text-theme dark:text-white;
 }
 
 .text-block .heading-sm {
