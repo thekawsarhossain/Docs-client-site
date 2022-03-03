@@ -54,8 +54,11 @@ export default function PurchasingOnline() {
   return (
     <div>
       <Accordion
-      
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        sx={{
+          backgroundColor: '#1e1f26',
+          color: 'white',
+          boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        }}
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
       >
@@ -72,8 +75,11 @@ export default function PurchasingOnline() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        sx={{
+          backgroundColor: '#1e1f26',
+          color: 'white',
+          boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        }}
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
       >
@@ -89,8 +95,11 @@ export default function PurchasingOnline() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white' ,boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)'}}
+        sx={{
+          backgroundColor: '#1e1f26',
+          color: 'white',
+          boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        }}
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
       >
@@ -107,8 +116,7 @@ export default function PurchasingOnline() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-      
-        sx={{ backgroundColor: '#1e1f26', color: 'white', }}
+        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
       >
@@ -126,8 +134,11 @@ export default function PurchasingOnline() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        sx={{
+          backgroundColor: '#1e1f26',
+          color: 'white',
+          boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        }}
         expanded={expanded === 'panel5'}
         onChange={handleChange('panel5')}
       >
@@ -145,8 +156,11 @@ export default function PurchasingOnline() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        sx={{
+          backgroundColor: '#1e1f26',
+          color: 'white',
+          boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        }}
         expanded={expanded === 'panel6'}
         onChange={handleChange('panel6')}
       >
