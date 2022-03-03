@@ -28,8 +28,23 @@ const MainDetails = () => {
     (state) => state?.reducers?.user?.userInfoFromDB
   )
 
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+
+  // react redux hook here
+  const dispatch = useDispatch()
+
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+
+  // Related Posts
+  const relatedPosts = blogs.filter(
+    (td) => td?.category === blog?.category && td?._id != blog?._id
+  )
+  const otherPosts = blogs.filter(
+    (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
+  )
+
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
@@ -120,63 +135,47 @@ const MainDetails = () => {
                 Related Post
               </h1>
               <div className="grid grid-cols-12 gap-4 text-white">
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt="blogImage"
-                    />
+                {relatedPosts.map((post) => (
+                  <div
+                    key={post?._id}
+                    className="col-span-12 md:col-span-6 lg:col-span-4"
+                  >
+                    <div>
+                      <img
+                        className="rounded-lg"
+                        src={post?.image}
+                        alt="blogImage"
+                      />
+                    </div>
+                    <div>
+                      <p className="pt-3 pb-1 font-sans text-sm">
+                        {post?.uploadDate} ~ {post?.uploadTime}
+                      </p>
+                      <h4 className="pb-2 text-xl font-semibold">
+                        {post?.title}
+                      </h4>
+                      <div className="flex">
+                        <div className="self-center">
+                          {' '}
+                          <div className="scisco-verified">
+                            <Avatar
+                              alt="Bloggers image"
+                              src={post?.blogger?.image}
+                              sx={{ width: 40, height: 40 }}
+                            />
+                          </div>
+                        </div>
+                        <div className="self-center pl-2">
+                          <p>
+                            <small className="text-sm">
+                              {post?.blogger?.displayName}
+                            </small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -294,60 +293,27 @@ const MainDetails = () => {
             <div className="py-6">
               <h1 className="py-3 text-2xl font-bold">Other Posts</h1>
               <div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
+                {otherPosts.map((otherPost) => (
+                  <div
+                    key={otherPost._id}
+                    style={{ maxWidth: '450px' }}
+                    className="grid grid-cols-12 gap-2 py-3"
+                  >
+                    <div className="col-span-5">
+                      <img
+                        className="rounded-lg"
+                        src={otherPost.image}
+                        alt=""
+                      />
+                    </div>
+                    <div className="col-span-7">
+                      <h3 className="text-base">{otherPost.title}</h3>
+                      <p className="mt-3 font-sans text-sm">
+                        {otherPost.uploadDate}
+                      </p>
+                    </div>
                   </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             {/* Post Categories */}

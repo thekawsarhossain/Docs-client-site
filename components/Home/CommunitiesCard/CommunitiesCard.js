@@ -67,9 +67,12 @@ const CommunitiesCard = () => {
   }, [showMore])
 
   return (
-    <div className="relative block w-full bg-Docy-AlmostBlack dark:bg-slate-100">
+    <Box>
       <Container>
-        <div className="absolute mx-auto -mt-72 rounded-xl bg-slate-100 shadow dark:bg-darkBlue">
+        <div
+          style={{ marginTop: '-110px' }}
+          className="  rounded-xl bg-slate-100 dark:bg-darkBlue  "
+        >
           {/* grid system for the items here  */}
           <div className="grid grid-cols-1 lg:grid-cols-3">
             {data?.map((item) => (
@@ -112,7 +115,7 @@ const CommunitiesCard = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </Box>
   )
 }
 

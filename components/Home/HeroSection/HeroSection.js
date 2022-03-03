@@ -7,8 +7,8 @@ const HeroSection = () => {
   return (
     <div>
       <div
-        style={{ height: '750px' }}
-        className="relative flex items-center justify-center bg-Docy-Blue dark:bg-Docy-Midnight"
+        style={{ minHeight: '750px' }}
+        className="flex flex-col items-center justify-center bg-Docy-Blue dark:bg-Docy-Midnight"
       >
         <div>
           <div className="">
@@ -24,18 +24,18 @@ const HeroSection = () => {
                 alt=""
               />
             </div>
-            <div className="shape-3 absolute bottom-0 right-0  hidden sm:block">
-              <img
-                src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/banner_shap3.png"
-                alt=""
-              />
-            </div>
-            <div className="shape-4 absolute bottom-0 right-0 hidden sm:block">
-              <img
-                src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/banner_shap2.png"
-                alt=""
-              />
-            </div>
+            {/* <div className="shape-3 absolute bottom-0 right-0  hidden sm:block">
+            <img
+              src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/banner_shap3.png"
+              alt=""
+            />
+          </div> */}
+            {/* <div className="shape-4 absolute  top-full right-0 hidden sm:block">
+            <img
+              src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/banner_shap2.png"
+              alt=""
+            />
+          </div> */}
             <div className="shape-5 absolute top-60 left-60 hidden sm:block">
               <img
                 src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/plugins/docy-core/widgets/inc/hero/controls/images/plus1.png"
@@ -95,7 +95,9 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <CommunitiesCard />
+      <div>
+        <CommunitiesCard></CommunitiesCard>
+      </div>
     </div>
   )
 }
