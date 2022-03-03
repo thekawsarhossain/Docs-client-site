@@ -89,7 +89,9 @@ const CommunitiesCard = () => {
                   />
                   <span className="ml-4">
                     <Link href="/home">
-                      <h6 className="font-bold text-white">{item?.title}</h6>
+                      <h6 className="font-bold text-white dark:text-Docy-Dark">
+                        {item?.title}
+                      </h6>
                     </Link>
                     <p className="text-secondary">{item?.info}</p>
                   </span>

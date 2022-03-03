@@ -1,5 +1,5 @@
 // import { createContext, useContext, useState } from "react";
-// import AuthService from "../service/AuthService";
+// import useFirebase from "../Firebase/useFirebase";
 
 // const authContext = createContext();
 
@@ -12,25 +12,27 @@
 // 	const [error, setError] = useState("");
 
 // 	const loginWithGoogle = async () => {
-// 		const { error, user } = await AuthService.loginWithGoogle();
+// 		const { error, user } = await useFirebase.signInWithGoogle();
 // 		setUser(user ?? null);
 // 		setError(error ?? "");
+		
 // 	};
 
 // 	const logout = async () => {
-// 		await AuthService.logout();
+// 		await useFirebase.logout();
 // 		setUser(null);
 // 	};
-// 	const value = { user, error, loginWithGoogle, logout, setUser };
+	
 
-// 	return <authContext.Provider value={value} {...props} />;
+// 	return <authContext.Provider  {...props} />;
 // }
+
 const useAuth = () => {
-  return (
-    <div>
-      Enter
-    </div>
-  );
+	return (
+		<div>
+			<h1>useAuth</h1>
+		</div>
+	);
 }
 
 export default useAuth;

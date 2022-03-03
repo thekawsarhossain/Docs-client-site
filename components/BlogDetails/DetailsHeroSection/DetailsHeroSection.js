@@ -12,17 +12,16 @@ const DetailsHeroSection = () => {
         <Container>
           <div
             style={{ minHeight: '300px' }}
-            className="flex w-full pt-12 text-white"
-          >
+            className="flex w-full pt-12 text-white" >
             <div className="self-center">
               <h1 className="font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
               <div className="mt-3 flex">
-                <Avatar alt="Blogger's photo" src={blog?.blogger?.image} />
-                <p className="self-center pl-2 font-sans">
+                <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
+                <p className="self-center pl-2">
                   {' '}
-                  {blog?.blogger?.displayName} | {blog?.uploadTime} -{' '}
-                  {blog?.uploadDate}
+                  {blog?.blogger?.displayName} | {blog?.uploadDate} |{' '}
+                  {blog?.uploadTime}
                 </p>
               </div>
             </div>
@@ -34,3 +33,6 @@ const DetailsHeroSection = () => {
 }
 
 export default DetailsHeroSection
+
+
+

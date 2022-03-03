@@ -7,12 +7,9 @@ const ASKBanner = () => {
     <div>
       <div
         style={{
-          background: '#2c303a',
           padding: '170px 0 70px',
-          position: 'relative',
-          zIndex: '1',
         }}
-        className="breadcrumb_area_three"
+        className="breadcrumb_area_three relative  bg-Docy-Dark dark:bg-Docy-paleGeen dark:text-Docy-Dark"
       >
         <img
           src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_left.png"
@@ -30,17 +27,13 @@ const ASKBanner = () => {
           <Container>
             <div
               style={{ maxWidth: '100%', width: '100%' }}
-              className="breadcrumb_text m-auto text-center"
+              className=" m-auto text-center"
             >
               <h1
                 style={{
-                  color: '#fff',
-                  fontSize: '50px',
                   lineHeight: '66px',
-                  marginBottom: '15px',
-                  fontWeight: '700',
                 }}
-                className="text-center"
+                className="mb-4 text-center text-5xl font-bold text-white dark:text-Docy-Dark"
               >
                 Ask Question
               </h1>

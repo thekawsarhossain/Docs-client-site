@@ -30,10 +30,9 @@ const VideoList = () => {
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              
             ></iframe>
           </div>
-          <div className="col-span-12 text-white md:col-span-5">
+          <div className="col-span-12 text-white dark:text-Docy-Dark md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
             <Accordion
               sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
@@ -379,7 +378,8 @@ const VideoList = () => {
                     <a href="#">
                       <li className="mb-3 flex gap-3">
                         <div>
-                          <img className="h-12 w-14 rounded"
+                          <img
+                            className="h-12 w-14 rounded"
                             src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
                             alt=""
                           />

@@ -14,7 +14,7 @@ const Register = () => {
   const router = useRouter()
 
   // getting register function from use firebase here
-  const { createUser } = useFirebase()
+  const { createUser ,signInWithGoogle} = useFirebase()
 
   const {
     handleSubmit,
@@ -27,13 +27,20 @@ const Register = () => {
     reset()
   }
 
+   const handleGoogleAuth=()=>{
+    signInWithGoogle()
+    .then((result) => {
+      console.log(result.user);
+      router.replace("/");
+    })
+     
+     
+   }
+
+
   return (
-    <Box sx={{ background: '#131417', color: 'white' }}>
-      <Link href="/">
-        <a className="absolute z-50 m-6 mx-auto ml-2 flex justify-center">
-          <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
-        </a>
-      </Link>
+    <div className='dark:bg-lightDark bg-slate-100'>
+    
       <div className="grid grid-cols-12 gap-4">
         <div className="relative col-span-12 h-96 bg-blue-700 md:col-span-4 md:min-h-screen">
           <img
@@ -74,7 +81,7 @@ const Register = () => {
               onSubmit={handleSubmit(submitHandler)}
             >
               <label>
-                <p className="font-semibold">Full name</p>
+                <p >Full name</p>
                 {/* showing error  */}
                 <small className="text-red-400">{errors?.name?.message}</small>
                 <input
@@ -166,12 +173,16 @@ const Register = () => {
                 >
                   Register
                 </button>
-              </div>
+              </div> 
             </form>
+            <button className="bg-white shadow  mb-6 text-black mx-auto flex  justify-center text-center px-10 py-3   cursor-pointer " onClick={handleGoogleAuth}>
+              Continue With 
+              <img src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png" alt="" className='w-6 ml-2'/> 
+             </button>
           </div>
         </div>
       </div>
-    </Box>
+    </div>
   )
 }
 

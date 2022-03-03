@@ -5,7 +5,8 @@ import { useState } from 'react'
 import { Avatar, Container } from '@mui/material'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import Link from 'next/link'
-// import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
+// import { ADD_TO_BLOG } from '../../../Redux/Slices/blogSlice'
+// import { ADD_TO_BLOG } from '../../../Redux/Slices/blogSlice'
 
 const HomeBlogList = () => {
   // react redux hook here

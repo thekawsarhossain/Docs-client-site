@@ -7,8 +7,8 @@ const HeroSection = () => {
   return (
     <div>
       <div
-        style={{ background: '#140B25', minHeight: '750px' }}
-        className="flex flex-col items-center justify-center"
+        style={{ minHeight: '750px' }}
+        className="flex flex-col items-center justify-center bg-Docy-Midnight dark:bg-Docy-Blue"
       >
         <div>
           <div className="">

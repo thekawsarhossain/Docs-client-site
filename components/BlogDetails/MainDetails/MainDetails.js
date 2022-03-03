@@ -27,10 +27,10 @@ const MainDetails = () => {
 
   // Related Posts
   const relatedPosts = blogs.filter(
-    (td) => td.category === blog.category && td._id != blog._id
+    (td) => td?.category === blog?.category && td?._id != blog?._id
   )
   const otherPosts = blogs.filter(
-    (td) => td.blogger._id === blog.blogger._id && td._id != blog._id
+    (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
   )
 
   // getting user info here
