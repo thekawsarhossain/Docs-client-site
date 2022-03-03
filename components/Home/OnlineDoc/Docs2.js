@@ -12,7 +12,7 @@ const Docs2 = () => {
     fetch('./docs.json')
       .then((res) => res.json())
       .then((data) => setDocs(data.slice(0, 6)))
-  })
+  }, [])
   return (
     <div>
       <Box sx={{ flexGrow: 1, mt: 10 }}>

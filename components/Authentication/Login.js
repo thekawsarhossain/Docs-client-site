@@ -5,14 +5,19 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import useFirebase from '../../Firebase/useFirebase'
-import GoogleIcon from '@mui/icons-material/Google';
+import GoogleIcon from '@mui/icons-material/Google'
+import { useSelector } from 'react-redux'
 const Login = () => {
+  // getting loading status data here
+  const status = useSelector((state) => state?.reducers?.user?.status)
+
   // router nextjs hook for routing
   const router = useRouter()
 
   // getting register function from use firebase here
-  const { signIn,signInWithGoogle } = useFirebase()
+  const { signIn, signInWithGoogle } = useFirebase()
 
+  // login with email and pass here
   const {
     handleSubmit,
     register,
@@ -24,23 +29,17 @@ const Login = () => {
     reset()
   }
 
-  const handleGoogleAuth=()=>{
-    signInWithGoogle()
-    .then((result) => {
-      console.log(result.user);
-      router.replace("/");
-    })
-     
-   }
-// Box sx={{ background: '#131417', color: 'white' }}
+  // Box sx={{ background: '#131417', color: 'white' }}
   return (
-    <div className='dark:bg-lightDark bg-slate-100'>
+    <div className="bg-slate-100 dark:bg-lightDark">
       {/* <Link href="/" >
         <a className="absolute z-50 md:ml-96 ml-80  mt-4">
           <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
         </a>
       </Link> */}
-      <h2 className='text-white  absolute z-50 pt-28 leading-relaxed tracking-wide pl-16 font-bold'>We are design changers <br /> do what matters.</h2>
+      <h2 className="absolute  z-50 pt-28 pl-16 font-bold leading-relaxed tracking-wide text-white">
+        We are design changers <br /> do what matters.
+      </h2>
 
       {/* images here  */}
       <div className="grid grid-cols-12 gap-4">
@@ -56,7 +55,8 @@ const Login = () => {
             alt="bottom ornament"
           />
           <div>
-            <img className='mt-36'
+            <img
+              className="mt-36"
               src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/themes/docy/assets/img/sign-up/door.png"
               alt="man image with lock"
             />
@@ -125,15 +125,24 @@ const Login = () => {
                 <button
                   type="submit"
                   className="mb-6 w-full rounded bg-indigo-600 py-3 px-7 text-white"
+                  disabled={status ? true : false}
                 >
                   Login
                 </button>
               </div>
             </form>
-            <button className="bg-white shadow  mb-6 text-black mx-auto flex  justify-center text-center px-10 py-3   cursor-pointer " onClick={handleGoogleAuth}>
-              Continue With 
-              <img src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png" alt="" className='w-6 ml-2'/> 
-             </button>
+            <button
+              className="mx-auto mb-6  flex cursor-pointer justify-center bg-white  px-10 py-3 text-center text-black   shadow "
+              onClick={() => signInWithGoogle(router)}
+              disabled={status ? true : false}
+            >
+              Continue With
+              <img
+                src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png"
+                alt="googleImage"
+                className="ml-2 w-6"
+              />
+            </button>
           </div>
         </div>
       </div>

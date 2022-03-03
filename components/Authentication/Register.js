@@ -14,7 +14,7 @@ const Register = () => {
   const router = useRouter()
 
   // getting register function from use firebase here
-  const { createUser ,signInWithGoogle} = useFirebase()
+  const { createUser, signInWithGoogle } = useFirebase()
 
   const {
     handleSubmit,
@@ -27,20 +27,8 @@ const Register = () => {
     reset()
   }
 
-   const handleGoogleAuth=()=>{
-    signInWithGoogle()
-    .then((result) => {
-      console.log(result.user);
-      router.replace("/");
-    })
-     
-     
-   }
-
-
   return (
-    <div className='dark:bg-lightDark bg-slate-100'>
-    
+    <div className="bg-slate-100 dark:bg-lightDark">
       <div className="grid grid-cols-12 gap-4">
         <div className="relative col-span-12 h-96 bg-blue-700 md:col-span-4 md:min-h-screen">
           <img
@@ -81,7 +69,7 @@ const Register = () => {
               onSubmit={handleSubmit(submitHandler)}
             >
               <label>
-                <p >Full name</p>
+                <p>Full name</p>
                 {/* showing error  */}
                 <small className="text-red-400">{errors?.name?.message}</small>
                 <input
@@ -173,12 +161,20 @@ const Register = () => {
                 >
                   Register
                 </button>
-              </div> 
+              </div>
             </form>
-            <button className="bg-white shadow  mb-6 text-black mx-auto flex  justify-center text-center px-10 py-3   cursor-pointer " onClick={handleGoogleAuth}>
-              Continue With 
-              <img src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png" alt="" className='w-6 ml-2'/> 
-             </button>
+            <button
+              className="mx-auto mb-6  flex cursor-pointer justify-center bg-white  px-10 py-3 text-center text-black   shadow "
+              onClick={() => signInWithGoogle(router)}
+              disabled={status ? true : false}
+            >
+              Continue With
+              <img
+                src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png"
+                alt="googleImage"
+                className="ml-2 w-6"
+              />
+            </button>
           </div>
         </div>
       </div>
