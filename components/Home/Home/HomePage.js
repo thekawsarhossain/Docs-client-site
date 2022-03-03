@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchBlogs } from '../../../Redux/Slices/blogSlice'
 import { fetchUserData } from '../../../Redux/Slices/userSlice'
+import HomeBlogList from '../HomeBlogList/HomeBlogList'
 
 const HomePage = () => {
   const userInfo = useSelector((state) => state?.reducers?.user?.currentUser)
@@ -28,7 +29,8 @@ const HomePage = () => {
     <div>
       <Navbar />
       <HeroSection />
-      <CommunitiesCard />
+      {/* <CommunitiesCard /> */}
+      <HomeBlogList></HomeBlogList>
       <OnlineDoc />
       <VideoList />
       <Questions />

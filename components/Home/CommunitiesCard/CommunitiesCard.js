@@ -67,15 +67,26 @@ const CommunitiesCard = () => {
   }, [showMore])
 
   return (
-    <Box sx={{ background: '#131417', py: 10 }}>
+    <Box>
       <Container>
-        <div className="  rounded-xl bg-darkBlue  ">
+        <div
+          style={{ marginTop: '-110px' }}
+          className="  rounded-xl bg-darkBlue  "
+        >
           {/* grid system for the items here  */}
           <div className="grid grid-cols-1 lg:grid-cols-3">
             {data?.map((item) => (
-              <div key={item.title} className=" border-w-1 border-b border-secondary">
+              <div
+                key={item.title}
+                className=" border-w-1 border-b border-secondary"
+              >
                 <div className="flex items-center p-8">
-                  <Image src={item?.icon} width="50px" height="50px" alt='img' />
+                  <Image
+                    src={item?.icon}
+                    width="50px"
+                    height="50px"
+                    alt="img"
+                  />
                   <span className="ml-4">
                     <Link href="/home">
                       <h6 className="font-bold text-white">{item?.title}</h6>
