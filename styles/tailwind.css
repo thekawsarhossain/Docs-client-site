@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Arimo', sans-serif;
+  transition: all 0.8s ease-in-out;
 }
 
 
@@ -60,10 +61,10 @@ body {
 
   /* footer regarding style start here  */
   .footer-icon {
-    @apply mt-5 mr-4 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue;
+    @apply mt-5 mr-4 cursor-pointer rounded-md bg-slate-800 p-2 duration-200 hover:text-lightBlue dark:text-Docy-White;
   }
   .footer-nav-title {
-    @apply mb-3 text-xl font-medium tracking-widest text-white;
+    @apply mb-3 text-xl font-medium tracking-widest text-white dark:text-Docy-Dark;
   }
   .footer-nav-item {
     @apply my-4 block cursor-pointer text-gray-600 hover:text-gray-800;
@@ -147,15 +148,15 @@ body {
 
 /*Video List CSS by Fahad */
 .video-List {
-  background-color: rgb(25, 26, 46);
+  @apply bg-Docy-DarkLight dark:bg-Docy-BlueyPurple dark:text-Docy-Dark;
 }
 .bshadow {
-  box-shadow: 0 20px 40px 0 rgb(4 73 89 / 10%);
+  box-shadow: 0 20px 40px 0 #0449591a;
 }
 
 /* slider css */
 .slider {
-  background: #131417;
+  @apply bg-Docy-AlmostBlack text-white dark:bg-slate-100 dark:text-Docy-Dark;
 }
 .slick-slide img {
   border-radius: 20px;
@@ -1022,9 +1023,8 @@ legend + * {
   background: #10b3d6;
 }
 
-
 /* User board css */
-.user-icon li{
+.user-icon li {
   background-color: rgba(36, 105, 92, 0.1);
   color: #24695c;
   width: 35px;
@@ -1034,11 +1034,10 @@ legend + * {
   justify-content: center;
   border-radius: 5px;
   margin-left: 20px;
-  
 }
-.user-icon li:hover{
-background: #24695c;
-color: white;
+.user-icon li:hover {
+  background: #24695c;
+  color: white;
 }
 
 /* Blog Detail Page  */
@@ -1055,4 +1054,3 @@ color: white;
 #documentation p {
   margin-bottom: 30px;
 }
-

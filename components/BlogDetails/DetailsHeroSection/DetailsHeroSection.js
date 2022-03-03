@@ -12,8 +12,7 @@ const DetailsHeroSection = () => {
         <Container>
           <div
             style={{ minHeight: '300px' }}
-            className="flex w-full pt-12 text-white"
-          >
+            className="flex w-full pt-12 text-white" >
             <div className="self-center">
               <h1 className="font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
@@ -34,3 +33,6 @@ const DetailsHeroSection = () => {
 }
 
 export default DetailsHeroSection
+
+
+

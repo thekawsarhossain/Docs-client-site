@@ -18,8 +18,8 @@ const ASKBody = () => {
   return (
     <div>
       <div
-        style={{ padding: '100px 0', background: '#131417' }}
-        className="sec_pad page_wrapper"
+        style={{ padding: '100px 0' }}
+        className="bg-Docy-AlmostBlack px-24 py-0 dark:bg-white"
       >
         <Container>
           <div
@@ -75,9 +75,9 @@ const ASKBody = () => {
               </div>
               <>
                 {/* <ContactBanner /> */}
-                <Box sx={{ background: '#131417', color: 'white', pb: 10 }}>
-                  <Container sx={{ background: '#2C303A', p: 5 }}>
-                    <div className="grid grid-cols-12 gap-4 ">
+                <div className="pb-4 text-white dark:text-Docy-Dark">
+                  <Container>
+                    <div className="darkshadow-black grid grid-cols-12 gap-4 bg-Docy-AlmostBlack shadow-lg shadow-white dark:bg-white">
                       <div className="col-span-12 p-3 lg:col-span-6">
                         <h2>Let’s get in touch</h2>
                         <p className="my-6">
@@ -244,7 +244,7 @@ const ASKBody = () => {
                     </div>
                   </Container>
                   {/* <Footer /> */}
-                </Box>
+                </div>
               </>
             </div>
           </div>
