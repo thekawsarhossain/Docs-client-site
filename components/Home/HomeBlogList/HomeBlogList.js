@@ -35,7 +35,7 @@ const HomeBlogList = () => {
           {dataSearch?.map((blog) => (
             <div
               key={blog?._id}
-              className="col-span-12 font-serif text-white drop-shadow-[0_35px_35px_rgba(25,35,43,1)] sm:col-span-6 md:col-span-4"
+              className="col-span-12 font-serif text-white shadow-lg dark:text-Docy-Dark  sm:col-span-6 md:col-span-4"
             >
               <button
                 className="w-full text-left"
@@ -43,23 +43,24 @@ const HomeBlogList = () => {
               >
                 <Link href={`/blog/${blog?._id}`}>
                   <a>
-                    <div
-                      className="rounded-lg "
-                      style={{ backgroundColor: '#2c303a' }}
-                    >
+                    <div className="rounded-lg bg-slate-100 dark:bg-Docy-Dark">
                       <img
-                        className="rounded-t-lg"
+                        className="h-96 w-96 rounded-t-lg object-cover"
                         src={blog?.image}
                         alt="blogImage"
                       />
                       <div className="px-4 pt-4 pb-8">
-                        <h3 className="text-xl">{blog?.title}</h3>
+                        <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
+                          {/* {blog?.title} */}
+                          {blog?.title.length > 30
+                            ? blog?.title.split(' ').slice(0, 10).join(' ')
+                            : 'You need more text to add '}
+                        </h3>
                       </div>
                       <hr className="text-white" />
                       <div className="flex justify-between p-4">
                         <div className="flex">
                           <div className="self-center">
-                            {' '}
                             <div className="scisco-verified">
                               <Avatar
                                 alt="Bloggers image"
@@ -70,19 +71,19 @@ const HomeBlogList = () => {
                           </div>
                           <div className="self-center pl-2">
                             <p>
-                              <small className="text-sm">
+                              <small className="text-sm text-Docy-Dark dark:text-white">
                                 {blog?.blogger?.displayName}
                               </small>
                             </p>
                             <p>
-                              <small className="font-sans text-sm">
+                              <small className="font-sans text-sm text-Docy-Dark dark:text-white">
                                 {blog?.uploadDate} - {blog?.uploadTime}
                               </small>
                             </p>
                           </div>
                         </div>
-                        <div className="float-right self-center">
-                          <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />{' '}
+                        <div className="float-right self-center text-Docy-Dark dark:text-white">
+                          <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />
                           {blog?.comment.length}
                         </div>
                       </div>
