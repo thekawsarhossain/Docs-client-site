@@ -100,21 +100,21 @@ const ProfileAbout = () => {
         style={{
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
-        className="rounded bg-Docy-Dark text-white dark:bg-Docy-White dark:text-Docy-DarkLight dark:shadow-md"
+        className="rounded bg-Docy-Dark text-white"
       >
         <div className=" flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
           <div className="scisco-user-table-right">John Doe</div>
         </div>
-        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 dark:border-Docy-Blurple">
           <div className="scisco-user-table-left">Age</div>
           <div className="scisco-user-table-right">34</div>
         </div>
-        <div className="scisco-user-table gender-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 ">
+        <div className="scisco-user-table gender-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Gender</div>
           <div className="scisco-user-table-right">Male</div>
         </div>
-        <div className="scisco-user-table location-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 ">
+        <div className="scisco-user-table location-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Location</div>
           <div className="scisco-user-table-right">New York</div>
         </div>
@@ -122,7 +122,7 @@ const ProfileAbout = () => {
           <div className="scisco-user-table-left">Website</div>
           <div className="scisco-user-table-right">www.thememasters.club/</div>
         </div>
-        <div className="scisco-user-table bio-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200 ">
+        <div className="scisco-user-table bio-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Biography</div>
           <div className="scisco-user-table-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -134,7 +134,7 @@ const ProfileAbout = () => {
         </div>
       </div>
       <div id="scisco-user-icons">
-        <ul className=" le mt-6 flex justify-end p-0 ">
+        <ul className="scisco-icons le mt-6 flex justify-end p-0 ">
           <li
             data-toggle="tooltip"
             data-placement="top"
@@ -147,7 +147,7 @@ const ProfileAbout = () => {
                 backgroundColor: '#3b5998',
                 transition: 'transform .2s ease-in-out',
               }}
-              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white dark:text-Docy-DarkLight"
+              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
               href="#"
               target="_blank"
             >

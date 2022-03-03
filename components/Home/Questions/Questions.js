@@ -45,7 +45,10 @@ const Questions = () => {
   return (
     <>
       <div>
-        <div style={{ background: '#131417' }} className="text-white">
+        <div
+          // style={{ background: '#131417' }}
+          className="bg-Docy-AlmostBlack text-white dark:bg-slate-100 dark:text-Docy-Dark"
+        >
           <Container>
             <div className="pt-28 text-center">
               <h1 className="pb-3 text-3xl font-bold">
@@ -59,7 +62,7 @@ const Questions = () => {
             <div className="grid grid-cols-12 md:gap-4 lg:gap-28">
               <div className="col-span-12 pb-28 md:col-span-4 lg:col-span-3">
                 <div
-                  className="my-5 rounded p-5 bshadow md:w-64 lg:w-64"
+                  className="bshadow my-5 rounded p-5 md:w-64 lg:w-64"
                   style={{ backgroundColor: '#1e1f26' }}
                 >
                   <p className="pt-4 pb-7 text-2xl font-semibold">

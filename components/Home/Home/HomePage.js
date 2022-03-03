@@ -1,7 +1,7 @@
 import Testimonial from '../Testimonial/Testimonial'
 import Navbar from '../../Shared/Navbar/Navbar'
 import Questions from '../Questions/Questions'
-import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
+// import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
 import VideoList from '../VideoList/VideoList'
 import OnlineDoc from '../OnlineDoc/OnlineDoc'
 import Footer from '../../Shared/Footer/Footer'
@@ -24,7 +24,7 @@ const HomePage = () => {
     <div>
       <Navbar />
       <HeroSection />
-      <CommunitiesCard />
+      {/* <CommunitiesCard /> */}
       <OnlineDoc />
       <VideoList />
       <Questions />

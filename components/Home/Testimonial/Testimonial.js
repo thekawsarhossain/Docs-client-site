@@ -36,11 +36,9 @@ const Testimonial = () => {
               <div className="-m-4 mx-auto flex  flex-wrap justify-between">
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
-                    <div className="flex-grow ">
-                      <Typography variant="h4" sx={{ color: 'white' }}>
-                        {slider.title}
-                      </Typography>
-                      <h4 className="mt-6 font-bold text-white">
+                    <div className="flex-grow text-white dark:text-Docy-Dark">
+                      <Typography variant="h4">{slider.title}</Typography>
+                      <h4 className="mt-6 font-bold text-white dark:text-Docy-Dark">
                         {slider.name}
                       </h4>
                       <p className="text-indigo-600">{slider.designation}</p>

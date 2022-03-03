@@ -6,7 +6,7 @@ import { Container } from '@mui/material'
 
 const Footer = () => {
   return (
-    <footer className="bg-black pt-10 text-white dark:bg-slate-100 dark:text-Docy-Dark lg:pt-32">
+    <footer className=" bg-black pt-10 text-white dark:bg-slate-100 dark:text-black  lg:pt-32">
       {/* <FooterBanner /> */}
       <Container>
         <div className="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
@@ -14,7 +14,16 @@ const Footer = () => {
           <div>
             <Link href="/">
               <a>
-                <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
+                <img
+                  className="block w-40 dark:hidden"
+                  src="https://i.ibb.co/KspLSX3/docy-logo.png"
+                  alt=""
+                />
+                <img
+                  className="hidden w-40 dark:block"
+                  src="https://i.ibb.co/Zx7g8yW/logo-2x-1.png"
+                  alt=""
+                />
               </a>
             </Link>
             <p className="mt-2 text-lg text-secondary">
@@ -36,7 +45,7 @@ const Footer = () => {
             </div>
           </div>
           {/*footer quick navigation area  */}
-          <div className="text-back mx-8">
+          <div className="mx-8">
             <h2 className="footer-nav-title">Doc Contents</h2>
             <nav className="mb-10 list-none">
               <li>
