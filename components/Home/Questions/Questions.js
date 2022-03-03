@@ -47,7 +47,7 @@ const Questions = () => {
       <div>
         <div
           // style={{ background: '#131417' }}
-          className="bg-Docy-AlmostBlack text-white dark:bg-slate-100 dark:text-Docy-Dark"
+          className="bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white"
         >
           <Container>
             <div className="pt-28 text-center">

@@ -1,11 +1,10 @@
 import { Avatar, Box, Container, Link } from '@mui/material'
 import Navbar from '../../Shared/Navbar/Navbar'
-import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded'
 
 const BlogHeroSection = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar />
       {/* Banner section  */}
       <div style={{ backgroundColor: '#223044', minHeight: '310px' }}>
         <Container>

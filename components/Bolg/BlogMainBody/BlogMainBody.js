@@ -27,7 +27,7 @@ const BlogMainBody = () => {
         .includes(filter.toString().toLowerCase())
     )
   })
-  dataSearch.reverse()
+  dataSearch?.reverse()
   return (
     <div>
       <div style={{ backgroundColor: '#21242c' }}>

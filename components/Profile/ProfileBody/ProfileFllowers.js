@@ -4,13 +4,12 @@ const ProfileFllowers = () => {
     <div>
       <form
         style={{
-          backgroundColor: '#2C303A',
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
         role="search"
         method="get"
         id="scisco-user-search-form"
-        className="relative mb-10 rounded-md border-0 p-6"
+        className="relative mb-10 rounded-md border-0 p-6 dark:bg-Docy-DarkM"
       >
         <div
           style={{ marginRight: '-10px', marginLeft: '-10px' }}
@@ -121,11 +120,10 @@ const ProfileFllowers = () => {
       <div
         style={{
           border: '0',
-          background: '#fff',
           borderRadius: '0.25rem',
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
-        className="scisco-users-wrapper"
+        className="scisco-users-wrapper bg-white dark:bg-Docy-DarkM"
       >
         <div
           style={{
@@ -163,14 +161,11 @@ const ProfileFllowers = () => {
           <div style={{ flex: 'auto' }} className="scisco-question-title">
             <h6
               style={{
-                margin: '0',
-                display: ' flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
                 lineHeight: '1.5',
                 fontSize: '1.2rem',
                 fontWeight: '700',
               }}
+              className="m-0 flex flex-wrap items-center"
             >
               <a href="https://wordpress-288344-1596643.cloudwaysapps.com/questions/profile/darrell//">
                 Darrell Collins
@@ -214,27 +209,21 @@ const ProfileFllowers = () => {
           >
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM "
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -251,27 +240,21 @@ const ProfileFllowers = () => {
             </span>
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: 'lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
-                maxWidth: '100%',
+                maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
-                textoverflow: 'ellipsis',
-                overflow: 'hidden',
+                textOverflow: 'ellipsis',
                 textAlign: ' center',
               }}
-              className="ap-questions-count ap-questions-vcount"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -324,14 +307,10 @@ const ProfileFllowers = () => {
           <div style={{ flex: 'auto' }} className="scisco-question-title">
             <h6
               style={{
-                margin: '0',
-                display: ' flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
                 lineHeight: '1.5',
                 fontSize: '1.2rem',
-                fontWeight: '700',
               }}
+              className="m-0 flex flex-wrap items-center font-bold"
             >
               <a href="https://wordpress-288344-1596643.cloudwaysapps.com/questions/profile/ian//">
                 Ian Harris
@@ -375,27 +354,21 @@ const ProfileFllowers = () => {
           >
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -412,27 +385,21 @@ const ProfileFllowers = () => {
             </span>
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: 'lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
-                maxWidth: '100%',
+                maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
-                textoverflow: 'ellipsis',
-                overflow: 'hidden',
+                textOverflow: 'ellipsis',
                 textAlign: ' center',
               }}
-              className="ap-questions-count ap-questions-vcount"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -458,7 +425,7 @@ const ProfileFllowers = () => {
           }}
           className="scisco-question-wrapper"
         >
-          <div className="scisco-question-avatar">
+          <div style={{ minWidth: '75px' }} className="scisco-question-avatar">
             <a href="https://wordpress-288344-1596643.cloudwaysapps.com/questions/profile/linda//">
               <img
                 className="avatar"
@@ -485,14 +452,10 @@ const ProfileFllowers = () => {
           <div style={{ flex: 'auto' }} className="scisco-question-title">
             <h6
               style={{
-                margin: '0',
-                display: ' flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
                 lineHeight: '1.5',
                 fontSize: '1.2rem',
-                fontWeight: '700',
               }}
+              className="m-0 flex flex-wrap items-center font-bold"
             >
               <a href="https://wordpress-288344-1596643.cloudwaysapps.com/questions/profile/linda//">
                 Linda Fernandez
@@ -536,27 +499,21 @@ const ProfileFllowers = () => {
           >
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -573,27 +530,21 @@ const ProfileFllowers = () => {
             </span>
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count ap-questions-vcount"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -619,7 +570,7 @@ const ProfileFllowers = () => {
           }}
           className="scisco-question-wrapper"
         >
-          <div className="scisco-question-avatar">
+          <div style={{ minWidth: '75px' }} className="scisco-question-avatar">
             <a href="https://wordpress-288344-1596643.cloudwaysapps.com/questions/profile/nelson//">
               <div className="scisco-verified">
                 <i className="fas fa-check" title="Verified user"></i>
@@ -700,27 +651,21 @@ const ProfileFllowers = () => {
           >
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',
@@ -737,27 +682,21 @@ const ProfileFllowers = () => {
             </span>
             <span
               style={{
-                background: '#fff',
-                display: 'block',
-                float: 'left',
-                textTransform: ' lowercase',
                 fontSize: '.7rem',
                 marginLeft: '15px',
                 color: 'inherit',
-                border: '1px solid rgba(0,0,0,.1)',
-                width: '50px',
+                border: '1px solid black',
                 minHeight: '60px',
                 maxWidth: ' 100%',
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
-                overflow: 'hidden',
                 textAlign: ' center',
               }}
-              className="ap-questions-count ap-questions-vcount"
+              className="float-left block w-12 overflow-hidden bg-slate-100 lowercase dark:bg-Docy-DarkM"
             >
               <span
                 style={{
-                  borderBottom: ' 1px solid rgba(0,0,0,.1)',
+                  borderBottom: ' 1px solid black',
                   width: 'auto',
                   fontSize: '.9rem',
                   textAlign: ' center',

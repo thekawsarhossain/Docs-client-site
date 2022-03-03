@@ -32,7 +32,7 @@ const VideoList = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
-          <div className="col-span-12 text-white dark:text-Docy-Dark md:col-span-5">
+          <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
             <Accordion
               sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}

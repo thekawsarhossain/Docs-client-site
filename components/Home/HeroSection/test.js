@@ -8,11 +8,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
- const Example =()=> {
+const Example = () => {
   return (
     <Menu as="div" className=" relative inline-block text-left">
       <div>
-        <Menu.Button className="click inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700  focus:outline-none   ">
+        <Menu.Button className="click inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none dark:bg-Docy-GrayBlue  dark:text-white   ">
           All
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
@@ -27,52 +27,53 @@ function classNames(...classes) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className=" origin-top-right absolute right-0 mt-2 w-56  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+        <Menu.Items className=" absolute right-0 mt-2 w-56 origin-top-right  divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link
-                href="/documentation"
-              >
-              <a className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800 '> Docs</a>
-              </Link>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link
-                  href="/Forum"
-                >
-                <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'
-                 > Forum</a>
+                <Link href="/documentation">
+                  <a className="block  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-200 hover:text-violet-800 ">
+                    {' '}
+                    Docs
+                  </a>
                 </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link
-                href="/blogs"
-              >
-              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> Blog</a>
-              </Link>
+                <Link href="/Forum">
+                  <a className="block  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-200 hover:text-violet-800">
+                    {' '}
+                    Forum
+                  </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link
-                href="/helpdesk"
-              >
-              <a  className= 'text-gray-700  block px-4 py-2 text-sm font-medium hover:bg-slate-200 hover:text-violet-800'> HelpDesk</a>
-              </Link>
+                <Link href="/blogs">
+                  <a className="block  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-200 hover:text-violet-800">
+                    {' '}
+                    Blog
+                  </a>
+                </Link>
               )}
             </Menu.Item>
-           
+            <Menu.Item>
+              {({ active }) => (
+                <Link href="/helpdesk">
+                  <a className="block  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-200 hover:text-violet-800">
+                    {' '}
+                    HelpDesk
+                  </a>
+                </Link>
+              )}
+            </Menu.Item>
           </div>
-        
         </Menu.Items>
       </Transition>
     </Menu>
   )
 }
 
-export default Example;
+export default Example

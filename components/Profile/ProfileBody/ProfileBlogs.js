@@ -1,54 +1,59 @@
-import Image from 'next/image'
+import SmsIcon from '@mui/icons-material/Sms'
 
 const ProfileBlogs = () => {
   return (
-    <div style={{ background: '#2C303A' }}>
+    <div className="">
       <div className="scisco-masonry-grid" style={{ opacity: '1' }}>
         <div className="scisco-two-columns" data-columns="2">
-          <div className="scisco-column size-1of2">
-            <div className="post-32 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-marketing tag-business tag-company tag-office tag-technology">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-12 rounded bg-slate-100 p-5 shadow dark:bg-Docy-DarkM lg:col-span-6">
               <div className="card-masonry">
                 <div className="card">
-                  <a
-                    className="card-featured-Image"
-                    href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards/"
-                  >
-                    <Image
-                      className="card-Image-top"
+                  <a className="card-featured-Image" href="">
+                    <img
+                      className=""
                       src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/9-1024x683.jpg"
                       alt="How Can My Business Win Awards?"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards/">
-                        How Can My Business Win Awards?
-                      </a>
+                    <h3 className="card-title py-6 font-bold leading-9">
+                      <a href="">How Can My Business Win Awards?</a>
                     </h3>
-                    <p>
+                    <p className="pb-2 text-slate-400">
                       Qui ex graviterque si et velit quamquam erudit. Amet
                       quamquam eu consequat. Quo cupidatat volupta, appellat
                       anim ab litteris domestic…
                     </p>
                   </div>
-                  <div className="card-footer">
+                  <div
+                    style={{
+                      padding: '1.25rem 1.75rem',
+                      borderTop: '1px solid black',
+                    }}
+                    className="card-footer flex flex-wrap items-center bg-slate-100 dark:bg-Docy-DarkM"
+                  >
                     <div className="card-avatar">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
+                      <a href="">
                         <div className="scisco-verified">
-                          <i className="fas fa-check" title="Verified user"></i>
-                          <Image
-                            className="avatar"
+                          {/* <i className="fas fa-check" title="Verified user"></i> */}
+                          <img
+                            className="avatar mr-4 h-10 w-10 rounded-full"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
-                            width="80"
-                            height="80"
                             alt=""
                           />
                         </div>
                       </a>
                     </div>
-                    <div className="card-meta">
+                    <div
+                      style={{ wordWrap: 'break-word' }}
+                      className="flex flex-col"
+                    >
                       <div className="card-meta-author">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
+                        <a
+                          className="block uppercase leading-6"
+                          href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/"
+                        >
                           John Doe
                         </a>
                       </div>
@@ -58,194 +63,75 @@ const ProfileBlogs = () => {
                         </a>
                       </div>
                     </div>
-                    <div className="card-comments">
+                    <div className="ml-auto">
                       <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards//#scisco-comments-wrapper">
-                        <i className="fas fa-comments"></i>3
+                        <SmsIcon sx={{ marginRight: '10px' }} />3
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="post-25 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-finance tag-business tag-finance tag-office">
+            <div className="col-span-12 rounded bg-slate-100 p-5 shadow dark:bg-Docy-DarkM lg:col-span-6">
               <div className="card-masonry">
                 <div className="card">
-                  <a
-                    className="card-featured-Image"
-                    href="https://wordpress-288344-1596643.cloudwaysapps.com/gdpr-misconceptions-explained/"
-                  >
-                    <Image
-                      className="card-Image-top"
-                      src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/7-1024x683.jpg"
-                      alt="GDPR Misconceptions Explained"
+                  <a className="card-featured-Image" href="">
+                    <img
+                      className=""
+                      src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/9-1024x683.jpg"
+                      alt="How Can My Business Win Awards?"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/gdpr-misconceptions-explained/">
-                        GDPR Misconceptions Explained
-                      </a>
+                    <h3 className="card-title py-6 font-bold leading-9">
+                      <a href="">How Can My Business Win Awards?</a>
                     </h3>
-                    <p>
-                      Ea sint tempor non tempor veniam sed deserunt relinqueret,
-                      culpa probant aut tamen ipsum ut incididunt elit cupidatat
-                      commodo e lorem occaecat…
+                    <p className="pb-2 text-slate-400">
+                      Qui ex graviterque si et velit quamquam erudit. Amet
+                      quamquam eu consequat. Quo cupidatat volupta, appellat
+                      anim ab litteris domestic…
                     </p>
                   </div>
-                  <div className="card-footer">
+                  <div
+                    style={{
+                      padding: '1.25rem 1.75rem',
+                      borderTop: '1px solid black',
+                    }}
+                    className="card-footer flex flex-wrap items-center bg-slate-100 dark:bg-Docy-DarkM"
+                  >
                     <div className="card-avatar">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
+                      <a href="">
                         <div className="scisco-verified">
-                          <i className="fas fa-check" title="Verified user"></i>
-                          <Image
-                            className="avatar"
+                          {/* <i className="fas fa-check" title="Verified user"></i> */}
+                          <img
+                            className="avatar mr-4 h-10 w-10 rounded-full"
                             src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
-                            width="80"
-                            height="80"
                             alt=""
                           />
                         </div>
                       </a>
                     </div>
-                    <div className="card-meta">
+                    <div
+                      style={{ wordWrap: 'break-word' }}
+                      className="flex flex-col"
+                    >
                       <div className="card-meta-author">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
+                        <a
+                          className="block uppercase leading-6"
+                          href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/"
+                        >
                           John Doe
                         </a>
                       </div>
                       <div className="card-meta-date">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/gdpr-misconceptions-explained/">
-                          January 27, 2019
+                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards/">
+                          March 12, 2019
                         </a>
                       </div>
                     </div>
-                    <div className="card-comments">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/gdpr-misconceptions-explained//#scisco-comments-wrapper">
-                        <i className="fas fa-comments"></i>0
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="scisco-column size-1of2">
-            <div className="post-30 post type-post status-publish format-gallery has-post-thumbnail hentry category-finance category-technology tag-business tag-office tag-technology post_format-post-format-gallery">
-              <div className="card-masonry">
-                <div className="card">
-                  <a
-                    className="card-featured-Image"
-                    href="https://wordpress-288344-1596643.cloudwaysapps.com/a-new-era-of-technology/"
-                  >
-                    <Image
-                      className="card-Image-top"
-                      src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/4-1024x683.jpg"
-                      alt="A New Era of Technology"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/a-new-era-of-technology/">
-                        A New Era of Technology
-                      </a>
-                    </h3>
-                    <p>
-                      Sunt eiusmod sed ingeniis iis quamquam compre in arbitror
-                      eu sed irure aute summis cernantur et et amet incurreret
-                      cohae, ubi ab familiar…
-                    </p>
-                  </div>
-                  <div className="card-footer">
-                    <div className="card-avatar">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                        <div className="scisco-verified">
-                          <i className="fas fa-check" title="Verified user"></i>
-                          <Image
-                            className="avatar"
-                            src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
-                            width="80"
-                            height="80"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                    </div>
-                    <div className="card-meta">
-                      <div className="card-meta-author">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                          John Doe
-                        </a>
-                      </div>
-                      <div className="card-meta-date">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/a-new-era-of-technology/">
-                          February 19, 2019
-                        </a>
-                      </div>
-                    </div>
-                    <div className="card-comments">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/a-new-era-of-technology//#scisco-comments-wrapper">
-                        <i className="fas fa-comments"></i>1
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="post-18 post type-post status-publish format-standard has-post-thumbnail hentry category-finance tag-business tag-commerce">
-              <div className="card-masonry">
-                <div className="card">
-                  <a
-                    className="card-featured-Image"
-                    href="https://wordpress-288344-1596643.cloudwaysapps.com/heres-which-commerce-markets-to-watch/"
-                  >
-                    <Image
-                      className="card-Image-top"
-                      src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/2-1024x683.jpg"
-                      alt="Commerce Markets to Watch"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/heres-which-commerce-markets-to-watch/">
-                        Commerce Markets to Watch
-                      </a>
-                    </h3>
-                    <p>
-                      Nostrud quis ne excepteur praetermissum, probant non
-                      probant, nulla cernantur nostrud ab expetendis irure
-                      senserit, id magna aute velit iudicem ex quem…
-                    </p>
-                  </div>
-                  <div className="card-footer">
-                    <div className="card-avatar">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                        <div className="scisco-verified">
-                          <i className="fas fa-check" title="Verified user"></i>
-                          <Image
-                            className="avatar"
-                            src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
-                            width="80"
-                            height="80"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                    </div>
-                    <div className="card-meta">
-                      <div className="card-meta-author">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                          John Doe
-                        </a>
-                      </div>
-                      <div className="card-meta-date">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/heres-which-commerce-markets-to-watch/">
-                          January 14, 2019
-                        </a>
-                      </div>
-                    </div>
-                    <div className="card-comments">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/heres-which-commerce-markets-to-watch//#scisco-comments-wrapper">
-                        <i className="fas fa-comments"></i> 0
+                    <div className="ml-auto">
+                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards//#scisco-comments-wrapper">
+                        <SmsIcon sx={{ marginRight: '10px' }} />3
                       </a>
                     </div>
                   </div>

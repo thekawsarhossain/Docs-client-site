@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div>
       <div
         style={{ height: '750px' }}
-        className="relative flex items-center justify-center bg-Docy-Midnight dark:bg-Docy-Blue"
+        className="relative flex items-center justify-center bg-Docy-Blue dark:bg-Docy-Midnight"
       >
         <div>
           <div className="">

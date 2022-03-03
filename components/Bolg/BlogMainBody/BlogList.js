@@ -45,7 +45,6 @@ const BlogList = (props) => {
                     <div className="flex justify-between p-4">
                       <div className="flex">
                         <div className="self-center">
-                          {' '}
                           <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                             <div className="scisco-verified">
                               <Avatar
