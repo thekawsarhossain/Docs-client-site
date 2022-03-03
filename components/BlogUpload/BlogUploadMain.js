@@ -5,11 +5,22 @@ import dynamic from 'next/dynamic'
 import InfoInput from './InfoInput/InfoInput'
 import Tags from './Tags/Tags'
 import { Container } from '@mui/material'
+import { useSelector } from 'react-redux'
 const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,
 })
 
 const BlogUploadMain = () => {
+  // user data
+  const user = useSelector((state) => state?.reducers?.user?.currentUser)
+  console.log(user)
+
+  // user info from data base
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+  console.log(userInfoFromDB)
+
   const [data, setData] = useState('')
   const [imageLink, setImageLink] = useState('')
   const [video, setVideo] = useState('')
@@ -17,6 +28,15 @@ const BlogUploadMain = () => {
   const [documentation, setDocumentation] = useState('')
   const [tags, setTags] = useState([])
   const [title, setTitle] = useState('')
+
+  let time = new Date()
+  const date = new Date().toLocaleDateString()
+  const currentTime = time.toLocaleString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  })
+
   const blogTitle = (e) => {
     setTitle(e)
   }
@@ -51,6 +71,9 @@ const BlogUploadMain = () => {
       category: categoryName,
       documentation: documentation,
       tags: tags,
+      uploadTime: currentTime,
+      uploadDate: date,
+      blogger: userInfoFromDB,
       comment: [],
     }
     fetch('https://enigmatic-atoll-27842.herokuapp.com/blogs', {

@@ -56,6 +56,9 @@ module.exports = {
           BlueyPurple: '#c4b4fff1',
           Blue: '#4C4CF1',
           paleGeen: '#F8FAFD',
+          GrayBlue:'#2E3243',
+          BlackGray:"#252830"
+
         },
       },
     },

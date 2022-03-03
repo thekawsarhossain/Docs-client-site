@@ -19,8 +19,8 @@ const Contact = () => {
   return (
     <>
       <ContactBanner />
-      <Box sx={{ background: '#FFFFF', color: 'black', py: 10 }}>
-        <Container sx={{ background: '#fffff', p: 5 }}>
+      <div className='py-16  bg-slate-100 dark:bg-Docy-AlmostBlack'>
+        <Container className='shadow p-8 bg-white  dark:bg-Docy-Dark dark:text-white'>
           <div className="grid grid-cols-12 gap-4 ">
             <div className="col-span-12 p-3 lg:col-span-6">
               <h2>Let’s get in touch</h2>
@@ -43,11 +43,11 @@ const Contact = () => {
                         },
                       })}
                       className={`${
-                        errors.firstName ? 'ring-2 ring-red-500' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring focus:ring-emerald-200`}
+                        errors.firstName ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Enter Your first name"
                     />
-                    <span className="py-2 text-sm text-red-400">
+                    <span className="py-2 text-sm text-red-700">
                       {errors?.firstName?.message}
                     </span>
                   </label>
@@ -63,11 +63,11 @@ const Contact = () => {
                         },
                       })}
                       className={`${
-                        errors.lastName ? 'ring-2 ring-red-500' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring focus:ring-emerald-200`}
+                        errors.lastName ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none  `}
                       placeholder="Enter Your last name"
                     />
-                    <span className="py-2 text-sm text-red-400">
+                    <span className="py-2 text-sm text-red-700">
                       {errors?.lastName?.message}
                     </span>
                   </label>
@@ -87,11 +87,11 @@ const Contact = () => {
                         },
                       })}
                       className={`${
-                        errors.email ? 'ring-2 ring-red-500' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring focus:ring-emerald-200`}
+                        errors.email ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 `}
                       placeholder="Enter Your Email"
                     />
-                    <span className="py-2 text-sm text-red-400">
+                    <span className="py-2 text-sm text-red-700">
                       {errors?.email?.message}
                     </span>
                   </label>
@@ -107,11 +107,11 @@ const Contact = () => {
                         },
                       })}
                       className={`${
-                        errors.subject ? 'ring-2 ring-red-500' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring focus:ring-emerald-200`}
+                        errors.subject ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Add a subject"
                     />
-                    <span className="py-2 text-sm text-red-400">
+                    <span className="py-2 text-sm text-red-700">
                       {errors?.subject?.message}
                     </span>
                   </label>
@@ -128,11 +128,11 @@ const Contact = () => {
                       },
                     })}
                     className={`${
-                      errors.message ? 'ring-2 ring-red-500' : null
-                    } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring focus:ring-emerald-200`}
+                      errors.message ? 'ring-2 ring-red-700' : null
+                    } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                     placeholder="Add a subject"
                   />
-                  <span className="py-2 text-sm text-red-400">
+                  <span className="py-2 text-sm text-red-700">
                     {errors?.message?.message}
                   </span>
                 </label>
@@ -146,7 +146,7 @@ const Contact = () => {
               </form>
             </div>
             <div className="col-span-12 lg:col-span-6">
-              <div className="iconHover mb-4 rounded-sm p-5 hover:shadow-lg">
+              <div className="iconHover mb-6  rounded-sm p-5 hover:shadow-lg">
                 <PhoneOutlinedIcon className="contactIcon" />
                 <h3>Phone</h3>
                 <p className="pb-3">
@@ -156,7 +156,7 @@ const Contact = () => {
                   <span className="text-lg font-bold">+880 122 4333 444</span>
                 </a>
               </div>
-              <div className="iconHover mb-4 p-5 hover:shadow-lg">
+              <div className="iconHover mb-6 p-5  hover:shadow-lg">
                 <MailOutlineIcon className="contactIcon" />
                 <h3>Email</h3>
                 <p className="pb-3">
@@ -168,7 +168,7 @@ const Contact = () => {
                   </span>
                 </a>
               </div>
-              <div className="iconHover mb-4 p-5 hover:shadow-lg">
+              <div className="iconHover  mb-4 p-5  hover:shadow-lg">
                 <LocationOnOutlinedIcon className="contactIcon" />
                 <h3 className="pb-3">Location</h3>
                 <span className="text-lg font-bold">
@@ -178,8 +178,8 @@ const Contact = () => {
             </div>
           </div>
         </Container>
+      </div>
         <Footer />
-      </Box>
     </>
   )
 }

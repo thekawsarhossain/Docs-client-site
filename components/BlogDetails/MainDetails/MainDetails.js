@@ -12,16 +12,19 @@ import { useState } from 'react'
 
 const MainDetails = () => {
   const [comment, setComment] = useState({})
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+  console.log(userInfoFromDB)
 
   // react redux hook here
   const dispatch = useDispatch()
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+  // getting user info here
+  const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
-  // demo user here
-  const name = 'Kawsar Hossain'
-  const email = 'demo@gmail.com'
   let time = new Date()
   const date = new Date().toLocaleDateString()
   const currentTime = time.toLocaleString('en-US', {
@@ -37,34 +40,63 @@ const MainDetails = () => {
     reset,
     formState: { errors },
   } = useForm()
-  const submitHandler = (data) => {
+
+  const submitHandler = async (data) => {
     const randomNumber = (((1 + Math.random() + 10000000) * 0x10000) | 0)
       .toString(16)
       .substring(1)
     const payload = {
       _id: randomNumber,
-      name: name,
-      email: email,
+      image: userInfoFromDB?.image,
+      name: userInfoFromDB?.displayName,
+      email: userInfoFromDB?.email,
       time: currentTime,
       date: date,
       comment: data.comment,
     }
+    // adding the comment into the db
+    // try {
+    //   const response = await fetch(`http://localhost:5000/blog/${blog?._id}`, {
+    //     method: 'PUT',
+    //     headers: { 'content-type': 'application/json' },
+    //     body: JSON.stringify(payload),
+    //   })
+    //   const result = await response.json()
+    //   console.log(result)
+    // } catch (e) {
+    //   alert('there is an error')
+    // }
+
+    fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result))
+      .catch((e) => console.log(e))
+
     dispatch(ADD_COMMENT(payload))
     reset()
   }
 
   return (
-    <div style={{ backgroundColor: '#21242c' }}>
+    <div style={{ backgroundColor: '#21242c' }} className="text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
             {blog?.video && <video src={blog?.video} controls></video>}
             {/* <DemoBlog data={.data}></DemoBlog> */}
+
+            {/* Main documentation  */}
             <div
+              id="documentation"
               dangerouslySetInnerHTML={{
                 __html: `${blog?.documentation}`,
               }}
             ></div>
+
+            {/* summary  */}
             <div
               style={{ minHeight: '200px' }}
               className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
@@ -85,6 +117,8 @@ const MainDetails = () => {
                 </p>
               </div>
             </div>
+
+            {/* Related post  */}
             <div>
               <h1 className="pb-4 text-2xl font-bold text-white">
                 Related Post
@@ -95,7 +129,7 @@ const MainDetails = () => {
                     <img
                       className="rounded-lg"
                       src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
+                      alt="blogImage"
                     />
                   </div>
                   <div>
@@ -164,14 +198,18 @@ const MainDetails = () => {
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>
                       <Avatar
-                        alt="Remy Sharp"
-                        src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
+                        alt="commenter image"
+                        src={
+                          comment?.image
+                            ? comment?.image
+                            : 'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg'
+                        }
                         sx={{ width: 56, height: 56 }}
                       />
                     </div>
                     <div className="pl-4">
                       <h1 className="text-2xl font-bold">{comment?.name}</h1>
-                      <p>
+                      <p className="font-sans">
                         {comment?.time} - {comment?.date}
                       </p>
                       <p className="py-4">{comment?.comment}</p>
@@ -236,6 +274,7 @@ const MainDetails = () => {
             </div>
             {/*  comment block end here   */}
           </div>
+
           {/* Side bar  */}
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
@@ -243,11 +282,13 @@ const MainDetails = () => {
               <div>
                 <img
                   className="border border-white p-1"
-                  src="https://academy.jungtin.me/dynamic-images/w5jz66raxup_04-08-2021_03-04-26.jpeg"
+                  src={blog?.blogger?.image}
                   alt=""
                 />
               </div>
-              <h1 className="py-2 font-sans text-4xl font-bold">Abdul Bari</h1>
+              <h1 className="py-2 font-sans text-4xl font-bold">
+                {blog?.blogger?.displayName}
+              </h1>
               <p>
                 James Bond jolly good happy days smashing barney bonnet bits and
                 bobs loo.!
@@ -327,6 +368,26 @@ const MainDetails = () => {
                   <li className="ml-5">Tourist Tours</li>
                   <li className="ml-5">Inspire</li>
                 </ul>
+              </div>
+            </div>
+            {/* Tag list  */}
+            <div className="pt-4">
+              <h1 className="pb-2 text-2xl">Tags</h1>
+              <div
+                style={{ minHeight: '150px', maxWidth: '500px' }}
+                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
+              >
+                {blog?.tags.map((tag, index) => {
+                  return (
+                    <div
+                      style={{ backgroundColor: 'aliceblue' }}
+                      key={index}
+                      className="m-1 h-fit rounded-lg p-1"
+                    >
+                      {tag}{' '}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
