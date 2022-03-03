@@ -21,9 +21,12 @@ const BlogList = (props) => {
         {props.dataSearch?.map((blog) => (
           <div
             key={blog?._id}
-            className="col-span-12 text-white drop-shadow-[0_35px_35px_rgba(25,35,43,1)] "
+            className="col-span-12 font-serif text-white drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
           >
-            <button onClick={() => dispatch(ADD_TO_BLOG(blog))}>
+            <button
+              className="w-full text-left"
+              onClick={() => dispatch(ADD_TO_BLOG(blog))}
+            >
               <Link href={`/blog/${blog?._id}`}>
                 <a>
                   <div
@@ -35,19 +38,19 @@ const BlogList = (props) => {
                       src={blog?.image}
                       alt="blogImage"
                     />
-                    <div className="p-3">
+                    <div className="px-4 pt-4 pb-8">
                       <h3 className="text-4xl">{blog?.title}</h3>
                     </div>
                     <hr className="text-white" />
-                    <div className="flex justify-between p-3">
+                    <div className="flex justify-between p-4">
                       <div className="flex">
                         <div className="self-center">
                           {' '}
                           <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
                             <div className="scisco-verified">
                               <Avatar
-                                alt="Remy Sharp"
-                                src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
+                                alt="Bloggers image"
+                                src={blog?.blogger?.image}
                                 sx={{ width: 40, height: 40 }}
                               />
                             </div>
@@ -55,15 +58,20 @@ const BlogList = (props) => {
                         </div>
                         <div className="self-center pl-2">
                           <p>
-                            <small className="text-sm">John Doe</small>
+                            <small className="text-sm">
+                              {blog?.blogger?.displayName}
+                            </small>
                           </p>
                           <p>
-                            <small className="text-sm">March 12, 2019</small>
+                            <small className="font-sans text-sm">
+                              {blog?.uploadDate} - {blog?.uploadTime}
+                            </small>
                           </p>
                         </div>
                       </div>
                       <div className="float-right self-center">
-                        <ForumOutlinedIcon sx={{ width: 18, height: 18 }} /> 3
+                        <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />{' '}
+                        {blog?.comment.length}
                       </div>
                     </div>
                   </div>

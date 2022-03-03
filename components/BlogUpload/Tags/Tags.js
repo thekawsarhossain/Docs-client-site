@@ -59,6 +59,7 @@ const Tags = (props) => {
             onKeyUp={addTag}
           />
         </div>
+        {/* Show tags  */}
         <div
           style={{ minHeight: '150px', maxWidth: '500px' }}
           className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
