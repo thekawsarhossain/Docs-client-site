@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Avatar, Container } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
@@ -11,6 +12,10 @@ import { useState } from 'react'
 
 const MainDetails = () => {
   const [comment, setComment] = useState({})
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+  console.log(userInfoFromDB)
 
   // react redux hook here
   const dispatch = useDispatch()
@@ -42,9 +47,9 @@ const MainDetails = () => {
       .substring(1)
     const payload = {
       _id: randomNumber,
-      image: user?.photoURL,
-      name: user?.displayName,
-      email: user?.email,
+      image: userInfoFromDB?.image,
+      name: userInfoFromDB?.displayName,
+      email: userInfoFromDB?.email,
       time: currentTime,
       date: date,
       comment: data.comment,
@@ -82,12 +87,16 @@ const MainDetails = () => {
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
             {blog?.video && <video src={blog?.video} controls></video>}
             {/* <DemoBlog data={.data}></DemoBlog> */}
+
+            {/* Main documentation  */}
             <div
               id="documentation"
               dangerouslySetInnerHTML={{
                 __html: `${blog?.documentation}`,
               }}
             ></div>
+
+            {/* summary  */}
             <div
               style={{ minHeight: '200px' }}
               className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
@@ -108,6 +117,8 @@ const MainDetails = () => {
                 </p>
               </div>
             </div>
+
+            {/* Related post  */}
             <div>
               <h1 className="pb-4 text-2xl font-bold text-white">
                 Related Post
@@ -187,7 +198,7 @@ const MainDetails = () => {
                   <div className="my-4 flex flex-col sm:flex-row">
                     <div>
                       <Avatar
-                        alt="Remy Sharp"
+                        alt="commenter image"
                         src={
                           comment?.image
                             ? comment?.image
@@ -198,7 +209,7 @@ const MainDetails = () => {
                     </div>
                     <div className="pl-4">
                       <h1 className="text-2xl font-bold">{comment?.name}</h1>
-                      <p>
+                      <p className="font-sans">
                         {comment?.time} - {comment?.date}
                       </p>
                       <p className="py-4">{comment?.comment}</p>
@@ -263,6 +274,7 @@ const MainDetails = () => {
             </div>
             {/*  comment block end here   */}
           </div>
+
           {/* Side bar  */}
           <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
@@ -270,11 +282,13 @@ const MainDetails = () => {
               <div>
                 <img
                   className="border border-white p-1"
-                  src="https://academy.jungtin.me/dynamic-images/w5jz66raxup_04-08-2021_03-04-26.jpeg"
+                  src={blog?.blogger?.image}
                   alt=""
                 />
               </div>
-              <h1 className="py-2 font-sans text-4xl font-bold">Abdul Bari</h1>
+              <h1 className="py-2 font-sans text-4xl font-bold">
+                {blog?.blogger?.displayName}
+              </h1>
               <p>
                 James Bond jolly good happy days smashing barney bonnet bits and
                 bobs loo.!
@@ -354,6 +368,26 @@ const MainDetails = () => {
                   <li className="ml-5">Tourist Tours</li>
                   <li className="ml-5">Inspire</li>
                 </ul>
+              </div>
+            </div>
+            {/* Tag list  */}
+            <div className="pt-4">
+              <h1 className="pb-2 text-2xl">Tags</h1>
+              <div
+                style={{ minHeight: '150px', maxWidth: '500px' }}
+                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
+              >
+                {blog?.tags.map((tag, index) => {
+                  return (
+                    <div
+                      style={{ backgroundColor: 'aliceblue' }}
+                      key={index}
+                      className="m-1 h-fit rounded-lg p-1"
+                    >
+                      {tag}{' '}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>

@@ -1023,9 +1023,8 @@ legend + * {
   background: #10b3d6;
 }
 
-
 /* User board css */
-.user-icon li{
+.user-icon li {
   background-color: rgba(36, 105, 92, 0.1);
   color: #24695c;
   width: 35px;
@@ -1035,11 +1034,10 @@ legend + * {
   justify-content: center;
   border-radius: 5px;
   margin-left: 20px;
-  
 }
-.user-icon li:hover{
-background: #24695c;
-color: white;
+.user-icon li:hover {
+  background: #24695c;
+  color: white;
 }
 
 /* Blog Detail Page  */
@@ -1056,4 +1054,3 @@ color: white;
 #documentation p {
   margin-bottom: 30px;
 }
-

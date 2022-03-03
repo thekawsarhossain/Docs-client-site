@@ -18,11 +18,11 @@ const DetailsHeroSection = () => {
               <h1 className="font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
               <div className="mt-3 flex">
-                <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
-                <p className="self-center pl-2">
+                <Avatar alt="Blogger's photo" src={blog?.blogger?.image} />
+                <p className="self-center pl-2 font-sans">
                   {' '}
-                  {blog?.blogger.displayName} | {blog?.uploadDate} |{' '}
-                  {blog?.uploadTime}
+                  {blog?.blogger?.displayName} | {blog?.uploadTime} -{' '}
+                  {blog?.uploadDate}
                 </p>
               </div>
             </div>

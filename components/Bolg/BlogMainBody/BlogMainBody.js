@@ -27,6 +27,7 @@ const BlogMainBody = () => {
         .includes(filter.toString().toLowerCase())
     )
   })
+  dataSearch.reverse()
   return (
     <div>
       <div style={{ backgroundColor: '#21242c' }}>
@@ -34,8 +35,9 @@ const BlogMainBody = () => {
         <div>
           <Box sx={{ background: '#1F3341' }}>
             <Container sx={{ color: 'white', py: 1 }}>
-              <div className="flex justify-between ">
-                <div className="flex items-center	text-sm	">
+              <div className="flex flex-col justify-between sm:flex-row ">
+                {/* Page title  */}
+                <div className="hidden items-center	text-sm	sm:flex">
                   <>
                     <Link href="/">
                       <a className="text-gray-400">Home</a>
@@ -44,8 +46,9 @@ const BlogMainBody = () => {
                   </>
                   <>Blogs</>
                 </div>
+                {/* Search bar  */}
                 <div className="">
-                  <p className="flex">
+                  <p className="flex justify-center ">
                     <input
                       style={{ minHeight: '30px' }}
                       placeholder="Search"
