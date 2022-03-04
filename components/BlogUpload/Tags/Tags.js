@@ -47,13 +47,15 @@ const Tags = (props) => {
   return (
     <Container>
       <div className="my-8">
-        <h1 className="pb-3 text-2xl text-white">Please enter some Tags...</h1>
-        <small className="text-white">
+        <h1 className="pb-3 text-2xl text-Docy-Dark dark:text-white">
+          Please enter some Tags...
+        </h1>
+        <small className="text-Docy-Dark dark:text-white">
           Press comma or click the add button to create a tag.
         </small>
         <div>
           <input
-            className="rounded-md p-3 text-base"
+            className="rounded-md border-2 p-3 text-base dark:border-0"
             placeholder="Enter tags . . ."
             style={{ minWidth: 280 }}
             onKeyUp={addTag}
@@ -62,7 +64,7 @@ const Tags = (props) => {
         {/* Show tags  */}
         <div
           style={{ minHeight: '150px', maxWidth: '500px' }}
-          className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
+          className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-100 p-4 dark:bg-Docy-Dark"
         >
           {tags.map((tag, index) => {
             return (

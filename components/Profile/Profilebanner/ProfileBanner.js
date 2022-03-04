@@ -6,13 +6,6 @@ import CheckIcon from '@mui/icons-material/Check'
 const ProfileBanner = () => {
   return (
     <div>
-      {/* <div
-        style={{
-          padding: '170px 0 70px',
-        }}
-        className="breadcrumb_area_three relative  bg-Docy-Dark dark:bg-Docy-paleGeen dark:text-Docy-Dark"
-      > */}
-
       <div
         style={{ padding: '80px 0 80px 80px' }}
         className="relative bg-Docy-paleGeen dark:bg-Docy-Dark"
@@ -22,6 +15,16 @@ const ProfileBanner = () => {
           className="one absolute"
           alt="leaf left"
           style={{ top: '0', left: '35px' }}
+        />
+        <img
+          className="absolute top-40 left-24 hidden md:block"
+          src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_01.png"
+          alt=""
+        />
+        <img
+          className="absolute right-40 top-32 hidden md:block"
+          src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_02.png"
+          alt=""
         />
         <img
           src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_right.png"

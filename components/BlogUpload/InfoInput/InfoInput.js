@@ -119,14 +119,14 @@ const InfoInput = (props) => {
         <div className="py-10">
           {/* Blog Title Input  */}
           <div>
-            <h2 className="mb-2 pb-1 text-2xl text-white">
+            <h2 className="mb-2 pb-1 text-2xl text-Docy-Dark dark:text-white">
               Please enter a suitable title for your blog or documentation.
             </h2>
             <div>
               <input
                 required
                 placeholder="Please enter your blog title"
-                className="mb-5 w-full rounded-md p-3 text-lg"
+                className="mb-5 w-full rounded-md border-2 p-3 text-lg dark:border-0"
                 type="text"
                 onBlur={title}
               />
@@ -134,11 +134,11 @@ const InfoInput = (props) => {
           </div>
           {/* Video Upload Handling  */}
           <div>
-            <h2 className="mb-3 pb-3 text-2xl text-white">
+            <h2 className="mb-3 pb-3 text-2xl text-Docy-Dark dark:text-white">
               Do you want to shear a video blog or documentation?
             </h2>
             <div>
-              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold text-white">
+              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold  text-Docy-Dark dark:text-white">
                 <input
                   className="hidden"
                   type="file"
@@ -167,11 +167,11 @@ const InfoInput = (props) => {
           </div>
           {/* Thumbnail Upload Handling  */}
           <div>
-            <h2 className="mb-3 pt-8 pb-3 text-2xl text-white">
+            <h2 className="mb-3 pt-8 pb-3 text-2xl text-Docy-Dark dark:text-white">
               🌝 Please set a thumbnail for your blog or documentation.
             </h2>
             <div>
-              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold text-white">
+              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold text-Docy-Dark dark:text-white">
                 <input
                   className="hidden"
                   type="file"
@@ -201,7 +201,7 @@ const InfoInput = (props) => {
           </div>
           {/* Category Selection Handling  */}
           <div>
-            <h2 className="mb-3 pt-8 text-2xl text-white">
+            <h2 className="mb-3 pt-8 text-2xl text-Docy-Dark dark:text-white">
               🌝 Please select a category of your blog or documentation.
             </h2>
             <FormControl
