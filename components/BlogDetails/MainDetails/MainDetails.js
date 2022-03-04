@@ -225,7 +225,9 @@ const MainDetails = () => {
             {/* submit comments  */}
             <div className="py-3">
               <div className="pb-4 text-white">
-                <h2 className="text-3xl font-bold">Leave a Comment</h2>
+                <h2 className="text-3xl font-bold text-Docy-Dark dark:text-white">
+                  Leave a Comment
+                </h2>
                 {/* <p>
                   Your email address will not be published. You can not change
                   your name and email*
