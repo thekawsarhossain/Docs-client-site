@@ -127,7 +127,7 @@ const useFirebase = () => {
   const saveUserDB = async (email, displayName, image, method) => {
     const user = { email, displayName, image }
     SET_STATUS(true)
-    fetch('https://enigmatic-atoll-27842.herokuapp.com/users', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),

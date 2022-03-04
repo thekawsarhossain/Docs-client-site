@@ -5,7 +5,7 @@ export const fetchUserData = createAsyncThunk(
   'fetchUser/fetchUserData',
   async (email) => {
     const response = await fetch(
-      `https://enigmatic-atoll-27842.herokuapp.com/users/${email}`
+      `https://polar-hamlet-38117.herokuapp.com/users/${email}`
     )
     const data = await response.json()
     return data

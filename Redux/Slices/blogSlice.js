@@ -2,9 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // getting all blogs api called here
 export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
-  const response = await fetch(
-    'https://enigmatic-atoll-27842.herokuapp.com/blogs'
-  )
+  const response = await fetch('https://polar-hamlet-38117.herokuapp.com/blogs')
   const data = await response.json()
   return data
 })
@@ -12,7 +10,7 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
 // getting single blog depend on id here
 export const fetchBlog = createAsyncThunk('blog/fetchBlog', async (id) => {
   const response = await fetch(
-    `https://enigmatic-atoll-27842.herokuapp.com/blog/${id}`
+    `https://polar-hamlet-38117.herokuapp.com/blog/${id}`
   )
   const data = await response.json()
   return data

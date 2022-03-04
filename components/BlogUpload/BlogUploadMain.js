@@ -78,7 +78,7 @@ const BlogUploadMain = () => {
       blogger: userInfoFromDB,
       comment: [],
     }
-    fetch('https://enigmatic-atoll-27842.herokuapp.com/blogs', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/blogs', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
