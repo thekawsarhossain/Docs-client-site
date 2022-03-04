@@ -76,7 +76,7 @@ const MainDetails = () => {
     }
 
     if (user?.email) {
-      fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
+      fetch(`https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
