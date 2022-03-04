@@ -5,7 +5,10 @@ const HeadSection = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div style={{ backgroundColor: '#223044', minHeight: '310px' }}>
+      <div
+        className="bg-Docy-PaleGrey dark:bg-Docy-Dark"
+        style={{ minHeight: '310px' }}
+      >
         <div>
           <img
             className="absolute"
@@ -30,7 +33,7 @@ const HeadSection = () => {
         </div>
         <div
           style={{ minHeight: '310px' }}
-          className="flex w-full items-center justify-center text-center text-white"
+          className="flex w-full items-center justify-center text-center text-Docy-Dark dark:text-white"
         >
           <div className="self-center">
             <h1 className="font-serif text-4xl">

@@ -21,7 +21,7 @@ const BlogList = (props) => {
         {props.dataSearch?.map((blog) => (
           <div
             key={blog?._id}
-            className="col-span-12 font-serif text-white drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
+            className="col-span-12 font-serif text-Docy-Dark dark:text-white dark:shadow-lg"
           >
             <button
               className="w-full text-left"
@@ -29,10 +29,7 @@ const BlogList = (props) => {
             >
               <Link href={`/blog/${blog?._id}`}>
                 <a>
-                  <div
-                    className="rounded-lg "
-                    style={{ backgroundColor: '#2c303a' }}
-                  >
+                  <div className="rounded-lg  bg-slate-100 dark:bg-Docy-Dark">
                     <img
                       className="rounded-t-lg"
                       src={blog?.image}
@@ -41,20 +38,17 @@ const BlogList = (props) => {
                     <div className="px-4 pt-4 pb-8">
                       <h3 className="text-4xl">{blog?.title}</h3>
                     </div>
-                    <hr className="text-white" />
+                    <hr className=" text-Docy-Dark dark:text-white" />
                     <div className="flex justify-between p-4">
                       <div className="flex">
                         <div className="self-center">
-                          {' '}
-                          <a href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/">
-                            <div className="scisco-verified">
-                              <Avatar
-                                alt="Bloggers image"
-                                src={blog?.blogger?.image}
-                                sx={{ width: 40, height: 40 }}
-                              />
-                            </div>
-                          </a>
+                          <div className="scisco-verified">
+                            <Avatar
+                              alt="Bloggers image"
+                              src={blog?.blogger?.image}
+                              sx={{ width: 40, height: 40 }}
+                            />
+                          </div>
                         </div>
                         <div className="self-center pl-2">
                           <p>

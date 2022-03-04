@@ -54,8 +54,7 @@ export default function License() {
   return (
     <div>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
       >
@@ -73,13 +72,12 @@ export default function License() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="bshadow"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        className="bshadow bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>
+          <Typography sx={{ backgroundColor: '' }}>
             How many shortcodes/blocks/elements are there in Rogan?
           </Typography>
         </AccordionSummary>
@@ -91,8 +89,7 @@ export default function License() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        className="bg-slate-200 text-Docy-Dark shadow-lg dark:bg-Docy-Dark dark:text-slate-100"
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
       >
@@ -106,8 +103,7 @@ export default function License() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
       >
@@ -125,8 +121,7 @@ export default function License() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        className="drop-shadow-[0_35px_35px_rgba(25,35,43,1)]"
-        sx={{ backgroundColor: '#1e1f26', color: 'white' }}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
       >

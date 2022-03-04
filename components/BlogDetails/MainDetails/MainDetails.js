@@ -4,24 +4,44 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
-import DemoBlog from './DemoBlog'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD_COMMENT } from '../../../Redux/Slices/blogSlice'
-import { useState } from 'react'
+import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const MainDetails = () => {
-  const [comment, setComment] = useState({})
-  const userInfoFromDB = useSelector(
-    (state) => state?.reducers?.user?.userInfoFromDB
-  )
-  console.log(userInfoFromDB)
-
   // react redux hook here
   const dispatch = useDispatch()
 
+  // next js hooks for dynamic routuing
+  const router = useRouter()
+  const id = router.query.id
+
+  // calling specfic blog depend on id here using redux
+  useEffect(() => {
+    dispatch(fetchBlog(id))
+  }, [dispatch, id])
+
+  // getting user info from db here
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+
+  // Related Posts
+  const relatedPosts = blogs.filter(
+    (td) => td?.category === blog?.category && td?._id != blog?._id
+  )
+  const otherPosts = blogs.filter(
+    (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
+  )
+
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
@@ -54,18 +74,6 @@ const MainDetails = () => {
       date: date,
       comment: data.comment,
     }
-    // adding the comment into the db
-    // try {
-    //   const response = await fetch(`http://localhost:5000/blog/${blog?._id}`, {
-    //     method: 'PUT',
-    //     headers: { 'content-type': 'application/json' },
-    //     body: JSON.stringify(payload),
-    //   })
-    //   const result = await response.json()
-    //   console.log(result)
-    // } catch (e) {
-    //   alert('there is an error')
-    // }
 
     fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
       method: 'PUT',
@@ -81,7 +89,7 @@ const MainDetails = () => {
   }
 
   return (
-    <div style={{ backgroundColor: '#21242c' }} className="text-white">
+    <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
@@ -99,7 +107,7 @@ const MainDetails = () => {
             {/* summary  */}
             <div
               style={{ minHeight: '200px' }}
-              className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
+              className="my-8 flex flex-col rounded-lg bg-slate-200 p-3  dark:bg-Docy-DarkGray md:flex-row"
             >
               <div className="p-6">
                 <Avatar
@@ -108,7 +116,7 @@ const MainDetails = () => {
                   sx={{ width: 56, height: 56 }}
                 />
               </div>
-              <div className="self-center">
+              <div className="self-center text-Docy-Dark dark:text-Docy-White ">
                 <h1 className="pb-3 text-xl font-bold">Jason Response</h1>
                 <p>
                   Loo tomfoolery jolly good bloke chancer chimney pot nice one
@@ -120,72 +128,56 @@ const MainDetails = () => {
 
             {/* Related post  */}
             <div>
-              <h1 className="pb-4 text-2xl font-bold text-white">
+              <h1 className="pb-4 text-2xl font-bold text-Docy-Dark dark:text-white">
                 Related Post
               </h1>
-              <div className="grid grid-cols-12 gap-4 text-white">
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt="blogImage"
-                    />
+              <div className="grid grid-cols-12 gap-4 text-Docy-Dark dark:text-white">
+                {relatedPosts.map((post) => (
+                  <div
+                    key={post?._id}
+                    className="col-span-12 md:col-span-6 lg:col-span-4"
+                  >
+                    <div>
+                      <img
+                        className="rounded-lg"
+                        src={post?.image}
+                        alt="blogImage"
+                      />
+                    </div>
+                    <div>
+                      <p className="pt-3 pb-1 font-sans text-sm">
+                        {post?.uploadDate} ~ {post?.uploadTime}
+                      </p>
+                      <h4 className="pb-2 text-xl font-semibold">
+                        {post?.title}
+                      </h4>
+                      <div className="flex">
+                        <div className="self-center">
+                          {' '}
+                          <div className="scisco-verified">
+                            <Avatar
+                              alt="Bloggers image"
+                              src={post?.blogger?.image}
+                              sx={{ width: 40, height: 40 }}
+                            />
+                          </div>
+                        </div>
+                        <div className="self-center pl-2">
+                          <p>
+                            <small className="text-sm">
+                              {post?.blogger?.displayName}
+                            </small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                  <div>
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <p className="pt-3 pb-1">18 Min Read | KbDoc</p>
-                    <h4 className="pb-2 text-xl font-semibold">
-                      70 Best Startups You Need to Watch Out for
-                    </h4>
-                    <p>
-                      Cup of char brilliant horse play bro bread sloshed
-                      lavatory only...
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
             {/* comments section start from here   */}
-            <div className="py-8 text-white">
+            <div className="py-8 text-Docy-Dark dark:text-white">
               <h2 className="py-6 text-3xl font-bold">
                 {blog?.comment?.length === 0 ? (
                   'There is no comments'
@@ -276,7 +268,7 @@ const MainDetails = () => {
           </div>
 
           {/* Side bar  */}
-          <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
+          <div className="col-span-12 text-Docy-Dark dark:text-Docy-White md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
             <div className="pb-3">
               <div>
@@ -298,64 +290,31 @@ const MainDetails = () => {
             <div className="py-6">
               <h1 className="py-3 text-2xl font-bold">Other Posts</h1>
               <div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
+                {otherPosts.map((otherPost) => (
+                  <div
+                    key={otherPost._id}
+                    style={{ maxWidth: '450px' }}
+                    className="grid grid-cols-12 gap-2 py-3"
+                  >
+                    <div className="col-span-5">
+                      <img
+                        className="rounded-lg"
+                        src={otherPost.image}
+                        alt=""
+                      />
+                    </div>
+                    <div className="col-span-7">
+                      <h3 className="text-base">{otherPost.title}</h3>
+                      <p className="mt-3 font-sans text-sm">
+                        {otherPost.uploadDate}
+                      </p>
+                    </div>
                   </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
-                <div
-                  style={{ maxWidth: '450px' }}
-                  className="grid grid-cols-12 gap-2 py-3"
-                >
-                  <div className="col-span-5">
-                    <img
-                      className="rounded-lg"
-                      src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-grid/blog_grid_post2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-base">
-                      How to Create GDPR Consent Form In WordPress
-                    </h3>
-                    <p className="mt-3 text-sm">January 19, 2020</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             {/* Post Categories */}
-            <div className="py-6">
+            <div className="py-6 text-Docy-Dark dark:text-Docy-White">
               <h3 className="pb-4 text-2xl font-bold">Post Categories</h3>
               <div>
                 <ul className="list-disc text-lg">
@@ -371,18 +330,17 @@ const MainDetails = () => {
               </div>
             </div>
             {/* Tag list  */}
-            <div className="pt-4">
+            <div className="pt-4 text-Docy-AlmostBlack">
               <h1 className="pb-2 text-2xl">Tags</h1>
               <div
                 style={{ minHeight: '150px', maxWidth: '500px' }}
-                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
+                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-GrayBlue"
               >
                 {blog?.tags.map((tag, index) => {
                   return (
                     <div
-                      style={{ backgroundColor: 'aliceblue' }}
                       key={index}
-                      className="m-1 h-fit rounded-lg p-1"
+                      className="m-1 h-fit rounded-lg bg-Docy-paleGeen  p-2 text-Docy-Dark"
                     >
                       {tag}{' '}
                     </div>

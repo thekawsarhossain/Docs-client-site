@@ -153,12 +153,19 @@ const Navbar = () => {
               <a className="flex justify-center">
                 <img
                   style={{ height: 'fit-content' }}
+                  className="hidden w-40 dark:block"
                   src="https://i.ibb.co/KspLSX3/docy-logo.png"
+                  alt=""
+                />
+                <img
+                  style={{ height: 'fit-content' }}
+                  className="block w-40 dark:hidden"
+                  src="https://i.ibb.co/Zx7g8yW/logo-2x-1.png"
                   alt=""
                 />
               </a>
             </Link>
-            <nav className="navbar-parent">
+            <nav className="navbar-parent flex">
               <Link href="/">
                 <a className="link-item">
                   <span>Home</span>
@@ -247,14 +254,16 @@ const Navbar = () => {
               {user?.email ? (
                 <div className="relative inline-block">
                   <div className="group relative inline-block">
-                    <button className="link-item inline-flex items-center">
-                      <span className="">
-                        <Avatar
-                          alt="avatar"
-                          src={user?.photoURL ? user?.photoURL : avatar}
-                        />
-                      </span>
-                    </button>
+                    <img
+                      style={{ height: '40px', width: '40px' }}
+                      className="link-item inline-flex items-center rounded-full"
+                      src={
+                        user?.photoURL
+                          ? user?.photoURL
+                          : `https://i.ibb.co/DMYmT3x/Generic-Profile.jpg`
+                      }
+                      alt=""
+                    />
                     <ul
                       style={{ minWidth: '120px' }}
                       className="absolute hidden pt-1 text-gray-700 group-hover:block"

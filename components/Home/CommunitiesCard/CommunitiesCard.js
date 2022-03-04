@@ -67,9 +67,12 @@ const CommunitiesCard = () => {
   }, [showMore])
 
   return (
-    <div className="relative block w-full bg-slate-100 dark:bg-Docy-AlmostBlack">
+    <Box>
       <Container>
-        <div className="absolute mx-auto -mt-72 rounded-xl bg-darkBlue shadow dark:bg-slate-100">
+        <div
+          style={{ marginTop: '-110px' }}
+          className="  rounded-xl bg-slate-100 dark:bg-darkBlue  "
+        >
           {/* grid system for the items here  */}
           <div className="grid grid-cols-1 lg:grid-cols-3">
             {data?.map((item) => (
@@ -86,7 +89,7 @@ const CommunitiesCard = () => {
                   />
                   <span className="ml-4">
                     <Link href="/home">
-                      <h6 className="font-bold text-white dark:text-Docy-Dark">
+                      <h6 className="font-bold text-Docy-Dark dark:text-white">
                         {item?.title}
                       </h6>
                     </Link>
@@ -112,7 +115,7 @@ const CommunitiesCard = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </Box>
   )
 }
 

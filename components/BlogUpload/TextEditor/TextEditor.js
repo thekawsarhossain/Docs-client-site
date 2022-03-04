@@ -27,14 +27,14 @@ export default class TextEditor extends Component {
     return (
       <Container>
         <div>
-          <h2 className="mb-2 text-xl text-white">
+          <h2 className="mb-2 text-xl text-Docy-Dark dark:text-white">
             Write your documentation or blog below 🌝
           </h2>
           <div
-            className="rounded-lg border px-2"
+            className="bg-Docy-PaleGrey rounded-lg border px-2 dark:bg-Docy-Dark"
             style={{
               minHeight: '400px',
-              backgroundColor: '#f7f4ec',
+              // backgroundColor: '#f7f4ec',
             }}
           >
             <Editor
@@ -66,7 +66,7 @@ export default class TextEditor extends Component {
             Send Data
           </button> */}
           <div
-            className="text-white"
+            className="text-Docy-Dark dark:text-white"
             dangerouslySetInnerHTML={{
               __html: `${draftToHtml(
                 convertToRaw(editorState?.getCurrentContent())

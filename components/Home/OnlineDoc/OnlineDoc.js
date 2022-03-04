@@ -69,14 +69,34 @@ const OnlineDoc = () => {
         </div>
 
         <Box sx={{ width: '100%', minHeight: '600px' }}>
-          <div sx={{ borderBottom: 2, borderColor: '#2C303A' }}>
-            <Tabs value={value} onChange={handleChange}>
-              <Tab label="Docy" {...a11yProps(0)} />
-              <Tab label="Gullu" {...a11yProps(1)} />
-              <Tab label="Rogan" {...a11yProps(2)} />
-              <Tab label="Sample" {...a11yProps(3)} />
+          <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
+            <Tabs
+              // sx={{ background: 'gray' }}
+              value={value}
+              onChange={handleChange}
+            >
+              <Tab
+                sx={{ color: `#00dea3!important` }}
+                label="Docy"
+                {...a11yProps(0)}
+              />
+              <Tab
+                sx={{ color: `#00dea3!important` }}
+                label="Gullu"
+                {...a11yProps(1)}
+              />
+              <Tab
+                sx={{ color: `#00dea3!important` }}
+                label="Rogan"
+                {...a11yProps(2)}
+              />
+              <Tab
+                sx={{ color: `#00dea3!important` }}
+                label="Sample"
+                {...a11yProps(3)}
+              />
             </Tabs>
-          </div>
+          </Box>
           <TabPanel value={value} index={0}>
             <Docs1 />
           </TabPanel>

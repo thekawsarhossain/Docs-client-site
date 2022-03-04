@@ -6,28 +6,28 @@ import Link from 'next/link'
 import React from 'react'
 import aboutImage from '../../Images/about.png'
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded'
-import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded'
 
 const AboutContent = () => {
   return (
     <>
-      <div className="pt-12 minimal-header">
+      <div className="minimal-header pt-12">
         <Container>
           <div className="minimal-header-text ">
             <h1>About Us</h1>
-            <div className="flex justify-center gap-3 mt-3">
-            <p >
-        <Link href='/'>
-        <a>Home</a>
-        </Link> 
-       <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/> Contact</p>
+            <div className="mt-3 flex justify-center gap-3 text-theme dark:text-white">
+              <p>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+                <ArrowForwardIosRoundedIcon sx={{ fontSize: '15px' }} /> Contact
+              </p>
             </div>
           </div>
         </Container>
       </div>
       <div className="mb-16">
         <Container>
-          <div className="grid items-center grid-cols-12 gap-4">
+          <div className="grid grid-cols-12 items-center gap-4">
             <div className="col-span-12 md:col-span-7">
               <div className="mb-8 md:mb-0">
                 {/* <Image
