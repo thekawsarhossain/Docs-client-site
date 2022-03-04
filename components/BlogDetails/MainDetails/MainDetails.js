@@ -75,17 +75,20 @@ const MainDetails = () => {
       comment: data.comment,
     }
 
-    fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
-      method: 'PUT',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result))
-      .catch((e) => console.log(e))
-
-    dispatch(ADD_COMMENT(payload))
-    reset()
+    if (user?.email) {
+      fetch(`https://enigmatic-atoll-27842.herokuapp.com/blog/${blog?._id}`, {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then((res) => res.json())
+        .then((result) => console.log(result))
+        .catch((e) => console.log(e))
+      dispatch(ADD_COMMENT(payload))
+      reset()
+    } else {
+      return alert('Go and login to comment !')
+    }
   }
 
   return (

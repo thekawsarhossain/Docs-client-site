@@ -126,7 +126,7 @@ const Navbar = () => {
               src={user?.photoURL ? user?.photoURL : avatar}
             />
             <button
-              className="bg-white p-4 text-white"
+              className="bg-white p-4 text-left text-white"
               onClick={() => logoutUser()}
             >
               logout
@@ -277,7 +277,7 @@ const Navbar = () => {
                       </li>
                       <li className="">
                         <button
-                          className="whitespace-no-wrap block w-full rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400"
+                          className="whitespace-no-wrap block w-full rounded-b bg-gray-200 py-2 px-4 text-left hover:bg-gray-400"
                           onClick={() => logoutUser()}
                         >
                           logout
