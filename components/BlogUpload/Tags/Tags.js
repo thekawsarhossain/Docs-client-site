@@ -69,9 +69,9 @@ const Tags = (props) => {
           {tags.map((tag, index) => {
             return (
               <div
-                style={{ backgroundColor: 'aliceblue' }}
+                // style={{ backgroundColor: 'aliceblue' }}
                 key={index}
-                className="m-1 h-fit rounded-lg p-1"
+                className="m-1 h-fit rounded-lg bg-slate-300 p-2 p-1 dark:bg-slate-600"
               >
                 {tag}{' '}
                 <span

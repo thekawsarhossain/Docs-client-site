@@ -54,10 +54,14 @@ export default function PricingAndSupport() {
   return (
     <div>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        // sx={{
+        //   backgroundColor: '#1e1f26',
+        //   color: 'white',
+        //   boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        // }}
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography>
@@ -77,10 +81,14 @@ export default function PricingAndSupport() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-      
-        sx={{ backgroundColor: '#1e1f26', color: 'white' ,boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)'}}
+        // sx={{
+        //   backgroundColor: '#1e1f26',
+        //   color: 'white',
+        //   boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        // }}
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
           <Typography>
@@ -96,10 +104,14 @@ export default function PricingAndSupport() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-      
-        sx={{ backgroundColor: '#1e1f26', color: 'white' ,boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)'}}
+        // sx={{
+        //   backgroundColor: '#1e1f26',
+        //   color: 'white',
+        //   boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        // }}
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography>
@@ -115,10 +127,14 @@ export default function PricingAndSupport() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-       
-        sx={{ backgroundColor: '#1e1f26', color: 'white',boxShadow:'0 20px 40px 0 rgb(4 73 89 / 10%)' }}
+        // sx={{
+        //   backgroundColor: '#1e1f26',
+        //   color: 'white',
+        //   boxShadow: '0 20px 40px 0 rgb(4 73 89 / 10%)',
+        // }}
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
+        className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
       >
         <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
           <Typography>
