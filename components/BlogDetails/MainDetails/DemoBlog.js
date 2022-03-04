@@ -3,7 +3,7 @@ import React from 'react'
 
 const DemoBlog = () => {
   return (
-    <div className="text-white">
+    <div className="text-Docy-Dark dark:text-white">
       <h1 className="pt-8 text-6xl">Algorithms and Data Structure - Part 1</h1>
       <p>by Abdul Bari</p>
       <br />

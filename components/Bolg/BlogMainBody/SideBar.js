@@ -15,7 +15,10 @@ const SideBar = () => {
           <p className="pb-3">
             Please enter your email to receive the latest news in your inbox.
           </p>
-          <input className="w-full rounded-t-lg p-3 text-black" type="text" />
+          <input
+            className="w-full rounded-t-lg border-2 p-3 text-black dark:border-0 dark:text-black"
+            type="text"
+          />
           <button className="mt-2 w-full rounded-b-lg bg-orange-400 p-2 text-lg font-semibold">
             Subscribe
           </button>

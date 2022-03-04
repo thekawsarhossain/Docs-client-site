@@ -61,11 +61,8 @@ const Questions = () => {
             </div>
             <div className="grid grid-cols-12 md:gap-4 lg:gap-28">
               <div className="col-span-12 pb-28 md:col-span-4 lg:col-span-3">
-                <div
-                  className="bshadow my-5 rounded p-5 md:w-64 lg:w-64"
-                  style={{ backgroundColor: '#1e1f26' }}
-                >
-                  <p className="pt-4 pb-7 text-2xl font-semibold">
+                <div className="bshadow my-5 rounded p-5 dark:bg-Docy-DarkGray md:w-64 lg:w-64">
+                  <p className="pt-4 pb-7 text-2xl font-semibold text-Docy-Dark dark:text-white">
                     Quick Navigation
                   </p>
                   <div className="flex flex-col">
