@@ -29,6 +29,11 @@ const Register = () => {
 
   return (
     <div className="bg-slate-100 dark:bg-lightDark">
+       <Link href="/" >
+        <a className="absolute z-50 md:ml-96 ml-80  mt-4">
+          <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
+        </a>
+      </Link>
       <div className="grid grid-cols-12 gap-4">
         <div className="relative col-span-12 h-96 bg-blue-700 md:col-span-4 md:min-h-screen">
           <img

@@ -17,7 +17,7 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   return (
-    <>
+    <div className='bg-white dark:bg-gray-900 dark:text-white'>
       <React.Fragment>
         <div
           onClick={() => setIsSidebarOpen(false)}
@@ -36,13 +36,13 @@ const Sidebar = () => {
         </div>
 
         <div
-          className={`fixed inset-y-0 left-0 z-30 w-80 translate-x-0 transform overflow-y-auto border-r-2 bg-white transition duration-300 ease-out lg:static lg:inset-0 lg:translate-x-0 ${
+          className={`fixed inset-y-0 left-0 z-30 w-80 translate-x-0 transform overflow-y-auto border-r-2 bg-white dark:bg-gray-900 dark:text-white transition duration-300 ease-out lg:static lg:inset-0 lg:translate-x-0 ${
             isSidebarOpen
               ? 'translate-x-0 ease-out'
               : '-translate-x-full ease-in'
           }`}
         >
-          <div className="flex items-center justify-center px-3 py-6 text-center">
+          <div className=" bg-white dark:bg-gray-900 dark:text-white flex items-center justify-center px-3 py-6 text-center">
             <Link href="/">
               <a>
                 <h2 className="font-bold">Docy</h2>
@@ -110,7 +110,7 @@ const Sidebar = () => {
           </div>
         </div>
       </React.Fragment>
-    </>
+    </div>
   )
 }
 

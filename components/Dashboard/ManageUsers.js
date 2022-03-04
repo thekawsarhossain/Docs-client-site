@@ -14,32 +14,77 @@ import WifiIcon from '@mui/icons-material/Wifi';
 
 const fakeData = [
   {
-    name: 'Morjina Begum',
+    name: 'Mariya khan',
     designation: 'Developer',
     userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/3.jpg',
     coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/1.jpg',
-    follower: 96,
+    follower: 6250,
     following: 10,
-    totalPost: 5
+    totalPost: 152
   },
   {
-    name: 'Kalamer bap',
+    name: 'Kamarun joss',
     designation: 'Manager',
     userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/16.jpg',
     coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/3.jpg',
-    follower: 96,
-    following: 10,
-    totalPost: 5
+    follower: 9600,
+    following: 25,
+    totalPost: 500
   },
   {
-    name: 'Sokhina Begum',
+    name: 'Soniya hoq',
     designation: 'Designer',
     userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
     coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
-    follower: 96,
-    following: 10,
-    totalPost: 5
+    follower: 2025,
+    following: 2,
+    totalPost: 50
   },
+  {
+    name: 'Soniya hoq',
+    designation: 'Designer',
+    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
+    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
+    follower: 2025,
+    following: 2,
+    totalPost: 50
+  },
+  {
+    name: 'Mariya khan',
+    designation: 'Developer',
+    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/3.jpg',
+    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/1.jpg',
+    follower: 6250,
+    following: 10,
+    totalPost: 152
+  },
+  {
+    name: 'Kamarun joss',
+    designation: 'Manager',
+    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/16.jpg',
+    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/3.jpg',
+    follower: 9600,
+    following: 25,
+    totalPost: 500
+  },
+  {
+    name: 'Soniya hoq',
+    designation: 'Designer',
+    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
+    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
+    follower: 2025,
+    following: 2,
+    totalPost: 50
+  },
+  {
+    name: 'Soniya hoq',
+    designation: 'Designer',
+    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
+    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
+    follower: 2025,
+    following: 2,
+    totalPost: 50
+  }
 
 ]
 
@@ -51,7 +96,7 @@ const ManageUsers = () => {
              <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                           {fakeData.map((data) => (
-                            <Grid item xs={12} sm={12} md={4} key={data.name}>
+                            <Grid item xs={12} sm={4} md={3} key={data.name}>
                                   <div className=" h-full shadow-md bg-white dark:bg-gray-900 dark:text-white">
                                       <div>
                                           <img src={data.coverImg} className="w-full h-full" alt={data.name} />
@@ -78,7 +123,7 @@ const ManageUsers = () => {
                                             <ul className='flex justify-evenly font-medium border-t  '>
                                                 <li className='pt-3 '>Follower <br /><h3>{data.follower}</h3></li>
                                                 <li className='border-x border-slate-300 px-8 pt-3'>Following <br /> <h3>{data.following}K</h3></li>
-                                                <li className=' pt-3'>Total Post <br /> <h3>{data.follower}M</h3></li>
+                                                <li className=' pt-3'>Total Post <br /> <h3>{data.totalPost}</h3></li>
                                             </ul>
                                         </div>
                                       </div>

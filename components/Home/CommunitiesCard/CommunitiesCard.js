@@ -9,47 +9,47 @@ import Link from 'next/link'
 const fakeData = [
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-1@2x-1.svg',
-    title: 'User Feedback',
+    title: 'Creative',
     info: '3 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-2@2x-1.svg',
-    title: 'Product Support',
+    title: 'Inspiration',
     info: '2 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/04/icon-8@2x.svg',
-    title: 'Docly Theme Support',
+    title: 'Lifestyle',
     info: '3 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-4@2x-1.svg',
-    title: 'Account Management',
+    title: 'News',
     info: '0 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-5@2x-1.svg',
-    title: 'Rogan Theme Support',
+    title: 'Photography',
     info: '9 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-6@2x-1.svg',
-    title: 'Gullu Theme Support',
+    title: 'skill',
     info: '10 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-7@2x-1.svg',
-    title: 'Aprimo Theme Support',
+    title: 'Tourist Tour',
     info: '1 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2019/04/smile@2x.png',
-    title: 'Deksi Theme',
+    title: 'Social Media',
     info: '5 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/04/icon-8@2x.svg',
-    title: 'kbDoc Template Support',
+    title: 'Trending',
     info: '4 Posts',
   },
 ]
@@ -109,7 +109,7 @@ const CommunitiesCard = () => {
                 ) : (
                   <ArrowCircleDownIcon className="animate-bounce" />
                 )}{' '}
-                More Communities{' '}
+                More Categories Blogs{' '}
               </button>
             </div>
           </div>

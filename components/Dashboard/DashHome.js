@@ -7,7 +7,7 @@ import ReportedUsers from './ReportedUsers'
 
 const DashHome = () => {
   return (
-    <div className="py-8">
+    <div className="py-8 ">
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-12 flex items-center justify-between rounded bg-teal-700 px-8 py-4 text-white md:col-span-6 lg:col-span-4">
           <div className="flex items-center gap-4">
