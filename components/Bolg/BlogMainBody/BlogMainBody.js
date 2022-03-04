@@ -21,7 +21,7 @@ const BlogMainBody = () => {
   let dataSearch = blogs?.filter((item) => {
     return Object.keys(item).some((key) =>
       item[key]
-        .toString()
+        ?.toString()
         .toLowerCase()
         .includes(filter.toString().toLowerCase())
     )
