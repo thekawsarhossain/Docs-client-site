@@ -8,11 +8,15 @@ const DetailsHeroSection = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div style={{ backgroundColor: '#223044', minHeight: '310px' }}>
+      <div
+        className="bg-Docy-PaleGrey dark:bg-Docy-Dark"
+        style={{ minHeight: '310px' }}
+      >
         <Container>
           <div
             style={{ minHeight: '300px' }}
-            className="flex w-full pt-12 text-white" >
+            className="flex w-full pt-12 text-Docy-Dark dark:text-white"
+          >
             <div className="self-center">
               <h1 className="font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
@@ -33,6 +37,3 @@ const DetailsHeroSection = () => {
 }
 
 export default DetailsHeroSection
-
-
-

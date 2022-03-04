@@ -92,7 +92,7 @@ const MainDetails = () => {
   }
 
   return (
-    <div style={{ backgroundColor: '#21242c' }} className="text-white">
+    <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
@@ -110,7 +110,7 @@ const MainDetails = () => {
             {/* summary  */}
             <div
               style={{ minHeight: '200px' }}
-              className="my-8 flex flex-col rounded-lg bg-gray-50 p-3 md:flex-row"
+              className="my-8 flex flex-col rounded-lg bg-slate-200 p-3  dark:bg-Docy-DarkGray md:flex-row"
             >
               <div className="p-6">
                 <Avatar
@@ -119,7 +119,7 @@ const MainDetails = () => {
                   sx={{ width: 56, height: 56 }}
                 />
               </div>
-              <div className="self-center">
+              <div className="self-center text-Docy-Dark dark:text-Docy-White ">
                 <h1 className="pb-3 text-xl font-bold">Jason Response</h1>
                 <p>
                   Loo tomfoolery jolly good bloke chancer chimney pot nice one
@@ -131,10 +131,10 @@ const MainDetails = () => {
 
             {/* Related post  */}
             <div>
-              <h1 className="pb-4 text-2xl font-bold text-white">
+              <h1 className="pb-4 text-2xl font-bold text-Docy-Dark dark:text-white">
                 Related Post
               </h1>
-              <div className="grid grid-cols-12 gap-4 text-white">
+              <div className="grid grid-cols-12 gap-4 text-Docy-Dark dark:text-white">
                 {relatedPosts.map((post) => (
                   <div
                     key={post?._id}
@@ -180,7 +180,7 @@ const MainDetails = () => {
             </div>
 
             {/* comments section start from here   */}
-            <div className="py-8 text-white">
+            <div className="py-8 text-Docy-Dark dark:text-white">
               <h2 className="py-6 text-3xl font-bold">
                 {blog?.comment?.length === 0 ? (
                   'There is no comments'
@@ -271,7 +271,7 @@ const MainDetails = () => {
           </div>
 
           {/* Side bar  */}
-          <div className="col-span-12 text-white md:col-span-12 lg:col-span-4">
+          <div className="col-span-12 text-Docy-Dark dark:text-Docy-White md:col-span-12 lg:col-span-4">
             {/* Bloggers profile */}
             <div className="pb-3">
               <div>
@@ -317,7 +317,7 @@ const MainDetails = () => {
               </div>
             </div>
             {/* Post Categories */}
-            <div className="py-6">
+            <div className="py-6 text-Docy-Dark dark:text-Docy-White">
               <h3 className="pb-4 text-2xl font-bold">Post Categories</h3>
               <div>
                 <ul className="list-disc text-lg">
@@ -333,18 +333,17 @@ const MainDetails = () => {
               </div>
             </div>
             {/* Tag list  */}
-            <div className="pt-4">
+            <div className="pt-4 text-Docy-AlmostBlack">
               <h1 className="pb-2 text-2xl">Tags</h1>
               <div
                 style={{ minHeight: '150px', maxWidth: '500px' }}
-                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-600 p-4"
+                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-GrayBlue"
               >
                 {blog?.tags.map((tag, index) => {
                   return (
                     <div
-                      style={{ backgroundColor: 'aliceblue' }}
                       key={index}
-                      className="m-1 h-fit rounded-lg p-1"
+                      className="m-1 h-fit rounded-lg bg-Docy-paleGeen  p-2 text-Docy-Dark"
                     >
                       {tag}{' '}
                     </div>

@@ -9,7 +9,6 @@ body {
   transition: all 0.8s ease-in-out;
 }
 
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -203,9 +202,9 @@ body {
   border-bottom-right-radius: 50%;
 }
 
- .loGo{
-   margin-left:30em;
- }
+.loGo {
+  margin-left: 30em;
+}
 /* Online Doc */
 button#simple-tab-0,
 button#simple-tab-1,
@@ -258,8 +257,8 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
 }
 
 .active-tabs {
-  background: #2c303a;
   border-bottom: 1px solid transparent;
+  @apply bg-slate-400 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white;
 }
 
 button {
