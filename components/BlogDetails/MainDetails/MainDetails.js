@@ -330,7 +330,7 @@ const MainDetails = () => {
               </div>
             </div>
             {/* Tag list  */}
-            <div className="pt-4 text-Docy-AlmostBlack">
+            <div className="pt-4 text-Docy-AlmostBlack dark:text-white">
               <h1 className="pb-2 text-2xl">Tags</h1>
               <div
                 style={{ minHeight: '150px', maxWidth: '500px' }}

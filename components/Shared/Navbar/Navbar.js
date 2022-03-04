@@ -222,7 +222,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="">
-                    <Link href="/Profile">
+                    <Link href="/profile">
                       <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
                         Profile
                       </a>

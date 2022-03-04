@@ -31,7 +31,7 @@ export default class TextEditor extends Component {
             Write your documentation or blog below 🌝
           </h2>
           <div
-            className="bg-Docy-PaleGrey rounded-lg border px-2 dark:bg-Docy-Dark"
+            className="bg-Docy-PaleGrey rounded-lg border px-2 text-Docy-Dark dark:bg-Docy-Dark"
             style={{
               minHeight: '400px',
               // backgroundColor: '#f7f4ec',
