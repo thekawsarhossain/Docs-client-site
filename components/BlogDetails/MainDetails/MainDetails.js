@@ -31,9 +31,6 @@ const MainDetails = () => {
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
-  // react redux hook here
-  const dispatch = useDispatch()
-
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
