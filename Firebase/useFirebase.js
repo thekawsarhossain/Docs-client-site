@@ -133,9 +133,8 @@ const useFirebase = () => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result))
-    // .catch((error) => dispatch(ADD_ERROR(error.message)))
-    // .finally(() => dispatch(SET_STATUS(false)))
+      .catch((error) => dispatch(ADD_ERROR(error.message)))
+      .finally(() => dispatch(SET_STATUS(false)))
   }
 
   // log out user here

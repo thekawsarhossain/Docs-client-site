@@ -6,6 +6,8 @@ import InfoInput from './InfoInput/InfoInput'
 import Tags from './Tags/Tags'
 import { Container } from '@mui/material'
 import { useSelector } from 'react-redux'
+import authCheck from '../../HOC/withAuthCheck'
+
 const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,
 })
@@ -114,4 +116,4 @@ const BlogUploadMain = () => {
   )
 }
 
-export default BlogUploadMain
+export default authCheck(BlogUploadMain)
