@@ -5,7 +5,7 @@ import DocsFooter from './DocsFooter'
 import AllDocs from './AllDocs'
 const DocsField = () => {
   return (
-    <div className='bg-white dark:bg-Docy-AlmostBlack dark:text-white '>
+    <div className='bg-Docy-AlmostBlack text-white '>
       <DocsBanner/>
       <DocsSubBanner/>
     <Container>
