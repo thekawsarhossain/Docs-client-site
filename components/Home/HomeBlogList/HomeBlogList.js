@@ -28,9 +28,13 @@ const HomeBlogList = () => {
   })
   dataSearch?.reverse()
   return (
-    <div className="py-16">
+    <div className="py-16 my-16">
       <Container>
-        <h1 className="pb-12 text-center">Blogs </h1>
+        <div  className="pb-24 text-center flex justify-between">
+          <h2 className='border-b-2 border-indigo-600 pb-3 font-bold '> Trending Blog</h2> 
+        <Link href='/blogUpload'>
+          <a ><button className='bg-indigo-700 px-10 py-4 text-white'>  Upload blog now</button></a>
+          </Link> </div>
         <div className="grid grid-cols-12 gap-8">
           {dataSearch?.map((blog) => (
             <button
@@ -42,7 +46,7 @@ const HomeBlogList = () => {
                 <a>
                   <div className="min-h-full rounded-lg bg-slate-100 dark:bg-Docy-Dark">
                     <img
-                      className="h-96 w-96 rounded-t-lg object-cover"
+                      className="h-96 w-full rounded-t-lg object-cover"
                       src={blog?.image}
                       alt="blogImage"
                     />

@@ -3,7 +3,7 @@
  import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 const Elements = () => {
   return (
-    <div className='pl-4'>
+    <div className='pl-4 '>
       <h2>Elements</h2>
       <img src="https://document360.com/wp-content/uploads/2020/11/Software_documentation-Document360-scaled.jpg" alt="" />
       <div className=" flex my-6 items-center">

@@ -32,14 +32,12 @@ const Login = () => {
   // Box sx={{ background: '#131417', color: 'white' }}
   return (
     <div className="bg-slate-100 dark:bg-lightDark">
-      {/* <Link href="/" >
+      <Link href="/" >
         <a className="absolute z-50 md:ml-96 ml-80  mt-4">
           <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
         </a>
-      </Link> */}
-      <h2 className="absolute  z-50 pt-28 pl-16 font-bold leading-relaxed tracking-wide text-white">
-        We are design changers <br /> do what matters.
-      </h2>
+      </Link>
+     
 
       {/* images here  */}
       <div className="grid grid-cols-12 gap-4">
