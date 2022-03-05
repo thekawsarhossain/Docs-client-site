@@ -76,22 +76,22 @@ const OnlineDoc = () => {
               onChange={handleChange}
             >
               <Tab
-                sx={{ color: `#00dea3!important` }}
+                sx={{ color: `#2563eb!important` }}
                 label="Docy"
                 {...a11yProps(0)}
               />
               <Tab
-                sx={{ color: `#00dea3!important` }}
+                sx={{ color: `#2563eb!important` }}
                 label="Gullu"
                 {...a11yProps(1)}
               />
               <Tab
-                sx={{ color: `#00dea3!important` }}
+                sx={{ color: `#2563eb!important` }}
                 label="Rogan"
                 {...a11yProps(2)}
               />
               <Tab
-                sx={{ color: `#00dea3!important` }}
+                sx={{ color: `#2563eb!important` }}
                 label="Sample"
                 {...a11yProps(3)}
               />
