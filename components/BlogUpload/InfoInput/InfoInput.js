@@ -14,6 +14,8 @@ import {
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { useState } from 'react'
+import VideoCallIcon from '@mui/icons-material/VideoCall'
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
 
 const InfoInput = (props) => {
   const Input = styled('input')({
@@ -52,7 +54,8 @@ const InfoInput = (props) => {
     }
   }
 
-  const [loading, setLoading] = useState(false)
+  const [imageLoading, setImageLoading] = useState(false)
+  const [videoLoading, setVideoLoading] = useState(false)
   const [image, setImage] = useState('')
   const [video, setVideo] = useState('')
   const [blogData, setBlogData] = useState({})
@@ -65,11 +68,11 @@ const InfoInput = (props) => {
     const data = new FormData()
     data.append('file', files[0])
     data.append('upload_preset', 'ml_default')
-    setLoading(true)
+    setImageLoading(true)
     console.log(e.target.name)
 
     const res = await fetch(
-      'https://api.cloudinary.com/v1_1/dkbgqzl1e/image/upload',
+      'https://api.cloudinary.com/v1_1/dvszolotz/image/upload',
       {
         method: 'POST',
         body: data,
@@ -87,30 +90,28 @@ const InfoInput = (props) => {
     console.log('something')
     setImage(file.secure_url)
     props.imgLink(file.secure_url)
-    setLoading(false)
+    setImageLoading(false)
   }
   const uploadVideo = async (e) => {
     const files = e.target.files
     const data = new FormData()
     data.append('file', files[0])
     data.append('upload_preset', 'ml_default')
-    setLoading(true)
+    setVideoLoading(true)
 
     const res = await fetch(
-      'https://api.cloudinary.com/v1_1/dkbgqzl1e/video/upload',
+      'https://api.cloudinary.com/v1_1/dvszolotz/video/upload',
       {
         method: 'POST',
         body: data,
       }
     )
     const file = await res.json()
-    // console.log(file.public_id);
 
-    props.imgLink(file.secure_url)
     setVideo(file.secure_url)
     props.videoLink(file.secure_url)
     console.log(video)
-    setLoading(false)
+    setVideoLoading(false)
   }
 
   return (
@@ -146,12 +147,12 @@ const InfoInput = (props) => {
                   placeholder="upload"
                   onChange={uploadVideo}
                 />
-                Upload Video
+                <VideoCallIcon className="animate-bounce" /> Upload Video
               </label>
             </div>
             <div>
               <div className="pt-4">
-                {loading && <h3>Loading ...</h3>}
+                {videoLoading && <h3>Loading ...</h3>}
                 <div>
                   {video && (
                     <video
@@ -179,12 +180,12 @@ const InfoInput = (props) => {
                   placeholder="upload"
                   onChange={uploadImage}
                 />
-                Upload Thumbnail
+                <AddAPhotoIcon className="animate-bounce" /> Upload Thumbnail
               </label>
             </div>
             <div>
               <div className="pt-4">
-                {loading && <h3>Loading ...</h3>}
+                {imageLoading && <h3>Loading ...</h3>}
                 <div>
                   {image && (
                     <img
