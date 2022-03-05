@@ -7,6 +7,7 @@ import Tags from './Tags/Tags'
 import { Container } from '@mui/material'
 import { useSelector } from 'react-redux'
 import authCheck from '../../HOC/withAuthCheck'
+import BackupIcon from '@mui/icons-material/Backup'
 
 const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,
@@ -15,13 +16,11 @@ const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
 const BlogUploadMain = () => {
   // user data
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
-  console.log(user)
 
   // user info from data base
   const userInfoFromDB = useSelector(
     (state) => state?.reducers?.user?.userInfoFromDB
   )
-  console.log(userInfoFromDB)
 
   const [data, setData] = useState('')
   const [imageLink, setImageLink] = useState('')
@@ -108,7 +107,7 @@ const BlogUploadMain = () => {
           onClick={() => handleUpload()}
           className="mb-6 rounded-lg bg-indigo-500 py-2 px-4 text-lg font-semibold text-white"
         >
-          Submit
+          <BackupIcon className="animate-bounce" /> Submit
         </button>
       </Container>
       <Footer></Footer>
