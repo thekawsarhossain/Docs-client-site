@@ -6,7 +6,7 @@ import { Avatar, Container } from '@mui/material'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import Link from 'next/link'
 import SvgButton from '../../Shared/SvgButton/SvgButton'
-import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
 import BackupIcon from '@mui/icons-material/Backup'
 
 const HomeBlogList = () => {
@@ -119,7 +119,8 @@ const HomeBlogList = () => {
           <Link href="/blogs">
             <a>
               <SvgButton sx={{ textAlign: 'center', color: '#6ab3fb' }}>
-                See All
+                {' '}
+                See All <KeyboardDoubleArrowRightIcon />
               </SvgButton>
             </a>
           </Link>
