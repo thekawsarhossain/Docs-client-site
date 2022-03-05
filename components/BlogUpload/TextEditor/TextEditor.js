@@ -31,7 +31,7 @@ export default class TextEditor extends Component {
             Write your documentation or blog below 🌝
           </h2>
           <div
-            className="bg-Docy-PaleGrey rounded-lg border px-2 text-Docy-Dark dark:bg-Docy-Dark"
+            className="rounded-lg border bg-Docy-PaleGrey px-2 text-Docy-Dark "
             style={{
               minHeight: '400px',
               // backgroundColor: '#f7f4ec',
@@ -45,34 +45,14 @@ export default class TextEditor extends Component {
               onEditorStateChange={this.onEditorStateChange}
             />
           </div>
-          {/* <button
-            className="bg-gray-400"
-            onClick={() =>
-              this.props.blogData(
-                draftToHtml(convertToRaw(editorState?.getCurrentContent()))
-              )
-            }
-          >
-            Send Data
-          </button> */}
-          {/* <button
-            className="bg-gray-400"
-            onClick={() =>
-              blogData(
-                draftToHtml(convertToRaw(editorState?.getCurrentContent()))
-              )
-            }
-          >
-            Send Data
-          </button> */}
-          <div
+          {/* <div
             className="text-Docy-Dark dark:text-white"
             dangerouslySetInnerHTML={{
               __html: `${draftToHtml(
                 convertToRaw(editorState?.getCurrentContent())
               )}`,
             }}
-          ></div>
+          ></div> */}
         </div>
       </Container>
     )
