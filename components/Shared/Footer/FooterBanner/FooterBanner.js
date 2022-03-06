@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const FooterBanner = () => {
   return (
-    <div className="bg-slate-100 dark:bg-lightDark">
+    <div className="bg-slate-100 dark:bg-lightDark pb-12">
       <Container>
         <div className="footerBannerParent">
           {/* shape image  */}

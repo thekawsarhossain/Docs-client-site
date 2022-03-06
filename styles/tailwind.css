@@ -541,7 +541,7 @@ button {
   padding: 170px 0 200px;
 }
 .minimal-header::before {
-  @apply absolute left-0 h-full w-full bg-slate-300 bg-cover bg-no-repeat dark:bg-theme;
+  @apply absolute left-0 h-full w-full bg-sky-500 bg-cover bg-no-repeat dark:bg-theme;
   top: -17%;
   content: '';
   z-index: -1;

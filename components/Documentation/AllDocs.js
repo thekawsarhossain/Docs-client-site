@@ -44,21 +44,21 @@ const AllDocs = () => {
       <div className='overflow-hidden h-full'>
         <Container >
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        <Grid className=" bg-Docy-DarkGray text-white pb-6 h-full " item xs={12} sm={6} md={4}>
+        <Grid className=" bg-slate-200 text-black dark:bg-Docy-DarkGray dark:text-white pb-6 h-full " item xs={12} sm={6} md={4}>
                 <div className=" md:mx-8 mt-16 ">
                  <h3>Docy Documentation</h3>
                   <input type="search" name="" id="docSearch" placeholder="Filter" />
       {/* start documentation tabs */}
           <Accordion
+          className='dark:text-white text-black'
             sx={{
               backgroundColor: '#2c303a00',
-              color: 'white',
               mb: 2,
               boxShadow: 'none',
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-white" />}
+              expandIcon={<ExpandMoreIcon  className='dark:text-white text-black' />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -95,15 +95,15 @@ const AllDocs = () => {
             </AccordionDetails>
           </Accordion>
           <Accordion
+           className='dark:text-white text-black'
             sx={{
               backgroundColor: '#2c303a00',
-              color: 'white',
               mb: 2,
               boxShadow: 'none',
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-white" />}
+              expandIcon={<ExpandMoreIcon  className='dark:text-white text-black' />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -136,15 +136,16 @@ const AllDocs = () => {
             </AccordionDetails>
           </Accordion>
           <Accordion
+           className='dark:text-white text-black'
             sx={{
               backgroundColor: '#2c303a00',
-              color: 'white',
+             
               mb: 2,
               boxShadow: 'none',
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-white" />}
+              expandIcon={<ExpandMoreIcon  className='dark:text-white text-black' />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -176,15 +177,15 @@ const AllDocs = () => {
             </AccordionDetails>
           </Accordion>
           <Accordion
+           className='dark:text-white text-black'
             sx={{
               backgroundColor: '#2c303a00',
-              color: 'white',
               mb: 2,
               boxShadow: 'none',
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-white" />}
+              expandIcon={<ExpandMoreIcon  className='dark:text-white text-black' />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -217,15 +218,15 @@ const AllDocs = () => {
             </AccordionDetails>
           </Accordion>
           <Accordion
+           className='dark:text-white text-black'
             sx={{
               backgroundColor: '#2c303a00',
-              color: 'white',
               mb: 2,
               boxShadow: 'none',
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-white" />}
+              expandIcon={<ExpandMoreIcon  className='dark:text-white text-black' />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
