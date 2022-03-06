@@ -78,7 +78,7 @@ const HeroSection = () => {
                                 type="search"
                                 name=""
                                 id="search"
-                                className="w-72 md:w-96"
+                                className="w-72 md:w-96 bg-white text-black"
                               />
                             </div>
                             <div>

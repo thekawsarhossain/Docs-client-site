@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   transition: all 0.8s ease-in-out;
 }
-
+.navbar-parent{
+  font-family: 'Poppins', sans-serif !important;
+}
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -125,10 +127,10 @@ body {
 }
 /* hero section */
 #search {
-  padding: 15px;
+  padding: 15px 50px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  @apply bg-slate-100 dark:bg-Docy-Dark;
+ 
 }
 #search:focus {
   outline: none;

@@ -33,7 +33,7 @@ const Docs1 = () => {
             </Typography>
             <Typography variant="p" sx={{ lineHeight: 2 }}>
               Docy is a powerful, responsive, and high-performance online
-              documentation WordPress theme that can assist you quickly
+              documentation that can assist you quickly
             </Typography>
             <Button sx={{ my: 2 }}>
               View All <ArrowForwardIcon sx={{ ml: 1 }} />{' '}
