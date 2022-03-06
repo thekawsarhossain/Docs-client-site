@@ -54,14 +54,14 @@ const HomeBlogList = () => {
           {trendingBlogs?.map((blog) => (
             <button
               key={blog?._id}
-              className="col-span-12 min-h-full w-full rounded-lg text-left font-serif  text-white shadow-lg dark:text-Docy-Dark sm:col-span-6 md:col-span-4"
+              className="col-span-12 min-h-full w-full rounded text-left font-serif  text-white shadow dark:text-Docy-Dark sm:col-span-6 md:col-span-4"
               onClick={() => dispatch(ADD_TO_BLOG(blog))}
             >
               <Link href={`/blog/${blog?._id}`}>
                 <a>
                   <div className="min-h-full rounded-lg bg-slate-100 dark:bg-Docy-Dark">
                     <img
-                      className="h-96 w-full rounded-t-lg object-cover"
+                      className="h-96 w-full rounded object-cover"
                       src={blog?.image}
                       alt="blogImage"
                     />
