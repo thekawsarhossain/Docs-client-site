@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </ThemeProvider>
       </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
   )
 }
