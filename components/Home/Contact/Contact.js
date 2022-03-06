@@ -13,7 +13,20 @@ const Contact = () => {
   } = useForm()
 
   const submitHandler = (data) => {
-    console.log(data)
+    fetch('http://localhost:5000/emails', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          window.alert('Your message has been sent.')
+        }
+      })
+
   }
 
   return (
@@ -42,9 +55,8 @@ const Contact = () => {
                           message: 'You must enter first name',
                         },
                       })}
-                      className={`${
-                        errors.firstName ? 'ring-2 ring-red-700' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                      className={`${errors.firstName ? 'ring-2 ring-red-700' : null
+                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Enter Your first name"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -62,9 +74,8 @@ const Contact = () => {
                           message: 'You must enter last name',
                         },
                       })}
-                      className={`${
-                        errors.lastName ? 'ring-2 ring-red-700' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none  `}
+                      className={`${errors.lastName ? 'ring-2 ring-red-700' : null
+                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none  `}
                       placeholder="Enter Your last name"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -86,9 +97,8 @@ const Contact = () => {
                           message: 'invalid email address',
                         },
                       })}
-                      className={`${
-                        errors.email ? 'ring-2 ring-red-700' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 `}
+                      className={`${errors.email ? 'ring-2 ring-red-700' : null
+                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 `}
                       placeholder="Enter Your Email"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -106,9 +116,8 @@ const Contact = () => {
                           message: 'You must write a subject',
                         },
                       })}
-                      className={`${
-                        errors.subject ? 'ring-2 ring-red-700' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                      className={`${errors.subject ? 'ring-2 ring-red-700' : null
+                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Add a subject"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -127,9 +136,8 @@ const Contact = () => {
                         message: 'You must write something',
                       },
                     })}
-                    className={`${
-                      errors.message ? 'ring-2 ring-red-700' : null
-                    } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                    className={`${errors.message ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                     placeholder="Add a subject"
                   />
                   <span className="py-2 text-sm text-red-700">
@@ -179,7 +187,7 @@ const Contact = () => {
           </div>
         </Container>
       </div>
-        <Footer />
+      <Footer />
     </>
   )
 }
