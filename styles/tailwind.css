@@ -270,7 +270,7 @@ button {
   flex-grow: 1;
 }
 .content {
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
   width: 100%;
   height: 100%;
   display: none;
@@ -514,13 +514,15 @@ button {
   color: #101e36;
 }
 .scisco-user-table-left {
-  min-width: 150px;
+  min-width: 130px;
+  max-width: 130px;
   font-weight: 500;
   border-right: 0;
   padding: 1.25rem;
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 700;
+  /* border-right: 1px solid rgb(255, 255, 255); */
   @apply text-Docy-Dark dark:text-white;
 }
 .scisco-user-table-right {

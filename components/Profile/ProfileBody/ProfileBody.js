@@ -26,21 +26,18 @@ const ProfileBody = () => {
   }
   return (
     <div>
-      <main
-        id="scisco-main-wrapper"
-        className="overflow-hidden px-20 py-0 dark:bg-Docy-AlmostBlack"
-      >
+      <main className="overflow-hidden  dark:bg-Docy-AlmostBlack">
         <Container>
           <div className="grid grid-cols-12">
             {/* SidBar list  */}
             <div className="col-span-12 lg:col-span-3">
-              <div className="my-5 rounded-md bg-slate-700 md:w-64 lg:w-64">
+              <div className="my-5 rounded-md bg-slate-700">
                 <div className="flex flex-col">
                   <button
                     className={
                       toggleState === 1
                         ? 'mb-1 rounded-t-md bg-blue-700 py-3 text-white'
-                        : 'text-whitebg-blue-700 mb-1 rounded-t-md bg-gray-800 py-3'
+                        : 'mb-1 rounded-t-md bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(1)}
                   >
@@ -49,7 +46,7 @@ const ProfileBody = () => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
-                          color: '#FFF',
+                          color: '#fff',
                         }}
                       />
                       About
@@ -145,7 +142,7 @@ const ProfileBody = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-12 pl-8 lg:col-span-9">
+            <div className="col-span-12 lg:col-span-9 lg:pl-8">
               <div
                 className={
                   toggleState === 1 ? 'content  active-content' : 'content'
