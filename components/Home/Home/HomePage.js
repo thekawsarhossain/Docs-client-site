@@ -30,7 +30,7 @@ const HomePage = () => {
       <Navbar />
       <HeroSection />
       {/* <CommunitiesCard /> */}
-      <HomeBlogList></HomeBlogList>
+      <HomeBlogList />
       <OnlineDoc />
       <VideoList />
       <Questions />
