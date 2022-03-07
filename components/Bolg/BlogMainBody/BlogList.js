@@ -21,7 +21,7 @@ const BlogList = (props) => {
         {props.dataSearch?.map((blog) => (
           <div
             key={blog?._id}
-            className="col-span-12 font-serif text-Docy-Dark dark:text-white dark:shadow-lg md:col-span-6"
+            className="col-span-12 font-serif text-Docy-Dark dark:text-white dark:shadow-lg lg:col-span-6"
           >
             <Link href={`/blog/${blog?._id}`}>
               <a>
@@ -41,9 +41,8 @@ const BlogList = (props) => {
                     >
                       <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
                         {/* {blog?.title} */}
-                        {blog?.title.length > 30
-                          ? blog?.title.split(' ').slice(0, 10).join(' ') +
-                            '...'
+                        {blog?.title.length > 70
+                          ? blog?.title.slice(0, 70) + '...'
                           : blog?.title}
                       </h3>
                     </div>

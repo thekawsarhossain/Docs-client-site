@@ -15,7 +15,7 @@ const ProfileM = () => {
       <Navbar />
       <ProfileBanner userInfoFromDB={userInfoFromDB} />
       <ProfileSubbanner />
-      <ProfileBody />
+      <ProfileBody userInfoFromDB={userInfoFromDB} />
       <Footer />
     </div>
   )
