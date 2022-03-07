@@ -13,6 +13,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
 import ArticleIcon from '@mui/icons-material/Article'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useSelector } from 'react-redux'
+import ProfileEdit from './ProfileEdit'
 
 const ProfileBody = (props) => {
   const [expanded, setExpanded] = useState(false)
@@ -174,6 +175,13 @@ const ProfileBody = (props) => {
                 <ProfileAbout
                   userInfoFromDB={props?.userInfoFromDB}
                 ></ProfileAbout>
+              </div>
+              <div
+                className={
+                  toggleState === 2 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileEdit userInfoFromDB={props?.userInfoFromDB} />
               </div>
               <div
                 className={

@@ -106,35 +106,37 @@ const ProfileAbout = (props) => {
           <div className="scisco-user-table-left">Name</div>
           <div className="scisco-user-table-right flex">
             <span className="self-center">
-              {props.userInfoFromDB.displayName}
+              {props.userInfoFromDB?.displayName}
             </span>
           </div>
         </div>
         <div className="scisco-user-table age-bx flex border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Profession</div>
           <div className="scisco-user-table-right flex">
-            <span className="self-center">Super man</span>
+            <span className="self-center">
+              {props.userInfoFromDB?.profession}
+            </span>
           </div>
         </div>
         <div className="scisco-user-table gender-bx flex  border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Gender</div>
           <div className="scisco-user-table-right flex">
             {' '}
-            <span className="self-center"> Male</span>
+            <span className="self-center">{props.userInfoFromDB?.gender}</span>
           </div>
         </div>
         <div className="scisco-user-table location-bx flex  border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Address</div>
           <div className="scisco-user-table-right flex">
             {' '}
-            <span className="self-center"> New York</span>
+            <span className="self-center">{props.userInfoFromDB?.address}</span>
           </div>
         </div>
         <div className="scisco-user-table website-bx flex  border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Website</div>
           <div className="scisco-user-table-right flex">
             {' '}
-            <span className="self-center"> www.thememasters.club/</span>
+            <span className="self-center">{props.userInfoFromDB?.website}</span>
           </div>
         </div>
         <div className="scisco-user-table bio-bx flex  border-b-2 border-solid border-gray-200">
@@ -144,11 +146,7 @@ const ProfileAbout = (props) => {
           <div className="scisco-user-table-right flex">
             {' '}
             <span className="self-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              pellentesque tincidunt sem a suscipit. Etiam pharetra ornare
-              ullamcorper. Curabitur ac efficitur purus. Sed id urna maximus,
-              aliquet est sed, egestas risus. Vestibulum rutrum purus tortor.
-              Sed in commodo nunc.
+              {props.userInfoFromDB?.biography}
             </span>
           </div>
         </div>
