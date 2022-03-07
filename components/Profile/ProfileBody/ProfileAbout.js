@@ -5,11 +5,11 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import MailIcon from '@mui/icons-material/Mail'
-const ProfileAbout = () => {
+const ProfileAbout = (props) => {
   return (
     <div>
-      <div className="scisco-user-boxes mb-8">
-        <div className="grid grid-cols-12">
+      <div>
+        {/* <div className="grid grid-cols-12">
           <div className="col-md mt-md-0 col-span-12 mt-3 pr-4 lg:col-span-4">
             <div
               style={{
@@ -94,42 +94,60 @@ const ProfileAbout = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div
         style={{
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
-        className="rounded bg-slate-100 text-Docy-Dark dark:bg-Docy-Dark dark:text-white "
+        className="my-5 rounded bg-slate-100 text-Docy-Dark dark:bg-Docy-Dark dark:text-white"
       >
-        <div className=" flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className=" flex border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
-          <div className="scisco-user-table-right">John Doe</div>
+          <div className="scisco-user-table-right flex">
+            <span className="self-center">
+              {props.userInfoFromDB?.displayName}
+            </span>
+          </div>
         </div>
-        <div className="scisco-user-table age-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
-          <div className="scisco-user-table-left">Age</div>
-          <div className="scisco-user-table-right">34</div>
+        <div className="scisco-user-table age-bx flex border-b-2 border-solid border-gray-200">
+          <div className="scisco-user-table-left">Profession</div>
+          <div className="scisco-user-table-right flex">
+            <span className="self-center">
+              {props.userInfoFromDB?.profession}
+            </span>
+          </div>
         </div>
-        <div className="scisco-user-table gender-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className="scisco-user-table gender-bx flex  border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Gender</div>
-          <div className="scisco-user-table-right">Male</div>
+          <div className="scisco-user-table-right flex">
+            {' '}
+            <span className="self-center">{props.userInfoFromDB?.gender}</span>
+          </div>
         </div>
-        <div className="scisco-user-table location-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
-          <div className="scisco-user-table-left">Location</div>
-          <div className="scisco-user-table-right">New York</div>
+        <div className="scisco-user-table location-bx flex  border-b-2 border-solid border-gray-200">
+          <div className="scisco-user-table-left">Address</div>
+          <div className="scisco-user-table-right flex">
+            {' '}
+            <span className="self-center">{props.userInfoFromDB?.address}</span>
+          </div>
         </div>
-        <div className="scisco-user-table website-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
+        <div className="scisco-user-table website-bx flex  border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Website</div>
-          <div className="scisco-user-table-right">www.thememasters.club/</div>
+          <div className="scisco-user-table-right flex">
+            {' '}
+            <span className="self-center">{props.userInfoFromDB?.website}</span>
+          </div>
         </div>
-        <div className="scisco-user-table bio-bx flex flex-nowrap items-center border-b-2 border-solid border-gray-200">
-          <div className="scisco-user-table-left">Biography</div>
-          <div className="scisco-user-table-right">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            pellentesque tincidunt sem a suscipit. Etiam pharetra ornare
-            ullamcorper. Curabitur ac efficitur purus. Sed id urna maximus,
-            aliquet est sed, egestas risus. Vestibulum rutrum purus tortor. Sed
-            in commodo nunc.
+        <div className="scisco-user-table bio-bx flex  border-b-2 border-solid border-gray-200">
+          <div className="scisco-user-table-left flex">
+            <span className="self-center">Biography</span>
+          </div>
+          <div className="scisco-user-table-right flex">
+            {' '}
+            <span className="self-center">
+              {props.userInfoFromDB?.biography}
+            </span>
           </div>
         </div>
       </div>

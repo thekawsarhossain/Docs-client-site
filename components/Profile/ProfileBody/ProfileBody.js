@@ -9,8 +9,13 @@ import ProfileFllowers from './ProfileFllowers'
 import ProfileFllowing from './ProfileFllowing'
 import { useState } from 'react'
 import ProfileBlogs from './ProfileBlogs'
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
+import ArticleIcon from '@mui/icons-material/Article'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useSelector } from 'react-redux'
+import ProfileEdit from './ProfileEdit'
 
-const ProfileBody = () => {
+const ProfileBody = (props) => {
   const [expanded, setExpanded] = useState(false)
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -21,162 +26,186 @@ const ProfileBody = () => {
   const toggleTab = (index) => {
     setToggleState(index)
   }
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  const [filter, setFilter] = useState('')
+  const searchText = (event) => {
+    setFilter(event.target.value)
+  }
+  const otherPosts = blogs?.filter(
+    (td) => td?.blogger?._id === props?.userInfoFromDB?._id
+  )
+  let dataSearch = otherPosts?.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    )
+  })
+  // dataSearch?.sort(
+  //   (firstItem, secondItem) =>
+  //     firstItem?.comment?.length - secondItem?.comment?.length
+  // )
+  dataSearch?.reverse()
   return (
     <div>
-      <main
-        id="scisco-main-wrapper"
-        className="overflow-hidden px-20 py-0 dark:bg-Docy-AlmostBlack"
-      >
+      <main className="overflow-hidden  dark:bg-Docy-AlmostBlack">
         <Container>
-          <div id="anspress" className="anspress">
-            <div id="ap-user" className="ap-row m-0 p-0">
-              <div className="grid grid-cols-12">
-                <div id="ap-user-nav" className="col-span-12 lg:col-span-3">
-                  <div className="my-5 rounded-md bg-slate-700 md:w-64 lg:w-64">
-                    <div className="flex flex-col">
-                      <button
-                        className={
-                          toggleState === 1
-                            ? 'mb-1 rounded-t-md bg-blue-700 py-3 text-white'
-                            : 'text-whitebg-blue-700 mb-1 rounded-t-md bg-gray-800 py-3'
-                        }
-                        onClick={() => toggleTab(1)}
-                      >
-                        <span className="float-left pl-3">
-                          <PersonIcon
-                            sx={{
-                              margin: '0',
-                              minWidth: '1.75rem',
-                              color: '#FFF',
-                            }}
-                          />
-                          About
-                        </span>
-                        {/* <span className="float-right pr-3">{'>'}</span> */}
-                      </button>
-                      <button
-                        className={
-                          toggleState === 2
-                            ? 'mb-1 bg-blue-700 py-3 text-white'
-                            : 'mb-1 bg-gray-800 py-3 text-white'
-                        }
-                        onClick={() => toggleTab(2)}
-                      >
-                        <span className="float-left pl-3">
-                          <EmojiEventsIcon
-                            sx={{
-                              margin: '0',
-                              minWidth: '1.75rem',
-                              color: '#0a48b3',
-                            }}
-                          />
-                          Reputations
-                        </span>
-                        {/* <span className="float-right pr-3">{'>'}</span> */}
-                      </button>
-                      <button
-                        className={
-                          toggleState === 3
-                            ? 'mb-1 bg-blue-700 py-3 text-white'
-                            : 'mb-1 bg-gray-800 py-3 text-white'
-                        }
-                        onClick={() => toggleTab(3)}
-                      >
-                        <span className="float-left pl-3">
-                          <FacebookRoundedIcon
-                            sx={{
-                              margin: '0',
-                              minWidth: '1.75rem',
-                              color: '#0a48b3',
-                            }}
-                          />
-                          Blog
-                        </span>
-                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                          4
-                        </span>
-                      </button>
-                      <button
-                        className={
-                          toggleState === 4
-                            ? 'mb-1 bg-blue-700 py-3 text-white'
-                            : 'mb-1 bg-gray-800 py-3 text-white'
-                        }
-                        onClick={() => toggleTab(4)}
-                      >
-                        <span className="float-left pl-3">
-                          <PeopleAltRoundedIcon
-                            sx={{
-                              margin: '0',
-                              minWidth: '1.75rem',
-                              color: '#0a48b3',
-                            }}
-                          />
-                          Followers
-                        </span>
-                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                          4
-                        </span>
-                      </button>
-                      <button
-                        className={
-                          toggleState === 5
-                            ? 'rounded-t-md bg-blue-700 py-3 text-white'
-                            : 'rounded-b-md bg-gray-800 py-3 text-white'
-                        }
-                        onClick={() => toggleTab(5)}
-                      >
-                        <span className="float-left pl-3">
-                          <RemoveRedEyeRoundedIcon
-                            sx={{
-                              margin: '0',
-                              minWidth: '1.75rem',
-                              color: '#0a48b3',
-                            }}
-                          />{' '}
-                          Following
-                        </span>
-                        <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                          4
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-12 pl-8 lg:col-span-9">
-                  <div
+          <div className="grid grid-cols-12">
+            {/* SidBar list  */}
+            <div className="col-span-12 lg:col-span-3">
+              <div className="my-5 rounded-md bg-slate-700">
+                <div className="flex flex-col">
+                  <button
                     className={
-                      toggleState === 1 ? 'content  active-content' : 'content'
+                      toggleState === 1
+                        ? 'mb-1 rounded-t-md bg-blue-700 py-3 text-white'
+                        : 'mb-1 rounded-t-md bg-gray-800 py-3 text-white'
                     }
+                    onClick={() => toggleTab(1)}
                   >
-                    <ProfileAbout></ProfileAbout>
-                  </div>
-                  <div
+                    <span className="float-left pl-3">
+                      <PersonIcon
+                        sx={{
+                          margin: '0',
+                          minWidth: '1.75rem',
+                          color: '#fff',
+                        }}
+                      />
+                      About
+                    </span>
+                    {/* <span className="float-right pr-3">{'>'}</span> */}
+                  </button>
+                  <button
                     className={
-                      toggleState === 3 ? 'content  active-content' : 'content'
+                      toggleState === 2
+                        ? 'mb-1 bg-blue-700 py-3 text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
+                    onClick={() => toggleTab(2)}
                   >
-                    <ProfileBlogs />
-                  </div>
-                  <div
+                    <span className="float-left pl-3">
+                      <ManageAccountsIcon
+                        sx={{
+                          margin: '0',
+                          minWidth: '1.75rem',
+                          color: '#fff',
+                        }}
+                      />
+                      Edit Profile
+                    </span>
+                    {/* <span className="float-right pr-3">{'>'}</span> */}
+                  </button>
+                  <button
                     className={
-                      toggleState === 4 ? 'content  active-content' : 'content'
+                      toggleState === 3
+                        ? 'mb-1 bg-blue-700 py-3 text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
+                    onClick={() => toggleTab(3)}
                   >
-                    <ProfileFllowers></ProfileFllowers>
-                  </div>
-                  <div
+                    <span className="float-left pl-3">
+                      <ArticleIcon
+                        sx={{
+                          margin: '0',
+                          minWidth: '1.75rem',
+                          color: '#fff',
+                        }}
+                      />
+                      Blogs
+                    </span>
+                    <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                      {dataSearch.length}
+                    </span>
+                  </button>
+                  <button
                     className={
-                      toggleState === 5 ? 'content  active-content' : 'content'
+                      toggleState === 4
+                        ? 'mb-1 bg-blue-700 py-3 text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
+                    onClick={() => toggleTab(4)}
                   >
-                    <ProfileFllowing></ProfileFllowing>
-                  </div>
+                    <span className="float-left pl-3">
+                      <PeopleAltRoundedIcon
+                        sx={{
+                          margin: '0',
+                          minWidth: '1.75rem',
+                          color: '#fff',
+                        }}
+                      />
+                      Followers
+                    </span>
+                    <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                      4
+                    </span>
+                  </button>
+                  <button
+                    className={
+                      toggleState === 5
+                        ? 'rounded-t-md bg-blue-700 py-3 text-white'
+                        : 'rounded-b-md bg-gray-800 py-3 text-white'
+                    }
+                    onClick={() => toggleTab(5)}
+                  >
+                    <span className="float-left pl-3">
+                      <FavoriteIcon
+                        sx={{
+                          margin: '0',
+                          minWidth: '1.75rem',
+                          color: '#fff',
+                        }}
+                      />{' '}
+                      Following
+                    </span>
+                    <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
+                      4
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
+            <div className="col-span-12 lg:col-span-9 lg:pl-8">
+              <div
+                className={
+                  toggleState === 1 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileAbout
+                  userInfoFromDB={props?.userInfoFromDB}
+                ></ProfileAbout>
+              </div>
+              <div
+                className={
+                  toggleState === 2 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileEdit userInfoFromDB={props?.userInfoFromDB} />
+              </div>
+              <div
+                className={
+                  toggleState === 3 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileBlogs searchText={searchText} dataSearch={dataSearch} />
+              </div>
+              <div
+                className={
+                  toggleState === 4 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileFllowers></ProfileFllowers>
+              </div>
+              <div
+                className={
+                  toggleState === 5 ? 'content  active-content' : 'content'
+                }
+              >
+                <ProfileFllowing></ProfileFllowing>
+              </div>
+            </div>
           </div>
-          <div className="clearfix"></div>
         </Container>
       </main>
     </div>

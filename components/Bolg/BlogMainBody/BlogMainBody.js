@@ -48,6 +48,7 @@ const BlogMainBody = () => {
                   </>
                   <p className="text-Docy-Dark dark:text-gray-400">Blogs</p>
                 </div>
+                {/* search bar  */}
                 <div className="">
                   <p className="flex justify-center ">
                     <input
