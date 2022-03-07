@@ -1,11 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import SmsIcon from '@mui/icons-material/Sms'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import SearchIcon from '@mui/icons-material/Search'
 
 const ProfileBlogs = (props) => {
   console.log(props.dataSearch)
   return (
-    <div className="">
+    <div className=" my-5">
       <div>
+        <div className="mb-8">
+          <p className="flex justify-center ">
+            <input
+              style={{ minHeight: '30px' }}
+              placeholder="Search"
+              className=" rounded-l-lg py-1 px-2 text-2xl dark:text-white"
+              type="text"
+              onChange={props.searchText.bind(this)}
+            />
+            <button className="self-center rounded-r-lg bg-slate-400 px-3 py-2">
+              <SearchIcon />
+            </button>
+          </p>
+        </div>
         {/* Blogs list  */}
         <div className="grid grid-cols-12 gap-4">
           {props.dataSearch?.map((blog) => (
@@ -27,6 +43,9 @@ const ProfileBlogs = (props) => {
                         ? blog?.title.slice(0, 70) + '...'
                         : blog?.title}
                     </h3>
+                    <p className="mt-2 text-gray-300">
+                      {blog?.uploadDate} - {blog?.uploadTime}
+                    </p>
                   </div>
                   <div
                     style={{
@@ -35,40 +54,20 @@ const ProfileBlogs = (props) => {
                     }}
                     className="card-footer flex flex-wrap items-center bg-slate-100 dark:bg-Docy-DarkM"
                   >
-                    <div className="card-avatar">
-                      <a href="">
-                        <div className="scisco-verified">
-                          {/* <i className="fas fa-check" title="Verified user"></i> */}
-                          <img
-                            className="avatar mr-4 h-10 w-10 rounded-full"
-                            src="https://wordpress-288344-1596643.cloudwaysapps.com/wp-content/uploads/2020/11/avatar-200x200.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                    </div>
                     <div
                       style={{ wordWrap: 'break-word' }}
                       className="flex flex-col"
                     >
-                      <div className="card-meta-author">
-                        <a
-                          className="block uppercase leading-6"
-                          href="https://wordpress-288344-1596643.cloudwaysapps.com/author/egemenerd/"
-                        >
-                          John Doe
-                        </a>
-                      </div>
-                      <div className="card-meta-date">
-                        <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards/">
-                          March 12, 2019
-                        </a>
-                      </div>
+                      <button className="p-2">
+                        <DeleteForeverIcon
+                          sx={{ fontSize: '35px' }}
+                          className="hover:animate-bounce"
+                        />{' '}
+                      </button>
                     </div>
-                    <div className="ml-auto">
-                      <a href="https://wordpress-288344-1596643.cloudwaysapps.com/how-can-my-business-win-awards//#scisco-comments-wrapper">
-                        <SmsIcon sx={{ marginRight: '10px' }} />3
-                      </a>
+                    <div className="ml-auto hover:animate-bounce">
+                      <SmsIcon sx={{ marginRight: '10px' }} />
+                      {blog?.comment?.length}
                     </div>
                   </div>
                 </div>

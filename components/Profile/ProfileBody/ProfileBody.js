@@ -180,7 +180,7 @@ const ProfileBody = (props) => {
                   toggleState === 3 ? 'content  active-content' : 'content'
                 }
               >
-                <ProfileBlogs dataSearch={dataSearch} />
+                <ProfileBlogs searchText={searchText} dataSearch={dataSearch} />
               </div>
               <div
                 className={
