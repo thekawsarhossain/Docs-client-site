@@ -8,9 +8,9 @@ const BlogHeroSection = () => {
       {/* Banner section  */}
       <div
         className="relative bg-Docy-paleGeen dark:bg-Docy-Dark "
-        style={{ minHeight: '310px' }}
+        style={{ minHeight: '200px' }}
       >
-        <div>
+        {/* <div>
           <img
             className="absolute"
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_left.png"
@@ -31,13 +31,13 @@ const BlogHeroSection = () => {
             src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_right.png"
             alt=""
           />
-        </div>
+        </div> */}
         <Container>
           <div
-            style={{ minHeight: '310px' }}
-            className="flex w-full text-Docy-Dark dark:text-white "
+            style={{ minHeight: '200px' }}
+            className=" w-full text-Docy-Dark dark:text-white "
           >
-            <div className="self-center">
+            <div className="pt-24 text-center">
               <h1 className="font-serif text-4xl">Docy Blog List</h1>
               <p className="pt-2 font-mono">
                 Keep explore, keep taking knowledge, be happy

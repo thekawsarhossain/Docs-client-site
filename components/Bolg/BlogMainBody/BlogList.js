@@ -21,57 +21,68 @@ const BlogList = (props) => {
         {props.dataSearch?.map((blog) => (
           <div
             key={blog?._id}
-            className="col-span-12 font-serif text-Docy-Dark dark:text-white dark:shadow-lg"
+            className="col-span-12 font-serif text-Docy-Dark dark:text-white dark:shadow-lg md:col-span-6"
           >
-            <button
-              className="w-full text-left"
-              onClick={() => dispatch(ADD_TO_BLOG(blog))}
-            >
-              <Link href={`/blog/${blog?._id}`}>
-                <a>
-                  <div className="rounded-lg  bg-slate-100 dark:bg-Docy-Dark">
+            <Link href={`/blog/${blog?._id}`}>
+              <a>
+                <button
+                  className="w-full text-left"
+                  onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                >
+                  <div className="min-h-full rounded-lg bg-slate-100 dark:bg-Docy-Dark">
                     <img
-                      className="rounded-t-lg"
+                      className="h-96 w-full rounded-t-lg object-cover"
                       src={blog?.image}
                       alt="blogImage"
                     />
-                    <div className="px-4 pt-4 pb-8">
-                      <h3 className="text-4xl">{blog?.title}</h3>
+                    <div
+                      style={{ minHeight: '135px' }}
+                      className="px-4 pt-4 pb-8"
+                    >
+                      <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
+                        {/* {blog?.title} */}
+                        {blog?.title.length > 30
+                          ? blog?.title.split(' ').slice(0, 10).join(' ') +
+                            '...'
+                          : blog?.title}
+                      </h3>
                     </div>
-                    <hr className=" text-Docy-Dark dark:text-white" />
-                    <div className="flex justify-between p-4">
-                      <div className="flex">
-                        <div className="self-center">
-                          <div className="scisco-verified">
-                            <Avatar
-                              alt="Bloggers image"
-                              src={blog?.blogger?.image}
-                              sx={{ width: 40, height: 40 }}
-                            />
+                    <div>
+                      <hr className="text-white" />
+                      <div className="flex justify-between p-4">
+                        <div className="flex">
+                          <div className="self-center">
+                            <div className="scisco-verified">
+                              <Avatar
+                                alt="Bloggers image"
+                                src={blog?.blogger?.image}
+                                sx={{ width: 40, height: 40 }}
+                              />
+                            </div>
+                          </div>
+                          <div className="self-center pl-2">
+                            <p>
+                              <small className="text-sm text-Docy-Dark dark:text-white">
+                                {blog?.blogger?.displayName}
+                              </small>
+                            </p>
+                            <p>
+                              <small className="font-sans text-sm text-Docy-Dark dark:text-white">
+                                {blog?.uploadDate} - {blog?.uploadTime}
+                              </small>
+                            </p>
                           </div>
                         </div>
-                        <div className="self-center pl-2">
-                          <p>
-                            <small className="text-sm">
-                              {blog?.blogger?.displayName}
-                            </small>
-                          </p>
-                          <p>
-                            <small className="font-sans text-sm">
-                              {blog?.uploadDate} - {blog?.uploadTime}
-                            </small>
-                          </p>
+                        <div className="float-right self-center text-Docy-Dark dark:text-white">
+                          <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />
+                          {blog?.comment.length}
                         </div>
-                      </div>
-                      <div className="float-right self-center">
-                        <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />{' '}
-                        {blog?.comment.length}
                       </div>
                     </div>
                   </div>
-                </a>
-              </Link>
-            </button>
+                </button>
+              </a>
+            </Link>
           </div>
         ))}
       </div>
