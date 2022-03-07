@@ -5,7 +5,7 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import MailIcon from '@mui/icons-material/Mail'
-const ProfileAbout = () => {
+const ProfileAbout = (props) => {
   return (
     <div>
       <div>
@@ -105,7 +105,9 @@ const ProfileAbout = () => {
         <div className=" flex border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
           <div className="scisco-user-table-right flex">
-            <span className="self-center">John Doe</span>
+            <span className="self-center">
+              {props.userInfoFromDB.displayName}
+            </span>
           </div>
         </div>
         <div className="scisco-user-table age-bx flex border-b-2 border-solid border-gray-200">
