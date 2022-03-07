@@ -12,13 +12,22 @@ const Contact = () => {
     formState: { errors },
   } = useForm()
 
+  let time = new Date()
+  const date = new Date().toLocaleDateString()
+  const currentTime = time.toLocaleString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  })
+
   const submitHandler = (data) => {
+    let newData = { ...data, sentTime: currentTime, sentDate: date }
     fetch('http://localhost:5000/emails', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(newData),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -26,14 +35,13 @@ const Contact = () => {
           window.alert('Your message has been sent.')
         }
       })
-
   }
 
   return (
     <>
       <ContactBanner />
-      <div className='py-16  bg-slate-100 dark:bg-Docy-AlmostBlack'>
-        <Container className='shadow p-8 bg-white  dark:bg-Docy-Dark dark:text-white'>
+      <div className="bg-slate-100  py-16 dark:bg-Docy-AlmostBlack">
+        <Container className="bg-white p-8 shadow  dark:bg-Docy-Dark dark:text-white">
           <div className="grid grid-cols-12 gap-4 ">
             <div className="col-span-12 p-3 lg:col-span-6">
               <h2>Let’s get in touch</h2>
@@ -55,8 +63,9 @@ const Contact = () => {
                           message: 'You must enter first name',
                         },
                       })}
-                      className={`${errors.firstName ? 'ring-2 ring-red-700' : null
-                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                      className={`${
+                        errors.firstName ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Enter Your first name"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -74,8 +83,9 @@ const Contact = () => {
                           message: 'You must enter last name',
                         },
                       })}
-                      className={`${errors.lastName ? 'ring-2 ring-red-700' : null
-                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none  `}
+                      className={`${
+                        errors.lastName ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none  `}
                       placeholder="Enter Your last name"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -97,8 +107,9 @@ const Contact = () => {
                           message: 'invalid email address',
                         },
                       })}
-                      className={`${errors.email ? 'ring-2 ring-red-700' : null
-                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 `}
+                      className={`${
+                        errors.email ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 `}
                       placeholder="Enter Your Email"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -116,8 +127,9 @@ const Contact = () => {
                           message: 'You must write a subject',
                         },
                       })}
-                      className={`${errors.subject ? 'ring-2 ring-red-700' : null
-                        } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                      className={`${
+                        errors.subject ? 'ring-2 ring-red-700' : null
+                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                       placeholder="Add a subject"
                     />
                     <span className="py-2 text-sm text-red-700">
@@ -136,8 +148,9 @@ const Contact = () => {
                         message: 'You must write something',
                       },
                     })}
-                    className={`${errors.message ? 'ring-2 ring-red-700' : null
-                      } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
+                    className={`${
+                      errors.message ? 'ring-2 ring-red-700' : null
+                    } "block " w-full rounded-md border border-gray-200 px-4 py-3 placeholder-gray-500 focus:outline-none `}
                     placeholder="Add a subject"
                   />
                   <span className="py-2 text-sm text-red-700">
