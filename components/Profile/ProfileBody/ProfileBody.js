@@ -12,8 +12,9 @@ import ProfileBlogs from './ProfileBlogs'
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
 import ArticleIcon from '@mui/icons-material/Article'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useSelector } from 'react-redux'
 
-const ProfileBody = () => {
+const ProfileBody = (props) => {
   const [expanded, setExpanded] = useState(false)
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -24,6 +25,28 @@ const ProfileBody = () => {
   const toggleTab = (index) => {
     setToggleState(index)
   }
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  const [filter, setFilter] = useState('')
+  const searchText = (event) => {
+    setFilter(event.target.value)
+  }
+  const otherPosts = blogs?.filter(
+    (td) => td?.blogger?._id === props?.userInfoFromDB?._id
+  )
+  let dataSearch = otherPosts?.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    )
+  })
+  // dataSearch?.sort(
+  //   (firstItem, secondItem) =>
+  //     firstItem?.comment?.length - secondItem?.comment?.length
+  // )
+  dataSearch?.reverse()
   return (
     <div>
       <main className="overflow-hidden  dark:bg-Docy-AlmostBlack">
@@ -89,10 +112,10 @@ const ProfileBody = () => {
                           color: '#fff',
                         }}
                       />
-                      Blog
+                      Blogs
                     </span>
                     <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                      4
+                      {dataSearch.length}
                     </span>
                   </button>
                   <button
@@ -148,14 +171,16 @@ const ProfileBody = () => {
                   toggleState === 1 ? 'content  active-content' : 'content'
                 }
               >
-                <ProfileAbout></ProfileAbout>
+                <ProfileAbout
+                  userInfoFromDB={props?.userInfoFromDB}
+                ></ProfileAbout>
               </div>
               <div
                 className={
                   toggleState === 3 ? 'content  active-content' : 'content'
                 }
               >
-                <ProfileBlogs />
+                <ProfileBlogs dataSearch={dataSearch} />
               </div>
               <div
                 className={
