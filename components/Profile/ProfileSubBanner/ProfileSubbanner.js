@@ -10,7 +10,7 @@ const ProfileSubbanner = () => {
         style={{
           zIndex: '1',
         }}
-        className="bg-Docy-PaleGrey relative py-4 px-0 dark:bg-Docy-DarkM"
+        className="relative bg-Docy-PaleGrey py-4 px-0 dark:bg-Docy-DarkM"
       >
         <div
           style={{
@@ -55,28 +55,13 @@ const ProfileSubbanner = () => {
                   />
                   <li
                     style={{
-                      color: ' #878EA6',
-                      fontSize: ' 14px',
-                      lineHeight: '21px',
-                    }}
-                    className="breadcrumb-item"
-                  >
-                    <Link style={{ color: '#878EA6' }} href="/">
-                      Blog
-                    </Link>
-                  </li>
-                  <ChevronRightIcon
-                    sx={{ color: ' #878EA6', fontSize: '14px' }}
-                  />
-                  <li
-                    style={{
                       fontSize: ' 14px',
                       lineHeight: '21px',
                     }}
                     className="breadcrumb-item active dark:text-white"
                     aria-current="page"
                   >
-                    Blog with sidebar
+                    Profile
                   </li>
                 </ol>
               </nav>

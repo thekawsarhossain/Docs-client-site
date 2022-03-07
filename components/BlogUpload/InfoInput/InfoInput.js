@@ -165,9 +165,6 @@ const InfoInput = (props) => {
           <div className="grid grid-cols-12 gap-6 pb-6">
             {/* Blog Title Input  */}
             <div className="col-span-12 md:col-span-6">
-              {/* <h2 className="mb-2 pb-1 text-2xl text-Docy-Dark dark:text-white">
-                Please enter a suitable title.
-              </h2> */}
               <div>
                 <input
                   required
@@ -181,50 +178,10 @@ const InfoInput = (props) => {
             </div>
             {/* Category Selection Handling  */}
             <div className="col-span-12 md:col-span-6">
-              {/* <h2 className="mb-2 pb-1 text-2xl text-Docy-Dark dark:text-white">
-                🌝 Please select your content category.
-              </h2> */}
-              {/* <FormControl
-                variant="filled"
-                sx={{
-                  // m: 1,
-                  minWidth: 300,
-                  backgroundColor: 'white',
-                  borderRadius: 2,
-                }}
-              >
-                <InputLabel
-                  id="demo-simple-select-filled-label"
-                  sx={{ color: 'black' }}
-                >
-                  Category
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-filled-label"
-                  id="demo-simple-select-filled"
-                  value={age}
-                  onChange={handleChange}
-                  sx={{ borderColor: 'white' }}
-                >
-                  <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                  <MenuItem value={1}>Creative</MenuItem>
-                  <MenuItem value={2}>Inspiration</MenuItem>
-                  <MenuItem value={3}>Lifestyle</MenuItem>
-                  <MenuItem value={4}>News</MenuItem>
-                  <MenuItem value={5}>Photography</MenuItem>
-                  <MenuItem value={6}>Skill</MenuItem>
-                  <MenuItem value={7}>Tourist Tours</MenuItem>
-                  <MenuItem value={8}>Inspire</MenuItem>
-                </Select>
-                <FormHelperText sx={{ color: 'red' }}>Required*</FormHelperText>
-              </FormControl> */}
               <select
                 value={age}
                 onChange={handleChange}
                 className=" h-14 w-full cursor-pointer rounded-lg border-2 p-3 text-lg dark:border-0"
-                // className="w-full rounded-md border-2 p-3 text-lg dark:border-0"
               >
                 <option className="hidden">Select Category</option>
                 <option>Creative</option>
@@ -243,9 +200,6 @@ const InfoInput = (props) => {
           <div className="grid grid-cols-12 gap-6">
             {/* Video Upload Handling  */}
             <div className="col-span-12 md:col-span-6">
-              {/* <h2 className="mb-3 pb-3 text-2xl text-Docy-Dark dark:text-white">
-                Do you want to shear a video blog or documentation?
-              </h2> */}
               <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
                 <label>
                   <div
@@ -317,9 +271,6 @@ const InfoInput = (props) => {
             </div>
             {/* Thumbnail Upload Handling  */}
             <div className="col-span-12 md:col-span-6">
-              {/* <h2 className="mb-3 pb-3 text-2xl text-Docy-Dark dark:text-white">
-                🌝 Please set a thumbnail for your blog or documentation.
-              </h2> */}
               <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
                 <label>
                   <div
