@@ -8,99 +8,11 @@ import MailIcon from '@mui/icons-material/Mail'
 const ProfileAbout = (props) => {
   return (
     <div>
-      <div>
-        {/* <div className="grid grid-cols-12">
-          <div className="col-md mt-md-0 col-span-12 mt-3 pr-4 lg:col-span-4">
-            <div
-              style={{
-                backgroundColor: '#2dce89',
-                boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
-              }}
-              className="flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
-            >
-              <div
-                style={{
-                  minWidth: '65px',
-                  borderRight: '1px solid rgba(255,255,255,.2)',
-                }}
-                className="flex items-center justify-center p-0 text-2xl"
-              >
-                <SmsIcon />
-              </div>
-              <div
-                className="flex flex-col p-4"
-                style={{
-                  flexBasis: 'auto',
-                }}
-              >
-                <span className="font-bold">4 Answers</span>{' '}
-                <span className="text-sm">1 Best Answers</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-md mt-md-0 col-span-12 mt-3 pr-4 lg:col-span-4">
-            <div
-              style={{
-                backgroundColor: '#d62828',
-                boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
-              }}
-              className=" flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
-            >
-              <div
-                style={{
-                  minWidth: '65px',
-                  borderRight: '1px solid rgba(255,255,255,.2)',
-                }}
-                className="flex items-center justify-center p-0 text-2xl"
-              >
-                <QuestionMarkIcon />
-              </div>
-              <div
-                style={{
-                  flexBasis: 'auto',
-                }}
-                className="flex flex-col p-4"
-              >
-                <span className="font-bold">3 Questions</span>{' '}
-                <span className="text-sm">0 Unanswered</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-md mt-md-0 col-span-12 mt-3 lg:col-span-4">
-            <div
-              style={{
-                backgroundColor: '#F28900',
-                boxShadow: '0 0 2rem 0 rgb(136 152 170 / 30%) ',
-              }}
-              className="scisco-user-box flex items-stretch overflow-hidden rounded p-0 text-white dark:text-Docy-Dark"
-            >
-              <div
-                style={{
-                  minWidth: '65px',
-                  borderRight: '1px solid rgba(255,255,255,.2)',
-                }}
-                className="scisco-user-box-icon flex items-center justify-center p-0 text-2xl"
-              >
-                <EmojiEventsIcon />
-              </div>
-              <div
-                style={{
-                  flexBasis: 'auto',
-                }}
-                className="scisco-user-box-info flex flex-col p-4"
-              >
-                <span className="font-bold">64 Reputation</span>{' '}
-                <span className="text-sm">Member since: Nov 2020</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
-      </div>
       <div
         style={{
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
         }}
-        className="my-5 rounded bg-slate-100 text-Docy-Dark dark:bg-Docy-Dark dark:text-white"
+        className="my-5 rounded bg-slate-100 text-Docy-Dark dark:bg-Docy-DarkM dark:text-white"
       >
         <div className=" flex border-b-2 border-solid border-gray-200">
           <div className="scisco-user-table-left">Name</div>
