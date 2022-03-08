@@ -1,6 +1,19 @@
 import { FormHelperText } from '@mui/material'
+import Box from '@mui/material/Box'
+import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import DesktopDatePicker from '@mui/lab/DatePicker'
+import { useState } from 'react'
 
 const ProfileEdit = (props) => {
+  const [value, setValue] = useState(new Date())
+  // const [date, setDate] = useState('')
+  // const addData = (e) => {
+  //   console.log(e.value)
+  //   setDate(e.value)
+  // }
+  // let fateDate = '09/09/2000'
+  // setDate(fateDate)
   return (
     <div>
       <div
@@ -18,6 +31,38 @@ const ProfileEdit = (props) => {
               name="country"
               defaultValue="Norway"
             />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Date of Birth
+            </FormHelperText>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DesktopDatePicker
+                label="Custom input"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue)
+                }}
+                renderInput={({ inputRef, inputProps, InputProps }) => (
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <input
+                      // value={date}
+                      className="w-full rounded-md border p-2 text-lg"
+                      ref={inputRef}
+                      // {...inputProps}
+                    />
+                    {/* {{ ...inputProps }.value != fateDate &&
+                      addData({ ...inputProps })} */}
+                    {InputProps?.endAdornment}
+                  </Box>
+                )}
+              />
+            </LocalizationProvider>
           </div>
           <div className="col-span-12 flex flex-col  md:col-span-6">
             <FormHelperText sx={{ color: 'gray' }}>Profession</FormHelperText>
