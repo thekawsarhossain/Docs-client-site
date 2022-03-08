@@ -17,7 +17,7 @@ const ProfileBanner = () => {
               <Box sx={{ }}>
                    <div >
                      <img  className="relative w-full lg:h-96" src="https://admin.pixelstrap.com/viho/assets/images/user-profile/bg-profile.jpg"  alt="banner" />
-                        <div  className="bg-slate-200 top-16 left-94 border p-2 m-3 lg:w-1/5 lg:absolute">         
+                        <div  className="bg-slate-200 dark:bg-Docy-Dark top-16 left-94 border p-2 m-3 lg:w-1/5 lg:absolute">         
                                     
                                     <div className='flex justify-center '>
                                         <img src="https://admin.pixelstrap.com/viho/assets/images/user/7.jpg" className="w-1/4 h-1/4 rounded-full border-4 border-indigo-600 mt-8 mb-4" alt="image" />
@@ -40,7 +40,7 @@ const ProfileBanner = () => {
                                 <div>
                                     <ul className='flex justify-evenly font-bold mt-3 p-3'>
                                         <li>Follower <br />10M</li>
-                                        <li>Following <br /> 3K</li>
+                                        <li className='mx-1'>Following <br /> 3K</li>
                                         <li>Total Post <br /> 5M</li>
                                     </ul>
                                 </div>
