@@ -166,6 +166,7 @@ const ProfileBody = (props) => {
                 </div>
               </div>
             </div>
+            {/* Details Section  */}
             <div className="col-span-12 lg:col-span-9 lg:pl-8">
               <div
                 className={
