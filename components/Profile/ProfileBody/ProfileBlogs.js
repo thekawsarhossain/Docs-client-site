@@ -2,9 +2,38 @@
 import SmsIcon from '@mui/icons-material/Sms'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import SearchIcon from '@mui/icons-material/Search'
+import { DELETE_BLOG } from '../../../Redux/Slices/blogSlice'
+import { useDispatch } from 'react-redux'
 
 const ProfileBlogs = (props) => {
-  console.log(props.dataSearch)
+  // DISPATCH REDUX HOOK HERE
+  const dispatch = useDispatch()
+
+  const handleBlogDelete = async (id) => {
+    console.log(id)
+    const procced = window.confirm('Are you sure you want DELETE ?')
+
+    if (procced) {
+      try {
+        const response = await fetch(
+          `https://polar-hamlet-38117.herokuapp.com/blog/${id}`,
+          {
+            method: 'DELETE',
+            header: { 'content-type': 'application/json' },
+          }
+        )
+        const result = await response.json()
+        if (result?.acknowledged) {
+          dispatch(DELETE_BLOG(id))
+        } else {
+          alert('there is an error we found !')
+        }
+      } catch (e) {
+        alert(e.message)
+      }
+    }
+  }
+
   return (
     <div className=" my-5">
       <div>
@@ -58,7 +87,10 @@ const ProfileBlogs = (props) => {
                       style={{ wordWrap: 'break-word' }}
                       className="flex flex-col"
                     >
-                      <button className="p-2">
+                      <button
+                        onClick={() => handleBlogDelete(blog?._id)}
+                        className="p-2"
+                      >
                         <DeleteForeverIcon
                           sx={{ fontSize: '35px' }}
                           className="hover:animate-bounce"

@@ -8,7 +8,7 @@ body {
   font-family: 'Poppins', sans-serif !important;
   transition: all 0.8s ease-in-out;
 }
-.navbar-parent{
+.navbar-parent {
   font-family: 'Poppins', sans-serif !important;
 }
 ::-webkit-scrollbar {
@@ -125,12 +125,36 @@ body {
 .three:hover span {
   height: 100%;
 }
+
+/* custom css for title  */
+.title {
+  width: 50%;
+  text-align: start;
+}
+.title:after {
+  content: '';
+  width: 4%;
+  height: 1px;
+  background-color: #4338ca;
+  display: inline-block;
+  transform: translateY(-7px);
+  margin: 0 10px;
+}
+.title:before {
+  content: '';
+  width: 4%;
+  height: 1px;
+  background-color: #4338ca;
+  display: inline-block;
+  transform: translateY(-7px);
+  margin: 0 10px;
+}
+
 /* hero section */
 #search {
   padding: 15px 50px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
- 
 }
 #search:focus {
   outline: none;

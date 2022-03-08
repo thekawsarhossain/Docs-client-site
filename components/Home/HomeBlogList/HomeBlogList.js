@@ -37,10 +37,7 @@ const HomeBlogList = () => {
     <div className="my-16 py-16">
       <Container>
         <div className="flex justify-between pb-24 text-center">
-          <h2 className="border-b-2 border-indigo-600 pb-3 font-bold ">
-            {' '}
-            Trending Blog
-          </h2>
+          <h2 className="title">Trending Blogs</h2>
           <Link href="/blogUpload">
             <a>
               <button className="bg-indigo-700 px-10 py-4 text-white">

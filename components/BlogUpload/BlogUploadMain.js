@@ -8,12 +8,16 @@ import { Container } from '@mui/material'
 import { useSelector } from 'react-redux'
 import authCheck from '../../HOC/withAuthCheck'
 import BackupIcon from '@mui/icons-material/Backup'
+import { useRouter } from 'next/router'
 
 const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,
 })
 
 const BlogUploadMain = () => {
+  // router nextjs hook for routing
+  const router = useRouter()
+
   // user data
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
 
@@ -88,6 +92,7 @@ const BlogUploadMain = () => {
       .then((data) => {
         if (data.insertedId) {
           window.alert('Your blog have been submitted.')
+          router.replace('/blogs')
         }
       })
   }
