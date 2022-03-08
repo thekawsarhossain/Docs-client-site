@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import DashboardLayout from '../../components/DashboardLayout/DashboardLayout'
 
 const manageUsers = () => {
   return (
     <DashboardLayout>
       <div>
-        <h1>Dashboard manage users page...</h1>
+        <h2>Users</h2>
       </div>
     </DashboardLayout>
   )
