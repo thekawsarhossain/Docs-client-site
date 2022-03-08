@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const FooterBanner = () => {
   return (
-    <div className="bg-slate-100 dark:bg-lightDark">
+    <div className="bg-slate-100 dark:bg-lightDark pb-12">
       <Container>
         <div className="footerBannerParent">
           {/* shape image  */}
@@ -24,10 +24,10 @@ const FooterBanner = () => {
                 Relationships start here
               </h2>
               <div className="flex-none   items-center justify-start md:flex">
-                <div className="mx-4 rounded-full bg-white px-4 dark:bg-Docy-Dark">
+                <div className="mx-4 rounded-full  px-4 bg-white ">
                   <Search />
                   <input
-                    className=" rounded-full py-3   focus:outline-none  lg:p-3 lg:pr-20"
+                    className=" rounded-full py-3 bg-white   focus:outline-none  lg:p-3 lg:pr-20"
                     style={{ flex: '1', border: 'none' }}
                     type="text"
                     placeholder="Your Email"

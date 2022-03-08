@@ -37,10 +37,7 @@ const HomeBlogList = () => {
     <div className="my-16 py-16">
       <Container>
         <div className="flex justify-between pb-24 text-center">
-          <h2 className="border-b-2 border-indigo-600 pb-3 font-bold ">
-            {' '}
-            Trending Blog
-          </h2>
+          <h2 className="title">Trending Blogs</h2>
           <Link href="/blogUpload">
             <a>
               <button className="bg-indigo-700 px-10 py-4 text-white">
@@ -54,14 +51,14 @@ const HomeBlogList = () => {
           {trendingBlogs?.map((blog) => (
             <button
               key={blog?._id}
-              className="col-span-12 min-h-full w-full rounded-lg text-left font-serif  text-white shadow-lg dark:text-Docy-Dark sm:col-span-6 md:col-span-4"
+              className="col-span-12 min-h-full w-full rounded text-left font-serif  text-white shadow dark:text-Docy-Dark sm:col-span-6 md:col-span-4"
               onClick={() => dispatch(ADD_TO_BLOG(blog))}
             >
               <Link href={`/blog/${blog?._id}`}>
                 <a>
                   <div className="min-h-full rounded-lg bg-slate-100 dark:bg-Docy-Dark">
                     <img
-                      className="h-96 w-full rounded-t-lg object-cover"
+                      className="h-96 w-full rounded object-cover"
                       src={blog?.image}
                       alt="blogImage"
                     />
@@ -71,9 +68,8 @@ const HomeBlogList = () => {
                     >
                       <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
                         {/* {blog?.title} */}
-                        {blog?.title.length > 30
-                          ? blog?.title.split(' ').slice(0, 10).join(' ') +
-                            '...'
+                        {blog?.title.length > 70
+                          ? blog?.title.slice(0, 70) + '...'
                           : blog?.title}
                       </h3>
                     </div>

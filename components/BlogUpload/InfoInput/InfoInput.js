@@ -26,32 +26,8 @@ const InfoInput = (props) => {
 
   const handleChange = (event) => {
     setAge(event.target.value)
-    switch (event.target.value) {
-      case 1:
-        props.category('Creative')
-        break
-      case 2:
-        props.category('Inspiration')
-        break
-      case 3:
-        props.category('Lifestyle')
-        break
-      case 4:
-        props.category('News')
-        break
-      case 5:
-        props.category('Photography')
-        break
-      case 6:
-        props.category('Skill')
-        break
-      case 7:
-        props.category('Tourist Tours')
-        break
-      case 8:
-        props.category('Inspire')
-        break
-    }
+    props.category(event.target.value)
+    console.log(event.target.value)
   }
 
   const [imageLoading, setImageLoading] = useState(false)
@@ -63,13 +39,56 @@ const InfoInput = (props) => {
   const title = (e) => {
     props.blogTitle(e.target.value)
   }
+
+  const dragOver = (e) => {
+    e.preventDefault()
+  }
+
+  const dragEnter = (e) => {
+    e.preventDefault()
+  }
+
+  const dragLeave = (e) => {
+    e.preventDefault()
+  }
+
+  const imageFileDrop = async (e) => {
+    e.preventDefault()
+    const files = e.dataTransfer.files
+    console.log(files)
+
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'ml_default')
+    setImageLoading(true)
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dvszolotz/image/upload',
+      {
+        method: 'POST',
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    const field = 'thumbnail'
+    const value = file.secure_url
+    const newBlogData = { ...blogData }
+    newBlogData[field] = value
+    setBlogData(newBlogData)
+
+    setImage(file.secure_url)
+    // setImage(files[0])
+    props.imgLink(file.secure_url)
+    setImageLoading(false)
+  }
   const uploadImage = async (e) => {
     const files = e.target.files
     const data = new FormData()
     data.append('file', files[0])
     data.append('upload_preset', 'ml_default')
     setImageLoading(true)
-    console.log(e.target.name)
+    console.log(e.target.files)
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dvszolotz/image/upload',
@@ -89,8 +108,33 @@ const InfoInput = (props) => {
 
     console.log('something')
     setImage(file.secure_url)
+    // setImage(files[0])
     props.imgLink(file.secure_url)
     setImageLoading(false)
+  }
+  const videoFileDrop = async (e) => {
+    e.preventDefault()
+    const files = e.dataTransfer.files
+    console.log(files)
+
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'ml_default')
+    setVideoLoading(true)
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dvszolotz/video/upload',
+      {
+        method: 'POST',
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setVideo(file.secure_url)
+    props.videoLink(file.secure_url)
+    console.log(video)
+    setVideoLoading(false)
   }
   const uploadVideo = async (e) => {
     const files = e.target.files
@@ -118,129 +162,182 @@ const InfoInput = (props) => {
     <div>
       <Container>
         <div className="py-10">
-          {/* Blog Title Input  */}
-          <div>
-            <h2 className="mb-2 pb-1 text-2xl text-Docy-Dark dark:text-white">
-              Please enter a suitable title for your blog or documentation.
-            </h2>
-            <div>
-              <input
-                required
-                placeholder="Please enter your blog title"
-                className="mb-5 w-full rounded-md border-2 p-3 text-lg dark:border-0"
-                type="text"
-                onBlur={title}
-              />
-            </div>
-          </div>
-          {/* Video Upload Handling  */}
-          <div>
-            <h2 className="mb-3 pb-3 text-2xl text-Docy-Dark dark:text-white">
-              Do you want to shear a video blog or documentation?
-            </h2>
-            <div>
-              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold  text-Docy-Dark dark:text-white">
+          <div className="grid grid-cols-12 gap-6 pb-6">
+            {/* Blog Title Input  */}
+            <div className="col-span-12 md:col-span-6">
+              <div>
                 <input
-                  className="hidden"
-                  type="file"
-                  name="video"
-                  placeholder="upload"
-                  onChange={uploadVideo}
+                  required
+                  placeholder="Please enter your blog title"
+                  className="h-14  w-full rounded-md border-2 p-3 text-lg dark:border-0"
+                  type="text"
+                  onBlur={title}
                 />
-                <VideoCallIcon className="animate-bounce" /> Upload Video
-              </label>
-            </div>
-            <div>
-              <div className="pt-4">
-                {videoLoading && <h3>Loading ...</h3>}
-                <div>
-                  {video && (
-                    <video
-                      className="mx-auto"
-                      style={{ maxWidth: '760px' }}
-                      src={video}
-                      controls
-                    ></video>
-                  )}
-                </div>
+                <FormHelperText sx={{ color: 'red' }}>Required*</FormHelperText>
               </div>
             </div>
-          </div>
-          {/* Thumbnail Upload Handling  */}
-          <div>
-            <h2 className="mb-3 pt-8 pb-3 text-2xl text-Docy-Dark dark:text-white">
-              🌝 Please set a thumbnail for your blog or documentation.
-            </h2>
-            <div>
-              <label className="rounded-lg bg-gray-400 px-3 py-3 font-semibold text-Docy-Dark dark:text-white">
-                <input
-                  className="hidden"
-                  type="file"
-                  name="thumbnail"
-                  placeholder="upload"
-                  onChange={uploadImage}
-                />
-                <AddAPhotoIcon className="animate-bounce" /> Upload Thumbnail
-              </label>
-            </div>
-            <div>
-              <div className="pt-4">
-                {imageLoading && <h3>Loading ...</h3>}
-                <div>
-                  {image && (
-                    <img
-                      className="mx-auto"
-                      style={{ maxWidth: '760px' }}
-                      src={image}
-                      controls
-                      alt=""
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Category Selection Handling  */}
-          <div>
-            <h2 className="mb-3 pt-8 text-2xl text-Docy-Dark dark:text-white">
-              🌝 Please select a category of your blog or documentation.
-            </h2>
-            <FormControl
-              variant="filled"
-              sx={{
-                m: 1,
-                minWidth: 300,
-                backgroundColor: 'white',
-                borderRadius: 2,
-              }}
-            >
-              <InputLabel
-                id="demo-simple-select-filled-label"
-                sx={{ color: 'black' }}
-              >
-                Category
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-filled-label"
-                id="demo-simple-select-filled"
+            {/* Category Selection Handling  */}
+            <div className="col-span-12 md:col-span-6">
+              <select
                 value={age}
                 onChange={handleChange}
-                sx={{ borderColor: 'white' }}
+                className=" h-14 w-full cursor-pointer rounded-lg border-2 p-3 text-lg dark:border-0"
               >
-                {/* <MenuItem value="">
-                  <em>None</em>
-                </MenuItem> */}
-                <MenuItem value={1}>Creative</MenuItem>
-                <MenuItem value={2}>Inspiration</MenuItem>
-                <MenuItem value={3}>Lifestyle</MenuItem>
-                <MenuItem value={4}>News</MenuItem>
-                <MenuItem value={5}>Photography</MenuItem>
-                <MenuItem value={6}>Skill</MenuItem>
-                <MenuItem value={7}>Tourist Tours</MenuItem>
-                <MenuItem value={8}>Inspire</MenuItem>
-              </Select>
+                <option className="hidden">Select Category</option>
+                <option>Creative</option>
+                <option>Inspiration</option>
+                <option>Lifestyle</option>
+                <option>News</option>
+                <option>Photography</option>
+                <option>Skill</option>
+                <option>Tourist Tours</option>
+                <option>Inspire</option>
+                <option>Education</option>
+              </select>
               <FormHelperText sx={{ color: 'red' }}>Required*</FormHelperText>
-            </FormControl>
+            </div>
+          </div>
+          <div className="grid grid-cols-12 gap-6">
+            {/* Video Upload Handling  */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
+                <label>
+                  <div
+                    // className="mt-12 text-center"
+                    onDragOver={dragOver}
+                    onDragEnter={dragEnter}
+                    onDragLeave={dragLeave}
+                    onDrop={videoFileDrop}
+                  >
+                    <div className="">
+                      {videoLoading && (
+                        <div>
+                          <img
+                            className="mx-auto animate-ping"
+                            style={{ height: '70px', width: '70px' }}
+                            src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                            alt=""
+                          />
+                          <p className="text-xl text-gray-400">Loading ...</p>
+                        </div>
+                      )}
+                      {!videoLoading && (
+                        <div>
+                          <img
+                            className="mx-auto animate-pulse"
+                            style={{ height: '70px', width: '70px' }}
+                            src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                            alt=""
+                          />
+                          <p className="text-xl text-gray-400">
+                            Drag & Drop your video content
+                          </p>
+                        </div>
+                      )}
+                      <p className="py-4">
+                        <span className="rounded-lg bg-gray-400 px-3 py-3 font-semibold  text-Docy-Dark dark:text-white">
+                          <VideoCallIcon className="animate-bounce" /> Upload
+                          Video
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    className="hidden"
+                    type="file"
+                    name="video"
+                    placeholder="upload"
+                    onChange={uploadVideo}
+                  />
+                </label>
+              </div>
+              <FormHelperText sx={{ color: 'red' }}>
+                Do you want to share a video documentation?(Not required*)
+              </FormHelperText>
+              <div>
+                <div className="pt-4">
+                  <div>
+                    {video && (
+                      <video
+                        className="mx-auto"
+                        style={{ maxWidth: '100%' }}
+                        src={video}
+                        controls
+                      ></video>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Thumbnail Upload Handling  */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
+                <label>
+                  <div
+                    // className="mt-12 text-center"
+                    onDragOver={dragOver}
+                    onDragEnter={dragEnter}
+                    onDragLeave={dragLeave}
+                    onDrop={imageFileDrop}
+                  >
+                    <div className="">
+                      {imageLoading && (
+                        <div>
+                          <img
+                            className="mx-auto animate-ping"
+                            style={{ height: '70px', width: '70px' }}
+                            src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                            alt=""
+                          />
+                          <p className="text-xl text-gray-400">Loading ...</p>
+                        </div>
+                      )}
+                      {!imageLoading && (
+                        <div>
+                          <img
+                            className="mx-auto animate-pulse"
+                            style={{ height: '70px', width: '70px' }}
+                            src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                            alt=""
+                          />
+                          <p className="text-xl text-gray-400">
+                            Drag & Drop your thumbnail image
+                          </p>
+                        </div>
+                      )}
+                      <p className="py-4">
+                        <span className="rounded-lg bg-gray-400 px-3 py-3 font-semibold  text-Docy-Dark dark:text-white">
+                          <AddAPhotoIcon className="animate-bounce" /> Upload
+                          Thumbnail
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    className="hidden"
+                    type="file"
+                    name="thumbnail"
+                    placeholder="upload"
+                    onChange={uploadImage}
+                  />
+                </label>
+              </div>
+              <FormHelperText sx={{ color: 'red' }}>Required*</FormHelperText>
+              <div>
+                <div className="pt-4">
+                  <div>
+                    {image && (
+                      <img
+                        className="mx-auto"
+                        style={{ maxWidth: '100%' }}
+                        src={image}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

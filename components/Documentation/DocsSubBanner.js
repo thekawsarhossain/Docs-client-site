@@ -7,21 +7,21 @@ const DocsSubBanner = () => {
   return (
     <Box sx={{background:'#1F3341'}}>
      <Container sx={{py:2}}>
-      <div className="flex justify-between ">
+      <div className="flex justify-between text-gray-200  ">
       <div className="flex text-sm	items-center	">
        <>
        <Link href='/'> 
-       <a className='text-gray-400'>
+       <a >
        Home
        </a>
        </Link>
         <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/></> 
        <> <Link href='/'> 
-       <a className='text-gray-400'>
+       <a >
        Docs
        </a>
        </Link> <ArrowForwardIosRoundedIcon  sx={{fontSize:'15px'}}/></>
-       <>Docy Documentation</>
+       <a >Docy Documentation</a>
       </div>
       <div className="time text-sm	">
         <p> <AccessTimeRoundedIcon  sx={{fontSize:'17px'}}/> Updated on Jan 10, 2022</p>

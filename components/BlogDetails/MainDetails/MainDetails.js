@@ -263,7 +263,7 @@ const MainDetails = () => {
                 </div>
                 <button
                   type="submit"
-                  className="my-3 rounded-md bg-teal-300 py-2 px-3 font-bold text-white hover:bg-teal-400"
+                  className="my-3 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
                 >
                   Post Comment
                 </button>

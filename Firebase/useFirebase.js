@@ -111,9 +111,9 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         saveUserDB(
-          result.user.email,
-          result.user.displayName,
-          result?.photoURL,
+          result?.user?.email,
+          result?.user?.displayName,
+          result?.user?.photoURL,
           'PUT'
         )
         dispatch(ADD_USER(result.user))
@@ -125,7 +125,7 @@ const useFirebase = () => {
 
   // save user to the DB
   const saveUserDB = async (email, displayName, image, method) => {
-    const user = { email, displayName, image }
+    const user = { email, displayName, image, role: 'user' }
     SET_STATUS(true)
     fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method,
