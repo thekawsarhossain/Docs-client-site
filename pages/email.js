@@ -6,7 +6,7 @@ const email = () => {
   const [emails, setEmails] = useState([])
   console.log(emails)
   useEffect(() => {
-    fetch('https://polar-hamlet-38117.herokuapp.com/emails')
+    fetch('http://localhost:5000/emails')
       .then((res) => res.json())
       .then((data) => setEmails(data))
   }, [])
