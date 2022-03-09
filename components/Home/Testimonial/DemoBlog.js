@@ -29,9 +29,9 @@ const DemoBlog = () => {
         {/* here start show blog section */}
         <Grid item xs={12} sm={6} md={8}>
        {blogs.map(blog=>
-         <Grid key={blog?._id} className="mb-8" container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+         <Grid key={blog?._id} className="mb-8" container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
          <Grid item xs={12} sm={6} md={4}>
-           <img src={blog?.image} className='-mb-4 h-80 md:h-64 w-full md:rounded' alt="" />
+           <img src={blog?.image} className='-mb-4 h-80 md:h-64 w-full md:rounded object-cover' alt="" />
          </Grid>
          <Grid item xs={12} sm={6} md={8}>
          <Link href={`/blog/${blog?._id}`}>
@@ -153,6 +153,7 @@ const DemoBlog = () => {
              <li>Skill</li>
              <li>Trending</li>
              <li>Tourist</li>
+             <li>Education</li>
             </div>
           </div>
         </Grid>
