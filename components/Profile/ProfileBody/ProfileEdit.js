@@ -7,13 +7,13 @@ import { useState } from 'react'
 
 const ProfileEdit = (props) => {
   const [value, setValue] = useState(new Date())
-  // const [date, setDate] = useState('')
-  // const addData = (e) => {
-  //   console.log(e.value)
-  //   setDate(e.value)
-  // }
-  // let fateDate = '09/09/2000'
-  // setDate(fateDate)
+  const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
+  console.log(value.toLocaleDateString())
+  const [date, setDate] = useState(props.userInfoFromDB?.birthDay)
+  const addData = (e) => {
+    console.log(e.value)
+    setDate(e.value)
+  }
   return (
     <div>
       <div
@@ -29,7 +29,7 @@ const ProfileEdit = (props) => {
               className="rounded-md border p-2 text-lg"
               type="text"
               name="country"
-              defaultValue="Norway"
+              defaultValue={props.userInfoFromDB?.displayName}
             />
           </div>
           <div className="col-span-12 flex flex-col  md:col-span-6">
@@ -51,13 +51,13 @@ const ProfileEdit = (props) => {
                     }}
                   >
                     <input
-                      // value={date}
+                      value={date}
                       className="w-full rounded-md border p-2 text-lg"
                       ref={inputRef}
                       // {...inputProps}
                     />
-                    {/* {{ ...inputProps }.value != fateDate &&
-                      addData({ ...inputProps })} */}
+                    {newDate != value.toLocaleDateString() &&
+                      addData({ ...inputProps })}
                     {InputProps?.endAdornment}
                   </Box>
                 )}
