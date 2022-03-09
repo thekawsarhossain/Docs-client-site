@@ -13,6 +13,7 @@ const Login = () => {
 
   // router nextjs hook for routing
   const router = useRouter()
+  console.log(router)
 
   // getting register function from use firebase here
   const { signIn, signInWithGoogle } = useFirebase()
@@ -32,12 +33,11 @@ const Login = () => {
   // Box sx={{ background: '#131417', color: 'white' }}
   return (
     <div className="bg-slate-100 dark:bg-lightDark">
-      <Link href="/" >
-        <a className="absolute z-50 md:ml-96 ml-80  mt-4">
+      <Link href="/">
+        <a className="absolute z-50 ml-80 mt-4  md:ml-96">
           <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
         </a>
       </Link>
-     
 
       {/* images here  */}
       <div className="grid grid-cols-12 gap-4">
