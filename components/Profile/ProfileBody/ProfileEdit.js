@@ -14,6 +14,7 @@ import {
   SET_STATUS,
   REMOVE_DATA,
 } from '../../../Redux/Slices/userSlice'
+import { useDispatch } from 'react-redux'
 // } from '../Redux/Slices/userSlice'
 
 const ProfileEdit = (props) => {
@@ -23,6 +24,8 @@ const ProfileEdit = (props) => {
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   console.log(value.toLocaleDateString())
   const [date, setDate] = useState(props.userInfoFromDB?.birthDay)
+  // redux hooks here
+  const dispatch = useDispatch()
   // if (!props?.userInfoFromDB?.birthDay) {
   //   setDate('')
   // }
