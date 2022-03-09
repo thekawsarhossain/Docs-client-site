@@ -57,7 +57,7 @@ const ProfileBanner = (props) => {
                     {props?.userInfoFromDB?.displayName}
                   </h1>
                   <p className="pt-2 font-mono">
-                    {props?.userInfoFromDB?.title}
+                    {props?.userInfoFromDB?.profession}
                   </p>
                 </div>
               </div>
