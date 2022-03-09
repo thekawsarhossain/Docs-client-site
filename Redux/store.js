@@ -13,6 +13,7 @@ import {
 } from 'redux-persist'
 import blogSlice from './Slices/blogSlice'
 import userSlice from './Slices/userSlice'
+import emailSlice from './Slices/emailSlice'
 
 const persistConfig = {
   key: 'root',
@@ -20,7 +21,11 @@ const persistConfig = {
   storage,
 }
 
-const rootReducer = combineReducers({ user: userSlice, blogs: blogSlice })
+const rootReducer = combineReducers({
+  user: userSlice,
+  blogs: blogSlice,
+  emails: emailSlice,
+})
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

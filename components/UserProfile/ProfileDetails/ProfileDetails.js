@@ -58,49 +58,49 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6  rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Rakibul Hasan</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/11.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Monirul Fahad</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                         <li className='flex justify-between my-4'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/3.jpg" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Shihab</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white  p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Kawsar Hossain</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                         <li className='flex justify-between  my-4'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Abu Bakker</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Rashedul Islam</h6>
-                                                <Button className='bg-indigo-500 text-white hover:bg-cyan-300 hover:text-black'>Add Friend</Button>
+                                                <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
                                         </li>
                                     
@@ -118,11 +118,11 @@ const ProfileDetails = () => {
                                 <h6 className='font-bold'>Following</h6>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                <ul className='text-center'>
+                                <ul className='text-center align-center'>
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6  rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Rakibul Hasan</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -130,7 +130,7 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/11.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Monirul Fahad</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -138,7 +138,7 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between my-4'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/3.jpg" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Shihab Hossain</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -146,7 +146,7 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Kawsar Hossain</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -154,7 +154,7 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between  my-4'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Abu Bakker</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -162,7 +162,7 @@ const ProfileDetails = () => {
                                         <li className='flex justify-between'>
                                             <img src="https://admin.pixelstrap.com/viho/assets/images/user/2.png" 
                                             className="w-2/12 h-3/6 rounded-full border-4 border-indigo-600" alt="" />
-                                            <div>
+                                            <div className='w-5/6 m-auto'>
                                                 <h6 className='font-bold'>Rashedul Islam</h6>
                                                 <button className='bg-indigo-500 text-white p-2 rounded hover:bg-cyan-300 hover:text-black'>Add Friend</button>
                                             </div>
@@ -182,13 +182,10 @@ const ProfileDetails = () => {
                                 <h6 className='font-bold'>Latest Photos</h6>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <ul>
-                                        <li><BusinessCenterIcon/> UX Desginer At Pixelstrap</li>
-                                        <li><LibraryBooksIcon/> Studied Computer Science</li>
-                                        <li><FavoriteIcon/> Relationship Status</li>
-                                        <li><LocationOnIcon/> Lived In London</li>
-                                        <li><BloodtypeIcon/> Blood Group</li>
-                                    
+                                    <ul className='flex justify-evenly'>
+                                       <img src="https://admin.pixelstrap.com/viho/assets/images/social-app/post-1.png" className='w-20 h-16' alt="" />
+                                       <img src="https://admin.pixelstrap.com/viho/assets/images/social-app/post-6.png" className='w-20 h-16' alt="" />
+                                       <img src="https://admin.pixelstrap.com/viho/assets/images/social-app/post-7.png" className='w-20 h-16' alt="" />
                                     </ul>
                                 </AccordionDetails>
                             </Accordion>
@@ -203,12 +200,11 @@ const ProfileDetails = () => {
                                 <h6 className='font-bold'>Friends</h6>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <ul>
-                                        <li><BusinessCenterIcon/> UX Desginer At Pixelstrap</li>
-                                        <li><LibraryBooksIcon/> Studied Computer Science</li>
-                                        <li><FavoriteIcon/> Relationship Status</li>
-                                        <li><LocationOnIcon/> Lived In London</li>
-                                        <li><BloodtypeIcon/> Blood Group</li>
+                                    <ul className='flex flex-wrap justify-evenly'>
+                                        <img src="https://admin.pixelstrap.com/viho/assets/images/user/6.jpg" className="w-12 h-12   rounded-full border-4 border-indigo-600" alt="" />
+                                        <img src="https://admin.pixelstrap.com/viho/assets/images/user/6.jpg" className="w-12 h-12   rounded-full border-4 border-indigo-600" alt="" />
+                                        <img src="https://admin.pixelstrap.com/viho/assets/images/user/6.jpg" className="w-12 h-12   rounded-full border-4 border-indigo-600" alt="" />
+                                        <img src="https://admin.pixelstrap.com/viho/assets/images/user/6.jpg" className="w-12 h-12   rounded-full border-4 border-indigo-600" alt="" />
                                     
                                     </ul>
                                 </AccordionDetails>
@@ -220,9 +216,9 @@ const ProfileDetails = () => {
                      <Container>
                      <div className='flex justify-between mx-4'>
                           <div className='flex mb-4'>
-                              <img src="https://admin.pixelstrap.com/viho/assets/images/user/7.jpg" className="w-1/12 h-5/6  rounded-full border-4 border-indigo-600" alt="" />
+                              <img src="https://admin.pixelstrap.com/viho/assets/images/user/7.jpg" className="w-12 h-12   rounded-full border-4 border-indigo-600" alt="" />
                               <div className='ml-4'>
-                                  <h2 className='font-bold'>Elon Mask</h2>
+                                  <h2 className='font-bold text-2xl'>Elon Mask</h2>
                                   <p>22 Hours Ago</p>
                               </div>
                           </div>
