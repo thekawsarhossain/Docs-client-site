@@ -1,9 +1,10 @@
 import React from 'react';
+import EmailDetails from '../../components/DashboardLayout/Emails/EmailDetails';
 
 const Id = () => {
     return (
         <div>
-            <h1>this is single email</h1>
+            <EmailDetails/>
         </div>
     );
 };
