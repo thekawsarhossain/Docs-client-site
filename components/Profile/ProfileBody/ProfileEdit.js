@@ -117,7 +117,7 @@ const ProfileEdit = (props) => {
       image: image,
     }
     SET_STATUS(true)
-    fetch('http://localhost:5000/users', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
