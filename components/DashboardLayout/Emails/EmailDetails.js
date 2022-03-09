@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react"
+import { useSelector } from 'react-redux'
 
 const EmailDetails = () => {
-  const [email, setEmail] = useState([])
-  console.log(email)
-  useEffect(() => {
-    fetch(`https://polar-hamlet-38117.herokuapp.com/email/${email?._id}`)
-      .then((res) => res.json())
-      .then((data) => setEmail(data))
-  })
+  // getting data from redux
+  const email = useSelector((state) => state?.reducers?.emails?.email)
+
   return (
     <div>
-      <h1>hello</h1>
+      <h2>
+        {email?.firstName} {email?.lastName}
+      </h2>
+      <p>{email?.message}</p>
     </div>
-  );
+  )
 }
 
-export default EmailDetails;
+export default EmailDetails
