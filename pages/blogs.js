@@ -1,11 +1,12 @@
-import Blog from '../components/Bolg/Blog'
+import BlogMainBody from '../components/Bolg/Blog/BlogMainBody'
+import DemoBlog from '../components/Bolg/Blog/BlogMainBody'
 
-const blogs = () => {
+const Blogs = () => {
   return (
     <div>
-      <Blog></Blog>
+      <BlogMainBody />
     </div>
   )
 }
 
-export default blogs
+export default Blogs

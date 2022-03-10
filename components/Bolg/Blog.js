@@ -1,6 +1,6 @@
 import Footer from '../Shared/Footer/Footer'
 import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
-import BlogMainBody from './BlogMainBody/BlogMainBody'
+import BlogMainBody from './BlogMainBodyOld/BlogMainBody'
 import authCheck from '../../HOC/withAuthCheck'
 
 const Blog = () => {

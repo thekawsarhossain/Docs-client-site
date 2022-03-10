@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD_TO_BLOG } from '../../../Redux/Slices/blogSlice'
-import { useState } from 'react'
+import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
+import { useEffect, useState } from 'react'
 import { Avatar, Container } from '@mui/material'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import Link from 'next/link'
@@ -13,8 +13,21 @@ const HomeBlogList = () => {
   // react redux hook here
   const dispatch = useDispatch()
 
+  // calling the redux thunk blogs api for data here
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
+
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  // const [blogs, setBlogs] = useState([])
+
+  // useEffect(() => {
+  //   fetch('https://polar-hamlet-38117.herokuapp.com/blogs')
+  //     .then((res) => res.json())
+  //     .then((data) => setBlogs(data))
+  //   // .then(() => setIsLoading(false))
+  // }, [])
   const [filter, setFilter] = useState('')
   const searchText = (event) => {
     setFilter(event.target.value)
