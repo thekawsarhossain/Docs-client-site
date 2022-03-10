@@ -23,7 +23,7 @@ const ProfileEdit = (props) => {
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   console.log(value.toLocaleDateString())
-  const [date, setDate] = useState(props.userInfoFromDB?.birthDay)
+  const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
   // redux hooks here
   const dispatch = useDispatch()
   // if (!props?.userInfoFromDB?.birthDay) {
@@ -122,7 +122,13 @@ const ProfileEdit = (props) => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then((res) => res.json(), alert('Update Successful'))
+      // .then((data) => {
+      //   if (data.modifiedCount > 0) {
+      //     alert('Update Successful')
+      //   }
+      //   console.log(data)
+      // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
@@ -150,7 +156,7 @@ const ProfileEdit = (props) => {
               />
             </div>
           </div>
-          {/* Thumbnail Upload Handling  */}
+          {/* Profile Photo Update Handling  */}
           <div className="col-span-12 flex flex-col md:col-span-6">
             <FormHelperText sx={{ color: 'gray' }}>
               Profile Photo
