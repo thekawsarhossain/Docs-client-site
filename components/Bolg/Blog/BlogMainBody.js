@@ -40,7 +40,7 @@ const BlogMainBody = () => {
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 12, md: 12 }}
+          columns={{ xs: 12, sm: 12, md: 12 }}
         >
           {/* here start show blog section */}
           <Grid item xs={12} sm={12} md={8}>
