@@ -201,7 +201,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="">
-                    <Link href="/dashboard">
+                    <Link href="/adminDashboard">
                       <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
                         Dashboard
                       </a>
