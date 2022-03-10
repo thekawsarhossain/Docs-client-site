@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Navbar from '../../Shared/Navbar/Navbar'
 import { Avatar, Container, Grid } from '@mui/material'
-import BlogHeroSection from '../../Bolg/BlogHeroSection/BlogHeroSection'
+import BlogHeroSection from '../BlogHeroSection/BlogHeroSection'
 import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -12,16 +12,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Footer from '../../Shared/Footer/Footer'
 
-const DemoBlog = () => {
-  // const [blogs, setBlogs] = useState([])
-  // useEffect(() => {
-  //   fetch('https://polar-hamlet-38117.herokuapp.com/blogs')
-  //     .then((res) => res.json())
-  //     .then((data) => setBlogs(data))
-  // })
-
-  // react redux hook here
+const BlogMainBody = () => {
   const dispatch = useDispatch()
 
   // getting all blogs from redux here
@@ -70,7 +63,7 @@ const DemoBlog = () => {
                   <Link href={`/blog/${blog?._id}`}>
                     <a>
                       <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                        <p className="text-red-600">{blog.category}</p>
+                        <p className="text-red-400">{blog.category}</p>
                         <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
                           {blog.title}
                         </h3>
@@ -247,8 +240,9 @@ const DemoBlog = () => {
           </Grid>
         </Grid>
       </Container>
+      <Footer></Footer>
     </div>
   )
 }
 
-export default DemoBlog
+export default BlogMainBody
