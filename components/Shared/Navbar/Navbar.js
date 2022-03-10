@@ -122,7 +122,7 @@ const Navbar = () => {
               className="bg-white p-4 text-left text-white"
               onClick={() => logoutUser()}
             >
-              logout
+              Logout
             </button>
           </div>
         ) : (
