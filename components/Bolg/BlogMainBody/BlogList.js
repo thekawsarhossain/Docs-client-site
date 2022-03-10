@@ -9,10 +9,12 @@ import { useDispatch } from 'react-redux'
 const BlogList = (props) => {
   // react redux hook here
   const dispatch = useDispatch()
+
   // calling the redux thunk blogs api for data here
   useEffect(() => {
     dispatch(fetchBlogs())
   }, [dispatch])
+
   return (
     <div>
       <div className="grid grid-cols-12 gap-6">

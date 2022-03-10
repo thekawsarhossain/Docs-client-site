@@ -59,7 +59,6 @@ module.exports = {
           GrayBlue: '#2E3243',
           BlackGray: '#252830',
           PaleGrey: '#F0F5F7',
-          DashDark:"#202938"
         },
       },
     },
