@@ -38,7 +38,7 @@ const ManageBlogs = () => {
                 </div>
 
                 <p className="px-10 pt-3 pb-2 font-bold text-black dark:text-slate-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   expedita quis ipsa esse, necessitatibus ut voluptate, nihil
                   deserunt harum dignissimos sapiente voluptatem praesentium
                   saepe tenetur quia, commodi fuga quos reiciendis! Enim labore
