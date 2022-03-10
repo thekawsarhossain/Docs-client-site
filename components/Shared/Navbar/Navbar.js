@@ -114,6 +114,7 @@ const Navbar = () => {
         </Link>
         {user?.email ? (
           <div>
+
             <Avatar
               alt="avatar"
               src={user?.photoURL ? user?.photoURL : avatar}
@@ -254,6 +255,7 @@ const Navbar = () => {
                       style={{ minWidth: '120px' }}
                       className="absolute hidden pt-1 text-gray-700 group-hover:block"
                     >
+
                       <li className="">
                         <Link href="/profile">
                           <a className="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400">
