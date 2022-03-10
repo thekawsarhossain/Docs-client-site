@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import DashboardLayout from '../../components/DashboardLayout/DashboardLayout'
-// import { Card, CardHeader, Select } from '@mui/material'
 import React, { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
+import RepotedBlog from '../../components/Dash/RepotedBlog'
 
 export default function Index() {
   React.useEffect(() => {
@@ -251,6 +252,9 @@ export default function Index() {
               <div></div>
             </div>
           </div>
+        </div>
+        <div className="grid grid-cols-12">
+          <RepotedBlog />
         </div>
       </div>
     </DashboardLayout>
