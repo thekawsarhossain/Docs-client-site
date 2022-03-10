@@ -23,7 +23,7 @@ const ProfileEdit = (props) => {
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   console.log(value.toLocaleDateString())
-  const [date, setDate] = useState(props.userInfoFromDB?.birthDay)
+  const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
   // redux hooks here
   const dispatch = useDispatch()
   // if (!props?.userInfoFromDB?.birthDay) {
@@ -117,12 +117,12 @@ const ProfileEdit = (props) => {
       image: image,
     }
     SET_STATUS(true)
-    fetch('http://localhost:5000/users', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then((res) => res.json(), alert('Update Successful'))
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
@@ -135,6 +135,78 @@ const ProfileEdit = (props) => {
         }}
         className="my-5 rounded bg-slate-100 px-4 py-4 text-Docy-Dark dark:bg-Docy-DarkM dark:text-white"
       >
+        <div className="grid grid-cols-12 gap-3">
+          {/* Profile picture  */}
+          <div className="col-span-12 flex justify-center md:col-span-6">
+            <div
+              className="mx-auto flex self-center overflow-hidden rounded-full border-2 border-white sm:mx-0"
+              style={{ height: '150px', width: '150px' }}
+            >
+              <img
+                style={{ height: '150px', width: '150px' }}
+                className="mx-auto rounded-full border-2 border-white"
+                src={image}
+                alt=""
+              />
+            </div>
+          </div>
+          {/* Profile Photo Update Handling  */}
+          <div className="col-span-12 flex flex-col md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Profile Photo
+            </FormHelperText>
+            <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
+              <label>
+                <div
+                  // className="mt-12 text-center"
+                  onDragOver={dragOver}
+                  onDragEnter={dragEnter}
+                  onDragLeave={dragLeave}
+                  onDrop={imageFileDrop}
+                >
+                  <div className="">
+                    {imageLoading && (
+                      <div>
+                        <img
+                          className="mx-auto animate-ping"
+                          style={{ height: '50px', width: '50px' }}
+                          src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                          alt=""
+                        />
+                        <p className="text-xl text-gray-400">Loading ...</p>
+                      </div>
+                    )}
+                    {!imageLoading && (
+                      <div>
+                        <img
+                          className="mx-auto animate-pulse"
+                          style={{ height: '50px', width: '50px' }}
+                          src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
+                          alt=""
+                        />
+                        <p className="text-md text-gray-400">
+                          Drag & Drop your profile photo
+                        </p>
+                      </div>
+                    )}
+                    <p className="py-4">
+                      <span className="rounded-lg bg-gray-400 px-2 py-2 font-semibold  text-Docy-Dark dark:text-white">
+                        <AddAPhotoIcon className="animate-bounce" /> Browse File
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <input
+                  className="hidden"
+                  type="file"
+                  name="thumbnail"
+                  placeholder="upload"
+                  onChange={uploadImage}
+                />
+              </label>
+            </div>
+          </div>
+        </div>
         <div className="grid grid-cols-12 gap-3 pb-2">
           <div className="col-span-12 flex flex-col  md:col-span-6">
             <FormHelperText sx={{ color: 'gray' }}>Name</FormHelperText>
@@ -219,78 +291,6 @@ const ProfileEdit = (props) => {
               {...register('website')}
               defaultValue={props.userInfoFromDB?.website}
             />
-          </div>
-        </div>
-        <div className="grid grid-cols-12 gap-3">
-          {/* Profile picture  */}
-          <div className="col-span-12 flex justify-center md:col-span-6">
-            <div
-              className="mx-auto flex self-center overflow-hidden rounded-full border-2 border-white sm:mx-0"
-              style={{ height: '150px', width: '150px' }}
-            >
-              <img
-                style={{ height: '150px', width: '150px' }}
-                className="mx-auto rounded-full border-2 border-white"
-                src={image}
-                alt=""
-              />
-            </div>
-          </div>
-          {/* Thumbnail Upload Handling  */}
-          <div className="col-span-12 flex flex-col md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>
-              Profile Photo
-            </FormHelperText>
-            <div className="rounded-lg border-2 border-dotted border-gray-400 p-3 text-center">
-              <label>
-                <div
-                  // className="mt-12 text-center"
-                  onDragOver={dragOver}
-                  onDragEnter={dragEnter}
-                  onDragLeave={dragLeave}
-                  onDrop={imageFileDrop}
-                >
-                  <div className="">
-                    {imageLoading && (
-                      <div>
-                        <img
-                          className="mx-auto animate-ping"
-                          style={{ height: '50px', width: '50px' }}
-                          src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
-                          alt=""
-                        />
-                        <p className="text-xl text-gray-400">Loading ...</p>
-                      </div>
-                    )}
-                    {!imageLoading && (
-                      <div>
-                        <img
-                          className="mx-auto animate-pulse"
-                          style={{ height: '50px', width: '50px' }}
-                          src="https://i.ibb.co/gJLdW8G/cloud-upload-regular-240.png"
-                          alt=""
-                        />
-                        <p className="text-md text-gray-400">
-                          Drag & Drop your profile photo
-                        </p>
-                      </div>
-                    )}
-                    <p className="py-4">
-                      <span className="rounded-lg bg-gray-400 px-2 py-2 font-semibold  text-Docy-Dark dark:text-white">
-                        <AddAPhotoIcon className="animate-bounce" /> Browse File
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <input
-                  className="hidden"
-                  type="file"
-                  name="thumbnail"
-                  placeholder="upload"
-                  onChange={uploadImage}
-                />
-              </label>
-            </div>
           </div>
         </div>
         <div className="pt-3">
