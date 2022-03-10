@@ -125,7 +125,7 @@ const useFirebase = () => {
 
   // save user to the DB
   const saveUserDB = async (email, displayName, image, method) => {
-    const user = { email, displayName, image, role: 'user' }
+    const user = { email, displayName, image }
     SET_STATUS(true)
     fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method,
