@@ -123,6 +123,7 @@ const ProfileEdit = (props) => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
+      .then((result) => console.log(result))
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
@@ -230,9 +231,9 @@ const ProfileEdit = (props) => {
             >
               <img
                 style={{ height: '150px', width: '150px' }}
-                className="mx-auto rounded-full border-2 border-white"
+                className="mx-auto rounded-full border-2 border-white object-cover"
                 src={image}
-                alt=""
+                alt="profile-avatar"
               />
             </div>
           </div>
@@ -308,7 +309,7 @@ const ProfileEdit = (props) => {
           <input
             type="submit"
             className="c-btn btn-brand mt-5 rounded px-6 py-3 font-bold  text-gray-900 hover:bg-white hover:text-black"
-            value="Send Message"
+            value="Save changes"
           />
         </span>
       </form>
