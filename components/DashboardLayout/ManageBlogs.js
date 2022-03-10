@@ -38,7 +38,11 @@ const ManageBlogs = () => {
                 </div>
 
                 <p className="px-10 pt-3 pb-2 font-bold text-black dark:text-slate-50">
-                  Angry Pitbull Club
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                  expedita quis ipsa esse, necessitatibus ut voluptate, nihil
+                  deserunt harum dignissimos sapiente voluptatem praesentium
+                  saepe tenetur quia, commodi fuga quos reiciendis! Enim labore
+                  corporis non quos quibusdam minus ut, consequatur quo!
                 </p>
 
                 <p className="px-10 text-sm font-semibold text-gray-500 dark:text-Docy-White">
@@ -49,9 +53,9 @@ const ManageBlogs = () => {
                 </p>
 
                 <p className="mb-5 px-10 py-2 text-gray-500 dark:text-slate-100">
-                  A collection of 10,000 Angry Pitbulls. Angry Pitbull Club is a
-                  collection of 10,000 unique, digital Pitbull NFT collectibles
-                  that represent community...
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                  explicabo necessitatibus accusantium libero, similique itaque
+                  atque repellendus neque sed eaque.
                 </p>
               </div>
             </div>
