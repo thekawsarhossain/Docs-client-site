@@ -13,12 +13,27 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Footer from '../../Shared/Footer/Footer'
+import { fetchBlogs } from '../../../Redux/Slices/blogSlice'
 
 const BlogMainBody = () => {
+  // react redux hook here
   const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data here
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
+  // const [blogs, setBlogs] = useState([])
+
+  // useEffect(() => {
+  //   fetch('https://polar-hamlet-38117.herokuapp.com/blogs')
+  //     .then((res) => res.json())
+  //     .then((data) => setBlogs(data))
+  // }, [])
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  console.log(blogs)
   const [filter, setFilter] = useState('')
   const searchText = (event) => {
     setFilter(event.target.value)
@@ -44,7 +59,7 @@ const BlogMainBody = () => {
         >
           {/* here start show blog section */}
           <Grid item xs={12} sm={12} md={8}>
-            {dataSearch.map((blog) => (
+            {dataSearch?.map((blog) => (
               <Grid
                 key={blog?._id}
                 className="mb-8"
