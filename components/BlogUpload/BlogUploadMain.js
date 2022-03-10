@@ -14,6 +14,7 @@ const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,
 })
 
+// this is the most important page for this project
 const BlogUploadMain = () => {
   // router nextjs hook for routing
   const router = useRouter()
