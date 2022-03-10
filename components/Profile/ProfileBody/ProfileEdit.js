@@ -123,12 +123,6 @@ const ProfileEdit = (props) => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json(), alert('Update Successful'))
-      // .then((data) => {
-      //   if (data.modifiedCount > 0) {
-      //     alert('Update Successful')
-      //   }
-      //   console.log(data)
-      // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
