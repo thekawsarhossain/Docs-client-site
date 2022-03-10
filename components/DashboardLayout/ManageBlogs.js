@@ -23,20 +23,16 @@ const ManageBlogs = () => {
     <div className="mt-5 h-full">
       <div className="grid grid-cols-12 gap-6">
         {/* {dataSearch.map((blog) => ()} */}
-        {dataSearch.map((blog) => (
+        {dataSearch?.map((blog) => (
           <div key={blog._id} className="col-span-3">
             <div className="flex  items-center justify-center">
               <div className=" rounded border border-gray-100 bg-white hover:shadow-lg dark:bg-gray-900">
-                <img
-                  src="https://picsum.photos/500/300"
-                  className="w-full rounded-t"
-                  alt=""
-                />
+                <img src={blog?.image} className="w-full rounded-t" alt="" />
 
                 <div className="ml-10 flex">
                   <img
-                    src="https://picsum.photos/50/50"
-                    className="-mt-6 rounded-full border-4 border-white shadow-lg"
+                    src={blog?.blogger?.image}
+                    className="-mt-6 h-16 w-16 rounded-full border-4 border-white shadow-lg"
                     alt=""
                   />
                 </div>
