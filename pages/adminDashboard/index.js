@@ -6,7 +6,6 @@ import Chart from 'chart.js/auto'
 import { create } from 'domain'
 import Repoteds from '../../components/Dashboards/Repoteds'
 import RBlog from '../../components/Dashboards/RBlog'
-// import Link from 'next/link'
 
 export default function Index() {
   React.useEffect(() => {
