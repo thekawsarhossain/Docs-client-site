@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-const Repoteds = () => {
+const RUser = () => {
   return (
     <div className="col-span-12 mx-5 mt-6 lg:col-span-6">
       <div className="shadow-xs w-full overflow-hidden rounded-lg">
@@ -707,4 +707,4 @@ const Repoteds = () => {
   )
 }
 
-export default Repoteds
+export default RUser

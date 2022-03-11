@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import AppBar from '@mui/material/AppBar'
@@ -16,7 +17,11 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
-
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
+import DashboardSharpIcon from '@mui/icons-material/DashboardSharp';
+import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
+import BookSharpIcon from '@mui/icons-material/BookSharp';
+import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp';
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -31,32 +36,51 @@ function DashboardLayout(props) {
     <div>
       <Toolbar />
       <Divider />
-      <List>
+      <div className="text-center mt-10 mb-4">
+            <div className="flex justify-center">
+              <img
+                src="https://live-production.wcms.abc-cdn.net.au/fc430b3393844cd39c05f28ab9d41de2?impolicy=wcms_crop_resize&cropH=1612&cropW=2418&xPos=7&yPos=0&width=862&height=575"
+                className="h-20 w-20 mb-3 rounded-full  p-2 object-cover"
+                alt="Admin logo"
+              />
+            </div>
+            <h3 className="text-lg font-bold">Admin</h3>
+            <p>admin@gmail.com</p>
+          </div>
+      <Divider />
+      <List sx={{ml:1}}>
         <Link href="/">
           <a>
             <ListItem button>
-              <ListItemText>Home</ListItemText>
+              <ListItemText> <HomeSharpIcon/> Home</ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard">
           <a>
             <ListItem button>
-              <ListItemText>Front Page</ListItemText>
+              <ListItemText><DashboardSharpIcon/> Dashboard</ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/manageUsers">
           <a>
             <ListItem button>
-              <ListItemText>Manage Users</ListItemText>
+              <ListItemText><ManageAccountsSharpIcon/> Manage Users</ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/manageBlogs">
           <a>
             <ListItem button>
-              <ListItemText>Manage Blogs</ListItemText>
+              <ListItemText><BookSharpIcon/> Manage Blogs</ListItemText>
+            </ListItem>
+          </a>
+        </Link>
+        <Link href="/adminDashboard/emails">
+          <a>
+            <ListItem button>
+              <ListItemText> <MarkEmailUnreadSharpIcon/> Messages</ListItemText>
             </ListItem>
           </a>
         </Link>
@@ -88,7 +112,7 @@ function DashboardLayout(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Admin Dashboard
           </Typography>
         </Toolbar>
       </AppBar>

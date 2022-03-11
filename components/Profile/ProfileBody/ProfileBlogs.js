@@ -2,12 +2,21 @@
 import SmsIcon from '@mui/icons-material/Sms'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import SearchIcon from '@mui/icons-material/Search'
-import { DELETE_BLOG } from '../../../Redux/Slices/blogSlice'
+import { DELETE_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
 import { useDispatch } from 'react-redux'
+import { Avatar, Grid } from '@mui/material'
+import Link from 'next/link'
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
+import { useEffect } from 'react'
 
 const ProfileBlogs = (props) => {
   // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
 
   const handleBlogDelete = async (id) => {
     console.log(id)
@@ -42,7 +51,7 @@ const ProfileBlogs = (props) => {
             <input
               style={{ minHeight: '30px' }}
               placeholder="Search"
-              className=" rounded-l-lg py-1 px-2 text-2xl dark:text-white"
+              className="rounded-l-lg border py-1 px-2 text-2xl dark:text-white"
               type="text"
               onChange={props.searchText.bind(this)}
             />
@@ -52,7 +61,77 @@ const ProfileBlogs = (props) => {
           </p>
         </div>
         {/* Blogs list  */}
-        <div className="grid grid-cols-12 gap-4">
+        {/* here start show blog section */}
+
+        {props.dataSearch?.map((blog) => (
+          <Grid
+            key={blog?._id}
+            className="mb-8"
+            container
+            spacing={{ xs: 2, md: 2 }}
+            columns={{ xs: 4, sm: 12, md: 12 }}
+          >
+            <Grid item xs={12} sm={4} md={4}>
+              <img
+                src={blog?.image}
+                className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
+                alt=""
+              />
+            </Grid>
+            <Grid item xs={12} sm={8} md={8}>
+              <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
+                <div className="flex justify-between">
+                  <span className="text-red-400">{blog.category}</span>
+                  <button
+                    onClick={() => handleBlogDelete(blog?._id)}
+                    className=""
+                  >
+                    <DeleteForeverIcon
+                      sx={{ fontSize: '35px' }}
+                      className="hover:animate-bounce"
+                    />{' '}
+                  </button>
+                </div>
+                <Link
+                  onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                  href={`/blog/${blog?._id}`}
+                >
+                  <a>
+                    <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
+                      {blog.title}
+                    </h3>
+                  </a>
+                </Link>
+                <div className="items-center  justify-between md:flex">
+                  <div className="mb-4 flex items-center">
+                    <Avatar
+                      alt="Bloggers image"
+                      src={blog?.blogger?.image}
+                      sx={{ width: 40, height: 40, mr: 2 }}
+                    />
+                    <p>
+                      {' '}
+                      {blog?.blogger?.displayName} <br />
+                      <small className="hidden md:flex">
+                        {' '}
+                        {blog?.uploadDate} - {blog?.uploadTime}
+                      </small>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      {' '}
+                      <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />{' '}
+                      {blog?.comment.length}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        ))}
+
+        {/* <div className="grid grid-cols-12 gap-4">
           {props.dataSearch?.map((blog) => (
             <div
               key={blog._id}
@@ -67,7 +146,6 @@ const ProfileBlogs = (props) => {
                   />
                   <div style={{ minHeight: '135px' }} className=" pt-4 pb-8">
                     <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
-                      {/* {blog?.title} */}
                       {blog?.title.length > 70
                         ? blog?.title.slice(0, 70) + '...'
                         : blog?.title}
@@ -106,7 +184,7 @@ const ProfileBlogs = (props) => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )

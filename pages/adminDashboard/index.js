@@ -1,11 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import DashboardLayout from '../../components/DashboardLayout/DashboardLayout'
 // import { Card, CardHeader, Select } from '@mui/material'
 import React, { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
-import { create } from 'domain'
-import Repoteds from '../../components/Dashboards/Repoteds'
-import RBlog from '../../components/Dashboards/RBlog'
+import RUser from '../../components/DashboardLayout/RUser/RUser'
+import RBlog from '../../components/DashboardLayout/RBlog/RBlog'
 
 export default function Index() {
   React.useEffect(() => {
@@ -95,11 +93,12 @@ export default function Index() {
     return function cleanup() {
       myLineChart.destroy()
     }
-  }, [])
+  })
   return (
     <DashboardLayout>
       <div className="bg-slate-200 p-10">
         <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+          {/* <!-- Value card --> */}
           <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
             <div>
               <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500">
@@ -224,8 +223,8 @@ export default function Index() {
           </div>
         </div>
         <div className="grid grid-cols-12 gap-5">
-          <div className="col-span-12 h-60 lg:col-span-8">
-            <div className="w-full">
+          <div className="col-span-8">
+            <div className="h-full w-full">
               <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-gray-50 shadow-lg">
                 <div className="mb-0 rounded-t bg-transparent px-4 py-3">
                   <div className="flex flex-wrap items-center">
@@ -248,7 +247,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-4">
+          <div className="col-span-4">
             <div className="relative mb-6 flex h-full w-full min-w-0 flex-col break-words rounded bg-gray-50 shadow-lg">
               <canvas id="PieChart"></canvas>
               <div></div>
@@ -256,8 +255,8 @@ export default function Index() {
           </div>
         </div>
         <div className="mt-10 grid grid-cols-12 gap-5">
-          <Repoteds />
-          <RBlog />
+          <RUser></RUser>
+          <RBlog></RBlog>
         </div>
       </div>
     </DashboardLayout>

@@ -1085,27 +1085,26 @@ legend + * {
 
 /* Sidebar css*/
 
-.sidebar-icon li {
-  margin-left: 25px;
-  border: 1px solid;
-  border-radius: 50%;
-  padding: 8px;
+.sidebar-icon li{
+margin-left: 25px;
+border: 1px solid;
+border-radius: 50%;
+padding: 8px;
 }
-.sidebar-icon li:hover {
-  background-color: #3636f8;
-  color: white;
+.sidebar-icon li:hover{
+background-color: #3636f8;
+color: white;
 }
-.category li {
+.category li{
   border: 1px solid;
   padding: 5px 0px;
   cursor: pointer;
   color: gray;
   border-radius: 5px;
   list-style: none;
+  
 }
-.category li:hover {
+.category li:hover{
   background-color: #3636f8;
   color: white;
 }
-
-
