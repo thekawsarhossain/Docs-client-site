@@ -46,7 +46,7 @@ const ProfileBanner = (props) => {
                 >
                   <img
                     style={{ height: '150px', width: '150px' }}
-                    className="mx-auto rounded-full border-2 border-white object-cover"
+                    className="mx-auto rounded-full border-2 border-white"
                     src={props?.userInfoFromDB?.image}
                     alt=""
                   />

@@ -125,20 +125,12 @@ const useFirebase = () => {
 
   // save user to the DB
   const saveUserDB = async (email, displayName, image, method) => {
-    const payload = {
-      email,
-      displayName,
-      image,
-      role: 'user',
-      followers: [],
-      following: [],
-    }
-
+    const user = { email, displayName, image }
     SET_STATUS(true)
-    fetch('https://polar-hamlet-38117.herokuapp.com/users/', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method,
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(user),
     })
       .then((res) => res.json())
       .catch((error) => dispatch(ADD_ERROR(error.message)))

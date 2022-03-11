@@ -61,7 +61,7 @@ const HeroSection = () => {
                 <h1 className="text-center font-sans font-bold text-white">
                   How can we help you?
                 </h1>
-                <p className="break-words pt-6 text-center text-lg font-bold text-white">
+                <p className="pt-6 text-center text-lg font-bold text-white">
                   Search here to get answers to your questions
                 </p>
               </div>
@@ -78,7 +78,7 @@ const HeroSection = () => {
                                 type="search"
                                 name=""
                                 id="search"
-                                className="w-full bg-white text-black md:w-96"
+                                className="w-72 md:w-96 bg-white text-black"
                               />
                             </div>
                             <div>

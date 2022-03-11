@@ -28,7 +28,7 @@ function DashboardLayout(props) {
   }
 
   const drawer = (
-    <div className="h-full bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
+    <div>
       <Toolbar />
       <Divider />
       <List>
@@ -73,8 +73,8 @@ function DashboardLayout(props) {
       <AppBar
         position="fixed"
         sx={{
-          width: { md: `calc(100% - ${drawerWidth}px)` },
-          ml: { md: `${drawerWidth}px` },
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
         }}
       >
         <Toolbar>
@@ -83,18 +83,18 @@ function DashboardLayout(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
+            Responsive drawer
           </Typography>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -107,7 +107,7 @@ function DashboardLayout(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', md: 'none' },
+            display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -119,7 +119,7 @@ function DashboardLayout(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', md: 'block' },
+            display: { xs: 'none', sm: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -131,19 +131,15 @@ function DashboardLayout(props) {
         </Drawer>
       </Box>
       <Box
-        className="bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack
-      dark:text-white "
         component="main"
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { md: `calc(100% - ${drawerWidth}px)` },
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
-        <div className="bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
-          {children}
-        </div>
+        <div>{children}</div>
       </Box>
     </Box>
   )
