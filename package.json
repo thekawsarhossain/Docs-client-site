@@ -37,6 +37,7 @@
     "heroicons": "^1.0.5",
     "html-to-draftjs": "^1.5.0",
     "html-to-react": "^1.4.8",
+    "immutable": "^4.0.0",
     "lint": "^0.7.0",
     "next": "latest",
     "next-themes": "^0.1.1",
