@@ -4,6 +4,7 @@ import { BsFillReplyFill } from 'react-icons/bs'
 import Sidebar from '../../Dashboard/Sidebar'
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import DashboardLayout from '../DashboardLayout'
 
 const EmailDetails = () => {
   // getting data from redux
@@ -35,8 +36,9 @@ const EmailDetails = () => {
 
   return (
     <>
-      <div className="flex w-full bg-gray-200">
-        <Sidebar />
+     <DashboardLayout>
+     <div className="flex w-full bg-gray-200">
+        
         <div className="m-5 min-h-screen w-full dark:bg-theme dark:text-white bg-white p-5 text-gray-900 transition-all">
           
           <div className="mb-4 flex justify-between">
@@ -112,6 +114,7 @@ const EmailDetails = () => {
           </form>
         </div>
       </div>
+     </DashboardLayout>
     </>
   )
 }
