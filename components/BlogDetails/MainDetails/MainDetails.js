@@ -106,8 +106,8 @@ const MainDetails = () => {
       })
         .then((res) => res.json())
         .then((result) => console.log(result))
-        .then(dispatch(fetchUserData(user?.email)))
-        .finally(alert('started following !'))
+      // .then(dispatch(fetchUserData(user?.email)))
+      // .finally(alert('started following !'))
     } else {
       alert('For folllow you need to login !')
     }
@@ -115,7 +115,7 @@ const MainDetails = () => {
 
   // finding the blogger id and the user following list if they match then we will disabled the following btn
   const isMatched = userInfoFromDB?.following?.find((followerInfo) => {
-    return blog?.blogger?._id === followerInfo?.id
+    return blog?.blogger?.email === followerInfo?.email
   })
 
   return (
