@@ -13,10 +13,16 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
 import Footer from '../../Shared/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-import { ADD_TO_BLOG } from '../../../Redux/Slices/blogSlice'
+import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
 
 const DemoBlog = () => {
+  // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data
+  useEffect(() => {
+    dispatch(fetchBlogs())
+  }, [dispatch])
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
