@@ -42,7 +42,7 @@ function DashboardLayout(props) {
         <Link href="/adminDashboard">
           <a>
             <ListItem button>
-              <ListItemText>Front Page</ListItemText>
+              <ListItemText>Dashboard</ListItemText>
             </ListItem>
           </a>
         </Link>
@@ -57,6 +57,13 @@ function DashboardLayout(props) {
           <a>
             <ListItem button>
               <ListItemText>Manage Blogs</ListItemText>
+            </ListItem>
+          </a>
+        </Link>
+        <Link href="/adminDashboard/emails">
+          <a>
+            <ListItem button>
+              <ListItemText>Emails</ListItemText>
             </ListItem>
           </a>
         </Link>
@@ -88,7 +95,7 @@ function DashboardLayout(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Admin Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
