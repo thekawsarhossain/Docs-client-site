@@ -55,13 +55,13 @@ const ProfileBody = (props) => {
           <div className="grid grid-cols-12">
             {/* SidBar list  */}
             <div className="col-span-12 lg:col-span-3">
-              <div className="my-5 rounded-md bg-slate-300 dark:bg-slate-700">
+              <div className="my-5 rounded-md bg-slate-700">
                 <div className="flex flex-col">
                   <button
                     className={
                       toggleState === 1
                         ? 'mb-1 rounded-t-md bg-blue-700 py-3 text-white'
-                        : 'mb-1 rounded-t-md bg-slate-100 py-3 text-Docy-Dark dark:bg-gray-800 dark:text-white'
+                        : 'mb-1 rounded-t-md bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(1)}
                   >
@@ -70,6 +70,7 @@ const ProfileBody = (props) => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
+                          color: '#fff',
                         }}
                       />
                       About
@@ -80,7 +81,7 @@ const ProfileBody = (props) => {
                     className={
                       toggleState === 2
                         ? 'mb-1 bg-blue-700 py-3 text-white'
-                        : 'mb-1 bg-slate-100 py-3 text-Docy-Dark dark:bg-gray-800 dark:text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(2)}
                   >
@@ -89,6 +90,7 @@ const ProfileBody = (props) => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
+                          color: '#fff',
                         }}
                       />
                       Edit Profile
@@ -99,7 +101,7 @@ const ProfileBody = (props) => {
                     className={
                       toggleState === 3
                         ? 'mb-1 bg-blue-700 py-3 text-white'
-                        : 'mb-1 bg-slate-100 py-3 text-Docy-Dark dark:bg-gray-800 dark:text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(3)}
                   >
@@ -108,19 +110,20 @@ const ProfileBody = (props) => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
+                          color: '#fff',
                         }}
                       />
                       Blogs
                     </span>
                     <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                      {dataSearch?.length}
+                      {dataSearch.length}
                     </span>
                   </button>
                   <button
                     className={
                       toggleState === 4
                         ? 'mb-1 bg-blue-700 py-3 text-white'
-                        : 'mb-1 bg-slate-100 py-3 text-Docy-Dark dark:bg-gray-800 dark:text-white'
+                        : 'mb-1 bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(4)}
                   >
@@ -129,6 +132,7 @@ const ProfileBody = (props) => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
+                          color: '#fff',
                         }}
                       />
                       Followers
@@ -140,8 +144,8 @@ const ProfileBody = (props) => {
                   <button
                     className={
                       toggleState === 5
-                        ? 'rounded-b-md bg-blue-700 py-3 text-white'
-                        : 'rounded-b-md bg-slate-100 py-3 text-Docy-Dark dark:bg-gray-800 dark:text-white'
+                        ? 'rounded-t-md bg-blue-700 py-3 text-white'
+                        : 'rounded-b-md bg-gray-800 py-3 text-white'
                     }
                     onClick={() => toggleTab(5)}
                   >
@@ -150,6 +154,7 @@ const ProfileBody = (props) => {
                         sx={{
                           margin: '0',
                           minWidth: '1.75rem',
+                          color: '#fff',
                         }}
                       />{' '}
                       Following
