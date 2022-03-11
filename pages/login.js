@@ -7,6 +7,7 @@ const login = () => {
         <title>Login</title>
       </Head>
       {/* login component called here  */}
+      {/* there is also register page */}
       <Login />
     </div>
   )
