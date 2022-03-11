@@ -18,7 +18,7 @@ import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import AddSharpIcon from '@mui/icons-material/AddSharp';
 import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
-const ProfileDetails = () => {
+const UserDetails = () => {
     return (
         <div className='md:px-8 md:py-8'>
               <Box sx={{ flexGrow: 1 }}>
@@ -218,4 +218,4 @@ const ProfileDetails = () => {
     );
 };
 
-export default ProfileDetails;
+export default UserDetails;

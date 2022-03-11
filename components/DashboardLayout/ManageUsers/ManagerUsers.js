@@ -10,97 +10,30 @@ import GoogleIcon from '@mui/icons-material/Google';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WifiIcon from '@mui/icons-material/Wifi';
-
-const fakeData = [
-  {
-    name: 'Mariya khan',
-    designation: 'Developer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/3.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/1.jpg',
-    follower: 6250,
-    following: 10,
-    totalPost: 152
-  },
-  {
-    name: 'Kamarun joss',
-    designation: 'Manager',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/16.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/3.jpg',
-    follower: 9600,
-    following: 25,
-    totalPost: 500
-  },
-  {
-    name: 'Soniya hoq',
-    designation: 'Designer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
-    follower: 2025,
-    following: 2,
-    totalPost: 50
-  },
-  {
-    name: 'Soniya hoq',
-    designation: 'Designer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
-    follower: 2025,
-    following: 2,
-    totalPost: 50
-  },
-  {
-    name: 'Mariya khan',
-    designation: 'Developer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/3.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/1.jpg',
-    follower: 6250,
-    following: 10,
-    totalPost: 152
-  },
-  {
-    name: 'Kamarun joss',
-    designation: 'Manager',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/16.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/3.jpg',
-    follower: 9600,
-    following: 25,
-    totalPost: 500
-  },
-  {
-    name: 'Soniya hoq',
-    designation: 'Designer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
-    follower: 2025,
-    following: 2,
-    totalPost: 50
-  },
-  {
-    name: 'Soniya hoq',
-    designation: 'Designer',
-    userImg: 'https://admin.pixelstrap.com/viho/assets/images/avtar/11.jpg',
-    coverImg: 'https://admin.pixelstrap.com/viho/assets/images/user-card/2.jpg',
-    follower: 2025,
-    following: 2,
-    totalPost: 50
-  }
-
-]
+import { useEffect, useState } from 'react'
 
 const ManageUsers = () => {
+
+  const [manageUsers,setManageUsers]=useState([])
+
+  useEffect(()=>{
+     fetch(`https://polar-hamlet-38117.herokuapp.com/manage-users`)
+     .then(res=>res.json())
+     .then(data=>setManageUsers(data))
+  })
     return (
         <Box >
     
           <h2 className='mt-3 mb-16'>User List</h2>
              <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                          {fakeData.map((data) => (
+                          {manageUsers.map((data) => (
                             <Grid item xs={12} sm={4} md={3} key={data.name}>
                                   <div className=" h-full shadow-md bg-white dark:bg-gray-900 dark:text-white rounded">
                                       <div>
                                           <img src={data.coverImg} className="w-full h-full" alt={data.name} />
                                           <div className='flex justify-center -mt-10'>
-                                              <img src={data.userImg} className="w-1/4 h-1/4 rounded-full border-4 border-slate-400" alt={data.name} />
+                                              <img src={data.userImg} className="w-20 h-20  rounded-full object-cover border-4 border-indigo-600" alt={data.name} />
                                           </div>
                                       </div>
                                       <div className=" p-6 text-center">

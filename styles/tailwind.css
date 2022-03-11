@@ -1083,6 +1083,7 @@ legend + * {
   margin-bottom: 30px;
 }
 
+
 /* dashboard */
 
 /* * > .intro-y:nth-child(1) {
@@ -1205,6 +1206,7 @@ legend + * {
   /* background-color: rgb(var(--color-slate-100) / var(--tw-bg-opacity)); */
   font-weight: 500;
 }
+
 
 /* Sidebar css*/
 

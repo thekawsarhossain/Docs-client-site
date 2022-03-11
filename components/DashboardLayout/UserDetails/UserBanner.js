@@ -10,7 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WifiIcon from '@mui/icons-material/Wifi';
 
-const ProfileBanner = () => {
+const UserBanner = () => {
     return (
         <div>     
         <div className='mt-4'>
@@ -46,4 +46,4 @@ const ProfileBanner = () => {
     );
 };
 
-export default ProfileBanner;
+export default UserBanner;

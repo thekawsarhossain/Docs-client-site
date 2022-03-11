@@ -28,7 +28,7 @@ function DashboardLayout(props) {
   }
 
   const drawer = (
-    <div>
+    <div className="h-full bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
       <Toolbar />
       <Divider />
       <List>
@@ -68,34 +68,33 @@ function DashboardLayout(props) {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <Box className='dark:bg-Docy-DashDark'  sx={{ display: 'flex' }}>
-     
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
         }}
       >
         <Toolbar>
           <IconButton
-          
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { md: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" >
+          <Typography variant="h6" noWrap component="div">
             Admin Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -108,7 +107,7 @@ function DashboardLayout(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -120,7 +119,7 @@ function DashboardLayout(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', md: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -132,15 +131,19 @@ function DashboardLayout(props) {
         </Drawer>
       </Box>
       <Box
+        className="bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack
+      dark:text-white "
         component="main"
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
-        <div>{children}</div>
+        <div className="bg-slate-100 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
+          {children}
+        </div>
       </Box>
     </Box>
   )
