@@ -1,14 +1,15 @@
+
 /* eslint-disable @next/next/no-img-element */
-import DashboardLayout from '../../components/DashboardLayout/DashboardLayout'
+import DashboardLayout from "../../components/DashboardLayout/DashboardLayout";
+import ManageUsers from "../../components/DashboardLayout/ManageUsers/ManagerUsers";
+
 
 const manageUsers = () => {
   return (
     <DashboardLayout>
-      <div>
-        <h2>Users</h2>
-      </div>
+      <ManageUsers/>
     </DashboardLayout>
-  )
+  );
 }
 
-export default manageUsers
+export default manageUsers;
