@@ -7,7 +7,6 @@ const login = () => {
         <title>Login</title>
       </Head>
       {/* login component called here  */}
-      {/* Register is also here */}
       <Login />
     </div>
   )
