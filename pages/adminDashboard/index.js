@@ -101,7 +101,6 @@ export default function Index() {
     <DashboardLayout>
       <div className="bg-slate-200 p-10">
         <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
-          {/* <!-- Value card --> */}
           <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
             <div>
               <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500">
