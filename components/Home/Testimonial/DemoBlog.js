@@ -13,16 +13,9 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
 import Footer from '../../Shared/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
 
 const DemoBlog = () => {
-  // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
-
-  // calling the redux thunk blogs api for data
-  useEffect(() => {
-    dispatch(fetchBlogs())
-  }, [dispatch])
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
@@ -67,7 +60,7 @@ const DemoBlog = () => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={8} md={8}>
-      <Link onClick={()=>dispatch( ADD_TO_BLOG(blog))} href={`/blog/${blog?._id}`}>
+                  <Link href={`/blog/${blog?._id}`}>
                     <a>
                       <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
                         <p className="text-red-400">{blog.category}</p>
