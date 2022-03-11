@@ -11,16 +11,16 @@ const Email = () => {
   useEffect(() => {
     dispatch(fetchEmails())
   }, [dispatch])
-
+// here get all emails
   const emails = useSelector((state) => state?.reducers?.emails?.emails)
 
   return (
     <div>
-      <div className="flex w-full dark:bg-theme bg-gray-200">
-        <Sidebar />
-        <div className="m-5 min-h-screen w-full dark:bg-theme bg-white p-5 transition-all">
+      <div className="flex w-full  bg-gray-200">
+     
+        <div className="m-5 min-h-screen w-full  bg-white p-5 transition-all">
           {emails?.map((email) => (
-            <button className="my-2  w-full dark:bg-gray-600 bg-gray-100 p-2 shadow hover:shadow-xl rounded"
+            <button className="my-2  w-full  bg-gray-100 p-2 shadow hover:shadow-xl rounded"
               onClick={() => dispatch(ADD_TO_EMAIL(email))}
               key={email?._id}
             >

@@ -5,6 +5,7 @@ import UserDetails from "../../components/DashboardLayout/UserDetails/UserDetail
 
 const userDetails = () => {
   return (
+
     <DashboardLayout>
    <UserBanner/>
    <UserDetails/>

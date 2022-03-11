@@ -20,8 +20,10 @@ import AddSharpIcon from '@mui/icons-material/AddSharp';
 import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
 const UserDetails = () => {
     return (
-        <div className='md:px-8 md:py-8'>
-              <Box sx={{ flexGrow: 1 }}>
+
+// here start user details
+    <div className='md:px-8 md:py-8'>
+      <Box sx={{ flexGrow: 1 }}>
         <Grid className='m-2' container spacing={2}>
             <Grid item xs={12} md={4}>
                       <div className='mt-10 shadow p-4 bg-slate-100'>
