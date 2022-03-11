@@ -3,10 +3,6 @@ import DashboardLayout from '../../components/DashboardLayout/DashboardLayout'
 import React, { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
 
-import Repoteds from '../../components/Dashboards/Repoteds'
-import RBlog from '../../components/Dashboards/RBlog'
-
-
 export default function Index() {
   React.useEffect(() => {
     const data = {
@@ -263,12 +259,6 @@ export default function Index() {
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-12">
-          <Repoteds />
-          <RBlog />
-        </div>
-
       </div>
     </DashboardLayout>
   )
