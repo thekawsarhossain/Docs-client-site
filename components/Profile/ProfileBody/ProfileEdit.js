@@ -23,7 +23,7 @@ const ProfileEdit = (props) => {
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   console.log(value.toLocaleDateString())
-  const [date, setDate] = useState(props.userInfoFromDB?.birthDay)
+  const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
   // redux hooks here
   const dispatch = useDispatch()
   // if (!props?.userInfoFromDB?.birthDay) {
@@ -122,7 +122,13 @@ const ProfileEdit = (props) => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then((res) => res.json(), alert('Update Successful'))
+      // .then((data) => {
+      //   if (data.modifiedCount > 0) {
+      //     alert('Update Successful')
+      //   }
+      //   console.log(data)
+      // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
   }
@@ -135,92 +141,6 @@ const ProfileEdit = (props) => {
         }}
         className="my-5 rounded bg-slate-100 px-4 py-4 text-Docy-Dark dark:bg-Docy-DarkM dark:text-white"
       >
-        <div className="grid grid-cols-12 gap-3 pb-2">
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>Name</FormHelperText>
-            <input
-              className="rounded-md border p-2 text-lg"
-              type="text"
-              name="displayName"
-              {...register('displayName')}
-              defaultValue={props.userInfoFromDB?.displayName}
-            />
-          </div>
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>
-              Date of Birth
-            </FormHelperText>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DesktopDatePicker
-                label="Custom input"
-                value={value}
-                onChange={(newValue) => {
-                  setValue(newValue)
-                }}
-                renderInput={({ inputRef, inputProps, InputProps }) => (
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <input
-                      name="birthDate"
-                      // {...register('birthDate')}
-                      value={date}
-                      className="w-full rounded-md border p-2 text-lg"
-                      ref={inputRef}
-                      // {...inputProps}
-                    />
-                    {newDate != value.toLocaleDateString() &&
-                      addData({ ...inputProps })}
-                    {InputProps?.endAdornment}
-                  </Box>
-                )}
-              />
-            </LocalizationProvider>
-          </div>
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>Profession</FormHelperText>
-            <input
-              className="rounded-md border p-2 text-lg"
-              type="text"
-              name="profession"
-              {...register('profession')}
-              defaultValue={props.userInfoFromDB?.profession}
-            />
-          </div>
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>Gender</FormHelperText>
-            <input
-              className="rounded-md border p-2 text-lg"
-              type="text"
-              name="gender"
-              {...register('gender')}
-              defaultValue={props.userInfoFromDB?.gender}
-            />
-          </div>
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>Address</FormHelperText>
-            <input
-              className="rounded-md border p-2 text-lg"
-              type="text"
-              name="address"
-              {...register('address')}
-              defaultValue={props.userInfoFromDB?.address}
-            />
-          </div>
-          <div className="col-span-12 flex flex-col  md:col-span-6">
-            <FormHelperText sx={{ color: 'gray' }}>Website</FormHelperText>
-            <input
-              className="rounded-md border p-2 text-lg"
-              type="text"
-              name="website"
-              {...register('website')}
-              defaultValue={props.userInfoFromDB?.website}
-            />
-          </div>
-        </div>
         <div className="grid grid-cols-12 gap-3">
           {/* Profile picture  */}
           <div className="col-span-12 flex justify-center md:col-span-6">
@@ -236,7 +156,7 @@ const ProfileEdit = (props) => {
               />
             </div>
           </div>
-          {/* Thumbnail Upload Handling  */}
+          {/* Profile Photo Update Handling  */}
           <div className="col-span-12 flex flex-col md:col-span-6">
             <FormHelperText sx={{ color: 'gray' }}>
               Profile Photo
@@ -291,6 +211,93 @@ const ProfileEdit = (props) => {
                 />
               </label>
             </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 gap-3 pb-2">
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>Name</FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="displayName"
+              {...register('displayName')}
+              defaultValue={props.userInfoFromDB?.displayName}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Date of Birth
+            </FormHelperText>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DesktopDatePicker
+                label="Custom input"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue)
+                }}
+                renderInput={({ inputRef, inputProps, InputProps }) => (
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <input
+                      name="birthDate"
+                      // {...register('birthDate')}
+                      value={date}
+                      className="w-full rounded-md border p-2 text-lg"
+                      ref={inputRef}
+                      // {...inputProps}
+                      disabled
+                    />
+                    {newDate != value.toLocaleDateString() &&
+                      addData({ ...inputProps })}
+                    {InputProps?.endAdornment}
+                  </Box>
+                )}
+              />
+            </LocalizationProvider>
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>Profession</FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="profession"
+              {...register('profession')}
+              defaultValue={props.userInfoFromDB?.profession}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>Gender</FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="gender"
+              {...register('gender')}
+              defaultValue={props.userInfoFromDB?.gender}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>Address</FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="address"
+              {...register('address')}
+              defaultValue={props.userInfoFromDB?.address}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>Website</FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="website"
+              {...register('website')}
+              defaultValue={props.userInfoFromDB?.website}
+            />
           </div>
         </div>
         <div className="pt-3">
