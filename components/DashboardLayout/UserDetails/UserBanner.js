@@ -12,7 +12,8 @@ import WifiIcon from '@mui/icons-material/Wifi';
 
 const UserBanner = () => {
     return (
-        <div>     
+        <div>  
+               {/*here user banner  */}
         <div className='mt-4'>
               <Box sx={{ }}>
                    <div >

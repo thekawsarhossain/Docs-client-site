@@ -39,7 +39,7 @@ const EmailDetails = () => {
      <DashboardLayout>
      <div className="flex w-full bg-gray-200">
         
-        <div className="m-5 min-h-screen w-full dark:bg-theme dark:text-white bg-white p-5 text-gray-900 transition-all">
+        <div className="m-5 min-h-screen w-full   bg-white p-5 text-gray-900 transition-all">
           
           <div className="mb-4 flex justify-between">
             <div>
@@ -64,17 +64,17 @@ const EmailDetails = () => {
               <p className="font-bold">{email?.sentDate}</p>
             </div>
           </div>
-          <div className="flex justify-center  dark:bg-slate-800 bg-gray-200 py-8">
+          <div className="flex justify-center   bg-gray-200 py-8">
             <div className=" w-3/5 ">
-              <p className=" mb-3 dark:bg-gray-600 rounded bg-white px-8 py-4">
+              <p className=" mb-3 rounded bg-white px-8 py-4">
                 <span className="font-bold">Subject:</span> {email?.subject}
               </p>
-              <p className="  dark:bg-gray-600 rounded bg-white px-8 py-4">
+              <p className="   rounded bg-white px-8 py-4">
                 <span className="font-bold">Message:</span> {email?.message}
               </p>
             </div>
           </div>
-          <form className="mt-5" ref={form} onSubmit={sendEmail}>
+          <form className="mt-5 mx-auto " ref={form} onSubmit={sendEmail}>
             <h3>
               Give a Reply to{' '}
               <span className="font-bold">
@@ -102,7 +102,7 @@ const EmailDetails = () => {
               type="text"
               placeholder="Type your reply message here"
               name="message"
-              className="mt-4 w-full rounded border border-gray-300 px-6 py-3"
+              className="mt-4 w-2/4 bg-slate-100  rounded border border-gray-300 px-6 py-3"
             ></textarea>
 
             <button
