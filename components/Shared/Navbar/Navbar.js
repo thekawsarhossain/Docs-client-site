@@ -244,7 +244,7 @@ const Navbar = () => {
                     <span className="link-hover right-1/2 h-0.5 w-0"></span>
                   </a>
                 </Link>
-                <Link href="/blogs">
+                <Link href="/demo">
                   <a className="link-item">
                     <span>Blog</span>
                     <span className="link-hover left-1/2 h-0.5 w-0"></span>
@@ -337,7 +337,7 @@ const Navbar = () => {
                             className="whitespace-no-wrap block w-full rounded-b bg-gray-200 py-2 px-4 text-left hover:bg-gray-400"
                             onClick={() => logoutUser()}
                           >
-                            logout
+                            Logout
                           </button>
                         </li>
                       </ul>
