@@ -13,7 +13,7 @@ const ProfileBlogs = (props) => {
   // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
 
-  // calling the redux thunk blogs api for data here
+  // calling the redux thunk blogs api for data
   useEffect(() => {
     dispatch(fetchBlogs())
   }, [dispatch])
