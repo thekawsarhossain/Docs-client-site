@@ -108,12 +108,14 @@ const BlogUploadMain = () => {
       <TextEditor blogData={blogData}></TextEditor>
       <Tags allTags={allTags}></Tags>
       <Container>
-        <button
-          onClick={() => handleUpload()}
-          className="mb-6 rounded-lg bg-indigo-500 py-2 px-4 text-lg font-semibold text-white"
-        >
-          <BackupIcon className="animate-bounce" /> Submit
-        </button>
+        <div className="mb-7 rounded-b-md bg-Docy-PaleGrey px-6  dark:bg-Docy-DarkGray">
+          <button
+            onClick={() => handleUpload()}
+            className="mb-6 rounded-lg bg-indigo-500 py-2 px-4 text-lg font-semibold text-white"
+          >
+            <BackupIcon className="animate-bounce" /> Submit
+          </button>
+        </div>
       </Container>
       <Footer></Footer>
     </div>
