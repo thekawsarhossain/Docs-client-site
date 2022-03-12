@@ -63,9 +63,9 @@ const VideoList = () => {
                     </div>
                     <div>
                       <h5 className="pb-2 text-gray-300">
-                        {video.title}
+                        {video.title.split(' ').slice(0, 5).join(' ')}...
                       </h5>
-                      <div className="flex justify-between gap-4 text-sm text-gray-500">
+                      <div className="flex gap-8 text-sm text-gray-500">
                         <div className="flex items-center gap-2">
                           <PersonIcon className=" text-sm" />
                           {video.blogger.displayName.split(' ')[0]}
