@@ -330,7 +330,7 @@ const ProfileEdit = (props) => {
         <span className="">
           <input
             type="submit"
-            className="c-btn btn-brand mt-5 rounded px-6 py-3 font-bold  text-white duration-200 hover:bg-black hover:text-white"
+            className="c-btn btn-brand mt-5 cursor-pointer rounded px-6 py-3 font-bold text-white duration-200 hover:bg-black hover:text-white"
             value="Save changes"
           />
         </span>
