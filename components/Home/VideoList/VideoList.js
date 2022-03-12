@@ -50,27 +50,27 @@ const VideoList = () => {
           </div>
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
-            <ul className="bg-gray-900 p-4">
+            <ul className="">
               {videos.map((video) => (
                 <a key={video._id} href="#">
-                  <li className="mb-3 flex gap-3">
+                  <li className=" bg-gray-900 p-4 mb-3 flex gap-3">
                     <div>
                       <img
-                        className="h-12 w-14 rounded"
+                        className="h-full w-14 rounded"
                         src={video.image}
                         alt=""
                       />
                     </div>
                     <div>
                       <h5 className="pb-2 text-gray-300">
-                        Have you any question which is not answered?
+                        {video.title}
                       </h5>
                       <div className="flex justify-between gap-4 text-sm text-gray-500">
-                        <div className="flex gap-2">
+                        <div className="flex items-center gap-2">
                           <PersonIcon className=" text-sm" />
                           {video.blogger.displayName.split(' ')[0]}
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex items gap-2">
                           <DateRangeIcon className="text-sm" />
                           {video.uploadDate}
                         </div>
