@@ -176,7 +176,7 @@ const Navbar = () => {
                   <span>
                     <img
                       style={{ height: '40px', width: '40px' }}
-                      className="link-item inline-flex items-center rounded-full"
+                      className="link-item inline-flex items-center rounded-full object-cover"
                       src={
                         userInfoFromDB?.image
                           ? userInfoFromDB?.image
@@ -313,7 +313,7 @@ const Navbar = () => {
                     <div className="group relative inline-block">
                       <img
                         style={{ height: '40px', width: '40px' }}
-                        className="link-item inline-flex items-center rounded-full"
+                        className="link-item inline-flex items-center rounded-full object-cover"
                         src={
                           userInfoFromDB?.image
                             ? userInfoFromDB?.image

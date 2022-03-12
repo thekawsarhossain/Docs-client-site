@@ -116,7 +116,7 @@ const ProfileBody = (props) => {
                       Blogs
                     </span>
                     <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                      {dataSearch.length}
+                      {dataSearch?.length}
                     </span>
                   </button>
                   <button

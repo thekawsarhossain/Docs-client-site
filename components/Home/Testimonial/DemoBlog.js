@@ -71,45 +71,44 @@ const DemoBlog = () => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={8} md={8}>
-                  <Link
-                    onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                    href={`/blog/${blog?._id}`}
-                  >
-                    <a>
-                      <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                        <p className="text-red-400">{blog.category}</p>
-                        <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                          {blog.title}
-                        </h3>
-                        <div className="items-center  justify-between md:flex">
-                          <div className="mb-4 flex items-center">
-                            <Avatar
-                              alt="Bloggers image"
-                              src={blog?.blogger?.image}
-                              sx={{ width: 40, height: 40, mr: 2 }}
-                            />
-                            <p>
-                              {' '}
-                              {blog?.blogger?.displayName} <br />
-                              <small className="hidden md:flex">
+                  <button onClick={() => dispatch(ADD_TO_BLOG(blog))}>
+                    <Link href={`/blog/${blog?._id}`}>
+                      <a>
+                        <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
+                          <p className="text-red-400">{blog.category}</p>
+                          <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
+                            {blog.title}
+                          </h3>
+                          <div className="items-center  justify-between md:flex">
+                            <div className="mb-4 flex items-center">
+                              <Avatar
+                                alt="Bloggers image"
+                                src={blog?.blogger?.image}
+                                sx={{ width: 40, height: 40, mr: 2 }}
+                              />
+                              <p>
                                 {' '}
-                                {blog?.uploadDate} - {blog?.uploadTime}
-                              </small>
-                            </p>
-                          </div>
-                          <div>
-                            <p>
-                              {' '}
-                              <ForumOutlinedIcon
-                                sx={{ width: 18, height: 18 }}
-                              />{' '}
-                              {blog?.comment.length}
-                            </p>
+                                {blog?.blogger?.displayName} <br />
+                                <small className="hidden md:flex">
+                                  {' '}
+                                  {blog?.uploadDate} - {blog?.uploadTime}
+                                </small>
+                              </p>
+                            </div>
+                            <div>
+                              <p>
+                                {' '}
+                                <ForumOutlinedIcon
+                                  sx={{ width: 18, height: 18 }}
+                                />{' '}
+                                {blog?.comment.length}
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </a>
-                  </Link>
+                      </a>
+                    </Link>
+                  </button>
                 </Grid>
               </Grid>
             ))}
