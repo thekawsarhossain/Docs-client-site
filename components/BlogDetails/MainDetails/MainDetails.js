@@ -16,6 +16,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
+import FlagIcon from '@mui/icons-material/Flag'
 
 const MainDetails = () => {
   // react redux hook here
@@ -117,25 +118,19 @@ const MainDetails = () => {
               }}
             ></div>
 
-            {/* Biography  */}
-            {blog?.blogger?.biography && (
-              <div
-                style={{ minHeight: '200px' }}
-                className="my-8 flex flex-col rounded-lg bg-slate-200 p-3  dark:bg-Docy-DarkGray md:flex-row"
+            {/* Report Blog  */}
+            <div className="flex justify-center pt-8 pb-12">
+              <button
+                style={{
+                  border: '1px solid',
+                  // borderRadius: '10%',
+                  padding: '8px',
+                }}
+                className="btn rounded-md border-8 border-sky-500 p-2 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200"
               >
-                <div className="p-6">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={blog?.blogger?.image}
-                    sx={{ width: 56, height: 56 }}
-                  />
-                </div>
-                <div className="self-center text-Docy-Dark dark:text-Docy-White ">
-                  <h1 className="pb-3 text-xl font-bold">Jason Response</h1>
-                  <p>{blog?.blogger?.biography}</p>
-                </div>
-              </div>
-            )}
+                <FlagIcon /> Report this blog
+              </button>
+            </div>
 
             {/* Related post  */}
             <div>
