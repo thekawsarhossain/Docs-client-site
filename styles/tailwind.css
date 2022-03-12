@@ -1085,26 +1085,70 @@ legend + * {
 
 /* Sidebar css*/
 
-.sidebar-icon li{
-margin-left: 25px;
-border: 1px solid;
-border-radius: 50%;
-padding: 8px;
+.sidebar-icon li {
+  margin-left: 25px;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 8px;
 }
-.sidebar-icon li:hover{
-background-color: #3636f8;
-color: white;
+.sidebar-icon li:hover {
+  background-color: #3636f8;
+  color: white;
 }
-.category li{
+.category li {
   border: 1px solid;
   padding: 5px 0px;
   cursor: pointer;
   color: gray;
   border-radius: 5px;
   list-style: none;
-  
 }
-.category li:hover{
+.category li:hover {
   background-color: #3636f8;
   color: white;
+}
+.stacked-cards {
+  position: relative;
+}
+.stacked-cards ul {
+  position: relative;
+  max-width: 60%;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.stacked-cards li {
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px 0px #333;
+  list-style: none;
+  width: 65%;
+  position: absolute;
+  left: 50%;
+  transition: 0.5s ease transform;
+}
+
+.stacked-cards li:after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.stacked-cards li.active:after {
+  display: none;
+}
+.stacked-cards li img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: 4;
+}
+.stacked-cards li.active {
+  cursor: default;
+  box-shadow: 0 5px 10px 0px #333;
+  transition: 0.5s ease transform;
 }
