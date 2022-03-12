@@ -1108,3 +1108,21 @@ color: white;
   background-color: #3636f8;
   color: white;
 }
+
+/* Reviews css */
+
+.reviews input, textarea{
+display: flex;
+width: 80%;
+margin: 0 auto;
+margin-bottom: 20px;
+padding: 15px;
+border-radius: 5px;
+
+}
+.reviews button{
+  width: 20%;
+  padding: 15px;
+  border-radius: 5px;
+
+}
