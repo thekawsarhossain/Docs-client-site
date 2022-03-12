@@ -46,7 +46,7 @@ const Tags = (props) => {
   }
   return (
     <Container>
-      <div className="my-8">
+      <div className="bg-Docy-PaleGrey py-8 px-6  dark:bg-Docy-DarkGray">
         <h1 className="pb-3 text-2xl text-Docy-Dark dark:text-white">
           Please enter some Tags...
         </h1>
@@ -64,14 +64,14 @@ const Tags = (props) => {
         {/* Show tags  */}
         <div
           style={{ minHeight: '150px', maxWidth: '500px' }}
-          className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-100 p-4 dark:bg-Docy-Dark"
+          className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-Dark"
         >
           {tags.map((tag, index) => {
             return (
               <div
                 // style={{ backgroundColor: 'aliceblue' }}
                 key={index}
-                className="m-1 h-fit rounded-lg bg-slate-300 p-2 p-1 dark:bg-slate-600"
+                className="m-1 h-fit rounded-lg bg-slate-300 p-2  dark:bg-slate-600"
               >
                 {tag}{' '}
                 <span

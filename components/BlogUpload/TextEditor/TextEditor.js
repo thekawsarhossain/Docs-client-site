@@ -26,12 +26,12 @@ export default class TextEditor extends Component {
     }
     return (
       <Container>
-        <div>
+        <div className="bg-Docy-PaleGrey px-6 dark:bg-Docy-DarkGray">
           <h2 className="mb-2 text-xl text-Docy-Dark dark:text-white">
             Write your documentation or blog below 🌝
           </h2>
           <div
-            className="rounded-lg border bg-Docy-PaleGrey px-2 text-Docy-Dark "
+            className="rounded-lg border bg-white px-2 text-Docy-Dark "
             style={{
               minHeight: '400px',
               // backgroundColor: '#f7f4ec',

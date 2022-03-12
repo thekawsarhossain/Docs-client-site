@@ -126,7 +126,7 @@ const MainDetails = () => {
                   // borderRadius: '10%',
                   padding: '8px',
                 }}
-                className="btn rounded-md border-8 border-sky-500 p-2 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200"
+                className="btn hover:text- rounded-md border-8 border-sky-500 p-2 text-gray-500 dark:hover:text-gray-200"
               >
                 <FlagIcon /> Report this blog
               </button>
