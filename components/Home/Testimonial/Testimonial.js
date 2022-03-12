@@ -11,7 +11,7 @@ const Testimonial = () => {
   const [sliders, setSliders] = useState([])
 
   useEffect(() => {
-    fetch(`https://polar-hamlet-38117.herokuapp.com/reviews`)
+    fetch(`http://localhost:5000/reviews`)
       .then((res) => res.json())
       .then((data) => setSliders(data.slice(0,3)))
   }, [])

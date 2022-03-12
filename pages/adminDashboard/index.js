@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
 import RUser from '../../components/DashboardLayout/RUser/RUser'
 import RBlog from '../../components/DashboardLayout/RBlog/RBlog'
+import Review from '../../components/DashboardLayout/Review/Review'
+// import Review from '../../components/DashboardLayout/Review/Review'
 
 export default function Index() {
   React.useEffect(() => {
@@ -255,8 +257,9 @@ export default function Index() {
           </div>
         </div>
         <div className="mt-10 grid grid-cols-12 gap-5">
-          <RUser></RUser>
-          <RBlog></RBlog>
+          <RUser />
+          <RBlog />
+          <Review />
         </div>
       </div>
     </DashboardLayout>
