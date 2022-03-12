@@ -117,6 +117,22 @@ const ProfileEdit = (props) => {
     }
     console.log(date)
     SET_STATUS(true)
+
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json(), alert('Update Successful'))
+      // .then((data) => {
+      //   if (data.modifiedCount > 0) {
+      //     alert('Update Successful')
+      //   }
+      //   console.log(data)
+      // })
+      .catch((error) => dispatch(ADD_ERROR(error.message)))
+      .finally(() => dispatch(SET_STATUS(false)))
+
     if (
       (date && date !== props?.userInfoFromDB?.birthDate) ||
       image !== props?.userInfoFromDB?.image ||
@@ -146,6 +162,7 @@ const ProfileEdit = (props) => {
     } else {
       alert("You didn't make any changes yet to update the profile !")
     }
+
   }
 
   return (
