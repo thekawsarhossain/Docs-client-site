@@ -222,7 +222,7 @@ const InfoInput = (props) => {
                         </div>
                       )}
                       {!videoLoading && (
-                        <div>
+                        <div className="cursor-pointer">
                           <img
                             className="mx-auto animate-pulse"
                             style={{ height: '70px', width: '70px' }}
@@ -293,7 +293,7 @@ const InfoInput = (props) => {
                         </div>
                       )}
                       {!imageLoading && (
-                        <div>
+                        <div className="cursor-pointer">
                           <img
                             className="mx-auto animate-pulse"
                             style={{ height: '70px', width: '70px' }}

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Avatar, Container } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
@@ -9,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { fetchUserData } from '../../../Redux/Slices/userSlice'
 import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -17,6 +17,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FlagIcon from '@mui/icons-material/Flag'
+
 
 const MainDetails = () => {
   // react redux hook here
@@ -102,6 +103,32 @@ const MainDetails = () => {
       return alert('Go and login to comment !')
     }
   }
+
+  // follow handler here
+  const handleFollow = (blogger) => {
+    const payload = {
+      bloggerId: blogger?._id,
+      userId: userInfoFromDB?._id,
+    }
+    if (userInfoFromDB) {
+      fetch(`https://polar-hamlet-38117.herokuapp.com/user`, {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then((res) => res.json())
+        .then((result) => console.log(result))
+      // .then(dispatch(fetchUserData(user?.email)))
+      // .finally(alert('started following !'))
+    } else {
+      alert('For folllow you need to login !')
+    }
+  }
+
+  // finding the blogger id and the user following list if they match then we will disabled the following btn
+  const isMatched = userInfoFromDB?.following?.find((followerInfo) => {
+    return blog?.blogger?._id === followerInfo?.id
+  })
 
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
@@ -289,15 +316,40 @@ const MainDetails = () => {
             <div className="pb-3">
               <div>
                 <img
-                  className="mx-auto border border-black p-1 dark:border-white"
+                  className="h-56 w-80 border border-white object-cover p-1"
                   src={blog?.blogger?.image}
-                  alt=""
+                  alt="blogger-image"
                 />
               </div>
-              <h1 className="py-2 text-center font-sans text-4xl font-bold">
+
+
+              {/* following btn here  */}
+              {isMatched ? (
+                <button className="my-3 w-80 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
+                  Following
+                </button>
+              ) : user?.email !== blog?.blogger?.email ? (
+                <button
+                  onClick={() => handleFollow(blog.blogger)}
+                  className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
+                >
+                  Follow
+                </button>
+              ) : (
+                ''
+              )}
+
+              <h1 className="py-2 font-sans text-4xl font-bold">
                 {blog?.blogger?.displayName}
               </h1>
+
+              {/* <p>
+                James Bond jolly good happy days smashing barney bonnet bits and
+                bobs loo.!
+              </p> */}
+
               <p className="text-center">{blog?.blogger?.profession}</p>
+
             </div>
             {/* Other posts  */}
             <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
