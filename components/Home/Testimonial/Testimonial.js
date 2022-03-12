@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
@@ -10,9 +11,9 @@ const Testimonial = () => {
   const [sliders, setSliders] = useState([])
 
   useEffect(() => {
-    fetch(`./slider.json`)
+    fetch(`http://localhost:8000/reviews`)
       .then((res) => res.json())
-      .then((data) => setSliders(data))
+      .then((data) => setSliders(data.slice(0,3)))
   }, [])
 
   const settings = {
@@ -37,22 +38,23 @@ const Testimonial = () => {
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow text-Docy-Dark dark:text-white">
-                      <Typography variant="h4">{slider.title}</Typography>
+                      <Typography variant="h4">{slider.description}</Typography>
                       <h4 className="mt-6 font-bold text-Docy-Dark dark:text-white">
                         {slider.name}
                       </h4>
-                      <p className="text-indigo-600">{slider.designation}</p>
+                      <p className="text-indigo-600">{slider.profession}</p>
                     </div>
                   </div>
                 </div>
                 <div className="p-4 md:w-full  lg:w-2/5">
                   <div className="flex  flex-col rounded-lg sm:flex-row">
-                    <Image
+                    <img
                       src={slider.img}
                       alt="img"
                       width="370"
                       height="500"
-                    ></Image>
+                      className='object-cover'
+                    ></img>
                     <div className="rounded-one  hidden  md:block "></div>
                     <div className="rounded-tow  hidden  md:block "></div>
                   </div>
