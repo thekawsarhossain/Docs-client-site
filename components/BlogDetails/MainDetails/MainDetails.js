@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   ADD_COMMENT,
+  ADD_TO_BLOG,
   ADD_TO_BLOGGER_DETAILS,
   fetchBlog,
 } from '../../../Redux/Slices/blogSlice'
@@ -98,9 +99,12 @@ const MainDetails = () => {
         body: JSON.stringify(payload),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result))
+        .then((result) => {
+          if (result?.acknowledged) {
+            dispatch(ADD_COMMENT(payload))
+          }
+        })
         .catch((e) => console.log(e))
-      dispatch(ADD_COMMENT(payload))
       reset()
     } else {
       return alert('Go and login to comment !')
@@ -120,9 +124,16 @@ const MainDetails = () => {
         body: JSON.stringify(payload),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result))
-      // .then(dispatch(fetchUserData(user?.email)))
-      // .finally(alert('started following !'))
+        .then((result) => {
+          if (result?.acknowledged) {
+            // dispatch(fetchUserData(user?.email))
+            alert('started following !')
+          } else {
+            alert('there is an problem we found !')
+          }
+        })
+        .catch((e) => alert(e.message))
+        .finally(dispatch(fetchUserData(user?.email)))
     } else {
       alert('For folllow you need to login !')
     }
@@ -378,26 +389,27 @@ const MainDetails = () => {
                       src={otherPost.image}
                       alt=""
                     />
-                    <Link
-                      className="self-center"
-                      onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                      href={`/blog/${otherPost?._id}`}
-                    >
-                      <a>
-                        <div className="px-6 text-left ">
-                          <p className="cursor-pointer font-medium hover:underline">
-                            {/* {otherPost?.title} */}
-                            {otherPost?.title.length > 55
-                              ? otherPost?.title.slice(0, 55) + '...'
-                              : otherPost?.title}
-                          </p>
+                    <button onClick={() => dispatch(ADD_TO_BLOG(blog))}>
+                      <Link
+                        className="self-center"
+                        href={`/blog/${otherPost?._id}`}
+                      >
+                        <a>
+                          <div className="px-6 text-left ">
+                            <p className="cursor-pointer font-medium hover:underline">
+                              {/* {otherPost?.title} */}
+                              {otherPost?.title.length > 55
+                                ? otherPost?.title.slice(0, 55) + '...'
+                                : otherPost?.title}
+                            </p>
 
-                          <small className="flex pt-2">
-                            {otherPost.uploadDate}
-                          </small>
-                        </div>
-                      </a>
-                    </Link>
+                            <small className="flex pt-2">
+                              {otherPost.uploadDate}
+                            </small>
+                          </div>
+                        </a>
+                      </Link>
+                    </button>
                   </div>
                 </div>
               ))}
