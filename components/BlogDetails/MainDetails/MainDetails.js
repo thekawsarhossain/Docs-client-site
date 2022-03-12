@@ -5,7 +5,11 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
+import {
+  ADD_COMMENT,
+  ADD_TO_BLOGGER_DETAILS,
+  fetchBlog,
+} from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { fetchUserData } from '../../../Redux/Slices/userSlice'
@@ -17,7 +21,6 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FlagIcon from '@mui/icons-material/Flag'
-
 
 const MainDetails = () => {
   // react redux hook here
@@ -204,11 +207,17 @@ const MainDetails = () => {
                           </div>
                         </div>
                         <div className="self-center pl-2">
-                          <p>
-                            <small className="text-sm">
-                              {post?.blogger?.displayName}
-                            </small>
-                          </p>
+                          <button
+                            onClick={() =>
+                              dispatch(ADD_TO_BLOGGER_DETAILS(post?.blogger))
+                            }
+                          >
+                            <Link href={`/blog/blogger/${post?.blogger?._id}`}>
+                              <a className="text-sm underline">
+                                {post?.blogger?.displayName}
+                              </a>
+                            </Link>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -322,7 +331,6 @@ const MainDetails = () => {
                 />
               </div>
 
-
               {/* following btn here  */}
               {isMatched ? (
                 <button className="my-3 w-80 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
@@ -339,9 +347,17 @@ const MainDetails = () => {
                 ''
               )}
 
-              <h1 className="py-2 font-sans text-4xl font-bold">
-                {blog?.blogger?.displayName}
-              </h1>
+              <button
+                onClick={() => dispatch(ADD_TO_BLOGGER_DETAILS(blog?.blogger))}
+              >
+                <Link href={`/blog/blogger/${blog?.blogger?._id}`}>
+                  <a>
+                    <h1 className="py-2 font-sans text-4xl font-bold underline">
+                      {blog?.blogger?.displayName}
+                    </h1>
+                  </a>
+                </Link>
+              </button>
 
               {/* <p>
                 James Bond jolly good happy days smashing barney bonnet bits and
@@ -349,7 +365,6 @@ const MainDetails = () => {
               </p> */}
 
               <p className="text-center">{blog?.blogger?.profession}</p>
-
             </div>
             {/* Other posts  */}
             <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">

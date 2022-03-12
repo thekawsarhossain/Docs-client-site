@@ -21,12 +21,16 @@ const blogsSlice = createSlice({
   initialState: {
     blogs: null,
     blog: null,
+    bloggerDetails: null,
     status: false,
     error: '',
   },
 
   //  reducers here
   reducers: {
+    ADD_TO_BLOGGER_DETAILS: (state, action) => {
+      state.bloggerDetails = action.payload
+    },
     ADD_TO_BLOG: (state, action) => {
       state.blog = action.payload
       state.error = ''
@@ -58,5 +62,6 @@ const blogsSlice = createSlice({
   },
 })
 
-export const { ADD_TO_BLOG, ADD_COMMENT, DELETE_BLOG } = blogsSlice.actions
+export const { ADD_TO_BLOG, ADD_COMMENT, DELETE_BLOG, ADD_TO_BLOGGER_DETAILS } =
+  blogsSlice.actions
 export default blogsSlice.reducer
