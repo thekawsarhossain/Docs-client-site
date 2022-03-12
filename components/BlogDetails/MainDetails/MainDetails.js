@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Avatar, Container } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
@@ -9,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { fetchUserData } from '../../../Redux/Slices/userSlice'
 
 const MainDetails = () => {
   // react redux hook here
@@ -114,7 +114,7 @@ const MainDetails = () => {
 
   // finding the blogger id and the user following list if they match then we will disabled the following btn
   const isMatched = userInfoFromDB?.following?.find((followerInfo) => {
-    return blog?.blogger?.email === followerInfo?.email
+    return blog?.blogger?._id === followerInfo?.id
   })
 
   return (
@@ -304,18 +304,36 @@ const MainDetails = () => {
             <div className="pb-3">
               <div>
                 <img
-                  className="border border-white p-1"
+                  className="h-56 w-80 border border-white object-cover p-1"
                   src={blog?.blogger?.image}
-                  alt=""
+                  alt="blogger-image"
                 />
               </div>
+
+              {/* following btn here  */}
+              {isMatched ? (
+                <button className="my-3 w-80 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
+                  Following
+                </button>
+              ) : user?.email !== blog?.blogger?.email ? (
+                <button
+                  onClick={() => handleFollow(blog.blogger)}
+                  className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
+                >
+                  Follow
+                </button>
+              ) : (
+                ''
+              )}
+
               <h1 className="py-2 font-sans text-4xl font-bold">
                 {blog?.blogger?.displayName}
               </h1>
-              <p>
+
+              {/* <p>
                 James Bond jolly good happy days smashing barney bonnet bits and
                 bobs loo.!
-              </p>
+              </p> */}
             </div>
             {/* Other posts  */}
             <div className="py-6">
