@@ -118,7 +118,7 @@ const ProfileEdit = (props) => {
     console.log(date)
     SET_STATUS(true)
     if (
-      (!date && date !== props?.userInfoFromDB?.birthDate) ||
+      (date && date !== props?.userInfoFromDB?.birthDate) ||
       image !== props?.userInfoFromDB?.image ||
       (data?.address && data?.address !== props?.userInfoFromDB?.address) ||
       (data?.biography &&
