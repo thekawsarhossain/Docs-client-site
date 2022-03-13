@@ -1,5 +1,11 @@
+import AQMain from '../components/Ask/AQMain'
+
 const askQuestion = () => {
-  return <div>This is ask question page</div>
+  return (
+    <div>
+      <AQMain></AQMain>
+    </div>
+  )
 }
 
 export default askQuestion
