@@ -22,7 +22,7 @@ const Contact = () => {
 
   const submitHandler = (data) => {
     let newData = { ...data, sentTime: currentTime, sentDate: date }
-    fetch('https://polar-hamlet-38117.herokuapp.com/emails', {
+    fetch('http://localhost:5000/emails', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -92,7 +92,7 @@ const MainDetails = () => {
     }
 
     if (user?.email) {
-      fetch(`https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}`, {
+      fetch(`http://localhost:5000/blog/${blog?._id}`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
@@ -114,7 +114,7 @@ const MainDetails = () => {
       userId: userInfoFromDB?._id,
     }
     if (userInfoFromDB) {
-      fetch(`https://polar-hamlet-38117.herokuapp.com/user`, {
+      fetch(`http://localhost:5000/user`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),

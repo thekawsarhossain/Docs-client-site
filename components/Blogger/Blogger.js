@@ -27,8 +27,20 @@ import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import AddSharpIcon from '@mui/icons-material/AddSharp'
 import RemoveSharpIcon from '@mui/icons-material/RemoveSharp'
 import Navbar from '../Shared/Navbar/Navbar'
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
 
 const Blogger = (props) => {
+  const [showMore, setShowMore] = React.useState(false)
+  const [data, setData] = React.useState([])
+
+  // React.useEffect(() => {
+  //   if (showMore) {
+  //     setData(fakeData)
+  //   } else {
+  //     setData(fakeData.slice(0, 6))
+  //   }
+  // }, [showMore])
   return (
     <div>
       <Navbar></Navbar>
@@ -108,26 +120,44 @@ const Blogger = (props) => {
                 </li>
               </ul>
             </div>
-            <Accordion
-              className="bg-slate-200 text-Docy-Dark dark:bg-Docy-Dark dark:text-slate-100"
-              expanded
+            <div
+              // style={{ marginTop: '-110px' }}
+              className="  rounded-xl bg-slate-100 dark:bg-darkBlue  "
             >
-              <AccordionSummary
-                aria-controls="panel1d-content"
-                id="panel1d-header"
-              >
-                <Typography>
-                  What is your refund policy and terms and conditions?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  We comply fully with Envato’s refund policy. We issue refunds
-                  for the reasons Envato permits us to give refund and we don’t
-                  issue refunds on the cases Envato does not guarantee refunds.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+              {/* grid system for the items here  */}
+              <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div
+                  // key={item.title}
+                  className=" border-w-1 border-b border-secondary"
+                >
+                  <div className="flex items-center p-8">
+                    <span className="ml-4">
+                      <Link href="/home">
+                        <h6 className="font-bold text-Docy-Dark dark:text-white">
+                          {/* {item?.title} */}
+                        </h6>
+                      </Link>
+                      <p className="text-secondary">{/* {item?.info} */}</p>
+                    </span>
+                  </div>
+                </div>
+
+                {/* buuton here  */}
+                <div className="my-4 text-center">
+                  <button
+                    className="rounded-md p-1 font-bold text-blue-800 duration-300 focus:ring-2"
+                    onClick={() => setShowMore(!showMore)}
+                  >
+                    {showMore ? (
+                      <ArrowCircleUpIcon className="animate-bounce" />
+                    ) : (
+                      <ArrowCircleDownIcon className="animate-bounce" />
+                    )}{' '}
+                    More{' '}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-8">
             <div className="mt-10">
