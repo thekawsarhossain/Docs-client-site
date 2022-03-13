@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
+import Blogger from '../../../components/Blogger/Blogger'
+import UserBanner from '../../../components/DashboardLayout/UserDetails/UserBanner'
+import UserDetails from '../../../components/DashboardLayout/UserDetails/UserDetails'
 
 const Id = () => {
   // next js hooks for dynamic routuing
@@ -11,8 +14,9 @@ const Id = () => {
 
   return (
     <div>
-      {id}
-      {blogger.displayName}
+      <Blogger></Blogger>
+      {/* <UserBanner></UserBanner> */}
+      {/* <UserDetails></UserDetails> */}
     </div>
   )
 }
