@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
-import Rating from '@mui/material/Rating';
+
 const AddReviews = () => {
   const { register, handleSubmit,reset } = useForm();
   // user info
@@ -16,7 +16,7 @@ const AddReviews = () => {
  data.img= user.photoURL
  data.status ="pending";
    console.log(data)
-    axios.post('http://localhost:5000/addReviews',data)
+    axios.post('https://polar-hamlet-38117.herokuapp.com/addReviews',data)
     .then(res =>{
       console.log(res);
       if(res.data.insertedId){
