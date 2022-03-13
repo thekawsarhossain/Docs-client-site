@@ -7,12 +7,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 const ASKBanner = () => {
   return (
     <div>
-      <div
-        style={{
-          padding: '170px 0 30px',
-        }}
-        className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white"
-      >
+      <div className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white">
         {/* <img
           src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_left.png"
           className="one absolute"
@@ -28,30 +23,14 @@ const ASKBanner = () => {
         <div>
           <Container>
             <div
-              style={{ maxWidth: '100%', width: '100%' }}
-              className=" m-auto"
+              style={{ minHeight: '200px' }}
+              className=" w-full text-Docy-Dark dark:text-white "
             >
-              <div className="flex flex-col justify-center md:flex-row md:justify-between">
-                <h1
-                  style={{
-                    lineHeight: '66px',
-                  }}
-                  className="mb-4 text-center text-4xl font-bold text-Docy-Dark dark:text-white"
-                >
-                  Top Questions
-                </h1>
-                <div className="mb-4 self-center">
-                  <Link href="/askQuestion">
-                    <a>
-                      <span className="rounded-lg bg-gray-400 px-3 py-3 text-2xl  font-semibold text-Docy-Dark dark:text-white">
-                        Ask Question{' '}
-                        <span className="">
-                          <HelpOutlineIcon className="animate-pulse" />
-                        </span>
-                      </span>
-                    </a>
-                  </Link>
-                </div>
+              <div className="pt-24 text-center">
+                <h1 className="font-serif text-4xl">Hello! here is Docy</h1>
+                <p className="pt-2 font-mono">
+                  Find the answer of your question
+                </p>
               </div>
             </div>
           </Container>

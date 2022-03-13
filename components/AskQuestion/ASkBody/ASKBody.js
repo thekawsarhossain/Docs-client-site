@@ -20,6 +20,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from 'next/head'
 import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 
 const ASKBody = () => {
   const [allBlogs, setAllBlogs] = useState()
@@ -71,12 +72,11 @@ const ASKBody = () => {
   }
   return (
     <div>
-      <Container className="mt-16">
+      <Container className="mt-10">
         <div className="grid grid-cols-12 gap-5">
-          {/* here start show blog section */}
           <div className="col-span-12 md:col-span-8">
             {/* search bar  */}
-            <div className="search-box mb-8 rounded bg-slate-100 p-6 text-center  dark:bg-Docy-DarkGray">
+            <div className="search-box rounded bg-slate-100 p-6 text-center  dark:bg-Docy-DarkGray">
               <h4 className="mb-2 font-bold">Search</h4>
               <hr />
               <input
@@ -84,12 +84,64 @@ const ASKBody = () => {
                 placeholder="Search..."
                 name=""
                 id=""
-                className="mt-4 mb-6 w-full rounded-full bg-slate-200 py-2 px-4 focus:outline-none dark:text-black"
+                className="mt-4 mb-6 w-full rounded-lg bg-slate-200 py-2 px-4 focus:outline-none dark:text-black"
                 onChange={searchText.bind(this)}
               />
             </div>
+          </div>
+          <div className="col-span-12 md:col-span-4">
+            {/* category bar  */}
+            <div className="search-box mb-5 rounded bg-slate-100 p-6 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">Find Category Wise Question</h4>
+              <hr />
+              <select
+                // value={age}
+                onChange={handleChange}
+                // className=" h-14 w-full cursor-pointer rounded-lg border-2 p-3 text-lg dark:border-0"
+                className="mt-4 mb-6 h-10 w-full cursor-pointer rounded-lg bg-slate-200 py-2 px-4 focus:outline-none dark:text-black"
+              >
+                <option className="hidden">Select Category</option>
+                <option>Creative</option>
+                <option>Inspiration</option>
+                <option>Lifestyle</option>
+                <option>News</option>
+                <option>Photography</option>
+                <option>Skill</option>
+                <option>Tourist Tours</option>
+                <option>Inspire</option>
+                <option>Education</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-5">
+          {/* here start show blog section */}
+          <div className="col-span-12 md:col-span-8">
+            <div className="flex flex-col justify-center md:flex-row md:justify-between">
+              <h1
+                style={{
+                  lineHeight: '66px',
+                }}
+                className="mb-4 text-center text-3xl font-bold text-Docy-Dark dark:text-white"
+              >
+                Top Questions
+              </h1>
+              <div className="mb-4 self-center">
+                <Link href="/askQuestion">
+                  <a>
+                    <span className="text-1xl rounded-lg bg-orange-500 px-3 py-3  font-semibold text-Docy-Dark dark:text-white">
+                      Ask Question{' '}
+                      <span className="">
+                        <HelpOutlineIcon className="animate-pulse" />
+                      </span>
+                    </span>
+                  </a>
+                </Link>
+              </div>
+            </div>
             {category && (
-              <div>
+              <div className="mt-4">
                 {' '}
                 {allBlogs?.map((blog) => (
                   <div key={blog._id} className="mb-5 w-full">
@@ -145,7 +197,7 @@ const ASKBody = () => {
               </div>
             )}
             {search && (
-              <div>
+              <div className="mt-4">
                 {' '}
                 {dataSearch?.map((blog) => (
                   <div key={blog._id} className="mb-5 w-full">
@@ -203,31 +255,9 @@ const ASKBody = () => {
           </div>
           {/*here start sidebar */}
           <div className="col-span-12 md:col-span-4">
-            {/* search bar  */}
-            <div className="search-box rounded bg-slate-100 p-6 text-center dark:bg-Docy-DarkGray">
-              <h4 className="mb-2 font-bold">Find Category Wise Question</h4>
-              <hr />
-              <select
-                // value={age}
-                onChange={handleChange}
-                // className=" h-14 w-full cursor-pointer rounded-lg border-2 p-3 text-lg dark:border-0"
-                className="mt-4 mb-6 h-10 w-full cursor-pointer rounded-full bg-slate-200 py-2 px-4 focus:outline-none dark:text-black"
-              >
-                <option className="hidden">Select Category</option>
-                <option>Creative</option>
-                <option>Inspiration</option>
-                <option>Lifestyle</option>
-                <option>News</option>
-                <option>Photography</option>
-                <option>Skill</option>
-                <option>Tourist Tours</option>
-                <option>Inspire</option>
-                <option>Education</option>
-              </select>
-            </div>
             {/* related question  */}
-            <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
-              <h4 className="mb-2 font-bold">Recent Post</h4>
+            <div className=" recent-blog mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">Recent Question</h4>
               <hr />
               {recentQuestion.map((question) => (
                 <div key={question._id} className="recent-blog mt-6">
