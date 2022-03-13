@@ -37,6 +37,17 @@ const VideoList = () => {
   //blogs with video
   const videos = blogs.filter((td) => td?.video !== '').slice(0, 4)
 
+  //tabs
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+  const [toggleState, setToggleState] = useState(1)
+
+  const toggleTab = (index) => {
+    setToggleState(index)
+  }
 
   return (
     <div className="video-List">
@@ -47,6 +58,23 @@ const VideoList = () => {
               src="https://res.cloudinary.com/dvszolotz/video/upload/v1646571212/1.1_Priori_Analysis_and_Posteriori_Testing_ypilzh.mp4"
               controls
             ></video>
+             {/* <div
+                  className={
+                    toggleState === 1 ? 'content  active-content' : 'content'
+                  }
+                >
+                  <video
+              src="https://res.cloudinary.com/dvszolotz/video/upload/v1646571212/1.1_Priori_Analysis_and_Posteriori_Testing_ypilzh.mp4"
+              controls
+            ></video>
+                </div> */}
+             {/* <div
+                  className={
+                    toggleState === 2 ? 'content  active-content' : 'content'
+                  }
+                >
+                  <>videos 2</>
+                </div> */}
           </div>
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
@@ -79,6 +107,16 @@ const VideoList = () => {
                   </li>
                 </a>
               ))}
+
+           {/* <button
+                className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'  }
+                onClick={() => toggleTab(1)} >
+                <span className="float-left pl-3">License</span>
+                <span className="float-right pr-3">{'>'}</span>
+          </button> */}
+          
+
+
             </ul>
           </div>
         </div>

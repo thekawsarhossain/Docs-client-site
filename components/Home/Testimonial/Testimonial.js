@@ -11,9 +11,9 @@ const Testimonial = () => {
   const [sliders, setSliders] = useState([])
 
   useEffect(() => {
-    fetch(`https://polar-hamlet-38117.herokuapp.com/reviews`)
+    fetch(`./slider.json`)
       .then((res) => res.json())
-      .then((data) => setSliders(data.slice(0,3)))
+      .then((data) => setSliders(data))
   }, [])
 
   const settings = {
@@ -38,11 +38,11 @@ const Testimonial = () => {
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow text-Docy-Dark dark:text-white">
-                      <Typography variant="h4">{slider.description}</Typography>
+                      <Typography variant="h4">{slider.title}</Typography>
                       <h4 className="mt-6 font-bold text-Docy-Dark dark:text-white">
                         {slider.name}
                       </h4>
-                      <p className="text-indigo-600">{slider.profession}</p>
+                      <p className="text-indigo-600">{slider.designation}</p>
                     </div>
                   </div>
                 </div>
