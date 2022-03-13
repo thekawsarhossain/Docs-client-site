@@ -16,7 +16,7 @@ const AddReviews = () => {
  data.img= user.photoURL
  data.status ="pending";
    console.log(data)
-    axios.post('https://polar-hamlet-38117.herokuapp.com/addReviews',data)
+    axios.post('http://localhost:5000/addReviews',data)
     .then(res =>{
       console.log(res);
       if(res.data.insertedId){
