@@ -17,37 +17,37 @@ import { useRouter } from 'next/router'
 
 const VideoList = () => {
   // react redux hook here
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  // next js hooks for dynamic routuing
-  const router = useRouter()
-  const id = router.query.id
+  // // next js hooks for dynamic routuing
+  // const router = useRouter()
+  // const id = router.query.id
 
-  // calling specfic blog depend on id here using redux
-  useEffect(() => {
-    dispatch(fetchBlog(id))
-  }, [dispatch, id])
+  // // calling specfic blog depend on id here using redux
+  // useEffect(() => {
+  //   dispatch(fetchBlog(id))
+  // }, [dispatch, id])
 
-  // getting all blogs from redux here
-  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  // // getting all blogs from redux here
+  // const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
-  // getting the match blog with id
-  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+  // // getting the match blog with id
+  // const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
-  //blogs with video
-  const videos = blogs.filter((td) => td?.video !== '').slice(0, 4)
+  // //blogs with video
+  // const videos = blogs.filter((td) => td?.video !== '').slice(0, 4)
 
-  //tabs
-  const [expanded, setExpanded] = useState(false)
+  // //tabs
+  // const [expanded, setExpanded] = useState(false)
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
-  const [toggleState, setToggleState] = useState(1)
+  // const handleChange = (panel) => (event, isExpanded) => {
+  //   setExpanded(isExpanded ? panel : false)
+  // }
+  // const [toggleState, setToggleState] = useState(1)
 
-  const toggleTab = (index) => {
-    setToggleState(index)
-  }
+  // const toggleTab = (index) => {
+  //   setToggleState(index)
+  // }
 
   return (
     <div className="video-List">
@@ -79,7 +79,7 @@ const VideoList = () => {
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className="pb-7 font-bold">Docky Video List</h2>
             <ul className="">
-              {videos.map((video) => (
+              {/* {videos.map((video) => (
                 <a key={video._id} href="#">
                   <li className=" bg-gray-900 p-4 mb-3 flex gap-3">
                     <div>
@@ -106,7 +106,7 @@ const VideoList = () => {
                     </div>
                   </li>
                 </a>
-              ))}
+              ))} */}
 
            {/* <button
                 className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'  }
