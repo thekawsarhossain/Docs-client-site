@@ -3,9 +3,9 @@ import { EditorState, convertToRaw } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import draftToHtml from 'draftjs-to-html'
-import { Container } from '@mui/material'
+import { Container, FormHelperText } from '@mui/material'
 
-export default class TextEditor extends Component {
+export default class AQTextEditor extends Component {
   state = {
     editorState: EditorState.createEmpty(),
   }
@@ -25,11 +25,16 @@ export default class TextEditor extends Component {
       console.log(e)
     }
     return (
-      <Container>
-        <div className="bg-Docy-PaleGrey px-6 dark:bg-Docy-DarkGray">
-          <h2 className="mb-2 text-xl text-Docy-Dark dark:text-white">
-            Write your documentation or blog below 🌝
-          </h2>
+      <>
+        <div className="">
+          {/* <h2 className="mb-2 text-xl text-Docy-Dark dark:text-white">
+            Include all the information someone would need to answer your
+            question🌝
+          </h2> */}
+          <FormHelperText sx={{ color: 'gray' }}>
+            Include all the information someone would need to answer your
+            question🌝
+          </FormHelperText>
           <div
             className="rounded-lg border bg-white px-2 text-Docy-Dark "
             style={{
@@ -54,7 +59,7 @@ export default class TextEditor extends Component {
             }}
           ></div> */}
         </div>
-      </Container>
+      </>
     )
   }
 }

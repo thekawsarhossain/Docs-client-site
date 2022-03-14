@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
@@ -47,12 +48,13 @@ const Testimonial = () => {
                 </div>
                 <div className="p-4 md:w-full  lg:w-2/5">
                   <div className="flex  flex-col rounded-lg sm:flex-row">
-                    <Image
+                    <img
                       src={slider.img}
                       alt="img"
                       width="370"
                       height="500"
-                    ></Image>
+                      className='object-cover'
+                    ></img>
                     <div className="rounded-one  hidden  md:block "></div>
                     <div className="rounded-tow  hidden  md:block "></div>
                   </div>

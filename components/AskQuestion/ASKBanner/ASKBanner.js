@@ -1,17 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Container } from '@mui/material'
+import Link from 'next/link'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 
 const ASKBanner = () => {
   return (
     <div>
-      <div
-        style={{
-          padding: '170px 0 70px',
-        }}
-        className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white"
-      >
-        <img
+      <div className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white">
+        {/* <img
           src="https://wordpress-theme.spider-themes.net/docy/wp-content/themes/docy/assets/img/leaf_left.png"
           className="one absolute"
           alt="leaf left"
@@ -22,21 +19,19 @@ const ASKBanner = () => {
           className="four absolute"
           alt="leaf right"
           style={{ right: '0', bottom: '0' }}
-        />
+        /> */}
         <div>
           <Container>
             <div
-              style={{ maxWidth: '100%', width: '100%' }}
-              className=" m-auto text-center"
+              style={{ minHeight: '200px' }}
+              className=" w-full text-Docy-Dark dark:text-white "
             >
-              <h1
-                style={{
-                  lineHeight: '66px',
-                }}
-                className="mb-4 text-center text-5xl font-bold text-Docy-Dark dark:text-white"
-              >
-                Ask Question
-              </h1>
+              <div className="pt-24 text-center">
+                <h1 className="font-serif text-4xl">Hello! here is Docy</h1>
+                <p className="pt-2 font-mono">
+                  Find the answer of your question
+                </p>
+              </div>
             </div>
           </Container>
         </div>

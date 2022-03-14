@@ -1,7 +1,7 @@
-import { Container } from '@mui/material'
+import { Container, FormHelperText } from '@mui/material'
 import React, { useState } from 'react'
 
-const Tags = (props) => {
+const AQTags = (props) => {
   const [tags, setTags] = useState([])
   const addTag = (e) => {
     if (e.key === 'Enter') {
@@ -45,26 +45,23 @@ const Tags = (props) => {
     props.allTags(newTags)
   }
   return (
-    <Container>
-      <div className="bg-Docy-PaleGrey py-8 px-6  dark:bg-Docy-DarkGray">
-        <h1 className="pb-3 text-2xl text-Docy-Dark dark:text-white">
-          Please enter some Tags...
-        </h1>
-        <small className="text-Docy-Dark dark:text-white">
+    <>
+      <div className="">
+        <FormHelperText sx={{ color: 'gray' }}>
           Press comma or click the add button to create a tag.
-        </small>
+        </FormHelperText>
         <div>
           <input
-            className="rounded-md border-2 p-3 text-base dark:border-0"
+            className="h-14 w-full rounded-md border-2 bg-slate-200 p-3 text-lg text-black dark:border-0"
             placeholder="Enter tags . . ."
-            style={{ minWidth: 280 }}
+            // style={{ minWidth: 280 }}
             onKeyUp={addTag}
           />
         </div>
         {/* Show tags  */}
         <div
-          style={{ minHeight: '150px', maxWidth: '500px' }}
-          className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-Dark"
+          style={{ minHeight: '150px' }}
+          className="tag-container my-2 flex w-full flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-Dark"
         >
           {tags.map((tag, index) => {
             return (
@@ -85,8 +82,8 @@ const Tags = (props) => {
           })}
         </div>
       </div>
-    </Container>
+    </>
   )
 }
 
-export default Tags
+export default AQTags
