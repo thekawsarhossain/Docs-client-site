@@ -81,7 +81,7 @@ const BlogUploadMain = () => {
       blogger: userInfoFromDB,
       comment: [],
     }
-    fetch('https://polar-hamlet-38117.herokuapp.com/blogs', {
+    fetch('http://localhost:5000/blogs', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -9,7 +9,6 @@ import {
   ADD_COMMENT,
   ADD_TO_BLOG,
   ADD_TO_BLOGGER_DETAILS,
-  fetchBlog,
 } from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -29,12 +28,7 @@ const MainDetails = () => {
 
   // next js hooks for dynamic routuing
   const router = useRouter()
-  const id = router.query.id
-
-  // calling specfic blog depend on id here using redux
-  useEffect(() => {
-    dispatch(fetchBlog(id))
-  }, [dispatch, id])
+  const id = router?.query?.id
 
   // getting user info from db here
   const userInfoFromDB = useSelector(
@@ -44,17 +38,26 @@ const MainDetails = () => {
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
+  // calling specfic blog depend on id here using redux
+  useEffect(() => {
+    if (blogs?.blog === null || '') {
+      fetch(`http://localhost:5000/blog/${id}`)
+        .then((res) => res.json())
+        .then((result) => console.log(result))
+    }
+  }, [blogs?.blog, id])
+
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   // Related Posts
   const relatedPosts = blogs
-    .filter((td) => td?.category === blog?.category && td?._id != blog?._id)
+    ?.filter((td) => td?.category === blog?.category && td?._id != blog?._id)
     .slice(0, 3)
 
   // Other Posts
   const otherPosts = blogs
-    .filter(
+    ?.filter(
       (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
     )
     .slice(0, 3)
@@ -93,7 +96,7 @@ const MainDetails = () => {
     }
 
     if (user?.email) {
-      fetch(`https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}`, {
+      fetch(`http://localhost:5000/blog/${blog?._id}`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
@@ -118,7 +121,7 @@ const MainDetails = () => {
       userId: userInfoFromDB?._id,
     }
     if (userInfoFromDB) {
-      fetch(`https://polar-hamlet-38117.herokuapp.com/user`, {
+      fetch(`http://localhost:5000/user`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
@@ -179,7 +182,7 @@ const MainDetails = () => {
                 Related Post
               </h1>
               <div className="grid grid-cols-12 gap-4 text-Docy-Dark dark:text-white">
-                {relatedPosts.map((post) => (
+                {relatedPosts?.map((post) => (
                   <div
                     key={post?._id}
                     className="col-span-12 md:col-span-6 lg:col-span-4"
@@ -382,11 +385,11 @@ const MainDetails = () => {
               <h4 className="mb-2 font-bold">Other Posts</h4>
               <hr />
               {otherPosts?.map((otherPost) => (
-                <div key={otherPost._id} className="recent-blog mt-6">
+                <div key={otherPost?._id} className="recent-blog mt-6">
                   <div className=" flex">
                     <img
                       className="h-32 w-32 rounded "
-                      src={otherPost.image}
+                      src={otherPost?.image}
                       alt=""
                     />
                     <button onClick={() => dispatch(ADD_TO_BLOG(blog))}>
@@ -398,13 +401,13 @@ const MainDetails = () => {
                           <div className="px-6 text-left ">
                             <p className="cursor-pointer font-medium hover:underline">
                               {/* {otherPost?.title} */}
-                              {otherPost?.title.length > 55
-                                ? otherPost?.title.slice(0, 55) + '...'
+                              {otherPost?.title?.length > 55
+                                ? otherPost?.title?.slice(0, 55) + '...'
                                 : otherPost?.title}
                             </p>
 
                             <small className="flex pt-2">
-                              {otherPost.uploadDate}
+                              {otherPost?.uploadDate}
                             </small>
                           </div>
                         </a>
@@ -482,7 +485,7 @@ const MainDetails = () => {
                 style={{ minHeight: '150px', maxWidth: '500px' }}
                 className="tag-container my-2 flex flex-wrap rounded-lg  py-4 "
               >
-                {blog?.tags.map((tag, index) => {
+                {blog?.tags?.map((tag, index) => {
                   return (
                     <div
                       key={index}
