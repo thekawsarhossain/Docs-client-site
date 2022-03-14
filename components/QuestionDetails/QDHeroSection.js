@@ -2,7 +2,7 @@ import { Avatar, Container } from '@mui/material'
 import { useSelector } from 'react-redux'
 import Navbar from '../../Shared/Navbar/Navbar'
 
-const DetailsHeroSection = () => {
+const QDHeroSection = () => {
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   return (
@@ -36,4 +36,4 @@ const DetailsHeroSection = () => {
   )
 }
 
-export default DetailsHeroSection
+export default QDHeroSection
