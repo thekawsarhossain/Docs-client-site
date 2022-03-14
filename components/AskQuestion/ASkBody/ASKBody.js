@@ -106,13 +106,13 @@ const ASKBody = () => {
               >
                 <option className="hidden">Select Category</option>
                 <option>Creative</option>
-                <option>Inspiration</option>
+                <option>Programming</option>
                 <option>Lifestyle</option>
                 <option>News</option>
                 <option>Photography</option>
                 <option>Skill</option>
                 <option>Tourist Tours</option>
-                <option>Inspire</option>
+                <option>Marketing</option>
                 <option>Education</option>
               </select>
             </div>
@@ -120,7 +120,7 @@ const ASKBody = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-5">
-          {/* here start show blog section */}
+          {/* here start show question section */}
           <div className="col-span-12 md:col-span-8">
             <div className="flex flex-col justify-center md:flex-row md:justify-between">
               <h1
@@ -150,8 +150,8 @@ const ASKBody = () => {
                 {allBlogs?.map((blog) => (
                   <div key={blog._id} className="mb-5 w-full">
                     <Link
-                      onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                      href={`/blog/${blog?._id}`}
+                      onClick={() => dispatch(ADD_TO_QUESTION(blog))}
+                      href={`/question/${blog?._id}`}
                     >
                       <a>
                         <div className=" rounded  bg-slate-100 px-6 py-3 hover:shadow dark:bg-Docy-DarkGray">
@@ -190,7 +190,7 @@ const ASKBody = () => {
                               </p>
                             </div>
                             <div>
-                              <p>{blog?.comment?.length} answers</p>
+                              <p>{blog?.answers?.length} answers</p>
                             </div>
                           </div>
                         </div>
@@ -206,8 +206,8 @@ const ASKBody = () => {
                 {dataSearch?.map((blog) => (
                   <div key={blog._id} className="mb-5 w-full">
                     <Link
-                      onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                      href={`/blog/${blog?._id}`}
+                      onClick={() => dispatch(ADD_TO_QUESTION(blog))}
+                      href={`/question/${blog?._id}`}
                     >
                       <a>
                         <div className=" rounded  bg-slate-100 px-6 py-3 hover:shadow dark:bg-Docy-DarkGray">
@@ -246,7 +246,7 @@ const ASKBody = () => {
                               </p>
                             </div>
                             <div>
-                              <p>{blog?.comment?.length} answers</p>
+                              <p>{blog?.answers?.length} answers</p>
                             </div>
                           </div>
                         </div>
