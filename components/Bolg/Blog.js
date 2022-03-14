@@ -72,7 +72,7 @@ const Blog = () => {
         >
           {/* here start show blog section */}
           <Grid item xs={12} sm={12} md={8}>
-            {dataSearch.map((blog) => (
+            {dataSearch?.map((blog) => (
               <Grid
                 key={blog?._id}
                 className="mb-8"
