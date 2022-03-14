@@ -158,7 +158,7 @@ const ASKBody = () => {
                             {blog.title}
                           </h3>
                           <div className="tag-container flex flex-wrap rounded-lg pb-2">
-                            {blog?.tags.map((tag, index) => {
+                            {blog?.tags?.map((tag, index) => {
                               return (
                                 <div
                                   key={index}
@@ -186,7 +186,7 @@ const ASKBody = () => {
                               </p>
                             </div>
                             <div>
-                              <p>{blog?.comment.length} answers</p>
+                              <p>{blog?.comment?.length} answers</p>
                             </div>
                           </div>
                         </div>
@@ -214,7 +214,7 @@ const ASKBody = () => {
                             {blog.title}
                           </h3>
                           <div className="tag-container flex flex-wrap rounded-lg pb-2">
-                            {blog?.tags.map((tag, index) => {
+                            {blog?.tags?.map((tag, index) => {
                               return (
                                 <div
                                   key={index}
@@ -242,7 +242,7 @@ const ASKBody = () => {
                               </p>
                             </div>
                             <div>
-                              <p>{blog?.comment.length} answers</p>
+                              <p>{blog?.comment?.length} answers</p>
                             </div>
                           </div>
                         </div>

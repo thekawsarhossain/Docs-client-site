@@ -4,14 +4,18 @@ import dynamic from 'next/dynamic'
 import AQTags from '../AQTags/AQTags'
 import BackupIcon from '@mui/icons-material/Backup'
 import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 const AQTextEditor = dynamic(() => import('../AQTextEditor/AQTextEditor'), {
   ssr: false,
 })
 
-const AQBody = () => {
-  //   const Input = styled('input')({
-  //     display: 'none',
-  //   })
+const AQBody = (props) => {
+  // const Input = styled('input')({
+  //   display: 'none',
+  // })
+
+  // router nextjs hook for routing
+  const router = useRouter()
 
   // user info from data base
   const userInfoFromDB = useSelector(
@@ -33,6 +37,7 @@ const AQBody = () => {
   const [title, setTitle] = useState('')
 
   const handleChange = (event) => {
+    setAge(event.target.value)
     setCategoryName(event.target.value)
     //   props.category(event.target.value)
     console.log(event.target.value)
@@ -40,7 +45,7 @@ const AQBody = () => {
   //   const [blogData, setBlogData] = useState({})
 
   const questionTitle = (e) => {
-    setTitle(e)
+    setTitle(e.target.value)
   }
 
   const blogData = (e) => {
@@ -49,14 +54,12 @@ const AQBody = () => {
 
   const allTags = (e) => {
     setTags(e)
-    console.log(...e)
-    console.log(tags)
   }
 
   const handleUpload = () => {
     if (!title || !categoryName || !documentation || !tags) {
       alert(
-        'Title, Category selection, Documentation , Tags giving are required. If any of those missing you can not submit you blog or documentation. Please enter the data if anyone is missing. Thank you.'
+        'Title, Category selection, Documentation, Tags giving are required. If any of those missing you can not submit you blog or documentation. Please enter the data if anyone is missing. Thank you.'
       )
       return
     }
@@ -70,20 +73,7 @@ const AQBody = () => {
       blogger: userInfoFromDB,
       answers: [],
     }
-    fetch('http://localhost:5000/blogs', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(uploadData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          window.alert('Your blog have been submitted.')
-          router.replace('/blogs')
-        }
-      })
+    props.handleUpload(uploadData)
   }
   return (
     <div>
@@ -98,7 +88,7 @@ const AQBody = () => {
                   <FormHelperText sx={{ color: 'gray' }}>Title</FormHelperText>
                   <input
                     required
-                    placeholder="Please enter your blog title"
+                    placeholder="Please enter a title"
                     className="h-14 w-full rounded-md border-2 bg-slate-200 p-3 text-lg text-black dark:border-0"
                     type="text"
                     onBlur={questionTitle}
@@ -115,13 +105,13 @@ const AQBody = () => {
                 >
                   <option className="hidden">Select Category</option>
                   <option>Creative</option>
-                  <option>Inspiration</option>
+                  <option>Programming</option>
                   <option>Lifestyle</option>
                   <option>News</option>
                   <option>Photography</option>
                   <option>Skill</option>
                   <option>Tourist Tours</option>
-                  <option>Inspire</option>
+                  <option>Marketing</option>
                   <option>Education</option>
                 </select>
               </div>
