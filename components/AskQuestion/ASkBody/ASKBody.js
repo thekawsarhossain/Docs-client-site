@@ -19,8 +19,11 @@ import { useEffect, useState } from 'react'
 // import Footer from '../Shared/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from 'next/head'
-import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import {
+  fetchQuestions,
+  ADD_TO_QUESTION,
+} from '../../../Redux/Slices/questionSlice'
 
 const ASKBody = () => {
   const [allBlogs, setAllBlogs] = useState()
@@ -31,11 +34,12 @@ const ASKBody = () => {
 
   // calling the redux thunk blogs api for data
   useEffect(() => {
-    dispatch(fetchBlogs())
+    dispatch(fetchQuestions())
   }, [dispatch])
 
   // getting all blogs from redux here
-  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  const blogs = useSelector((state) => state?.reducers?.questions?.questions)
+  console.log(blogs)
   // let allBlogs = blogs
   // console.log(allBlogs)
 
@@ -43,7 +47,7 @@ const ASKBody = () => {
   //   (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
   // )
 
-  const recentQuestion = blogs.slice(0, 3)
+  const recentQuestion = blogs?.slice(0, 3)
   const [filter, setFilter] = useState('')
   const searchText = (event) => {
     setCategory(false)
@@ -259,14 +263,14 @@ const ASKBody = () => {
             <div className=" recent-blog mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
               <h4 className="mb-2 font-bold">Recent Question</h4>
               <hr />
-              {recentQuestion.map((question) => (
+              {recentQuestion?.map((question) => (
                 <div key={question._id} className="recent-blog mt-6">
                   <div className=" flex ">
                     <Link href="/">
                       <a>
                         <div className="px-6 text-left ">
                           <p className="cursor-pointer font-medium hover:underline">
-                            {question.title}
+                            {question?.title}
                           </p>
 
                           <small className="flex pt-2">

@@ -14,6 +14,7 @@ import {
 import blogSlice from './Slices/blogSlice'
 import userSlice from './Slices/userSlice'
 import emailSlice from './Slices/emailSlice'
+import questionSlice from './Slices/questionSlice'
 
 const persistConfig = {
   key: 'root',
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   user: userSlice,
   blogs: blogSlice,
   emails: emailSlice,
+  questions: questionSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
