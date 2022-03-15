@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
-import Example from './test'
+import Example from './Example'
 
 const HeroSection = () => {
   return (
