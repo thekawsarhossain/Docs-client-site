@@ -259,7 +259,7 @@ export default function Index() {
         <div className="mt-10 grid grid-cols-12 gap-5">
           <RUser />
           <RBlog />
-          <Review />
+          {/* <Review /> */}
         </div>
       </div>
     </DashboardLayout>
