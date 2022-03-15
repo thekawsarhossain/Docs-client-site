@@ -120,7 +120,7 @@ const Blog = () => {
                               <ForumOutlinedIcon
                                 sx={{ width: 18, height: 18 }}
                               />{' '}
-                              {blog?.comment.length}
+                              {blog?.comment?.length}
                             </p>
                           </div>
                         </div>

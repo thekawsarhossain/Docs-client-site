@@ -4,7 +4,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 export const fetchQuestions = createAsyncThunk(
   'questions/fetchQuestions',
   async () => {
-    const response = await fetch('http://localhost:5000/questions')
+    const response = await fetch(
+      'https://polar-hamlet-38117.herokuapp.com/questions'
+    )
     const data = await response.json()
     return data
   }
@@ -14,9 +16,13 @@ export const fetchQuestions = createAsyncThunk(
 export const fetchQuestion = createAsyncThunk(
   'question/fetchQuestion',
   async (id) => {
-    const response = await fetch(`http://localhost:5000/questions/${id}`)
-    const data = await response.json()
-    return data
+    if (id) {
+      const response = await fetch(
+        `https://polar-hamlet-38117.herokuapp.com/questions/${id}`
+      )
+      const data = await response.json()
+      return data
+    }
   }
 )
 
@@ -40,7 +46,7 @@ const questionsSlice = createSlice({
       state.error = ''
     },
     ADD_ANSWER: (state, action) => {
-      state.question.answer.push(action.payload)
+      state.question.answers.push(action.payload)
       state.error = ''
     },
     DELETE_QUESTION: (state, action) => {

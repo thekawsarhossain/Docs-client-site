@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // getting all blogs api called here
 export const fetchEmails = createAsyncThunk('emails/fetchEmails', async () => {
-  const response = await fetch('http://localhost:5000/emails')
+  const response = await fetch(
+    'https://polar-hamlet-38117.herokuapp.com/emails'
+  )
   const data = await response.json()
   return data
 })
