@@ -32,6 +32,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // import {fetchBlogs } from
 import Head from 'next/head'
 import { ADD_TO_BLOG, fetchBlogs } from '../../Redux/Slices/blogSlice'
+import Pagination from './Pagination'
 
 const Blog = () => {
   // DISPATCH REDUX HOOK HERE
@@ -44,11 +45,21 @@ const Blog = () => {
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  //pagination start
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  //pagination end
   const [filter, setFilter] = useState('')
   const searchText = (event) => {
     setFilter(event.target.value)
   }
-  let dataSearch = blogs?.filter((item) => {
+  let dataSearch = currentPosts?.filter((item) => {
     return Object.keys(item).some((key) =>
       item[key]
         ?.toString()
@@ -131,6 +142,7 @@ const Blog = () => {
               </Grid>
             ))}
           </Grid>
+
           {/*here start sidebar */}
           <Grid item xs={12} sm={12} md={4}>
             <div className="search-box rounded bg-slate-100 p-6 text-center dark:bg-Docy-DarkGray">
@@ -271,6 +283,13 @@ const Blog = () => {
           </Grid>
         </Grid>
       </Container>
+      <div className="container">
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={blogs.length}
+            paginate={paginate}
+          />
+        </div>
       <Footer></Footer>
     </div>
   )
