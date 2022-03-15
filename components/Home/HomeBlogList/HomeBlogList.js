@@ -70,8 +70,8 @@ const HomeBlogList = () => {
                     >
                       <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
                         {/* {blog?.title} */}
-                        {blog?.title.length > 70
-                          ? blog?.title.slice(0, 70) + '...'
+                        {blog?.title?.length > 70
+                          ? blog?.title?.slice(0, 70) + '...'
                           : blog?.title}
                       </h3>
                     </div>
@@ -103,7 +103,7 @@ const HomeBlogList = () => {
                         </div>
                         <div className="float-right self-center text-Docy-Dark dark:text-white">
                           <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />
-                          {blog?.comment.length}
+                          {blog?.comment?.length}
                         </div>
                       </div>
                     </div>

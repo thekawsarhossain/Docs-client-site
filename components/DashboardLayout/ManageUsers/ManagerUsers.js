@@ -14,10 +14,9 @@ import { useEffect, useState } from 'react'
 
 const ManageUsers = () => {
   const [manageUsers, setManageUsers] = useState([])
-  // console.log(manageUsers);
   // here users
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://polar-hamlet-38117.herokuapp.com/manage-users`)
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
@@ -31,19 +30,19 @@ const ManageUsers = () => {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {manageUsers.map((data) => (
-            <Grid item xs={12} sm={4} md={3} key={data?._id}>
+            <Grid item xs={12} sm={4} md={3} key={data.name}>
               <div className=" h-full rounded bg-white shadow-md dark:bg-gray-900 dark:text-white">
                 <div>
                   <img
-                    src={data?.image}
-                    className="h-52 w-full"
-                    alt={data?._id}
+                    src={data.coverImg}
+                    className="h-full w-full"
+                    alt={data.name}
                   />
                   <div className="-mt-10 flex justify-center">
                     <img
-                      src={data?.image}
+                      src={data.userImg}
                       className="h-20 w-20  rounded-full border-4 border-indigo-600 object-cover"
-                      alt={data?._id}
+                      alt={data.name}
                     />
                   </div>
                 </div>
@@ -69,20 +68,20 @@ const ManageUsers = () => {
                       </ul>
                     </Container>
                   </div>
-                  <h3 className="text-black-500 ">{data?.displayName}</h3>
-                  <p className="mt-1 mb-6 text-zinc-400">{data?.profession}</p>
+                  <h3 className="text-black-500 ">{data.name}</h3>
+                  <p className="mt-1 mb-6 text-zinc-400">{data.designation}</p>
 
                   <div>
                     <ul className="flex justify-evenly border-t font-medium  ">
                       <li className="pt-3 ">
                         Follower <br />
-                        <h3>{data?.followers?.length}</h3>
+                        <h3>{data.follower}</h3>
                       </li>
                       <li className="border-x border-slate-300 px-8 pt-3">
-                        Following <br /> <h3>{data?.following?.length}</h3>
+                        Following <br /> <h3>{data.following}K</h3>
                       </li>
                       <li className=" pt-3">
-                        Total Post <br /> <h3>{data?.totalPost?.length}</h3>
+                        Total Post <br /> <h3>{data.totalPost}</h3>
                       </li>
                     </ul>
                   </div>
