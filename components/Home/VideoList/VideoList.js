@@ -37,7 +37,7 @@ const VideoList = () => {
   //blogs with video
 const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
 
- const [videoList,setVideoList]=useState(videos[0].video)
+ const [videoList,setVideoList]=useState(videos[0]?.video)
  const handleVideo=(e)=>{
   setVideoList(e)
 
