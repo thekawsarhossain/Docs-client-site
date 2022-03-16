@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import React from 'react'
-import AboutContent from '../components/AboutPage/AboutContent';
-import AddReviews from '../components/AboutPage/AddReviews';
-import TeamContent from '../components/AboutPage/TeamContent';
-import Footer from '../components/Shared/Footer/Footer';
-import Navbar from '../components/Shared/Navbar/Navbar';
+import AboutContent from '../components/AboutPage/AboutContent'
+import TeamContent from '../components/AboutPage/TeamContent'
+import TeamMembers from '../components/AboutPage/TeamMembers'
+import Footer from '../components/Shared/Footer/Footer'
+import Navbar from '../components/Shared/Navbar/Navbar'
 
 const about = () => {
   return (
@@ -15,7 +15,7 @@ const about = () => {
       <Navbar />
       <AboutContent />
       <TeamContent />
-      <AddReviews/>
+      <TeamMembers />
       <Footer />
     </div>
   )
