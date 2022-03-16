@@ -10,6 +10,7 @@ import {
   ADD_COMMENT,
   ADD_TO_BLOG,
   ADD_TO_BLOGGER_DETAILS,
+  fetchBlog,
 } from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -30,7 +31,10 @@ const MainDetails = () => {
   // next js hooks for dynamic routuing
   const router = useRouter()
   const id = router?.query?.id
-  console.log(id)
+
+  useEffect(() => {
+    dispatch(fetchBlog(id))
+  }, [dispatch, id])
 
   // getting user info from db here
   const userInfoFromDB = useSelector(
@@ -41,13 +45,6 @@ const MainDetails = () => {
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
   // calling specfic blog depend on id here using redux
-  useEffect(() => {
-    if (blog === null) {
-      fetch(`http://localhost:5000/blog/${id}`)
-        .then((res) => res.json())
-        .then((result) => console.log(result))
-    }
-  }, [blog, id])
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
@@ -98,18 +95,15 @@ const MainDetails = () => {
     }
 
     if (user?.email) {
-      fetch(`http://localhost:5000/blog/${blog?._id}`, {
+      fetch(`https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
       })
         .then((res) => res.json())
-        .then((result) => {
-          if (result?.acknowledged) {
-            dispatch(ADD_COMMENT(payload))
-          }
-        })
-        .catch((e) => console.log(e))
+        .then((result) => {})
+        .catch((e) => alert('Something went wrong !'))
+      dispatch(ADD_COMMENT(payload))
       reset()
     } else {
       return alert('Go and login to comment !')
@@ -123,7 +117,7 @@ const MainDetails = () => {
       userId: userInfoFromDB?._id,
     }
     if (userInfoFromDB) {
-      fetch(`http://localhost:5000/user`, {
+      fetch(`https://polar-hamlet-38117.herokuapp.com/user`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),

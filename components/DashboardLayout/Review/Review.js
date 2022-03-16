@@ -1,77 +1,202 @@
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
-import React, {  useEffect, useState } from "react";
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-const Review =()=>{
-  const [sliders, setSliders] = useState([])
+const Review = () => {
+  return (
+    <div className="col-span-12 mx-2  mt-5 md:col-span-6">
+      <div className="mt-4 space-y-5 md:flex md:space-y-0 md:space-x-5 lg:mt-10 lg:space-x-10">
+        <div className="w-full space-y-5 rounded-xl border border-gray-100 bg-white p-5 shadow-lg lg:w-1/2">
+          <div className="flex items-center">
+            <div className="mr-3 h-10 w-10 overflow-hidden rounded-full">
+              <img
+                src="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg"
+                alt=""
+                className="h-10 w-10 object-cover"
+              />
+            </div>
+            <div>
+              <span className="block leading-3">Lilly Donovan</span>
+              <span className="text-xs text-gray-400">Business trainer</span>
+            </div>
+          </div>
 
-  useEffect(() => {
-    fetch(`./slider.json`)
-      .then((res) => res.json())
-      .then((data) => setSliders(data))
-  }, [])
-   {
-    const settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear"
-    };
-    return (
-     <Container sx={{mt:5}}>
-        <div>
-        <Slider {...settings}>
-        {sliders.map((slider) => (
-          <Grid key={slider?.title} spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid item xs={12} sm={6} md={12}>
-              <p>{slider?.title}</p>
-              <img src={slider?.img} alt="" />
-            </Grid>
-          </Grid>
-          ))}
-        </Slider>
+          <h3 className="text-lg font-semibold">
+            <a href="#" className="hover:text-blue-800">
+              How to properly manage your personal budget?
+            </a>
+          </h3>
+
+          <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-blue-800">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">Video</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-blue-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">15 min</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">112 likes</span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="font-semibold text-gray-600">5 days ago</div>
+
+            <a
+              href="#"
+              className="flex items-center space-x-3 rounded-full bg-blue-800 px-4 py-3 text-white hover:bg-red-500"
+            >
+              <span>Connect</span>
+
+              <div className="h-4 w-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div className="w-full space-y-5 rounded-xl border border-gray-100 bg-white p-5 shadow-lg lg:w-1/2">
+          <div className="flex items-center">
+            <div className="mr-3 h-10 w-10 overflow-hidden rounded-full">
+              <img
+                src="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg"
+                alt=""
+                className="h-10 w-10 object-cover"
+              />
+            </div>
+            <div>
+              <span className="block leading-3">Lilly Donovan</span>
+              <span className="text-xs text-gray-400">Business trainer</span>
+            </div>
+          </div>
+
+          <h3 className="text-lg font-semibold">
+            <a href="#" className="hover:text-blue-800">
+              How to properly manage your personal budget?
+            </a>
+          </h3>
+
+          <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-blue-800">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">Video</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-blue-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">15 min</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <div className="w-6 text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600">112 likes</span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="font-semibold text-gray-600">5 days ago</div>
+
+            <a
+              href="#"
+              className="flex items-center space-x-3 rounded-full bg-blue-800 px-4 py-3 text-white hover:bg-red-500"
+            >
+              <span>Connect</span>
+
+              <div className="h-4 w-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-     </Container>
-    );
-  }
+    </div>
+  )
 }
 
-export default Review;
-
-// //   <div
-// key={slider.title}
-// className="container mx-auto flex flex-wrap px-5 py-24 lg:w-8/12"
-// >
-// <div className="-m-4 mx-auto flex  flex-wrap justify-between">
-//   <div className=" p-4 md:w-full lg:w-3/5 ">
-//     <div className="flex flex-col p-4 sm:flex-row">
-//       <div className="flex-grow text-Docy-Dark dark:text-white">
-//         <Typography variant="h4">{slider.title}</Typography>
-//         <h4 className="mt-6 font-bold text-Docy-Dark dark:text-white">
-//           {slider.name}
-//         </h4>
-//         <p className="text-indigo-600">{slider.designation}</p>
-//       </div>
-//     </div>
-//   </div>
-//   <div className="p-4 md:w-full  lg:w-2/5">
-//     <div className="flex  flex-col rounded-lg sm:flex-row">
-//       <img
-//         src={slider.img}
-//         alt="img"
-//         width="370"
-//         height="500"
-//         className='object-cover'
-//       ></img>
-//       <div className="rounded-one  hidden  md:block "></div>
-//       <div className="rounded-tow  hidden  md:block "></div>
-//     </div>
-//   </div>
-// </div>
-// </div>
+export default Review

@@ -38,9 +38,16 @@ const VideoList = () => {
   // }, [blog, id])
 
   //blogs with video
-  const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
 
-  const [videoList, setVideoList] = useState(videos[0]?.video)
+  const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
+  console.log(videos)
+
+  //here default video
+  const [videoList, setVideoList] = useState(
+    'https://res.cloudinary.com/dvszolotz/video/upload/v1647261249/%E0%A6%9A%E0%A7%80%E0%A6%A8%E0%A7%87_%E0%A6%86%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A6%93_%E0%A6%B0%E0%A7%87%E0%A6%95%E0%A6%B0%E0%A7%8D%E0%A6%A1_%E0%A6%95%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE_%E0%A6%B8%E0%A6%82%E0%A6%95%E0%A7%8D%E0%A6%B0%E0%A6%AE%E0%A6%A3_%E0%A7%A7_%E0%A6%95%E0%A7%8B%E0%A6%9F%E0%A6%BF_%E0%A7%AD%E0%A7%A6_%E0%A6%B2%E0%A6%BE%E0%A6%96_%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%81%E0%A6%B7_%E0%A6%98%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%BF_-_China_Lockdown_fdlq15.mp4'
+  )
+  //  setVideoList(videos[0]?.video)
+
   const handleVideo = (e) => {
     setVideoList(e)
   }

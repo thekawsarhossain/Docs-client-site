@@ -2,19 +2,20 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // getting all blogs api called here
 export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
-  const response = await fetch('http://localhost:5000/blogs')
+  const response = await fetch('https://polar-hamlet-38117.herokuapp.com/blogs')
   const data = await response.json()
   return data
 })
 
-// getting single blog depend on id here
-// export const fetchBlog = createAsyncThunk('blog/fetchBlog', async (id) => {
-//   const response = await fetch(
-//     `http://localhost:5000/blog/${id}`
-//   )
-//   const data = await response.json()
-//   return data
-// })
+export const fetchBlog = createAsyncThunk('blog/fetchBlog', async (id) => {
+  if (id) {
+    const response = await fetch(
+      `https://polar-hamlet-38117.herokuapp.com/blog/${id}`
+    )
+    const data = await response.json()
+    return data
+  }
+})
 
 const blogsSlice = createSlice({
   name: 'blogs',
@@ -52,13 +53,13 @@ const blogsSlice = createSlice({
     builder.addCase(fetchBlogs.pending, (state, action) => {
       state.status = false
     })
-    // builder.addCase(fetchBlog.fulfilled, (state, action) => {
-    //   state.blog = action.payload
-    //   state.status = true
-    // })
-    // builder.addCase(fetchBlog.pending, (state, action) => {
-    //   state.status = false
-    // })
+    builder.addCase(fetchBlog.fulfilled, (state, action) => {
+      state.blog = action.payload
+      state.status = true
+    })
+    builder.addCase(fetchBlog.pending, (state, action) => {
+      state.status = false
+    })
   },
 })
 

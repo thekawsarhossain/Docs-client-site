@@ -7,7 +7,7 @@ const AQMain = () => {
   // router nextjs hook for routing
   const router = useRouter()
   const handleUpload = (e) => {
-    fetch('http://localhost:5000/questions', {
+    fetch('https://polar-hamlet-38117.herokuapp.com/questions', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -17,7 +17,7 @@ const AQMain = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          window.alert('Your blog have been submitted.')
+          window.alert('Your question have been submitted.')
           router.replace('/ask')
         }
       })

@@ -2,7 +2,7 @@
 import { Box, Container, Grid } from '@mui/material';
 import Navbar from '../Shared/Navbar/Navbar';
 
-import Example from '../Home/HeroSection/Example'
+import Example from '../Home/HeroSection/test'
 const DocsBanner = () => {
   return (  
     <div>
