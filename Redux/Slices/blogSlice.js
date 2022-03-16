@@ -7,7 +7,6 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
   return data
 })
 
-// getting single blog depend on id here
 export const fetchBlog = createAsyncThunk('blog/fetchBlog', async (id) => {
   if (id) {
     const response = await fetch(

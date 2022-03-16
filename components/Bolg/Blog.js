@@ -234,7 +234,7 @@ const Blog = () => {
                 name=""
                 id=""
                 className="mt-4 mb-6 w-full rounded-full bg-slate-200 py-2 px-4 focus:outline-none dark:text-black"
-                onChange={searchText.bind(this)}
+                onChange={searchText?.bind(this)}
               />
             </div>
             <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">

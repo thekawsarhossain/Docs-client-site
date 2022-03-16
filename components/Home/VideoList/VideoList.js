@@ -11,7 +11,6 @@ import { useState } from 'react'
 import PersonIcon from '@mui/icons-material/Person'
 import DateRangeIcon from '@mui/icons-material/DateRange'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchBlog } from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -21,18 +20,22 @@ const VideoList = () => {
 
   // next js hooks for dynamic routuing
   const router = useRouter()
-  const id = router.query.id
-
-  // calling specfic blog depend on id here using redux
-  useEffect(() => {
-    dispatch(fetchBlog(id))
-  }, [dispatch, id])
+  const id = router?.query?.id
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+
+  // calling specfic blog depend on id here using redux
+  // useEffect(() => {
+  //   if (blog === null || '') {
+  //     fetch(`http://localhost:5000/blog/${id}`)
+  //       .then((res) => res.json())
+  //       .then((result) => console.log(result))
+  //   }
+  // }, [blog, id])
 
   //blogs with video
   // const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
