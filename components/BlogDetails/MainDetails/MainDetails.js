@@ -30,6 +30,7 @@ const MainDetails = () => {
   // next js hooks for dynamic routuing
   const router = useRouter()
   const id = router?.query?.id
+  console.log(id)
 
   // getting user info from db here
   const userInfoFromDB = useSelector(
@@ -40,13 +41,13 @@ const MainDetails = () => {
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
   // calling specfic blog depend on id here using redux
-  // useEffect(() => {
-  //   if (blogs?.blog === null || '') {
-  //     fetch(`http://localhost:5000/blog/${id}`)
-  //       .then((res) => res.json())
-  //       .then((result) => console.log(result))
-  //   }
-  // }, [blogs?.blog, id])
+  useEffect(() => {
+    if (blog === null) {
+      fetch(`http://localhost:5000/blog/${id}`)
+        .then((res) => res.json())
+        .then((result) => console.log(result))
+    }
+  }, [blog, id])
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
