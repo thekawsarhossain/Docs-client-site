@@ -43,6 +43,9 @@ const blogsSlice = createSlice({
     DELETE_BLOG: (state, action) => {
       state.blogs = state?.blogs?.filter((blog) => blog?._id !== action.payload)
     },
+    REPORT_BLOG: (state, action) => {
+      state?.blog?.reports.push(action.payload)
+    },
   },
   //   extra reducers here for api
   extraReducers: (builder) => {
@@ -63,6 +66,11 @@ const blogsSlice = createSlice({
   },
 })
 
-export const { ADD_TO_BLOG, ADD_COMMENT, DELETE_BLOG, ADD_TO_BLOGGER_DETAILS } =
-  blogsSlice.actions
+export const {
+  ADD_TO_BLOG,
+  ADD_COMMENT,
+  DELETE_BLOG,
+  ADD_TO_BLOGGER_DETAILS,
+  REPORT_BLOG,
+} = blogsSlice.actions
 export default blogsSlice.reducer
