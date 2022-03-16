@@ -38,12 +38,6 @@ const ASKBody = () => {
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.questions?.questions)
   console.log(blogs)
-  // let allBlogs = blogs
-  // console.log(allBlogs)
-
-  // const categoryWise = blogs.filter(
-  //   (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
-  // )
 
   const recentQuestion = blogs?.slice(0, 3)
   const [filter, setFilter] = useState('')
@@ -61,7 +55,7 @@ const ASKBody = () => {
         .includes(filter.toString().toLowerCase())
     )
   })
-  // setAllBlogs(dataSearch?.reverse())
+
   const handleChange = (event) => {
     setCategory(true)
     setSearch(false)
@@ -127,7 +121,7 @@ const ASKBody = () => {
                 }}
                 className="mb-4 text-center text-3xl font-bold text-Docy-Dark dark:text-white"
               >
-                Top Questions
+                Questions
               </h1>
               <div className="mb-4 self-center">
                 <Link href="/askQuestion">
