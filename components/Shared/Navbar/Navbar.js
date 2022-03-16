@@ -185,7 +185,7 @@ const Navbar = () => {
   )
   return (
     <div className="font-serif">
-      <header className="body-font absolute z-10 w-full text-gray-400">
+      <header className="body-font absolute z-10 w-full text-white">
         <Container>
           <div className="mt-5 flex justify-between">
             <Link href="/">
