@@ -17,7 +17,7 @@ const ManageUsers = () => {
   // console.log(manageUsers);
   // here users
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
