@@ -369,7 +369,7 @@ const MainDetails = () => {
                 <div key={otherPost?._id} className="recent-blog mt-6">
                   <div className=" flex">
                     <img
-                      className="h-32 w-32 rounded "
+                      className="h-32 w-32 rounded object-cover"
                       src={otherPost?.image}
                       alt=""
                     />
