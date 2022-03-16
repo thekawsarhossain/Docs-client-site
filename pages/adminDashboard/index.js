@@ -5,6 +5,8 @@ import Chart from 'chart.js/auto'
 import RUser from '../../components/DashboardLayout/RUser/RUser'
 import RBlog from '../../components/DashboardLayout/RBlog/RBlog'
 import Review from '../../components/DashboardLayout/Review/Review'
+import { useSelector } from 'react-redux'
+import Charts from '../../components/Chart/Chart'
 // import Review from '../../components/DashboardLayout/Review/Review'
 
 export default function Index() {
@@ -96,6 +98,11 @@ export default function Index() {
       myLineChart.destroy()
     }
   })
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+  console.log(userInfoFromDB)
   return (
     <DashboardLayout>
       <div className="bg-slate-200 p-10">
@@ -137,7 +144,9 @@ export default function Index() {
               <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500">
                 Users
               </h6>
-              <span className="text-xl font-semibold">50,021</span>
+              <span className="text-xl font-semibold">
+                {/* {userInfoFromDB.length} */}
+              </span>
               <span className="ml-2 inline-block rounded-md bg-green-100 px-2 py-px text-xs text-green-500">
                 +2.6%
               </span>
@@ -166,9 +175,9 @@ export default function Index() {
           <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
             <div>
               <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500">
-                Orders
+                Blogs
               </h6>
-              <span className="text-xl font-semibold">45,021</span>
+              <span className="text-xl font-semibold">{blogs.length}</span>
               <span className="ml-2 inline-block rounded-md bg-green-100 px-2 py-px text-xs text-green-500">
                 +3.1%
               </span>
