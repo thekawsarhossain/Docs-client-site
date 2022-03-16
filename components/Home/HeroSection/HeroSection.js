@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import CommunitiesCard from '../CommunitiesCard/CommunitiesCard'
-// import Example from './test'
+import Example from './test'
 
 const HeroSection = () => {
   return (
@@ -81,7 +81,9 @@ const HeroSection = () => {
                                 className="w-full bg-white text-black md:w-96"
                               />
                             </div>
-                            <div>{/* <Example /> */}</div>
+                            <div>
+                              <Example />
+                            </div>
                           </div>
                         </div>
                       </div>
