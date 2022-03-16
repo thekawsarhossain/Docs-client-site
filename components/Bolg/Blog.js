@@ -1,21 +1,3 @@
-// import Footer from '../Shared/Footer/Footer'
-// import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
-// import BlogMainBody from './BlogMainBody/BlogMainBody'
-// import authCheck from '../../HOC/withAuthCheck'
-
-// const Blog = () => {
-//   return (
-//     <div>
-//       <BlogHeroSection></BlogHeroSection>
-//       <BlogMainBody></BlogMainBody>
-//       <Footer></Footer>
-//     </div>
-//   )
-// }
-
-// export default authCheck(Blog)
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
 import Navbar from '../Shared/Navbar/Navbar'
 import { Avatar, Container, Grid } from '@mui/material'
 import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
@@ -46,6 +28,8 @@ const Blog = () => {
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+
+  const recentPost = blogs.slice(0, 3)
 
   //pagination start
   const [currentPage, setCurrentPage] = useState(1)
