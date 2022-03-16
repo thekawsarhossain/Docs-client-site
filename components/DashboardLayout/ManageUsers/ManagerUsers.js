@@ -69,6 +69,7 @@ const ManageUsers = () => {
                       </ul>
                     </Container>
                   </div>
+                  {/* here user details  */}
                   <h3 className="text-black-500 ">{data?.displayName}</h3>
                   <p className="mt-1 mb-6 text-zinc-400">{data?.profession}</p>
 
