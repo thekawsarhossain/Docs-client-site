@@ -142,7 +142,7 @@ const useFirebase = () => {
 
     SET_STATUS(true)
     if (email) {
-      fetch('http://localhost:5000/users/', {
+      fetch('https://polar-hamlet-38117.herokuapp.com/users/', {
         method,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import { Container } from "@mui/material";
 import { useForm } from "react-hook-form";
@@ -35,15 +35,15 @@ const AddReviews = () => {
         
       {/* register your input into the hook by invoking the "register" function */}
       {/* <Rating name="size-large" {...register("ratings")} onChange={(e =>(e.target.value))} size="large" /> */}
-      <input className=" dark:bg-zinc-700" type='text'  placeholder="Enter your profession" {...register("profession")} />
+      <input className=" dark:bg-zinc-700" type='text' required  placeholder="Enter your profession" {...register("profession")} />
      
-      <textarea  name="" className=" dark:bg-zinc-700" cols="30" rows="10" placeholder="Write Your Feedback.." {...register("description")}></textarea>
+      <textarea  name="" required className=" dark:bg-zinc-700" cols="30" rows="10" placeholder="Write Your Feedback.." {...register("description")}></textarea>
     
      <button type="submit"  className=" text-white mt-8 mb-12 bg-indigo-600" >Submit</button>
      
     </form>
     </div>
-  </Container>
+    </Container>
       </>
  
 

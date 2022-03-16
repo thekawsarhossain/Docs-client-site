@@ -74,7 +74,7 @@ const BlogList = (props) => {
                         </div>
                         <div className="float-right self-center text-Docy-Dark dark:text-white">
                           <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />
-                          {blog?.comment.length}
+                          {/* {blog?.comment?.length} */}
                         </div>
                       </div>
                     </div>

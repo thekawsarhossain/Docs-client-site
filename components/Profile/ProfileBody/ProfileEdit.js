@@ -145,7 +145,7 @@ const ProfileEdit = (props) => {
         data?.profession !== props?.userInfoFromDB?.profession) ||
       (data?.website && data?.website !== props?.userInfoFromDB?.website)
     ) {
-      fetch('http://localhost:5000/profile-update', {
+      fetch('https://polar-hamlet-38117.herokuapp.com/profile-update', {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(user),
@@ -162,7 +162,6 @@ const ProfileEdit = (props) => {
     } else {
       alert("You didn't make any changes yet to update the profile !")
     }
-
   }
 
   return (

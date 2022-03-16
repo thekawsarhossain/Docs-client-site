@@ -24,10 +24,13 @@ const ProfileBlogs = (props) => {
 
     if (procced) {
       try {
-        const response = await fetch(`http://localhost:5000/blog/${id}`, {
-          method: 'DELETE',
-          header: { 'content-type': 'application/json' },
-        })
+        const response = await fetch(
+          `https://polar-hamlet-38117.herokuapp.com/blog/${id}`,
+          {
+            method: 'DELETE',
+            header: { 'content-type': 'application/json' },
+          }
+        )
         const result = await response.json()
         if (result?.acknowledged) {
           dispatch(DELETE_BLOG(id))

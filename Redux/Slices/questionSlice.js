@@ -4,7 +4,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 export const fetchQuestions = createAsyncThunk(
   'questions/fetchQuestions',
   async () => {
-    const response = await fetch('http://localhost:5000/questions')
+    const response = await fetch(
+      'https://polar-hamlet-38117.herokuapp.com/questions'
+    )
     const data = await response.json()
     return data
   }
@@ -14,9 +16,13 @@ export const fetchQuestions = createAsyncThunk(
 export const fetchQuestion = createAsyncThunk(
   'question/fetchQuestion',
   async (id) => {
-    const response = await fetch(`http://localhost:5000/questions/${id}`)
-    const data = await response.json()
-    return data
+    if (id) {
+      const response = await fetch(
+        `https://polar-hamlet-38117.herokuapp.com/questions/${id}`
+      )
+      const data = await response.json()
+      return data
+    }
   }
 )
 
@@ -25,22 +31,18 @@ const questionsSlice = createSlice({
   initialState: {
     questions: null,
     question: null,
-    // bloggerDetails: null,
     status: false,
     error: '',
   },
 
   //  reducers here
   reducers: {
-    // ADD_TO_BLOGGER_DETAILS: (state, action) => {
-    //   state.bloggerDetails = action.payload
-    // },
     ADD_TO_QUESTION: (state, action) => {
       state.question = action.payload
       state.error = ''
     },
     ADD_ANSWER: (state, action) => {
-      state.question.answer.push(action.payload)
+      state.question.answers.push(action.payload)
       state.error = ''
     },
     DELETE_QUESTION: (state, action) => {
@@ -56,13 +58,6 @@ const questionsSlice = createSlice({
       state.status = true
     })
     builder.addCase(fetchQuestions.pending, (state, action) => {
-      state.status = false
-    })
-    builder.addCase(fetchQuestion.fulfilled, (state, action) => {
-      state.question = action.payload
-      state.status = true
-    })
-    builder.addCase(fetchQuestion.pending, (state, action) => {
       state.status = false
     })
   },
