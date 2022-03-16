@@ -3,13 +3,13 @@
 
 # Used Technologies
 
- # Backend
+ ## Backend
 
  ### Language : Node.js
  ### Framework : Express.js
  ### Database : MongoDB
 
-# Frontend
+## Frontend
  ### Language : JavaScript
  ### UI Framework : NEXT.js
  ### State Management : Redux
