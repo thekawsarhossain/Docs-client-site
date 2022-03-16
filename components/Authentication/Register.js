@@ -29,8 +29,8 @@ const Register = () => {
 
   return (
     <div className="bg-slate-100 dark:bg-lightDark">
-       <Link href="/" >
-        <a className="absolute z-50 md:ml-96 ml-80  mt-4">
+      <Link href="/">
+        <a className="absolute z-50 ml-80 mt-4  md:ml-96">
           <img src="https://i.ibb.co/KspLSX3/docy-logo.png" alt="" />
         </a>
       </Link>
@@ -169,11 +169,11 @@ const Register = () => {
               </div>
             </form>
             <button
-              className="mx-auto mb-6  flex cursor-pointer justify-center bg-white  px-10 py-3 text-center text-black   shadow "
+              className="mx-auto mb-6  flex cursor-pointer justify-center rounded-md bg-white  px-10 py-3 text-center font-semibold text-black  shadow "
               onClick={() => signInWithGoogle(router)}
               disabled={status ? true : false}
             >
-              Continue With
+              Continue with
               <img
                 src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png"
                 alt="googleImage"

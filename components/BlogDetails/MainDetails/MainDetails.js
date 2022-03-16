@@ -6,9 +6,23 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD_COMMENT, fetchBlog } from '../../../Redux/Slices/blogSlice'
+import {
+  ADD_COMMENT,
+  ADD_TO_BLOG,
+  ADD_TO_BLOGGER_DETAILS,
+  fetchBlog,
+} from '../../../Redux/Slices/blogSlice'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { fetchUserData } from '../../../Redux/Slices/userSlice'
+import Link from 'next/link'
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import PinterestIcon from '@mui/icons-material/Pinterest'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import FlagIcon from '@mui/icons-material/Flag'
 
 const MainDetails = () => {
   // react redux hook here
@@ -16,9 +30,8 @@ const MainDetails = () => {
 
   // next js hooks for dynamic routuing
   const router = useRouter()
-  const id = router.query.id
+  const id = router?.query?.id
 
-  // calling specfic blog depend on id here using redux
   useEffect(() => {
     dispatch(fetchBlog(id))
   }, [dispatch, id])
@@ -31,16 +44,22 @@ const MainDetails = () => {
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
+  // calling specfic blog depend on id here using redux
+
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
 
   // Related Posts
-  const relatedPosts = blogs.filter(
-    (td) => td?.category === blog?.category && td?._id != blog?._id
-  )
-  const otherPosts = blogs.filter(
-    (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
-  )
+  const relatedPosts = blogs
+    ?.filter((td) => td?.category === blog?.category && td?._id != blog?._id)
+    .slice(0, 3)
+
+  // Other Posts
+  const otherPosts = blogs
+    ?.filter(
+      (td) => td?.blogger?._id === blog?.blogger?._id && td?._id != blog?._id
+    )
+    .slice(0, 3)
 
   // getting user info here
   const user = useSelector((state) => state?.reducers?.user?.currentUser)
@@ -82,8 +101,8 @@ const MainDetails = () => {
         body: JSON.stringify(payload),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result))
-        .catch((e) => console.log(e))
+        .then((result) => {})
+        .catch((e) => alert('Something went wrong !'))
       dispatch(ADD_COMMENT(payload))
       reset()
     } else {
@@ -91,14 +110,46 @@ const MainDetails = () => {
     }
   }
 
+  // follow handler here
+  const handleFollow = (blogger) => {
+    const payload = {
+      bloggerId: blogger?._id,
+      userId: userInfoFromDB?._id,
+    }
+    if (userInfoFromDB) {
+      fetch(`https://polar-hamlet-38117.herokuapp.com/user`, {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result?.acknowledged) {
+            // dispatch(fetchUserData(user?.email))
+            alert('started following !')
+          } else {
+            alert('there is an problem we found !')
+          }
+        })
+        .catch((e) => alert(e.message))
+        .finally(dispatch(fetchUserData(user?.email)))
+    } else {
+      alert('For folllow you need to login !')
+    }
+  }
+
+  // finding the blogger id and the user following list if they match then we will disabled the following btn
+  const isMatched = userInfoFromDB?.following?.find((followerInfo) => {
+    return blog?.blogger?._id === followerInfo?.id
+  })
+
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
       <Container>
         <div className="grid grid-cols-12 gap-6 py-8">
+          {/* Main blog details  */}
           <div className="col-span-12 md:col-span-12 lg:col-span-8">
             {blog?.video && <video src={blog?.video} controls></video>}
-            {/* <DemoBlog data={.data}></DemoBlog> */}
-
             {/* Main documentation  */}
             <div
               id="documentation"
@@ -107,26 +158,18 @@ const MainDetails = () => {
               }}
             ></div>
 
-            {/* summary  */}
-            <div
-              style={{ minHeight: '200px' }}
-              className="my-8 flex flex-col rounded-lg bg-slate-200 p-3  dark:bg-Docy-DarkGray md:flex-row"
-            >
-              <div className="p-6">
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-single/about_img.jpg"
-                  sx={{ width: 56, height: 56 }}
-                />
-              </div>
-              <div className="self-center text-Docy-Dark dark:text-Docy-White ">
-                <h1 className="pb-3 text-xl font-bold">Jason Response</h1>
-                <p>
-                  Loo tomfoolery jolly good bloke chancer chimney pot nice one
-                  a, he nicked it mufty Oxford say wind up bits and bobs cheeky
-                  bugger, amongst cack bugger Eaton William skive off.!
-                </p>
-              </div>
+            {/* Report Blog  */}
+            <div className="flex justify-center pt-8 pb-12">
+              <button
+                style={{
+                  border: '1px solid',
+                  // borderRadius: '10%',
+                  padding: '8px',
+                }}
+                className="btn hover:text- rounded-md border-8 border-sky-500 p-2 text-gray-500 dark:hover:text-gray-200"
+              >
+                <FlagIcon /> Report this blog
+              </button>
             </div>
 
             {/* Related post  */}
@@ -135,14 +178,14 @@ const MainDetails = () => {
                 Related Post
               </h1>
               <div className="grid grid-cols-12 gap-4 text-Docy-Dark dark:text-white">
-                {relatedPosts.map((post) => (
+                {relatedPosts?.map((post) => (
                   <div
                     key={post?._id}
                     className="col-span-12 md:col-span-6 lg:col-span-4"
                   >
                     <div>
                       <img
-                        className="rounded-lg"
+                        className="h-40 w-full rounded-lg object-cover"
                         src={post?.image}
                         alt="blogImage"
                       />
@@ -151,9 +194,17 @@ const MainDetails = () => {
                       <p className="pt-3 pb-1 font-sans text-sm">
                         {post?.uploadDate} ~ {post?.uploadTime}
                       </p>
-                      <h4 className="pb-2 text-xl font-semibold">
-                        {post?.title}
-                      </h4>
+                      <Link
+                        onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                        href={`/blog/${post?._id}`}
+                      >
+                        <a>
+                          <h4 className="pb-2 text-xl font-semibold hover:underline">
+                            {post?.title}
+                          </h4>
+                        </a>
+                      </Link>
+
                       <div className="flex">
                         <div className="self-center">
                           {' '}
@@ -166,11 +217,17 @@ const MainDetails = () => {
                           </div>
                         </div>
                         <div className="self-center pl-2">
-                          <p>
-                            <small className="text-sm">
-                              {post?.blogger?.displayName}
-                            </small>
-                          </p>
+                          <button
+                            onClick={() =>
+                              dispatch(ADD_TO_BLOGGER_DETAILS(post?.blogger))
+                            }
+                          >
+                            <Link href={`/blog/blogger/${post?.blogger?._id}`}>
+                              <a className="text-sm underline">
+                                {post?.blogger?.displayName}
+                              </a>
+                            </Link>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -235,24 +292,9 @@ const MainDetails = () => {
               </div>
               <form onSubmit={handleSubmit(submitHandler)}>
                 <div className="grid grid-cols-12 gap-4">
-                  {/* <input
-                    type="text"
-                    className="col-span-6 rounded-lg p-2"
-                    placeholder="Name"
-                    {...register('email', {
-                      required: {
-                        value: true,
-                      },
-                    })}
-                  />
-                  <input
-                    type="text"
-                    className="col-span-6 rounded-lg p-2"
-                    placeholder="Email"
-                  /> */}
                   <textarea
                     rows="5"
-                    className="col-span-12 rounded-lg p-2"
+                    className="col-span-12 w-full rounded-lg p-2"
                     placeholder="Write your comment here "
                     {...register('comment', {
                       required: {
@@ -278,70 +320,156 @@ const MainDetails = () => {
             <div className="pb-3">
               <div>
                 <img
-                  className="border border-white p-1"
+                  className="mx-auto border border-white object-cover p-1"
                   src={blog?.blogger?.image}
-                  alt=""
+                  alt="blogger-image"
                 />
               </div>
-              <h1 className="py-2 font-sans text-4xl font-bold">
-                {blog?.blogger?.displayName}
-              </h1>
-              <p>
+
+              <button
+                className="w-full"
+                onClick={() => dispatch(ADD_TO_BLOGGER_DETAILS(blog?.blogger))}
+              >
+                <Link href={`/blog/blogger/${blog?.blogger?._id}`}>
+                  <a>
+                    <h1 className="w-full py-2 text-center font-sans text-4xl font-bold hover:underline">
+                      {blog?.blogger?.displayName}
+                    </h1>
+                  </a>
+                </Link>
+              </button>
+
+              {/* <p>
                 James Bond jolly good happy days smashing barney bonnet bits and
                 bobs loo.!
-              </p>
-            </div>
-            {/* Other posts  */}
-            <div className="py-6">
-              <h1 className="py-3 text-2xl font-bold">Other Posts</h1>
-              <div>
-                {otherPosts.map((otherPost) => (
-                  <div
-                    key={otherPost._id}
-                    style={{ maxWidth: '450px' }}
-                    className="grid grid-cols-12 gap-2 py-3"
+              </p> */}
+
+              <p className="text-center">{blog?.blogger?.profession}</p>
+
+              <div className="flex justify-center">
+                {/* following btn here  */}
+                {isMatched ? (
+                  <button className="my-3 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
+                    Following
+                  </button>
+                ) : user?.email !== blog?.blogger?.email ? (
+                  <button
+                    onClick={() => handleFollow(blog.blogger)}
+                    className="my-3 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
                   >
-                    <div className="col-span-5">
-                      <img
-                        className="rounded-lg"
-                        src={otherPost.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-span-7">
-                      <h3 className="text-base">{otherPost.title}</h3>
-                      <p className="mt-3 font-sans text-sm">
-                        {otherPost.uploadDate}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                    Follow
+                  </button>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
-            {/* Post Categories */}
-            <div className="py-6 text-Docy-Dark dark:text-Docy-White">
-              <h3 className="pb-4 text-2xl font-bold">Post Categories</h3>
+            {/* Other posts  */}
+            <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">Other Posts</h4>
+              <hr />
+              {otherPosts?.map((otherPost) => (
+                <div key={otherPost?._id} className="recent-blog mt-6">
+                  <div className=" flex">
+                    <img
+                      className="h-32 w-32 rounded object-cover"
+                      src={otherPost?.image}
+                      alt=""
+                    />
+                    <button onClick={() => dispatch(ADD_TO_BLOG(blog))}>
+                      <Link
+                        className="self-center"
+                        href={`/blog/${otherPost?._id}`}
+                      >
+                        <a>
+                          <div className="px-6 text-left ">
+                            <p className="cursor-pointer font-medium hover:underline">
+                              {/* {otherPost?.title} */}
+                              {otherPost?.title?.length > 55
+                                ? otherPost?.title?.slice(0, 55) + '...'
+                                : otherPost?.title}
+                            </p>
+
+                            <small className="flex pt-2">
+                              {otherPost?.uploadDate}
+                            </small>
+                          </div>
+                        </a>
+                      </Link>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Stay In Touch */}
+            <div className="mb-10 rounded bg-slate-100  p-8 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">Stay In Touch</h4>
+              <hr />
               <div>
-                <ul className="list-disc text-lg">
-                  <li className="ml-5">Creative</li>
-                  <li className="ml-5">Inspiration</li>
-                  <li className="ml-5">Lifestyle</li>
-                  <li className="ml-5">News</li>
-                  <li className="ml-5">Photography</li>
-                  <li className="ml-5">Skill</li>
-                  <li className="ml-5">Tourist Tours</li>
-                  <li className="ml-5">Inspire</li>
+                <ul className="sidebar-icon mt-4 flex justify-center text-gray-500">
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <FacebookIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <TwitterIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <PinterestIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <LinkedInIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <InstagramIcon />
+                      </a>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
+            {/* Post Categories */}
+            <div className="mb-10 rounded bg-slate-100 p-6 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">All Category</h4>
+              <hr />
+              <div className="category mt-4 grid grid-cols-3   gap-4">
+                <li>Creative</li>
+                <li>Inspiration</li>
+                <li>Lifestyle</li>
+                <li>News</li>
+                <li>Photography</li>
+                <li>Skill</li>
+                <li>Trending</li>
+                <li>Tourist</li>
+                <li>Education</li>
+              </div>
+            </div>
             {/* Tag list  */}
-            <div className="pt-4 text-Docy-AlmostBlack dark:text-white">
-              <h1 className="pb-2 text-2xl">Tags</h1>
+            <div className="mb-10 rounded bg-slate-100 p-6 text-center dark:bg-Docy-DarkGray">
+              <h4 className="mb-2 font-bold">Tags</h4>
+              <hr />
               <div
                 style={{ minHeight: '150px', maxWidth: '500px' }}
-                className="tag-container my-2 flex flex-wrap rounded-lg bg-slate-200 p-4 dark:bg-Docy-GrayBlue"
+                className="tag-container my-2 flex flex-wrap rounded-lg  py-4 "
               >
-                {blog?.tags.map((tag, index) => {
+                {blog?.tags?.map((tag, index) => {
                   return (
                     <div
                       key={index}

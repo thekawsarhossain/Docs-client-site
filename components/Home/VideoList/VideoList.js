@@ -10,427 +10,102 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useState } from 'react'
 import PersonIcon from '@mui/icons-material/Person'
 import DateRangeIcon from '@mui/icons-material/DateRange'
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const VideoList = () => {
-  const [expanded, setExpanded] = useState(false)
+  // react redux hook here
+  const dispatch = useDispatch()
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
+  // next js hooks for dynamic routuing
+  const router = useRouter()
+  const id = router?.query?.id
+
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+
+  // getting the match blog with id
+  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
+
+  // calling specfic blog depend on id here using redux
+  // useEffect(() => {
+  //   if (blog === null || '') {
+  //     fetch(`http://localhost:5000/blog/${id}`)
+  //       .then((res) => res.json())
+  //       .then((result) => console.log(result))
+  //   }
+  // }, [blog, id])
+
+  //blogs with video
+  // const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
+  const videos = blogs?.filter((td) => td?.video !== '')
+  const video = blogs?.find((td) => td?.video !== '')
+  console.log(video?.video)
+
+  const allVideos = videos?.slice(2, 5)
+
+  //here default video
+  const [videoList, setVideoList] = useState(video?.video)
+  console.log(videoList)
+  // if (allVideos[0]) {
+  //   setVideoList(allVideos[0]?.video)
+  //   console.log(allVideos)
+  // }
+  //  setVideoList(videos[0]?.video)
+
+  const handleVideo = (e) => {
+    setVideoList(e)
   }
-  return (
-    <div className="video-List">
-      <Container>
-        <div className="videoList-container grid grid-cols-12 gap-5">
-          <div className="col-span-12 md:col-span-7">
-            <iframe
-              // className="w-full"
-              width="100%"
-              height="450"
-              src="https://www.youtube.com/embed/X7XbjwD6fVY"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </div>
-          <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
-            <h2 className="pb-7 font-bold">Docky Video List</h2>
-            <Accordion
-              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
-              expanded={expanded === 'panel1'}
-              onChange={handleChange('panel1')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon className="text-white" />}
-                sx={{ backgroundColor: '#2C303A', color: 'white' }}
-                aria-controls="panel1bh-content"
-                id="panel1bh-header"
-              >
-                <Typography className="font-bold">Configuration</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <ul>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-2-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Theme Settings – Docy Video Tutorial
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                  </ul>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
-              expanded={expanded === 'panel2'}
-              onChange={handleChange('panel2')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon className="text-white" />}
-                sx={{ backgroundColor: '#2C303A', color: 'white' }}
-                aria-controls="panel2bh-content"
-                id="panel2bh-header"
-              >
-                <Typography className="font-bold">
-                  Development Environment
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <ul>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                  </ul>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
 
-            <Accordion
-              sx={{ mb: 1, backgroundColor: '#2C303A', color: 'white' }}
-              expanded={expanded === 'panel3'}
-              onChange={handleChange('panel3')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon className="text-white" />}
-                sx={{ backgroundColor: '#2C303A', color: 'white' }}
-                aria-controls="panel3bh-content"
-                id="panel3bh-header"
-              >
-                <Typography className="font-bold">Getting Started</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <ul>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
+  return (
+    <div className="video-List ">
+      <Container sx={{ py: 15 }}>
+        <div className=" grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-7">
+            {!videoList && video && setVideoList(video?.video)}
+            {videoList && <video src={videoList} controls></video>}
+          </div>
+
+          <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
+            <h2 className=" -mt-2 pb-2 font-medium ">Docky Video List</h2>
+            <ul className="bg-slate-100   dark:bg-gray-900">
+              {videos?.map((video) => (
+                <>
+                  <button
+                    key={video?._id}
+                    onClick={() => handleVideo(video?.video)}
+                  >
+                    <>
+                      <li className="  mb-3 flex gap-4 p-4">
                         <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
+                          <video
+                            className="h-full w-24 rounded"
+                            src={video?.video}
                             alt=""
                           />
                         </div>
                         <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
+                          <h5 className=" pb-2  text-black dark:text-gray-300">
+                            {video?.title?.split(' ').slice(0, 6).join(' ')}...
                           </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
+                          <div className=" flex justify-between  text-sm text-gray-500">
+                            <div className="flex items-center gap-2">
                               <PersonIcon className=" text-sm" />
-                              Fahad
+                              {video?.blogger?.displayName?.split(' ')[0]}
                             </div>
-                            <div className="flex gap-2">
+                            <div className="items flex gap-2">
                               <DateRangeIcon className="text-sm" />
-                              March 27, 2022
+                              {video?.uploadDate}
                             </div>
                           </div>
                         </div>
                       </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                  </ul>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{ backgroundColor: '#2C303A', color: 'white' }}
-              expanded={expanded === 'panel4'}
-              onChange={handleChange('panel4')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon className="text-white" />}
-                sx={{ backgroundColor: '#2C303A', color: 'white' }}
-                aria-controls="panel4bh-content"
-                id="panel4bh-header"
-              >
-                <Typography className="font-bold">
-                  License and Support
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <ul>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt="img"
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                    <a href="#">
-                      <li className="mb-3 flex gap-3">
-                        <div>
-                          <img
-                            className="h-12 w-14 rounded"
-                            src="https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/03/video-bg-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className="pb-2 text-gray-300">
-                            Have you any question which is not answered?
-                          </h5>
-                          <div className="flex gap-4 text-sm text-gray-500">
-                            <div className="flex gap-2">
-                              <PersonIcon className=" text-sm" />
-                              Fahad
-                            </div>
-                            <div className="flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              March 27, 2022
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </a>
-                  </ul>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+                    </>
+                  </button>
+                </>
+              ))}
+            </ul>
           </div>
         </div>
       </Container>

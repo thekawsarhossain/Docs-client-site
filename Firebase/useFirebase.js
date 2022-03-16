@@ -125,16 +125,32 @@ const useFirebase = () => {
 
   // save user to the DB
   const saveUserDB = async (email, displayName, image, method) => {
-    const user = { email, displayName, image }
+    const payload = {
+      email,
+      displayName,
+      image,
+      role: 'user',
+      followers: [],
+      following: [],
+      address: '',
+      biography: '',
+      gender: '',
+      profession: '',
+      website: '',
+      birthDate: '',
+    }
+
     SET_STATUS(true)
-    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
-      method,
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .catch((error) => dispatch(ADD_ERROR(error.message)))
-      .finally(() => dispatch(SET_STATUS(false)))
+    if (email) {
+      fetch('https://polar-hamlet-38117.herokuapp.com/users/', {
+        method,
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then((res) => res.json())
+        .catch((error) => dispatch(ADD_ERROR(error.message)))
+        .finally(() => dispatch(SET_STATUS(false)))
+    }
   }
 
   // log out user here

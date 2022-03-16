@@ -1,9 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { Facebook, LinkedIn, Twitter } from '@mui/icons-material'
 import Link from 'next/link'
 import { Container } from '@mui/material'
 import ScrollToTop from 'react-scroll-to-top'
-
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import CallIcon from '@mui/icons-material/Call';
+import FacebookIcon from '@mui/icons-material/Facebook'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import PinterestIcon from '@mui/icons-material/Pinterest'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
 const Footer = () => {
   return (
     <footer className=" bg-slate-100 pt-10 text-white dark:bg-black dark:text-black  lg:pt-32">
@@ -24,7 +30,7 @@ const Footer = () => {
       />
       {/* <FooterBanner /> */}
       <Container>
-        <div className="grid grid-cols-1 gap-6 py-16 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 py-16 lg:grid-cols-4">
           {/* footer logo & short description */}
           <div>
             <Link href="/">
@@ -41,76 +47,118 @@ const Footer = () => {
                 />
               </a>
             </Link>
-            <p className="mt-2 text-lg text-secondary">
+            <p className="my-6 text-lg text-secondary">
               I’m available for commissions and collaborations, and i’m excited
               to hear from you about new projects.!!
             </p>
 
             {/* social icons here  */}
-            <div className="flex justify-start">
-              <a className="footer-icon">
-                <Facebook />
-              </a>
-              <a className="footer-icon">
-                <Twitter />
-              </a>
-              <a className="footer-icon">
-                <LinkedIn />
-              </a>
+            <div className="md:-ml-8 ">
+            <div>
+                <ul className="sidebar-icon flex text-gray-500">
+                  <li>
+                    <Link  href="https://www.facebook.com/Docy-107057608607026">
+                      <a target="_blank">
+                        <FacebookIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <TwitterIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <PinterestIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <LinkedInIcon />
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <a>
+                        <InstagramIcon />
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           {/*footer quick navigation area  */}
-          <div className="mx-8">
-            <h2 className="footer-nav-title">Doc Contents</h2>
+          <div className="md:ml-16">
+            <h2 className="footer-nav-title">Quick links</h2>
             <nav className="mb-10 list-none">
               <li>
-                <a className="footer-nav-item">First Link</a>
+                <Link href='/about'>
+                  <a className='footer-nav-item'>About us</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Second Link</a>
+                <Link href='/ask'>
+                  <a className='footer-nav-item'>Ask Question</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Third Link</a>
+                <Link href='/contact'>
+                  <a className='footer-nav-item'>Contact Us</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Fourth Link</a>
+                <Link href='/helpdesk'>
+                  <a className='footer-nav-item'>Help Desk</a>
+                </Link>
               </li>
+            
             </nav>
           </div>
-          <div className="mx-8">
-            <h2 className="footer-nav-title">Doc Elements</h2>
+          {/*footer quick navigation area  */}
+          <div className="">
+            <h2 className="footer-nav-title">Quick links</h2>
             <nav className="mb-10 list-none">
               <li>
-                <a className="footer-nav-item">First Link</a>
+                <Link href='/documentation'>
+                  <a className='footer-nav-item'>Documentation</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Second Link</a>
+                <Link href='/blogs'>
+                  <a className='footer-nav-item'>Blogs</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Third Link</a>
+                <Link href='/404'>
+                  <a className='footer-nav-item'>404 Page</a>
+                </Link>
               </li>
               <li>
-                <a className="footer-nav-item">Fourth Link</a>
+                <Link href='/helpdesk'>
+                  <a className='footer-nav-item'>Help Desk</a>
+                </Link>
               </li>
+            
             </nav>
           </div>
-          <div className="mx-8">
-            <h2 className="footer-nav-title">Footnotes</h2>
-            <nav className="mb-10 list-none">
-              <li>
-                <a className="footer-nav-item">First Link</a>
-              </li>
-              <li>
-                <a className="footer-nav-item">Second Link</a>
-              </li>
-              <li>
-                <a className="footer-nav-item">Third Link</a>
-              </li>
-              <li>
-                <a className="footer-nav-item">Fourth Link</a>
-              </li>
-            </nav>
+          {/*footer quick navigation area  */}
+          <div className="md:-ml-6">
+            <h2 className="footer-nav-title">Contact Us</h2>
+            <p className='footer-nav-item'><LocationOnIcon /> Docy Centre, Gulshan, Dhaka</p>
+            <p className='footer-nav-item'><EmailIcon /> Official: profolks@gmail.com</p>
+            <p className='footer-nav-item'><CallIcon /> Helpline : 01887403752</p>
+            
           </div>
+        
+         
         </div>
       </Container>
       {/* copyright text here  */}

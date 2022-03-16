@@ -7,13 +7,14 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
   return data
 })
 
-// getting single blog depend on id here
 export const fetchBlog = createAsyncThunk('blog/fetchBlog', async (id) => {
-  const response = await fetch(
-    `https://polar-hamlet-38117.herokuapp.com/blog/${id}`
-  )
-  const data = await response.json()
-  return data
+  if (id) {
+    const response = await fetch(
+      `https://polar-hamlet-38117.herokuapp.com/blog/${id}`
+    )
+    const data = await response.json()
+    return data
+  }
 })
 
 const blogsSlice = createSlice({
@@ -21,12 +22,16 @@ const blogsSlice = createSlice({
   initialState: {
     blogs: null,
     blog: null,
+    bloggerDetails: null,
     status: false,
     error: '',
   },
 
   //  reducers here
   reducers: {
+    ADD_TO_BLOGGER_DETAILS: (state, action) => {
+      state.bloggerDetails = action.payload
+    },
     ADD_TO_BLOG: (state, action) => {
       state.blog = action.payload
       state.error = ''
@@ -58,5 +63,6 @@ const blogsSlice = createSlice({
   },
 })
 
-export const { ADD_TO_BLOG, ADD_COMMENT, DELETE_BLOG } = blogsSlice.actions
+export const { ADD_TO_BLOG, ADD_COMMENT, DELETE_BLOG, ADD_TO_BLOGGER_DETAILS } =
+  blogsSlice.actions
 export default blogsSlice.reducer

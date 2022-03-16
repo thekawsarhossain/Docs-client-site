@@ -144,30 +144,6 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        {/* <Link href="/profile">
-          <ListItem button>
-            <ListItemText>
-              <span>
-                <img
-                  style={{ height: '40px', width: '40px' }}
-                  className="link-item inline-flex items-center rounded-full"
-                  src={
-                    userInfoFromDB?.image
-                      ? userInfoFromDB?.image
-                      : `https://i.ibb.co/DMYmT3x/Generic-Profile.jpg`
-                  }
-                  alt=""
-                />{' '}
-                My Profile
-              </span>
-            </ListItemText>
-          </ListItem>
-        </Link>
-        <ListItem button onClick={() => logoutUser()}>
-          <ListItemText>
-            <button className="">Logout</button>
-          </ListItemText>
-        </ListItem> */}
         {user?.email ? (
           <div>
             <Link href="/profile">
@@ -176,7 +152,7 @@ const Navbar = () => {
                   <span>
                     <img
                       style={{ height: '40px', width: '40px' }}
-                      className="link-item inline-flex items-center rounded-full"
+                      className="link-item inline-flex items-center rounded-full object-cover"
                       src={
                         userInfoFromDB?.image
                           ? userInfoFromDB?.image
@@ -237,20 +213,30 @@ const Navbar = () => {
                     <span className="link-hover right-1/2 h-0.5 w-0"></span>
                   </a>
                 </Link>
-                <Link href="/documentation">
+                <Link href="/ask">
                   <a className="link-item">
-                    <span>Documentation</span>
+                    <span>Ask</span>
                     <span className="link-hover left-1/2 h-0.5 w-0"></span>
                     <span className="link-hover right-1/2 h-0.5 w-0"></span>
                   </a>
                 </Link>
-                <Link href="/demo">
+                <Link href="/blogs">
                   <a className="link-item">
-                    <span>Blog</span>
+                    <span>Blogs</span>
                     <span className="link-hover left-1/2 h-0.5 w-0"></span>
                     <span className="link-hover right-1/2 h-0.5 w-0"></span>
                   </a>
                 </Link>
+                {user?.email && userInfoFromDB?.role === 'admin' && (
+                  <Link href="/adminDashboard">
+                    <a className="link-item">
+                      <span>Dashboard</span>
+                      <span className="link-hover left-1/2 h-0.5 w-0"></span>
+                      <span className="link-hover right-1/2 h-0.5 w-0"></span>
+                    </a>
+                  </Link>
+                )}
+
                 {/* Dropdown button  */}
                 <div className="group relative inline-block">
                   <button className="link-item inline-flex items-center">
@@ -272,20 +258,6 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/adminDashboard">
-                        <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
-                          Dashboard
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="">
-                      <Link href="/profile">
-                        <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
-                          Profile
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="">
                       <Link href="/contact">
                         <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
                           Contact
@@ -293,9 +265,9 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/ask">
+                      <Link href="/documentation">
                         <a className="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400">
-                          Ask
+                          Documentation
                         </a>
                       </Link>
                     </li>
@@ -313,7 +285,7 @@ const Navbar = () => {
                     <div className="group relative inline-block">
                       <img
                         style={{ height: '40px', width: '40px' }}
-                        className="link-item inline-flex items-center rounded-full"
+                        className="link-item inline-flex items-center rounded-full object-cover"
                         src={
                           userInfoFromDB?.image
                             ? userInfoFromDB?.image
@@ -351,6 +323,7 @@ const Navbar = () => {
                 {renderThemeChange()}
               </nav>
             </div>
+            {/* Mode change button  */}
             <div className="flex flex-wrap items-center justify-center text-base md:ml-auto lg:hidden">
               <React.Fragment key="left">
                 <Button onClick={toggleDrawer('left', true)}>

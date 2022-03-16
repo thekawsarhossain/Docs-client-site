@@ -37,14 +37,14 @@ const HomeBlogList = () => {
     <div className="my-16 py-16">
       <Container>
         <div className="flex flex-col pb-24 text-center md:flex-row md:justify-between">
-          <h2 className="pb-6 md:pb-0">
+          <h2 className="title w-2/5 pb-6 md:pb-0">
             <span className="pb-6">Trending Blogs</span>
           </h2>
           <Link href="/blogUpload">
             <a>
-              <button className="bg-indigo-700 px-10 py-4 text-white">
+              <button className="rounded-md bg-indigo-700 px-10 py-4 font-semibold text-white">
                 {' '}
-                Upload blog now <BackupIcon className="animate-bounce" />
+                Upload blog now <BackupIcon className="mx-2 animate-bounce" />
               </button>
             </a>
           </Link>{' '}
@@ -70,8 +70,8 @@ const HomeBlogList = () => {
                     >
                       <h3 className="text-xl text-Docy-Dark dark:text-slate-100">
                         {/* {blog?.title} */}
-                        {blog?.title.length > 70
-                          ? blog?.title.slice(0, 70) + '...'
+                        {blog?.title?.length > 70
+                          ? blog?.title?.slice(0, 70) + '...'
                           : blog?.title}
                       </h3>
                     </div>
@@ -103,7 +103,7 @@ const HomeBlogList = () => {
                         </div>
                         <div className="float-right self-center text-Docy-Dark dark:text-white">
                           <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />
-                          {blog?.comment.length}
+                          {blog?.comment?.length}
                         </div>
                       </div>
                     </div>

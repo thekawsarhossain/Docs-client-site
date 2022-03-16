@@ -18,9 +18,9 @@ const DetailsHeroSection = () => {
             className="flex w-full pt-12 text-Docy-Dark dark:text-white"
           >
             <div className="self-center">
-              <h1 className="font-serif text-4xl">{blog?.title}</h1>
+              <h1 className="pt-12 font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
-              <div className="mt-3 flex">
+              <div className="mt-3 flex pb-8">
                 <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
                 <p className="self-center pl-2">
                   {' '}

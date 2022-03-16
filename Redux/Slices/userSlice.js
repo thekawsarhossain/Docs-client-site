@@ -4,11 +4,13 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchUserData = createAsyncThunk(
   'fetchUser/fetchUserData',
   async (email) => {
-    const response = await fetch(
-      `https://polar-hamlet-38117.herokuapp.com/users/${email}`
-    )
-    const data = await response.json()
-    return data
+    if (email) {
+      const response = await fetch(
+        `https://polar-hamlet-38117.herokuapp.com/users/${email}`
+      )
+      const data = await response.json()
+      return data
+    }
   }
 )
 

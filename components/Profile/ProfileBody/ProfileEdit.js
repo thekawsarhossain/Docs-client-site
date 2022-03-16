@@ -13,6 +13,7 @@ import {
   REMOVE_USER,
   SET_STATUS,
   REMOVE_DATA,
+  fetchUserData,
 } from '../../../Redux/Slices/userSlice'
 import { useDispatch } from 'react-redux'
 // } from '../Redux/Slices/userSlice'
@@ -22,7 +23,6 @@ const ProfileEdit = (props) => {
   const [image, setImage] = useState(props?.userInfoFromDB?.image)
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
-  console.log(value.toLocaleDateString())
   const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
   // redux hooks here
   const dispatch = useDispatch()
@@ -30,12 +30,12 @@ const ProfileEdit = (props) => {
   //   setDate('')
   // }
   const addData = (e) => {
-    console.log(e.value)
     setDate(e.value)
   }
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm()
 
@@ -54,7 +54,6 @@ const ProfileEdit = (props) => {
   const imageFileDrop = async (e) => {
     e.preventDefault()
     const files = e.dataTransfer.files
-    console.log(files)
 
     const data = new FormData()
     data.append('file', files[0])
@@ -116,8 +115,10 @@ const ProfileEdit = (props) => {
       birthDate: date,
       image: image,
     }
+    console.log(date)
     SET_STATUS(true)
-    fetch('http://localhost:5000/users', {
+
+    fetch('https://polar-hamlet-38117.herokuapp.com/users', {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user),
@@ -131,7 +132,38 @@ const ProfileEdit = (props) => {
       // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
+
+    if (
+      (date && date !== props?.userInfoFromDB?.birthDate) ||
+      image !== props?.userInfoFromDB?.image ||
+      (data?.address && data?.address !== props?.userInfoFromDB?.address) ||
+      (data?.biography &&
+        data?.biography !== props?.userInfoFromDB?.biography) ||
+      data?.displayName !== props?.userInfoFromDB?.displayName ||
+      (data?.gender && data?.gender !== props?.userInfoFromDB?.gender) ||
+      (data?.profession &&
+        data?.profession !== props?.userInfoFromDB?.profession) ||
+      (data?.website && data?.website !== props?.userInfoFromDB?.website)
+    ) {
+      fetch('https://polar-hamlet-38117.herokuapp.com/profile-update', {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            alert('Profile updated successfully !')
+            dispatch(fetchUserData(props.userInfoFromDB?.email))
+          }
+        })
+        .catch((error) => dispatch(ADD_ERROR(error.message)))
+        .finally(() => dispatch(SET_STATUS(false)))
+    } else {
+      alert("You didn't make any changes yet to update the profile !")
+    }
   }
+
   return (
     <div>
       <form
@@ -150,7 +182,7 @@ const ProfileEdit = (props) => {
             >
               <img
                 style={{ height: '150px', width: '150px' }}
-                className="mx-auto rounded-full border-2 border-white"
+                className="mx-auto rounded-full border-2 border-white object-cover"
                 src={image}
                 alt=""
               />
@@ -314,8 +346,8 @@ const ProfileEdit = (props) => {
         <span className="">
           <input
             type="submit"
-            className="c-btn btn-brand mt-5 rounded px-6 py-3 font-bold  text-gray-900 hover:bg-white hover:text-black"
-            value="Send Message"
+            className="c-btn btn-brand mt-5 cursor-pointer rounded px-6 py-3 font-bold text-white duration-200 hover:bg-black hover:text-white"
+            value="Save changes"
           />
         </span>
       </form>
