@@ -16,7 +16,10 @@ const ManageUsers = () => {
   const [manageUsers, setManageUsers] = useState([])
   // here users
   useEffect(() => {
-    fetch(`https://polar-hamlet-38117.herokuapp.com/manage-users`)
+
+    fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
+
+ 
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
