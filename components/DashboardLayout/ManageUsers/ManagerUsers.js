@@ -18,8 +18,6 @@ const ManageUsers = () => {
   useEffect(() => {
 
     fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
-
- 
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
@@ -33,19 +31,19 @@ const ManageUsers = () => {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {manageUsers.map((data) => (
-            <Grid item xs={12} sm={4} md={3} key={data.name}>
+            <Grid item xs={12} sm={4} md={3} key={data?._id}>
               <div className=" h-full rounded bg-white shadow-md dark:bg-gray-900 dark:text-white">
                 <div>
                   <img
-                    src={data.coverImg}
-                    className="h-full w-full"
-                    alt={data.name}
+                    src={data?.image}
+                    className="h-52 w-full"
+                    alt={data?._id}
                   />
                   <div className="-mt-10 flex justify-center">
                     <img
-                      src={data.userImg}
+                      src={data?.image}
                       className="h-20 w-20  rounded-full border-4 border-indigo-600 object-cover"
-                      alt={data.name}
+                      alt={data?._id}
                     />
                   </div>
                 </div>
@@ -79,13 +77,13 @@ const ManageUsers = () => {
                     <ul className="flex justify-evenly border-t font-medium  ">
                       <li className="pt-3 ">
                         Follower <br />
-                        <h3>{data.follower}</h3>
+                        <h3>{data?.followers?.length}</h3>
                       </li>
                       <li className="border-x border-slate-300 px-8 pt-3">
-                        Following <br /> <h3>{data.following}K</h3>
+                        Following <br /> <h3>{data?.following?.length}</h3>
                       </li>
                       <li className=" pt-3">
-                        Total Post <br /> <h3>{data.totalPost}</h3>
+                        Total Post <br /> <h3>{data?.totalPost?.length}</h3>
                       </li>
                     </ul>
                   </div>
