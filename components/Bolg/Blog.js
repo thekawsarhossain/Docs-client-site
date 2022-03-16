@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Navbar from '../Shared/Navbar/Navbar'
 import { Avatar, Container, Grid } from '@mui/material'
 import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
@@ -29,8 +30,6 @@ const Blog = () => {
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
 
-  const recentPost = blogs.slice(0, 3)
-
   //pagination start
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(5)
@@ -38,6 +37,7 @@ const Blog = () => {
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   const allBlogs = [].concat(blogs).reverse()
+  const recentPosts = allBlogs?.slice(0, 3)
 
   const currentPosts = allBlogs?.slice(indexOfFirstPost, indexOfLastPost)
 
@@ -240,66 +240,38 @@ const Blog = () => {
             <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
               <h4 className="mb-2 font-bold">Recent Post</h4>
               <hr />
-              <div className="recent-blog mt-6">
-                <div className=" flex ">
-                  <img
-                    className="h-32 w-32 rounded "
-                    src="https://scontent.fzyl2-1.fna.fbcdn.net/v/t39.30808-6/275367712_1648586195500355_2483915726415132579_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_ohc=xKjSr6auZKgAX9IgnS8&_nc_ht=scontent.fzyl2-1.fna&oh=00_AT9VEuqlManHEEBqyZKrD1d3LF7MlwYQQf3m_BEx-MpR4Q&oe=622D3A81"
-                    alt=""
-                  />
-                  <Link href="/#">
-                    <div className="px-6 text-left ">
-                      <p className="cursor-pointer font-medium hover:underline">
-                        We spoke to some of our amazing female colleagues{' '}
-                      </p>
+              {recentPosts?.map((recentPost) => (
+                <div key={recentPost?._id} className="recent-blog mt-6">
+                  <div className=" flex">
+                    <img
+                      className="h-32 w-32 rounded object-cover"
+                      src={recentPost?.image}
+                      alt=""
+                    />
+                    <button onClick={() => dispatch(ADD_TO_BLOG(recentPost))}>
+                      <Link
+                        className="self-center"
+                        href={`/blog/${recentPost?._id}`}
+                      >
+                        <a>
+                          <div className="px-6 text-left ">
+                            <p className="cursor-pointer font-medium hover:underline">
+                              {/* {otherPost?.title} */}
+                              {recentPost?.title?.length > 55
+                                ? recentPost?.title?.slice(0, 55) + '...'
+                                : recentPost?.title}
+                            </p>
 
-                      <small className="flex pt-2">
-                        January 21, 2021 4 min read
-                      </small>
-                    </div>
-                  </Link>
+                            <small className="flex pt-2">
+                              {recentPost?.uploadDate}
+                            </small>
+                          </div>
+                        </a>
+                      </Link>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="recent-blog mt-6">
-                <div className=" flex ">
-                  <img
-                    className="h-32 w-32 rounded "
-                    src="https://scontent.fzyl2-1.fna.fbcdn.net/v/t39.30808-6/275065633_3077111162601122_2651930209104763729_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=RFPAGTkEdRkAX9CrtTb&_nc_ht=scontent.fzyl2-1.fna&oh=00_AT-x9Q0VC19Lzk19fvHSuPnfNdb4IN4vo7aX14x7pAhMZA&oe=622C1855"
-                    alt=""
-                  />
-                  <Link href="/#">
-                    <div className="px-6 text-left ">
-                      <p className="cursor-pointer font-medium hover:underline">
-                        iPadOS 14 introduces new designed specifically for
-                      </p>
-
-                      <small className="flex pt-2">
-                        January 21, 2021 4 min read
-                      </small>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-              <div className="recent-blog mt-6">
-                <div className=" flex ">
-                  <img
-                    className="h-32 w-32 rounded "
-                    src="https://images.unsplash.com/photo-1537174621888-eba6137cf6c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dG91cnxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60"
-                    alt=""
-                  />
-                  <Link href="/#">
-                    <div className="px-6 text-left ">
-                      <p className="cursor-pointer font-medium hover:underline">
-                        Browse premium related images on iStock{' '}
-                      </p>
-
-                      <small className="flex pt-2">
-                        January 21, 2021 4 min read
-                      </small>
-                    </div>
-                  </Link>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="mb-10 rounded bg-slate-100  p-8 text-center dark:bg-Docy-DarkGray">
