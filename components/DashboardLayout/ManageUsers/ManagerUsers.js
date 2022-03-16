@@ -71,8 +71,9 @@ const ManageUsers = () => {
                       </ul>
                     </Container>
                   </div>
-                  <h3 className="text-black-500 ">{data.name}</h3>
-                  <p className="mt-1 mb-6 text-zinc-400">{data.designation}</p>
+                  {/* here user details  */}
+                  <h3 className="text-black-500 ">{data?.displayName}</h3>
+                  <p className="mt-1 mb-6 text-zinc-400">{data?.profession}</p>
 
                   <div>
                     <ul className="flex justify-evenly border-t font-medium  ">
