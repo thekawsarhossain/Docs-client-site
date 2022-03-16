@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Avatar, Container } from '@mui/material'
+import { Avatar, Box, Container, Fade, Modal } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
@@ -12,7 +12,7 @@ import {
   ADD_TO_BLOGGER_DETAILS,
   fetchBlog,
 } from '../../../Redux/Slices/blogSlice'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { fetchUserData } from '../../../Redux/Slices/userSlice'
 import Link from 'next/link'
@@ -23,6 +23,29 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FlagIcon from '@mui/icons-material/Flag'
+import Backdrop from '@mui/material/Backdrop'
+import Paper from '@mui/material/Paper'
+
+// modal style here
+const modalStyle = {
+  color: '#000',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '60%',
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: 3,
+  boxShadow: 24,
+  p: 4,
+}
+// modal content paper style here
+const paperStyle = {
+  margin: '10px 0',
+  padding: '10px',
+  fontWeight: 'bold',
+}
 
 const MainDetails = () => {
   // react redux hook here
@@ -31,6 +54,9 @@ const MainDetails = () => {
   // next js hooks for dynamic routuing
   const router = useRouter()
   const id = router?.query?.id
+
+  // modal state here
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     dispatch(fetchBlog(id))
@@ -43,8 +69,6 @@ const MainDetails = () => {
 
   // getting all blogs from redux here
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
-
-  // calling specfic blog depend on id here using redux
 
   // getting the match blog with id
   const blog = useSelector((state) => state?.reducers?.blogs?.blog)
@@ -137,11 +161,60 @@ const MainDetails = () => {
       alert('For folllow you need to login !')
     }
   }
+  // report reason state here
+  const [reportReason, setReportReason] = useState('')
+  // report blog handler here
+  const handleReport = () => {
+    if (user?.email) {
+      if (!reportReason) {
+        alert('You have to select a reason for reporting !')
+      } else {
+        const payload = {
+          reportReason,
+          reportedBy: userInfoFromDB,
+        }
+        fetch(
+          `https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}/reportBlog`,
+          {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(payload),
+          }
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            if (result?.acknowledged) {
+              dispatch(fetchBlog(id))
+            }
+          })
+          .catch((e) => console.log(e.message))
+          .finally(setOpen(false))
+      }
+    } else {
+      alert('You have to login first for report !')
+    }
+  }
 
-  // finding the blogger id and the user following list if they match then we will disabled the following btn
-  const isMatched = userInfoFromDB?.following?.find((followerInfo) => {
-    return blog?.blogger?._id === followerInfo?.id
-  })
+  // finding the matched email
+  const [isMatched, setIsMatched] = useState()
+  useEffect(() => {
+    // finding the blogger id and the user following list if they match then we will disabled the following btn
+    const match = userInfoFromDB?.following?.find((followerInfo) => {
+      return blog?.blogger?.email === followerInfo?.email
+    })
+    setIsMatched(match)
+  }, [blog?.blogger?.email, userInfoFromDB?.following])
+
+  //
+  const [isMatchedReport, setIsMatchedReport] = useState()
+  useEffect(() => {
+    // finding the reported user and the match blog
+    const match = blog?.reports?.find((report) => {
+      return user?.email === report?.reportedBy?.email
+    })
+    setIsMatchedReport(match)
+  }, [blog?.reports, user?.email])
+  console.log(isMatchedReport)
 
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
@@ -160,16 +233,34 @@ const MainDetails = () => {
 
             {/* Report Blog  */}
             <div className="flex justify-center pt-8 pb-12">
-              <button
-                style={{
-                  border: '1px solid',
-                  // borderRadius: '10%',
-                  padding: '8px',
-                }}
-                className="btn hover:text- rounded-md border-8 border-sky-500 p-2 text-gray-500 dark:hover:text-gray-200"
-              >
-                <FlagIcon /> Report this blog
-              </button>
+              {blog?.blogger?.email === user?.email ? (
+                <span className="btn rounded-sm border p-2 px-6 font-medium">
+                  Reported by {blog?.reports?.length} user
+                </span>
+              ) : isMatchedReport ? (
+                <button
+                  style={{
+                    border: '1px solid',
+                    padding: '8px',
+                  }}
+                  className="btn hover:text- rounded-md border-8 border-sky-500 p-2 text-gray-500 dark:hover:text-gray-200"
+                >
+                  <FlagIcon /> Reported
+                </button>
+              ) : (
+                <button
+                  onClick={() => setOpen(true)}
+                  style={{
+                    border: '1px solid',
+                    padding: '8px',
+                  }}
+                  className="btn hover:text- rounded-md border-8 border-sky-500 p-2 text-gray-500 dark:hover:text-gray-200"
+                  disabled={isMatchedReport ? true : false}
+                >
+                  <FlagIcon />{' '}
+                  {isMatchedReport ? 'Reported' : 'Report this blog'}
+                </button>
+              )}
             </div>
 
             {/* Related post  */}
@@ -480,6 +571,74 @@ const MainDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* modal content start here  */}
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={open}
+          onClose={() => setOpen(false)}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <Box sx={modalStyle}>
+              <h3 className="w-full">Why do you want to report this blog ? </h3>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the first rule"
+              >
+                1 - For breaking the first rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the second rule"
+              >
+                2 - For breaking the second rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the third rule"
+              >
+                3 - For breaking the third rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the fourth rule"
+              >
+                4 - For breaking the fourth rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the fifth rule"
+              >
+                5 - For breaking the fifth rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="Something else"
+              >
+                6 - Something else
+              </button>
+              <button
+                onClick={handleReport}
+                className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
+              >
+                Report
+              </button>
+            </Box>
+          </Fade>
+        </Modal>
+        {/* modal content end here  */}
       </Container>
     </div>
   )
