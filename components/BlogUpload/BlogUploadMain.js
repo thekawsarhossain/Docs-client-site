@@ -80,6 +80,7 @@ const BlogUploadMain = () => {
       uploadDate: date,
       blogger: userInfoFromDB,
       comment: [],
+      reports: [],
     }
     fetch('https://polar-hamlet-38117.herokuapp.com/blogs', {
       method: 'POST',

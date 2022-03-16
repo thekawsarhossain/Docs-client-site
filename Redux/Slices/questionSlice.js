@@ -31,16 +31,12 @@ const questionsSlice = createSlice({
   initialState: {
     questions: null,
     question: null,
-    // bloggerDetails: null,
     status: false,
     error: '',
   },
 
   //  reducers here
   reducers: {
-    // ADD_TO_BLOGGER_DETAILS: (state, action) => {
-    //   state.bloggerDetails = action.payload
-    // },
     ADD_TO_QUESTION: (state, action) => {
       state.question = action.payload
       state.error = ''
@@ -62,13 +58,6 @@ const questionsSlice = createSlice({
       state.status = true
     })
     builder.addCase(fetchQuestions.pending, (state, action) => {
-      state.status = false
-    })
-    builder.addCase(fetchQuestion.fulfilled, (state, action) => {
-      state.question = action.payload
-      state.status = true
-    })
-    builder.addCase(fetchQuestion.pending, (state, action) => {
       state.status = false
     })
   },
