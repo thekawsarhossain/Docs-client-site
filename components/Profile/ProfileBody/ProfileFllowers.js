@@ -2,6 +2,7 @@
 const ProfileFllowers = (props) => {
   return (
     <div>
+      {/* search bar */}
       <form
         style={{
           boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
