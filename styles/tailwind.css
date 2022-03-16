@@ -39,7 +39,7 @@ body {
     @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
   }
   .link-item {
-    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
+    @apply two relative mr-5 w-max text-base font-bold text-white hover:text-white;
   }
   .link-hover {
     @apply absolute -bottom-1 bg-white transition-all;
@@ -47,7 +47,6 @@ body {
   .title-btn {
     @apply ml-5 mr-5 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
   }
- 
 
   /* authentication || login || register components classes here  */
   .auth-input {
@@ -280,7 +279,6 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   border-bottom: 1px solid transparent;
   @apply bg-slate-400 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white;
 }
-
 
 button {
   border: none;
@@ -1103,23 +1101,21 @@ legend + * {
   color: white;
 }
 
-
 /* Reviews css */
 
-.reviews input, textarea{
-display: flex;
-width: 80%;
-margin: 0 auto;
-margin-bottom: 20px;
-padding: 15px;
-border-radius: 5px;
-
+.reviews input,
+textarea {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
 }
-.reviews button{
+.reviews button {
   width: 20%;
   padding: 15px;
   border-radius: 5px;
-
 }
 
 .stacked-cards {
@@ -1167,4 +1163,3 @@ border-radius: 5px;
   box-shadow: 0 5px 10px 0px #333;
   transition: 0.5s ease transform;
 }
-
