@@ -20,9 +20,9 @@ const DetailsHeroSection = () => {
             <div className="self-center">
               <h1 className="pt-12 font-serif text-4xl">{blog?.title}</h1>
               <p className="pt-2 font-mono">Category: {blog?.category}</p>
-              <div className="mt-3 flex">
+              <div className="mt-3 flex pb-8">
                 <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
-                <p className="self-center pl-2 pb-8">
+                <p className="self-center pl-2">
                   {' '}
                   {blog?.blogger?.displayName} | {blog?.uploadDate} |{' '}
                   {blog?.uploadTime}
