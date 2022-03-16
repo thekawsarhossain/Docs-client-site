@@ -1,10 +1,10 @@
 import { Avatar, Container } from '@mui/material'
 import { useSelector } from 'react-redux'
-import Navbar from '../../Shared/Navbar/Navbar'
+import Navbar from '../Shared/Navbar/Navbar'
+import Link from 'next/link'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 
-const QDHeroSection = () => {
-  const blog = useSelector((state) => state?.reducers?.blogs?.blog)
-
+const QDHeroSection = (props) => {
   return (
     <div>
       <Navbar></Navbar>
@@ -17,15 +17,30 @@ const QDHeroSection = () => {
             style={{ minHeight: '300px' }}
             className="flex w-full pt-12 text-Docy-Dark dark:text-white"
           >
-            <div className="self-center">
-              <h1 className="pt-12 font-serif text-4xl">{blog?.title}</h1>
-              <p className="pt-2 font-mono">Category: {blog?.category}</p>
+            <div className="w-full self-center">
+              <div className="flex w-full justify-between pt-12">
+                <p className="font-mono text-red-400">
+                  {props?.question?.category}
+                </p>
+                <div className="mb-1 self-center">
+                  <Link href="/askQuestion">
+                    <a>
+                      <span className="text-1xl rounded-lg bg-orange-500 px-3 py-3  font-semibold text-Docy-Dark dark:text-white">
+                        Ask Question{' '}
+                        <span className="">
+                          <HelpOutlineIcon className="animate-pulse" />
+                        </span>
+                      </span>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <h1 className="pt-2 font-serif text-4xl">
+                {props?.question?.title}
+              </h1>
               <div className="mt-3 flex">
-                <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
-                <p className="self-center pl-2 pb-8">
-                  {' '}
-                  {blog?.blogger?.displayName} | {blog?.uploadDate} |{' '}
-                  {blog?.uploadTime}
+                <p className="self-center pb-8">
+                  {props?.question?.uploadDate} | {props?.question?.uploadTime}
                 </p>
               </div>
             </div>
