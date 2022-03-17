@@ -63,7 +63,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard/manageUsers">
+        <Link href="/adminDashboard/manageUser">
           <a>
             <ListItem button>
               <ListItemText><ManageAccountsSharpIcon/> Manage Users</ListItemText>

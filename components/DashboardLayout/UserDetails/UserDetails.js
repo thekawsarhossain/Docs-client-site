@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import * as React from 'react';
+import { useEffect, useState } from 'react'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -18,7 +18,30 @@ import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import AddSharpIcon from '@mui/icons-material/AddSharp';
 import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
-const UserDetails = () => {
+const UserDetails = (props) => {
+  const id = props.props.id;
+  // console.log(props);
+  const [details,setDetails] = useState([]);
+  const [blogs,setBlogs] = useState([]);
+  // console.log(blogs);
+  useEffect(() =>{
+      fetch("https://polar-hamlet-38117.herokuapp.com/users")
+      .then(res => res.json())
+      .then(data => setDetails(data))
+  },[])
+  const info = details.filter(td => td._id === id);
+
+  //------- here filter blogs by email ---------//
+  const email = info[0]?.email;
+  // console.log(email);
+  useEffect(() =>{
+    fetch("https://polar-hamlet-38117.herokuapp.com/blogs")
+    .then(res => res.json())
+    .then(data => setBlogs(data))
+},[])
+  
+const blogData = blogs.filter(dt => dt.blogger.email === email);
+ console.log(blogData);
     return (
 
 // here start user details
@@ -27,16 +50,18 @@ const UserDetails = () => {
         <Grid className='m-2' container spacing={2}>
             <Grid item xs={12} md={4}>
                       <div className='mt-10 shadow p-4 bg-slate-100'>
-                        <h6 className='font-bold'>About Rakib</h6>
+                        <h6 className='font-bold'>About {info[0]?.displayName}</h6>
                         <ul>
                            <hr className='mb-4'/>
-                            <li className='mb-4'><BusinessCenterIcon/> UX Designer At Docy</li>
+                            <li className='mb-4'><BusinessCenterIcon/> {info[0]?.profession} At Docy</li>
                                 <li className='mb-4'><LibraryBooksIcon/> BBA </li>
                                 <li className='mb-2' ><FavoriteIcon/> Single</li>
-                                <li className='mb-2'><LocationOnIcon/> Lived In Sonargoan</li>
+                                <li className='mb-2'><LocationOnIcon/> Lived In {info[0]?.address}</li>
                                 <li className='mb-2'><BloodtypeIcon/> (A+)</li>
+                                <li className='mb-2'><BloodtypeIcon/>Birthday:{info[0]?.birthDate}</li>
+                                <li className='mb-2'><BloodtypeIcon/>Website:{info[0]?.website}</li>
                                     
-                                    </ul>
+                        </ul>
                           
                          </div>
                          {/* here follower options */}
@@ -47,45 +72,26 @@ const UserDetails = () => {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 >
-                                <h6 className='font-bold'>Rakibs  Followers</h6>
+                                <h6 className='font-bold'>{info[0]?.displayName} Followers</h6>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                   <hr />
-                                    <ul className='text-center mt-4'>
-                                        <li className=' px-4 mb-6'>
+                                  <Box sx={{ flexGrow: 1 }}>
+                                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                                      {info[0]?.followers?.map((person) => (
+                                        <Grid item xs={2} sm={12} md={12} key={person?._id}>
+                                               <ul className='text-center mt-4'>
+                                        <li className=' px-4 mb-2'>
                                            <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6>
-                                          </div>
-                                           
+                                           <img className='w-12 h-12 rounded-full' src={person?.image} alt="" />
+                                             <p className='font-bold ml-3'>{person?.name}</p></div>    
                                         </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6>
-                                          </div>
-                                           
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6>
-                                          </div>
-                                           
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6>
-                                          </div>
-                                           
-                                        </li>
-                                       
-                                     </ul>
+                                      </ul>
+                                        </Grid>
+                                      ))}
+                                    </Grid>
+                                  </Box>
+                                  
                                 </AccordionDetails>
                             </Accordion>
                         </div>
@@ -97,48 +103,26 @@ const UserDetails = () => {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 >
-                                <h6 className='font-bold'>Rakibs Following</h6>
+                                <h6 className='font-bold'>{info[0]?.displayName} Following</h6>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                   <hr />
-                                    <ul className='text-center mt-4'>
+                                  <Box sx={{ flexGrow: 1 }}>
+                                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                                      {info[0]?.following?.map((person) => (
+                                        <Grid item xs={2} sm={12} md={12} key={person?._id}>
+                                               <ul className='text-center mt-4'>
                                         <li className=' px-4 mb-6'>
                                            <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
-                                        </li>
-                                        <li className=' px-4 mb-6'>
-                                           <div className="info flex items-center">
-                                           <img src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c" 
-                                            className="w-16 h-16  rounded-full border-4 border-indigo-600" alt="" />
-                                             <h6 className='font-bold ml-3'>Rakibul Hasan</h6></div>    
+                                           <img className='w-12 h-12 rounded-full' src={person?.image} alt="" />
+                                             <p className='font-bold ml-3'>{person?.name}</p></div>    
                                         </li>
                                       </ul>
+                                        </Grid>
+                                      ))}
+                                    </Grid>
+                                  </Box>
+                                  
                                 </AccordionDetails>
                             </Accordion>
                         </div>
@@ -146,72 +130,45 @@ const UserDetails = () => {
             </Grid>
             <Grid item xs={12} md={8}>
                <Container>
-               <div className=''>
-                     <h2 className='md:ml-96 ml-28 mt-6 mb-10 title'>My Posts</h2>
-                      <div>
-                      <Grid  className="mb-8" container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-         <Grid item xs={12} sm={6} md={4}>
-           <img src='https://images.unsplash.com/photo-1604700403855-dc64a1320324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80' className='-mb-4 h-80 md:h-64 w-full md:rounded object-cover' alt="" />
-         </Grid>
-         <Grid item xs={12} sm={6} md={8}>
-         <Link href='/'>
-           <a>
-           <div className=' border hover:shadow  md:rounded  px-6 py-5 md:h-64 h-72'>
-             <p className='text-red-600'>news</p>
-             <h3 className='font-bold pt-4 pb-10 hover:underline cursor-pointer '>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-            <div className="md:flex  items-center justify-between">
-             <div className="flex items-center mb-4">
-             <Avatar
-                  alt="Bloggers image"
-                  src='/'
-                  sx={{ width: 40, height: 40,mr:2 }}
-                />
-               <p> RH santo <br />
-                 <small className='hidden md:flex'> 02/03/2022 - 7:30 pm</small></p>
-             </div>
-             <div>
-               <p> <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />2</p>
-               </div>
-             </div>
-           </div>
-           </a>
-          </Link>
-         </Grid>
-         </Grid>
-      </div>
-      {/* here all post */}
-                      <div>
-                      <Grid  className="mb-8" container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-         <Grid item xs={12} sm={6} md={4}>
-           <img src='https://images.unsplash.com/photo-1604700403855-dc64a1320324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80' className='-mb-4 h-80 md:h-64 w-full md:rounded object-cover' alt="" />
-         </Grid>
-         <Grid item xs={12} sm={6} md={8}>
-         <Link href='/'>
-           <a>
-           <div className=' border hover:shadow  md:rounded  px-6 py-5 md:h-64 h-72'>
-             <p className='text-red-600'>news</p>
-             <h3 className='font-bold pt-4 pb-10 hover:underline cursor-pointer '>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-            <div className="md:flex  items-center justify-between">
-             <div className="flex items-center mb-4">
-             <Avatar
-                  alt="Bloggers image"
-                  src='/'
-                  sx={{ width: 40, height: 40,mr:2 }}
-                />
-               <p> RH santo <br />
-                 <small className='hidden md:flex'> 02/03/2022 - 7:30 pm</small></p>
-             </div>
-             <div>
-               <p> <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />2</p>
-               </div>
-             </div>
-           </div>
-           </a>
-          </Link>
-         </Grid>
-         </Grid>
-                      </div>
-               </div>
+               <h2 className='md:ml-96 ml-28 mt-6 mb-10 title'>My Posts</h2>
+               <Box sx={{ flexGrow: 1 }}>
+                  <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {blogData.map((blog) => (
+                      <Grid item xs={2} sm={4} md={12} key={blog?._id}>
+                          <Grid  className="mb-8" container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                              <Grid item xs={12} sm={6} md={4}>
+                                <img className='h-56' src={blog?.image} alt="" />
+                              </Grid>
+                              <Grid item xs={12} sm={6} md={8}>
+                              <Link onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                        href={`/blog/${blog?._id}`}>
+                                <a>
+                                <div className=' border hover:shadow  md:rounded  px-6 py-5 md:h-64 h-72'>
+                                  {/* <p className='text-red-600'>{blog?.title}</p> */}
+                                  <h3 className='font-bold pt-4 pb-10 hover:underline cursor-pointer '>{blog?.title} </h3>
+                                  <div className="md:flex  items-center justify-between">
+                                  <div className="flex items-center mb-4">
+                                  <Avatar
+                                        alt="Bloggers image"
+                                        src={info[0]?.image}
+                                        sx={{ width: 40, height: 40,mr:2 }}
+                                      />
+                                    <p>{blog?.blogger?.displayName} <br />
+                                      <small className='hidden md:flex'> {blog?.uploadDate} - {blog?.uploadTime}</small></p>
+                                  </div>
+                                  <div>
+                                    <p> <ForumOutlinedIcon sx={{ width: 18, height: 18 }} />{blog?.comment?.length}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                </a>
+                                </Link>
+                              </Grid>
+                          </Grid>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
                </Container>
             </Grid>
         </Grid>
