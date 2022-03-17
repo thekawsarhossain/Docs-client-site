@@ -1067,7 +1067,17 @@ legend + * {
   background: #24695c;
   color: white;
 }
-
+.user-icon-2 li {
+  background: #24695c;
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 20px;
+}
 /* Blog Detail Page  */
 #documentation img {
   margin: 0 auto;

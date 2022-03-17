@@ -23,9 +23,10 @@ const ManageUsers = () => {
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
+
+
   return (
     <Box>
-      <h2 className="mt-3 mb-16">User List</h2>
       <Box sx={{ flexGrow: 1 }}>
         <Grid
           container
@@ -34,7 +35,7 @@ const ManageUsers = () => {
         >
           {manageUsers.map((data) => (
             <Grid item xs={12} sm={4} md={3} key={data?._id}>
-              <div className=" h-full rounded bg-white shadow-md dark:bg-gray-900 dark:text-white">
+              <div className="cursor-pointer h-full rounded bg-white shadow-md dark:bg-gray-900 dark:text-white">
                 <div>
                   <img
                     src={data?.image}
