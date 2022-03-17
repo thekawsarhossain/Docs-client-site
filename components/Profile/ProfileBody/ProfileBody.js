@@ -43,10 +43,6 @@ const ProfileBody = (props) => {
         .includes(filter.toString().toLowerCase())
     )
   })
-  // dataSearch?.sort(
-  //   (firstItem, secondItem) =>
-  //     firstItem?.comment?.length - secondItem?.comment?.length
-  // )
   dataSearch?.reverse()
   return (
     <div>
