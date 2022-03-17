@@ -1,8 +1,8 @@
 const RBlog = () => {
   return (
     <div className="col-span-12 mx-2  mt-5 md:col-span-6">
-      <div className=" bg-slate-300 p-3">
-        <div className="block items-center divide-gray-100 sm:flex md:divide-x">
+      <div className=" rounded-lg bg-slate-300 p-3 dark:bg-Docy-Dark">
+        <div className="block items-center divide-gray-100 dark:divide-Docy-Dark sm:flex md:divide-x">
           <form className="mb-4 sm:mb-0 sm:pr-3" action="#" method="GET">
             <label
               //   for="products-search"
@@ -15,7 +15,7 @@ const RBlog = () => {
                 type="text"
                 name="email"
                 id="products-search"
-                className="mb-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-600 focus:ring-cyan-600 sm:text-sm"
+                className="mb-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-600 focus:ring-cyan-600 dark:bg-Docy-DarkLight dark:text-slate-100 sm:text-sm"
                 placeholder="Search for products"
               />
             </div>
@@ -113,7 +113,7 @@ const RBlog = () => {
             <div className="inline-block min-w-full align-middle">
               <div className="overflow-hidden shadow">
                 <table className="min-w-full table-fixed divide-y divide-gray-200">
-                  <thead className="bg-gray-100">
+                  <thead className="bg-gray-100 dark:bg-Docy-Dark">
                     <tr>
                       <th scope="col" className="p-4">
                         <div className="flex items-center">
@@ -133,42 +133,42 @@ const RBlog = () => {
                       </th>
                       <th
                         scope="col"
-                        className="p-4 text-left text-xs font-medium uppercase text-gray-500"
+                        className="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-300"
                       >
                         Product Name
                       </th>
                       <th
                         scope="col"
-                        className="p-4 text-left text-xs font-medium uppercase text-gray-500"
+                        className="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-300"
                       >
                         Technology
                       </th>
                       <th
                         scope="col"
-                        className="p-4 text-left text-xs font-medium uppercase text-gray-500"
+                        className="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-300"
                       >
                         ID
                       </th>
                       <th
                         scope="col"
-                        className="p-4 text-left text-xs font-medium uppercase text-gray-500"
+                        className="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-300"
                       >
                         Price
                       </th>
                       <th scope="col" className="p-4"></th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 bg-white">
+                  <tbody className="divide-y divide-gray-200 bg-white dark:bg-Docy-Dark">
                     {/* {{< products.inline >}} */}
                     {/* {{- range (index $.Site.Data "products") }} */}
-                    <tr className="hover:bg-gray-100">
+                    <tr className="hover:bg-gray-100 dark:hover:bg-Docy-DarkGray">
                       <td className="w-4 p-4">
                         <div className="flex items-center">
                           <input
                             id="checkbox-{{ .id }}"
                             aria-describedby="checkbox-1"
                             type="checkbox"
-                            className="focus:ring-3 h-4 w-4 rounded border-gray-300 bg-gray-50 focus:ring-cyan-200"
+                            className="focus:ring-3 h-4 w-4 rounded border-gray-300 bg-gray-50 focus:ring-cyan-200 dark:bg-Docy-Dark"
                           />
                           <label
                             // for="checkbox-{{ .id }}"
@@ -178,28 +178,28 @@ const RBlog = () => {
                           </label>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap p-4 text-sm font-normal text-gray-500">
-                        <div className="text-base font-semibold text-gray-900">
+                      <td className="whitespace-nowrap p-4 text-sm font-normal text-gray-500 ">
+                        <div className="text-base font-semibold text-gray-900 dark:text-white">
                           Name
                         </div>
-                        <div className="text-sm font-normal text-gray-500">
+                        <div className="text-sm font-normal text-gray-500 dark:text-gray-300">
                           category
                         </div>
                       </td>
-                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-gray-300">
                         technology
                       </td>
-                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-gray-300">
                         #id
                       </td>
-                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                      <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-gray-300">
                         price
                       </td>
                       <td className="space-x-2 whitespace-nowrap p-4">
                         <button
                           type="button"
                           data-modal-toggle="product-modal"
-                          className="inline-flex items-center rounded-lg bg-cyan-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200"
+                          className="inline-flex items-center rounded-lg bg-cyan-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 "
                         >
                           <svg
                             className="mr-2 h-5 w-5"
@@ -246,11 +246,11 @@ const RBlog = () => {
           </div>
         </div>
 
-        <div className="sticky bottom-0 right-0 w-full items-center border-t border-gray-200 bg-white p-4 sm:flex sm:justify-between">
+        <div className="sticky bottom-0 right-0 w-full items-center border-t border-gray-200 bg-white p-4 dark:bg-Docy-Dark sm:flex sm:justify-between">
           <div className="mb-4 flex items-center sm:mb-0">
             <a
               href="#"
-              className="inline-flex cursor-pointer justify-center rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+              className="inline-flex cursor-pointer justify-center rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300"
             >
               <svg
                 className="h-7 w-7"
@@ -267,7 +267,7 @@ const RBlog = () => {
             </a>
             <a
               href="#"
-              className="mr-2 inline-flex cursor-pointer justify-center rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+              className="mr-2 inline-flex cursor-pointer justify-center rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300"
             >
               <svg
                 className="h-7 w-7"
@@ -282,9 +282,15 @@ const RBlog = () => {
                 ></path>
               </svg>
             </a>
-            <span className="text-sm font-normal text-gray-500">
-              Showing <span className="font-semibold text-gray-900">1-20</span>{' '}
-              of <span className="font-semibold text-gray-900">2290</span>
+            <span className="text-sm font-normal text-gray-500 dark:text-gray-300">
+              Showing{' '}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                1-20
+              </span>{' '}
+              of{' '}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                2290
+              </span>
             </span>
           </div>
           <div className="flex items-center space-x-3">
