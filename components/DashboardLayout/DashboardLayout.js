@@ -22,6 +22,7 @@ import DashboardSharpIcon from '@mui/icons-material/DashboardSharp';
 import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
 import BookSharpIcon from '@mui/icons-material/BookSharp';
 import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -81,6 +82,13 @@ function DashboardLayout(props) {
           <a>
             <ListItem button>
               <ListItemText> <MarkEmailUnreadSharpIcon/> Messages</ListItemText>
+            </ListItem>
+          </a>
+        </Link>
+        <Link href="/adminDashboard/makeAdmin">
+          <a>
+            <ListItem button>
+              <ListItemText> <AdminPanelSettingsIcon/> Make Admin</ListItemText>
             </ListItem>
           </a>
         </Link>
