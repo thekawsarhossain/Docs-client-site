@@ -219,17 +219,14 @@ const CategoryBlog = () => {
                     </Grid>
                   </div>
                 ))}
-                {currentPosts[0] && (
                   <div className="pb-6">
                     <Pagination
-                      color="secondary"
-                      // count={5}
                       postsPerPage={postsPerPage}
-                      totalPosts={blogs.length}
+                      totalPosts={allBlogs.length}
                       paginate={paginate}
                     />
                   </div>
-                )}
+               
               </div>
             )}
           </div>
