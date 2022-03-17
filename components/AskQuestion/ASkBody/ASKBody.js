@@ -142,53 +142,52 @@ const ASKBody = () => {
                 {' '}
                 {allBlogs?.map((blog) => (
                   <div key={blog._id} className="mb-5 w-full">
-                    <Link
-                      onClick={() => dispatch(ADD_TO_QUESTION(blog))}
-                      href={`/question/${blog?._id}`}
-                    >
-                      <a>
-                        <div className=" rounded  bg-slate-100 px-6 py-3 hover:shadow dark:bg-Docy-DarkGray">
-                          <p className="text-sm text-red-400">
-                            {blog.category}
-                          </p>
-                          <h3 className="cursor-pointer pb-1 font-bold hover:underline ">
-                            {blog.title}
-                          </h3>
-                          <div className="tag-container flex flex-wrap rounded-lg pb-2">
-                            {blog?.tags?.map((tag, index) => {
-                              return (
-                                <div
-                                  key={index}
-                                  className="m-1 h-fit rounded bg-Docy-paleGeen  py-1 px-2 text-xs text-Docy-Dark"
-                                >
-                                  {tag}{' '}
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="items-center  justify-between md:flex">
-                            <div className="mb-2 flex items-center">
-                              <Avatar
-                                alt="Bloggers image"
-                                src={blog?.blogger?.image}
-                                sx={{ width: 40, height: 40, mr: 2 }}
-                              />
-                              <p>
-                                {' '}
-                                {blog?.blogger?.displayName} <br />
-                                <small className="hidden md:flex">
+                    <button onClick={() => dispatch(ADD_TO_QUESTION(blog))}>
+                      <Link href={`/question/${blog?._id}`}>
+                        <a>
+                          <div className=" rounded  bg-slate-100 px-6 py-3 hover:shadow dark:bg-Docy-DarkGray">
+                            <p className="text-sm text-red-400">
+                              {blog.category}
+                            </p>
+                            <h3 className="cursor-pointer pb-1 font-bold hover:underline ">
+                              {blog.title}
+                            </h3>
+                            <div className="tag-container flex flex-wrap rounded-lg pb-2">
+                              {blog?.tags?.map((tag, index) => {
+                                return (
+                                  <div
+                                    key={index}
+                                    className="m-1 h-fit rounded bg-Docy-paleGeen  py-1 px-2 text-xs text-Docy-Dark"
+                                  >
+                                    {tag}{' '}
+                                  </div>
+                                )
+                              })}
+                            </div>
+                            <div className="items-center  justify-between md:flex">
+                              <div className="mb-2 flex items-center">
+                                <Avatar
+                                  alt="Bloggers image"
+                                  src={blog?.blogger?.image}
+                                  sx={{ width: 40, height: 40, mr: 2 }}
+                                />
+                                <p>
                                   {' '}
-                                  {blog?.uploadDate} - {blog?.uploadTime}
-                                </small>
-                              </p>
-                            </div>
-                            <div>
-                              <p>{blog?.answers?.length} answers</p>
+                                  {blog?.blogger?.displayName} <br />
+                                  <small className="hidden md:flex">
+                                    {' '}
+                                    {blog?.uploadDate} - {blog?.uploadTime}
+                                  </small>
+                                </p>
+                              </div>
+                              <div>
+                                <p>{blog?.answers?.length} answers</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
-                    </Link>
+                        </a>
+                      </Link>
+                    </button>
                   </div>
                 ))}
               </div>
