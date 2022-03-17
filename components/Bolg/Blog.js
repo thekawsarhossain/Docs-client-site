@@ -212,8 +212,6 @@ const Blog = () => {
                 ))}
                 <div className="pb-6">
                   <Pagination
-                    // className=""
-                    // // count={5}
                     postsPerPage={postsPerPage}
                     totalPosts={blogs.length}
                     paginate={paginate}
