@@ -21,6 +21,7 @@ import { useDispatch } from 'react-redux'
 const ProfileEdit = (props) => {
   const [imageLoading, setImageLoading] = useState(false)
   const [image, setImage] = useState(props?.userInfoFromDB?.image)
+  console.log(image)
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
