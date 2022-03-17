@@ -111,7 +111,7 @@ export default function Index() {
           <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
             <div>
               <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500">
-                Video
+                Value
               </h6>
               <span className="text-xl font-semibold">$30,000</span>
               <span className="ml-2 inline-block rounded-md bg-green-100 px-2 py-px text-xs text-green-500">
@@ -268,7 +268,7 @@ export default function Index() {
         <div className="mt-10 grid grid-cols-12 gap-5">
           <RUser />
           <RBlog />
-          {/* <Review /> */}
+          <Review />
         </div>
       </div>
     </DashboardLayout>
