@@ -11,6 +11,8 @@ const Question = () => {
   // next js hooks for dynamic routuing
   const router = useRouter()
   const id = router.query.id
+  console.log(id)
+  console.log(id)
 
   // calling specfic blog depend on id here using redux
   useEffect(() => {

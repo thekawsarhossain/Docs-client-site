@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import { experimentalStyled as styled } from '@mui/material/styles'
@@ -29,6 +30,11 @@ import RemoveSharpIcon from '@mui/icons-material/RemoveSharp'
 import Navbar from '../Shared/Navbar/Navbar'
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
+import UserFollowers from './UserFollowers'
+import BlogerProfile from './BlogerProfile'
+import Example from '../Home/HeroSection/test'
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded'
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded'
 
 const Blogger = (props) => {
   const [showMore, setShowMore] = React.useState(false)
@@ -43,183 +49,87 @@ const Blogger = (props) => {
   // }, [showMore])
   return (
     <div>
-      <Navbar></Navbar>
-      {/* Banner section  */}
       <div>
-        {/*here user banner  */}
-        <div className="">
+        <Navbar />
+        {/* Hero section start */}
+        <div
+          style={{
+            background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
+            padding: '60px 0 0px',
+            position: 'relative',
+          }}
+          className="breadcrumb_area overflow-hidden"
+        >
           <div
-            id="show"
+            className="custom_container container"
             style={{
-              minHeight: '350px',
-              backgroundImage: `url(https://i.ibb.co/sRgf5qw/linkedin-default-background-cover-photo-1.png)`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'cover',
+              width: '100%',
+              marginRight: 'auto',
+              marginLeft: 'auto',
             }}
           >
-            <Container>
-              <div className="mx-auto flex w-64 flex-col  items-center justify-center pt-20 md:mx-0">
-                <div className="self-center">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/AOh14Gg-Y0BFICoasm2f78WUpEWY7l60FZx-BPaf4jmA=s96-c"
-                    className="h-32 w-32 rounded-full border-4 border-green-600  "
-                    alt="image"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className=" mt-1 font-bold text-white">Elon Mask</h3>
-                  <p className="mt-1 mb-3 text-white">Manager</p>
-                </div>
-                <div className="self-center">
-                  <ul className="user-icon my-1 flex">
-                    <li>
-                      <FacebookIcon sx={{ fontSize: '30px' }} />
-                    </li>
-                    <li>
-                      <GoogleIcon sx={{ fontSize: '30px' }} />
-                    </li>
-                    <li>
-                      <InstagramIcon sx={{ fontSize: '30px' }} />
-                    </li>
-                    <li>
-                      <TwitterIcon sx={{ fontSize: '30px' }} />
-                    </li>
-                    <li>
-                      <WifiIcon sx={{ fontSize: '30px' }} />
-                    </li>
-                  </ul>
+            <form action="#" className="">
+              <div className="relative flex justify-center">
+                <div className=" py-8 px-2">
+                  <div>
+                    <div className="md:flex">
+                      <div className=" py-3">
+                        <div className="relative flex">
+                          <div>
+                            <div className="text-center font-bold text-white dark:text-white">
+                              <h1 className="font-serif text-4xl">
+                                Hello! here is Docy
+                              </h1>
+                              <p className="pt-2 font-mono">
+                                Find your best blogger by Docy
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </Container>
+            </form>
           </div>
         </div>
+        {/* Hero section end */}
+        {/* Sub banner section start */}
+        <div className="bg-slate-200 dark:bg-Docy-Dark">
+          <Container sx={{ py: 2 }}>
+            <div className="flex justify-between text-gray-200 dark:text-black ">
+              <div className="flex items-center	text-sm text-black dark:text-white">
+                <>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                  <ArrowForwardIosRoundedIcon sx={{ fontSize: '15px' }} />
+                </>
+                <>
+                  {' '}
+                  <Link href="/">
+                    <a>Docs</a>
+                  </Link>{' '}
+                  <ArrowForwardIosRoundedIcon sx={{ fontSize: '15px' }} />
+                </>
+                <a>My Profile</a>
+              </div>
+              <div className="time text-sm	">
+                <p className="text-black dark:text-white">
+                  <AccessTimeRoundedIcon sx={{ fontSize: '17px' }} /> Updated on
+                  Jan 10, 2022
+                </p>
+              </div>
+            </div>
+          </Container>
+        </div>
+        {/* Sub banner section end */}
       </div>
       {/* here start user details */}
-      <Container>
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-4">
-            <div className="mt-10 bg-slate-100 p-4 shadow">
-              <h6 className="font-bold">About Rakib</h6>
-              <ul>
-                <hr className="mb-4" />
-                <li className="mb-4">
-                  <BusinessCenterIcon /> UX Designer At Docy
-                </li>
-                <li className="mb-4">
-                  <LibraryBooksIcon /> BBA{' '}
-                </li>
-                <li className="mb-2">
-                  <FavoriteIcon /> Single
-                </li>
-                <li className="mb-2">
-                  <LocationOnIcon /> Lived In Sonargoan
-                </li>
-                <li className="mb-2">
-                  <BloodtypeIcon /> (A+)
-                </li>
-              </ul>
-            </div>
-            <div
-              // style={{ marginTop: '-110px' }}
-              className="  rounded-xl bg-slate-100 dark:bg-darkBlue  "
-            >
-              {/* grid system for the items here  */}
-              <div className="grid grid-cols-1 lg:grid-cols-3">
-                <div
-                  // key={item.title}
-                  className=" border-w-1 border-b border-secondary"
-                >
-                  <div className="flex items-center p-8">
-                    <span className="ml-4">
-                      <Link href="/home">
-                        <h6 className="font-bold text-Docy-Dark dark:text-white">
-                          {/* {item?.title} */}
-                        </h6>
-                      </Link>
-                      <p className="text-secondary">{/* {item?.info} */}</p>
-                    </span>
-                  </div>
-                </div>
-
-                {/* buuton here  */}
-                <div className="my-4 text-center">
-                  <button
-                    className="rounded-md p-1 font-bold text-blue-800 duration-300 focus:ring-2"
-                    onClick={() => setShowMore(!showMore)}
-                  >
-                    {showMore ? (
-                      <ArrowCircleUpIcon className="animate-bounce" />
-                    ) : (
-                      <ArrowCircleDownIcon className="animate-bounce" />
-                    )}{' '}
-                    More{' '}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-8">
-            <div className="mt-10">
-              <Grid
-                // key={blog?._id}
-                className="mb-8"
-                container
-                spacing={{ xs: 2, md: 2 }}
-                columns={{ xs: 4, sm: 12, md: 12 }}
-              >
-                <Grid item xs={12} sm={4} md={4}>
-                  <img
-                    // src={blog?.image}
-                    src="https://i.ibb.co/vZFxQTW/SEI89459931-1-1.jpg"
-                    className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
-                    alt=""
-                  />
-                </Grid>
-                <Grid item xs={12} sm={8} md={8}>
-                  <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                    <div className="flex justify-between">
-                      <span className="text-red-400">category</span>
-                    </div>
-                    <Link
-                      onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                      // href={`/blog/${blog?._id}`}
-                      href="/"
-                    >
-                      <a>
-                        <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                          title
-                        </h3>
-                      </a>
-                    </Link>
-                    <div className="items-center  justify-between md:flex">
-                      <div className="mb-4 flex items-center">
-                        <Avatar
-                          alt="Bloggers image"
-                          // src={blog?.blogger?.image}
-                          src="https://i.ibb.co/vZFxQTW/SEI89459931-1-1.jpg"
-                          sx={{ width: 40, height: 40, mr: 2 }}
-                        />
-                        <p>
-                          {' '}
-                          blogger name <br />
-                          <small className="hidden md:flex"> date - time</small>
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          {' '}
-                          <ForumOutlinedIcon sx={{ width: 18, height: 18 }} /> 3
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </Grid>
-              </Grid>
-            </div>
-          </div>
-        </div>
-      </Container>
+      <div>
+        <BlogerProfile blogger={props?.blogger} />
+      </div>
     </div>
   )
 }

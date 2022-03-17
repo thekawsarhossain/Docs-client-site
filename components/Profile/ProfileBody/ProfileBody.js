@@ -43,10 +43,6 @@ const ProfileBody = (props) => {
         .includes(filter.toString().toLowerCase())
     )
   })
-  // dataSearch?.sort(
-  //   (firstItem, secondItem) =>
-  //     firstItem?.comment?.length - secondItem?.comment?.length
-  // )
   dataSearch?.reverse()
   return (
     <div>
@@ -138,7 +134,7 @@ const ProfileBody = (props) => {
                       Followers
                     </span>
                     <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                      4
+                      {props?.userInfoFromDB?.followers?.length}
                     </span>
                   </button>
                   <button
@@ -160,7 +156,7 @@ const ProfileBody = (props) => {
                       Following
                     </span>
                     <span className="float-right mr-4 rounded-md bg-green-500 px-2 text-center text-white">
-                      4
+                      {props?.userInfoFromDB?.following?.length}
                     </span>
                   </button>
                 </div>
@@ -196,14 +192,18 @@ const ProfileBody = (props) => {
                   toggleState === 4 ? 'content  active-content' : 'content'
                 }
               >
-                <ProfileFllowers></ProfileFllowers>
+                <ProfileFllowers
+                  userInfoFromDB={props?.userInfoFromDB}
+                ></ProfileFllowers>
               </div>
               <div
                 className={
                   toggleState === 5 ? 'content  active-content' : 'content'
                 }
               >
-                <ProfileFllowing></ProfileFllowing>
+                <ProfileFllowing
+                  userInfoFromDB={props?.userInfoFromDB}
+                ></ProfileFllowing>
               </div>
             </div>
           </div>

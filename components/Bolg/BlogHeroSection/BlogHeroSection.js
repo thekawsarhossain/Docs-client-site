@@ -8,44 +8,46 @@ const BlogHeroSection = () => {
       <Navbar />
       {/* Banner section  */}
       <div
-        className="relative bg-Docy-paleGeen dark:bg-Docy-Dark "
-        style={{ minHeight: '200px' }}
+        style={{
+          background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
+          padding: '60px 0 0px',
+          position: 'relative',
+        }}
+        className="breadcrumb_area overflow-hidden"
       >
-        {/* <div>
-          <img
-            className="absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_left.png"
-            alt=""
-          />
-          <img
-            className="absolute top-40 left-24 hidden md:block"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_01.png"
-            alt=""
-          />
-          <img
-            className="absolute right-40 top-32 hidden md:block"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_02.png"
-            alt=""
-          />
-          <img
-            className="absolute right-0 top-24"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_right.png"
-            alt=""
-          />
-        </div> */}
-        <Container>
-          <div
-            style={{ minHeight: '200px' }}
-            className=" w-full text-Docy-Dark dark:text-white "
-          >
-            <div className="pt-24 text-center">
-              <h1 className="font-serif text-4xl">Docy Blog List</h1>
-              <p className="pt-2 font-mono">
-                Keep explore, keep taking knowledge, be happy
-              </p>
+        <div
+          className="custom_container container"
+          style={{
+            width: '100%',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+          }}
+        >
+          <form action="#" className="">
+            <div className="relative flex justify-center">
+              <div className=" py-8 px-2">
+                <div>
+                  <div className="md:flex">
+                    <div className=" py-3">
+                      <div className="relative flex">
+                        <div>
+                          <div className="text-center font-bold text-white dark:text-white">
+                            <h1 className="font-serif text-4xl">
+                              Docy Blog List
+                            </h1>
+                            <p className="pt-2 font-mono">
+                              Keep explore, keep taking knowledge, be happy
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </Container>
+          </form>
+        </div>
       </div>
     </div>
   )

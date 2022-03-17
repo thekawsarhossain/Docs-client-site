@@ -39,7 +39,7 @@ body {
     @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
   }
   .link-item {
-    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
+    @apply two relative mr-5 w-max text-base font-bold text-white hover:text-white;
   }
   .link-hover {
     @apply absolute -bottom-1 bg-white transition-all;
@@ -47,7 +47,13 @@ body {
   .title-btn {
     @apply ml-5 mr-5 rounded-full border-2 border-gray-400 px-4 py-2 text-base font-bold hover:border-white hover:text-white;
   }
- 
+  /* naavbar regarding end here */
+
+  /* video section regarding start here  */
+  .videoList-container {
+    @apply py-32;
+  }
+  /* video section regarding end here  */
 
   /* authentication || login || register components classes here  */
   .auth-input {
@@ -280,7 +286,6 @@ span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
   border-bottom: 1px solid transparent;
   @apply bg-slate-400 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white;
 }
-
 
 button {
   border: none;
@@ -1102,69 +1107,42 @@ legend + * {
   background-color: #3636f8;
   color: white;
 }
-
-
-/* Reviews css */
-
-.reviews input, textarea{
-display: flex;
-width: 80%;
-margin: 0 auto;
-margin-bottom: 20px;
-padding: 15px;
-border-radius: 5px;
-
-}
-.reviews button{
-  width: 20%;
-  padding: 15px;
-  border-radius: 5px;
-
-}
-
-.stacked-cards {
+/* Team Members */
+.profile-card {
   position: relative;
+  font-family: sans-serif;
+  width: 220px;
+  height: 220px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+  margin: 0 25px;
 }
-.stacked-cards ul {
-  position: relative;
-  max-width: 60%;
-  margin: 0 auto;
-  padding-left: 0;
+.profile-card:hover {
+  border-radius: 10px;
+  height: 260px;
 }
-
-.stacked-cards li {
-  margin-top: 5px;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px 0px #333;
-  list-style: none;
-  width: 65%;
-  position: absolute;
-  left: 50%;
-  transition: 0.5s ease transform;
+.profile-card:hover .img {
+  transform: translateY(-60px);
 }
-
-.stacked-cards li:after {
-  bottom: 0;
-  content: '';
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+.profile-card:hover img {
+  border-radius: 10px;
 }
-.stacked-cards li.active:after {
-  display: none;
+.profile-card:hover .caption {
+  opacity: 1;
 }
-.stacked-cards li img {
-  position: relative;
-  display: block;
-  max-width: 100%;
-  height: auto;
-  z-index: 4;
+.caption .social-links a {
+  color: #333;
+  margin-right: 15px;
+  font-size: 21px;
+  transition: 0.6s;
 }
-.stacked-cards li.active {
-  cursor: default;
-  box-shadow: 0 5px 10px 0px #333;
-  transition: 0.5s ease transform;
+.social-links a:hover {
+  color: #0c52a1;
 }
-
+.caption {
+  transform: translateY(-80px);
+  opacity: 0;
+}

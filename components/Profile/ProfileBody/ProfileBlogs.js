@@ -46,7 +46,7 @@ const ProfileBlogs = (props) => {
   return (
     <div className=" my-5">
       <div>
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <p className="flex justify-center ">
             <input
               style={{ minHeight: '30px' }}
@@ -59,7 +59,80 @@ const ProfileBlogs = (props) => {
               <SearchIcon />
             </button>
           </p>
-        </div>
+        </div> */}
+        <form
+          style={{
+            boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
+          }}
+          role="search"
+          method="get"
+          id="scisco-user-search-form"
+          className="relative mb-10 mt-5 rounded-md border-0 p-6 dark:bg-Docy-DarkM"
+        >
+          <div
+            style={{ marginRight: '-10px', marginLeft: '-10px' }}
+            className="form-row grid grid-cols-12"
+          >
+            <div className="col-span-12">
+              <div
+                style={{
+                  boxShadow: '0 3px 2px rgb(233 236 239 / 5%)',
+                  borderRadius: '0.25rem',
+                  transition: 'all .15s ease-in-out',
+                  position: 'relative',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'stretch',
+                  width: '100%',
+                }}
+                className="input-group"
+              >
+                <input
+                  onChange={props.searchText.bind(this)}
+                  type="text"
+                  className="form-control"
+                  minLength="3"
+                  placeholder="Search by name..."
+                  name="qa_user"
+                  style={{
+                    display: ' block',
+                    width: '100%',
+                    height: 'calc(1.5em + 1.25rem + 2px)',
+                    padding: '0.625rem 0.85rem',
+                    fontSize: '.9rem',
+                    fontWeight: '400',
+                    lineHeight: '1.5',
+                    color: '#525f7f',
+                    backgroundColor: '#fff',
+                    backgroundClip: ' padding-box',
+                    border: ' 1px solid rgba(0,0,0,0.1)',
+                    borderRadius: '0.25rem',
+                    boxShadow: '0 3px 2px rgb(233 236 239 / 5%)',
+                    transition: 'all .2s ease-in-out',
+                  }}
+                />
+                <div
+                  style={{ marginleft: '-1px' }}
+                  className="input-group-append"
+                >
+                  <button
+                    style={{
+                      borderTopLeftRadius: '0',
+                      borderBottomLeftRadius: '0',
+                      position: 'relative',
+                      zIndex: '2',
+                      transform: 'none !important',
+                    }}
+                    type="submit"
+                    className="btn btn-info"
+                  >
+                    <i className="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
         {/* Blogs list  */}
         {/* here start show blog section */}
 
@@ -79,7 +152,7 @@ const ProfileBlogs = (props) => {
               />
             </Grid>
             <Grid item xs={12} sm={8} md={8}>
-              <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
+              <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkM md:h-64 md:rounded">
                 <div className="flex justify-between">
                   <span className="text-red-400">{blog?.category}</span>
                   <button

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Navbar from '../Shared/Navbar/Navbar'
+import Navbar from '../../../components/Shared/Navbar/Navbar'
 import { Avatar, Container, Grid } from '@mui/material'
-import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
+import BlogHeroSection from '../../../components/Bolg/BlogHeroSection/BlogHeroSection'
 import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -10,14 +10,16 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
-import Footer from '../Shared/Footer/Footer'
+import Footer from '../../../components/Shared/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-// import {fetchBlogs } from
 import Head from 'next/head'
-import { ADD_TO_BLOG, fetchBlogs } from '../../Redux/Slices/blogSlice'
-import Pagination from './Pagination'
+import Pagination from '../../../components/Bolg/Pagination'
+import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
+import { useRouter } from 'next/router'
 
-const Blog = () => {
+const CategoryBlog = () => {
+  const router = useRouter()
+  const id = router.query.id
   const [search, setSearch] = useState(false)
   // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
@@ -36,8 +38,11 @@ const Blog = () => {
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const allBlogs = [].concat(blogs).reverse()
-  const recentPosts = allBlogs?.slice(0, 3)
+  const allBlogs = []
+    .concat(blogs)
+    .reverse()
+    .filter((td) => td?.category === id)
+  const recentPosts = [].concat(blogs)?.reverse().slice(0, 3)
 
   const currentPosts = allBlogs?.slice(indexOfFirstPost, indexOfLastPost)
 
@@ -62,9 +67,6 @@ const Blog = () => {
   dataSearch?.reverse()
   return (
     <div>
-      <Head>
-        <title>Blog List</title>
-      </Head>
       <Navbar />
       <BlogHeroSection />
       <Container className="mt-16">
@@ -340,4 +342,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default CategoryBlog

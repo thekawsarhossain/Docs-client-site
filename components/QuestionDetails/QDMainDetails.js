@@ -34,14 +34,15 @@ const QDTextEditor = dynamic(() => import('./QDTextEditor'), {
   ssr: false,
 })
 
-const QDMainDetails = () => {
+const QDMainDetails = (props) => {
   const [documentation, setDocumentation] = useState('')
 
   const dispatch = useDispatch()
 
   // next js hooks for dynamic routuing
-  const router = useRouter()
-  const id = router.query.id
+  // const router = useRouter()
+  const id = props?.question?._id
+  console.log(props?.question?._id)
 
   // calling specfic blog depend on id here using redux
   useEffect(() => {
@@ -60,6 +61,7 @@ const QDMainDetails = () => {
 
   // getting the match blog with id
   const question = useSelector((state) => state?.reducers?.questions?.question)
+  console.log(questions)
 
   // Related Posts
   const relatedPosts = questions

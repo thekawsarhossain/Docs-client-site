@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Container } from '@mui/material'
 import Navbar from '../../Shared/Navbar/Navbar'
 
 const HeadSection = () => {
@@ -6,45 +7,49 @@ const HeadSection = () => {
     <div>
       <Navbar></Navbar>
       <div
-        className="bg-Docy-PaleGrey dark:bg-Docy-Dark"
-        style={{ minHeight: '310px' }}
+        style={{
+          background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
+          padding: '60px 0 0px',
+          position: 'relative',
+        }}
+        className="breadcrumb_area overflow-hidden"
       >
-        <div>
-          <img
-            className="absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_left.png"
-            alt=""
-          />
-          <img
-            className="absolute top-40 left-24 hidden md:block"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_01.png"
-            alt=""
-          />
-          <img
-            className="absolute right-40 top-32 hidden md:block"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/man_02.png"
-            alt=""
-          />
-          <img
-            className="absolute right-0 top-24"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/typography/leaf_right.png"
-            alt=""
-          />
-        </div>
-        <div
-          style={{ minHeight: '310px' }}
-          className="flex w-full items-center justify-center text-center text-Docy-Dark dark:text-white"
-        >
-          <div className="self-center">
-            <h1 className="font-serif text-4xl">
-              Hello! here is <span className="font-extrabold">Docy</span>{' '}
-            </h1>
-            <p className="pt-2 font-mono">
-              Shear your blog or documentation with{' '}
-              <span className="font-black">Docy</span>
-            </p>
+        <Container>
+          <div
+            className="custom_container container"
+            style={{
+              width: '100%',
+              marginRight: 'auto',
+              marginLeft: 'auto',
+            }}
+          >
+            <form action="#" className="">
+              <div className="relative flex justify-center">
+                <div className=" py-8 px-2">
+                  <div>
+                    <div className="md:flex">
+                      <div className=" py-3">
+                        <div className="relative flex">
+                          <div>
+                            <div className="text-center font-bold text-white dark:text-white">
+                              <h1 className="font-serif text-4xl">
+                                Hello! here is Docy
+                              </h1>
+                              <p className="pt-2 font-mono">
+                                Shear your blog or documentation with{' '}
+                                <span className="font-black">Docy</span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   )
