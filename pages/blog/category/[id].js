@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Navbar from '../Shared/Navbar/Navbar'
+import Navbar from '../../../components/Shared/Navbar/Navbar'
 import { Avatar, Container, Grid } from '@mui/material'
-import BlogHeroSection from './BlogHeroSection/BlogHeroSection'
+import BlogHeroSection from '../../../components/Bolg/BlogHeroSection/BlogHeroSection'
 import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -10,14 +10,16 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import { useEffect, useState } from 'react'
-import Footer from '../Shared/Footer/Footer'
+import Footer from '../../../components/Shared/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-// import {fetchBlogs } from
 import Head from 'next/head'
-import { ADD_TO_BLOG, fetchBlogs } from '../../Redux/Slices/blogSlice'
-import Pagination from './Pagination'
+import Pagination from '../../../components/Bolg/Pagination'
+import { ADD_TO_BLOG, fetchBlogs } from '../../../Redux/Slices/blogSlice'
+import { useRouter } from 'next/router'
 
-const Blog = () => {
+const CategoryBlog = () => {
+  const router = useRouter()
+  const id = router.query.id
   const [search, setSearch] = useState(false)
   // DISPATCH REDUX HOOK HERE
   const dispatch = useDispatch()
@@ -36,8 +38,11 @@ const Blog = () => {
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const allBlogs = [].concat(blogs).reverse()
-  const recentPosts = allBlogs?.slice(0, 3)
+  const allBlogs = []
+    .concat(blogs)
+    .reverse()
+    .filter((td) => td?.category === id)
+  const recentPosts = [].concat(blogs)?.reverse().slice(0, 3)
 
   const currentPosts = allBlogs?.slice(indexOfFirstPost, indexOfLastPost)
 
@@ -62,9 +67,6 @@ const Blog = () => {
   dataSearch?.reverse()
   return (
     <div>
-      <Head>
-        <title>Blog List</title>
-      </Head>
       <Navbar />
       <BlogHeroSection />
       <Container className="mt-16">
@@ -152,73 +154,82 @@ const Blog = () => {
             )}
             {!search && (
               <div>
+                {!currentPosts[0] && (
+                  <div className="text-center">
+                    <h1>No one posted in this category!</h1>
+                  </div>
+                )}
                 {currentPosts?.map((blog) => (
-                  <Grid
-                    key={blog?._id}
-                    className="mb-8"
-                    container
-                    spacing={{ xs: 2, md: 2 }}
-                    columns={{ xs: 4, sm: 12, md: 12 }}
-                  >
-                    <Grid item xs={12} sm={4} md={4}>
-                      <img
-                        src={blog?.image}
-                        className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
-                        alt=""
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={8} md={8}>
-                      <Link
-                        onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                        href={`/blog/${blog?._id}`}
-                      >
-                        <a>
-                          <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                            <p className="text-red-400">{blog.category}</p>
-                            <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                              {blog.title}
-                            </h3>
-                            <div className="items-center  justify-between md:flex">
-                              <div className="mb-4 flex items-center">
-                                <Avatar
-                                  alt="Bloggers image"
-                                  src={blog?.blogger?.image}
-                                  sx={{ width: 40, height: 40, mr: 2 }}
-                                />
-                                <p>
-                                  {' '}
-                                  {blog?.blogger?.displayName} <br />
-                                  <small className="hidden md:flex">
+                  <div key={blog?._id}>
+                    <h3 className="pb-4">{id} category related</h3>
+                    <Grid
+                      className="mb-8"
+                      container
+                      spacing={{ xs: 2, md: 2 }}
+                      columns={{ xs: 4, sm: 12, md: 12 }}
+                    >
+                      <Grid item xs={12} sm={4} md={4}>
+                        <img
+                          src={blog?.image}
+                          className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
+                          alt=""
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={8} md={8}>
+                        <Link
+                          onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                          href={`/blog/${blog?._id}`}
+                        >
+                          <a>
+                            <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
+                              <p className="text-red-400">{blog.category}</p>
+                              <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
+                                {blog.title}
+                              </h3>
+                              <div className="items-center  justify-between md:flex">
+                                <div className="mb-4 flex items-center">
+                                  <Avatar
+                                    alt="Bloggers image"
+                                    src={blog?.blogger?.image}
+                                    sx={{ width: 40, height: 40, mr: 2 }}
+                                  />
+                                  <p>
                                     {' '}
-                                    {blog?.uploadDate} - {blog?.uploadTime}
-                                  </small>
-                                </p>
-                              </div>
-                              <div>
-                                <p>
-                                  {' '}
-                                  <ForumOutlinedIcon
-                                    sx={{ width: 18, height: 18 }}
-                                  />{' '}
-                                  {blog?.comment?.length}
-                                </p>
+                                    {blog?.blogger?.displayName} <br />
+                                    <small className="hidden md:flex">
+                                      {' '}
+                                      {blog?.uploadDate} - {blog?.uploadTime}
+                                    </small>
+                                  </p>
+                                </div>
+                                <div>
+                                  <p>
+                                    {' '}
+                                    <ForumOutlinedIcon
+                                      sx={{ width: 18, height: 18 }}
+                                    />{' '}
+                                    {blog?.comment?.length}
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </a>
-                      </Link>
+                          </a>
+                        </Link>
+                      </Grid>
                     </Grid>
-                  </Grid>
+                  </div>
                 ))}
-                <div className="pb-6">
-                  <Pagination
-                    color="secondary"
-                    // count={5}
-                    postsPerPage={postsPerPage}
-                    totalPosts={blogs.length}
-                    paginate={paginate}
-                  />
-                </div>
+                {currentPosts[0] && (
+                  <div className="pb-6">
+                    <Pagination
+                      color="secondary"
+                      // count={5}
+                      postsPerPage={postsPerPage}
+                      totalPosts={blogs.length}
+                      paginate={paginate}
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -340,4 +351,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default CategoryBlog

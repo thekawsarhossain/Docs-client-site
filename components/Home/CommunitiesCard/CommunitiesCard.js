@@ -5,10 +5,11 @@ import { Box, Container } from '@mui/material'
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
 
 const fakeData = [
   {
-    icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-1@2x-1.svg',
+    icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-4@2x-1.svg',
     title: 'Creative',
     info: '3 Posts',
   },
@@ -23,7 +24,7 @@ const fakeData = [
     info: '3 Posts',
   },
   {
-    icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-4@2x-1.svg',
+    icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-1@2x-1.svg',
     title: 'News',
     info: '0 Posts',
   },
@@ -34,7 +35,7 @@ const fakeData = [
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/07/icon-6@2x-1.svg',
-    title: 'skill',
+    title: 'Skill',
     info: '10 Posts',
   },
   {
@@ -44,17 +45,27 @@ const fakeData = [
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2019/04/smile@2x.png',
-    title: 'Social Media',
+    title: 'Trending',
     info: '5 Posts',
   },
   {
     icon: 'https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2021/04/icon-8@2x.svg',
-    title: 'Trending',
+    title: 'Education',
     info: '4 Posts',
   },
 ]
 
 const CommunitiesCard = () => {
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // getting all blogs from redux here
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
+
+  // const categoryWiseBlogs = blogs.filter(
+  //   (td) => td?.category === event.target.value
+  // )
+
   const [showMore, setShowMore] = React.useState(false)
   const [data, setData] = React.useState([])
 
@@ -88,12 +99,20 @@ const CommunitiesCard = () => {
                     alt="img"
                   />
                   <span className="ml-4">
-                    <Link href="/home">
-                      <h6 className="font-bold text-Docy-Dark dark:text-white">
-                        {item?.title}
-                      </h6>
+                    <Link href={`/blog/category/${item?.title}`}>
+                      <a>
+                        <h6 className="font-bold text-Docy-Dark dark:text-white">
+                          {item?.title}
+                        </h6>
+                      </a>
                     </Link>
-                    <p className="text-secondary">{item?.info}</p>
+                    <p className="text-secondary">
+                      {
+                        blogs?.filter((td) => td?.category === item?.title)
+                          .length
+                      }{' '}
+                      Posts
+                    </p>
                   </span>
                 </div>
               </div>

@@ -411,34 +411,19 @@ const MainDetails = () => {
             <div className="pb-3">
               <div>
                 <img
-                  className="h-56 w-80 border border-white object-cover p-1"
+                  className="mx-auto border border-white object-cover p-1"
                   src={blog?.blogger?.image}
                   alt="blogger-image"
                 />
               </div>
 
-              {/* following btn here  */}
-              {isMatched ? (
-                <button className="my-3 w-80 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
-                  Following
-                </button>
-              ) : user?.email !== blog?.blogger?.email ? (
-                <button
-                  onClick={() => handleFollow(blog.blogger)}
-                  className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
-                >
-                  Follow
-                </button>
-              ) : (
-                ''
-              )}
-
               <button
+                className="w-full"
                 onClick={() => dispatch(ADD_TO_BLOGGER_DETAILS(blog?.blogger))}
               >
                 <Link href={`/blog/blogger/${blog?.blogger?._id}`}>
                   <a>
-                    <h1 className="py-2 font-sans text-4xl font-bold underline">
+                    <h1 className="w-full py-2 text-center font-sans text-4xl font-bold hover:underline">
                       {blog?.blogger?.displayName}
                     </h1>
                   </a>
@@ -451,6 +436,24 @@ const MainDetails = () => {
               </p> */}
 
               <p className="text-center">{blog?.blogger?.profession}</p>
+
+              <div className="flex justify-center">
+                {/* following btn here  */}
+                {isMatched ? (
+                  <button className="my-3 cursor-not-allowed rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
+                    Following
+                  </button>
+                ) : user?.email !== blog?.blogger?.email ? (
+                  <button
+                    onClick={() => handleFollow(blog.blogger)}
+                    className="my-3 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
+                  >
+                    Follow
+                  </button>
+                ) : (
+                  ''
+                )}
+              </div>
             </div>
             {/* Other posts  */}
             <div className=" recent-blog mt-10 mb-10 rounded bg-slate-100 p-4 text-center dark:bg-Docy-DarkGray">
@@ -460,7 +463,7 @@ const MainDetails = () => {
                 <div key={otherPost?._id} className="recent-blog mt-6">
                   <div className=" flex">
                     <img
-                      className="h-32 w-32 rounded "
+                      className="h-32 w-32 rounded object-cover"
                       src={otherPost?.image}
                       alt=""
                     />
