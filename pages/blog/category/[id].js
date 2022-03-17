@@ -154,73 +154,82 @@ const CategoryBlog = () => {
             )}
             {!search && (
               <div>
+                {!currentPosts[0] && (
+                  <div className="text-center">
+                    <h1>No one posted in this category!</h1>
+                  </div>
+                )}
                 {currentPosts?.map((blog) => (
-                  <Grid
-                    key={blog?._id}
-                    className="mb-8"
-                    container
-                    spacing={{ xs: 2, md: 2 }}
-                    columns={{ xs: 4, sm: 12, md: 12 }}
-                  >
-                    <Grid item xs={12} sm={4} md={4}>
-                      <img
-                        src={blog?.image}
-                        className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
-                        alt=""
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={8} md={8}>
-                      <Link
-                        onClick={() => dispatch(ADD_TO_BLOG(blog))}
-                        href={`/blog/${blog?._id}`}
-                      >
-                        <a>
-                          <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                            <p className="text-red-400">{blog.category}</p>
-                            <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                              {blog.title}
-                            </h3>
-                            <div className="items-center  justify-between md:flex">
-                              <div className="mb-4 flex items-center">
-                                <Avatar
-                                  alt="Bloggers image"
-                                  src={blog?.blogger?.image}
-                                  sx={{ width: 40, height: 40, mr: 2 }}
-                                />
-                                <p>
-                                  {' '}
-                                  {blog?.blogger?.displayName} <br />
-                                  <small className="hidden md:flex">
+                  <div key={blog?._id}>
+                    <h3 className="pb-4">{id} category related</h3>
+                    <Grid
+                      className="mb-8"
+                      container
+                      spacing={{ xs: 2, md: 2 }}
+                      columns={{ xs: 4, sm: 12, md: 12 }}
+                    >
+                      <Grid item xs={12} sm={4} md={4}>
+                        <img
+                          src={blog?.image}
+                          className="-mb-4 h-80 w-full object-cover md:h-64 md:rounded"
+                          alt=""
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={8} md={8}>
+                        <Link
+                          onClick={() => dispatch(ADD_TO_BLOG(blog))}
+                          href={`/blog/${blog?._id}`}
+                        >
+                          <a>
+                            <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
+                              <p className="text-red-400">{blog.category}</p>
+                              <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
+                                {blog.title}
+                              </h3>
+                              <div className="items-center  justify-between md:flex">
+                                <div className="mb-4 flex items-center">
+                                  <Avatar
+                                    alt="Bloggers image"
+                                    src={blog?.blogger?.image}
+                                    sx={{ width: 40, height: 40, mr: 2 }}
+                                  />
+                                  <p>
                                     {' '}
-                                    {blog?.uploadDate} - {blog?.uploadTime}
-                                  </small>
-                                </p>
-                              </div>
-                              <div>
-                                <p>
-                                  {' '}
-                                  <ForumOutlinedIcon
-                                    sx={{ width: 18, height: 18 }}
-                                  />{' '}
-                                  {blog?.comment?.length}
-                                </p>
+                                    {blog?.blogger?.displayName} <br />
+                                    <small className="hidden md:flex">
+                                      {' '}
+                                      {blog?.uploadDate} - {blog?.uploadTime}
+                                    </small>
+                                  </p>
+                                </div>
+                                <div>
+                                  <p>
+                                    {' '}
+                                    <ForumOutlinedIcon
+                                      sx={{ width: 18, height: 18 }}
+                                    />{' '}
+                                    {blog?.comment?.length}
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </a>
-                      </Link>
+                          </a>
+                        </Link>
+                      </Grid>
                     </Grid>
-                  </Grid>
+                  </div>
                 ))}
-                <div className="pb-6">
-                  <Pagination
-                    color="secondary"
-                    // count={5}
-                    postsPerPage={postsPerPage}
-                    totalPosts={blogs.length}
-                    paginate={paginate}
-                  />
-                </div>
+                {currentPosts[0] && (
+                  <div className="pb-6">
+                    <Pagination
+                      color="secondary"
+                      // count={5}
+                      postsPerPage={postsPerPage}
+                      totalPosts={blogs.length}
+                      paginate={paginate}
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>

@@ -48,7 +48,7 @@ const useFirebase = () => {
           'https://i.ibb.co/DMYmT3x/Generic-Profile.jpg',
           'POST'
         )
-        router.replace('/')
+        router.replace('/giveInfo')
       })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
@@ -138,6 +138,10 @@ const useFirebase = () => {
       profession: '',
       website: '',
       birthDate: '',
+      facebook: '',
+      twitter: '',
+      linkedin: '',
+      instagram: '',
     }
 
     SET_STATUS(true)
