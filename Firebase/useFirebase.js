@@ -148,7 +148,6 @@ const useFirebase = () => {
         body: JSON.stringify(payload),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result))
         .catch((error) => dispatch(ADD_ERROR(error.message)))
         .finally(() => dispatch(SET_STATUS(false)))
     }
