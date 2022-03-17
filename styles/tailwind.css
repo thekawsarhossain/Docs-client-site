@@ -39,7 +39,7 @@ body {
     @apply hidden flex-wrap items-center justify-center text-base md:ml-auto lg:block;
   }
   .link-item {
-    @apply two relative mr-5 w-max text-base font-bold hover:text-white;
+    @apply two relative mr-5 w-max text-base font-bold text-white hover:text-white;
   }
   .link-hover {
     @apply absolute -bottom-1 bg-white transition-all;
