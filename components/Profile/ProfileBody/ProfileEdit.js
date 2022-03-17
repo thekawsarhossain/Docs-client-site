@@ -21,6 +21,7 @@ import { useDispatch } from 'react-redux'
 const ProfileEdit = (props) => {
   const [imageLoading, setImageLoading] = useState(false)
   const [image, setImage] = useState(props?.userInfoFromDB?.image)
+  console.log(image)
   const [value, setValue] = useState(new Date())
   const [newDate, setNewDate] = useState(new Date().toLocaleDateString())
   const [date, setDate] = useState(props.userInfoFromDB?.birthDate)
@@ -99,11 +100,7 @@ const ProfileEdit = (props) => {
     // console.log(file.public_id);
     const field = e.target.name
     const value = file.secure_url
-    // const newBlogData = { ...blogData }
-    // newBlogData[field] = value
-    // setBlogData(newBlogData)
     setImage(file.secure_url)
-    // setImage(files[0])
     setImageLoading(false)
   }
 
@@ -124,12 +121,6 @@ const ProfileEdit = (props) => {
       body: JSON.stringify(user),
     })
       .then((res) => res.json(), alert('Update Successful'))
-      // .then((data) => {
-      //   if (data.modifiedCount > 0) {
-      //     alert('Update Successful')
-      //   }
-      //   console.log(data)
-      // })
       .catch((error) => dispatch(ADD_ERROR(error.message)))
       .finally(() => dispatch(SET_STATUS(false)))
 
@@ -143,7 +134,11 @@ const ProfileEdit = (props) => {
       (data?.gender && data?.gender !== props?.userInfoFromDB?.gender) ||
       (data?.profession &&
         data?.profession !== props?.userInfoFromDB?.profession) ||
-      (data?.website && data?.website !== props?.userInfoFromDB?.website)
+      (data?.website && data?.website !== props?.userInfoFromDB?.website) ||
+      (data?.facebook && data?.facebook !== props?.userInfoFromDB?.facebook) ||
+      (data?.twitter && data?.twitter !== props?.userInfoFromDB?.twitter) ||
+      (data?.linkedin && data?.linkedin !== props?.userInfoFromDB?.linkedin) ||
+      (data?.instagram && data?.instagram !== props?.userInfoFromDB?.instagram)
     ) {
       fetch('https://polar-hamlet-38117.herokuapp.com/profile-update', {
         method: 'PUT',
@@ -329,6 +324,54 @@ const ProfileEdit = (props) => {
               name="website"
               {...register('website')}
               defaultValue={props.userInfoFromDB?.website}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Facebook Profile Link
+            </FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="facebook"
+              {...register('facebook')}
+              defaultValue={props.userInfoFromDB?.facebook}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Twitter Profile Link
+            </FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="twitter"
+              {...register('twitter')}
+              defaultValue={props.userInfoFromDB?.twitter}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Linkedin Profile Link
+            </FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="linkedin"
+              {...register('linkedin')}
+              defaultValue={props.userInfoFromDB?.linkedin}
+            />
+          </div>
+          <div className="col-span-12 flex flex-col  md:col-span-6">
+            <FormHelperText sx={{ color: 'gray' }}>
+              Instagram Profile Link
+            </FormHelperText>
+            <input
+              className="rounded-md border p-2 text-lg"
+              type="text"
+              name="instagram"
+              {...register('instagram')}
+              defaultValue={props.userInfoFromDB?.instagram}
             />
           </div>
         </div>

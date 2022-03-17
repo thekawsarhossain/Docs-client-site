@@ -51,107 +51,38 @@ const Blogger = (props) => {
     <div>
       <div>
         <Navbar />
+        {/* Hero section start */}
         <div
           style={{
             background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
-            padding: '190px 0 95px',
+            padding: '60px 0 0px',
             position: 'relative',
           }}
           className="breadcrumb_area overflow-hidden"
         >
-          <img
-            className="absolute"
-            style={{
-              width: '150px',
-              height: '145px',
-              bottom: '-7px',
-              left: '20px',
-              zIndex: '1',
-            }}
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/v.svg"
-            alt=""
-          />
-          <img
-            style={{
-              width: '135px',
-              height: '110px',
-              right: '30px',
-              bottom: '-7px',
-              zIndex: '1',
-            }}
-            className="absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/b_leaf.svg"
-            alt=""
-          />
-          <img
-            style={{
-              top: '0',
-              width: '100%',
-              left: '0',
-              zIndex: '0',
-              right: '0',
-              height: 'auto',
-            }}
-            className="star absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/banner_bg.png"
-            alt=""
-          />
-          <img
-            style={{ bottom: '0', zIndex: '0' }}
-            className="absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-classic/shap_01.png"
-            alt=""
-          />
-          <img
-            style={{ bottom: '0', zIndex: '0' }}
-            className="absolute"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/blog-classic/shap_02.png"
-            alt=""
-          />
-          <img
-            className="absolute"
-            style={{
-              right: '20%',
-              bottom: '25px',
-              visibility: 'visible',
-              animationName: 'fadeInRight',
-            }}
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/b_man_two.png"
-            alt=""
-          />
-          <img
-            className="absolute"
-            data-wow-delay="0.2s"
-            src="https://html.creativegigs.net/kbdoc/kbdoc-html/img/home_one/flower.png"
-            alt=""
-            style={{
-              left: '20%',
-              bottom: '0',
-              visibility: 'visible',
-              animationDelay: '0.2s',
-              animationName: 'fadeInUp',
-            }}
-          />
           <div
             className="custom_container container"
             style={{
               width: '100%',
-              paddingRight: '15px',
-              paddingLeft: '15px',
               marginRight: 'auto',
               marginLeft: 'auto',
             }}
           >
-            <form action="#" className=" pb-7">
+            <form action="#" className="">
               <div className="relative flex justify-center">
-                <div className=" py-10 px-2">
+                <div className=" py-8 px-2">
                   <div>
                     <div className="md:flex">
-                      <div className=" p-3">
+                      <div className=" py-3">
                         <div className="relative flex">
                           <div>
-                            <div className="text-center text-6xl font-bold text-white dark:text-white">
-                              My Profile
+                            <div className="text-center font-bold text-white dark:text-white">
+                              <h1 className="font-serif text-4xl">
+                                Hello! here is Docy
+                              </h1>
+                              <p className="pt-2 font-mono">
+                                Find your best blogger by Docy
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -163,6 +94,8 @@ const Blogger = (props) => {
             </form>
           </div>
         </div>
+        {/* Hero section end */}
+        {/* Sub banner section start */}
         <div className="bg-slate-200 dark:bg-Docy-Dark">
           <Container sx={{ py: 2 }}>
             <div className="flex justify-between text-gray-200 dark:text-black ">
@@ -191,10 +124,11 @@ const Blogger = (props) => {
             </div>
           </Container>
         </div>
+        {/* Sub banner section end */}
       </div>
       {/* here start user details */}
       <div>
-        <BlogerProfile />
+        <BlogerProfile blogger={props?.blogger} />
       </div>
     </div>
   )

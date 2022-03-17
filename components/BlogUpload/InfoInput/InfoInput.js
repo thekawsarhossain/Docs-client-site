@@ -193,7 +193,7 @@ const InfoInput = (props) => {
                   <option>Photography</option>
                   <option>Skill</option>
                   <option>Tourist Tours</option>
-                  <option>Inspire</option>
+                  <option>Trending</option>
                   <option>Education</option>
                 </select>
               </div>
