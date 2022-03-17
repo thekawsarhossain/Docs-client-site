@@ -25,6 +25,7 @@ const GiveInfo = () => {
     <div>
       <Navbar></Navbar>
       <ProfileBanner userInfoFromDB={userInfoFromDB}></ProfileBanner>
+      {/* From for giving information  */}
       <Container>
         <div className="my-5 rounded bg-slate-100 px-4 py-4 text-center text-Docy-Dark dark:bg-Docy-DarkM dark:text-white">
           <h4 className="text-3xl font-bold">
