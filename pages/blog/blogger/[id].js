@@ -11,10 +11,11 @@ const Id = () => {
 
   // getting blogger info here
   const blogger = useSelector((state) => state?.reducers?.blogs?.bloggerDetails)
+  console.log(blogger)
 
   return (
     <div>
-      <Blogger></Blogger>
+      <Blogger blogger={blogger}></Blogger>
       {/* <UserBanner></UserBanner> */}
       {/* <UserDetails></UserDetails> */}
     </div>
