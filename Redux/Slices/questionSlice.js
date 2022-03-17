@@ -60,6 +60,13 @@ const questionsSlice = createSlice({
     builder.addCase(fetchQuestions.pending, (state, action) => {
       state.status = false
     })
+    builder.addCase(fetchQuestion.fulfilled, (state, action) => {
+      state.question = action.payload
+      state.status = true
+    })
+    builder.addCase(fetchQuestion.pending, (state, action) => {
+      state.status = false
+    })
   },
 })
 

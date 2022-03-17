@@ -1156,3 +1156,9 @@ legend + * {
   transform: translateY(-80px);
   opacity: 0;
 }
+
+/* makeAdmin */
+.makeAdmin {
+  width: 600px;
+  /* height: 80vh;  */
+}
