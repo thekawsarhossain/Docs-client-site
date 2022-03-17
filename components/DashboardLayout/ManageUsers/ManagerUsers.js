@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import { experimentalStyled as styled } from '@mui/material/styles'
@@ -5,6 +6,7 @@ import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import { Container } from '@mui/material'
+import Link from 'next/link'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import GoogleIcon from '@mui/icons-material/Google'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -39,13 +41,15 @@ const ManageUsers = () => {
                     className="h-52 w-full"
                     alt={data?._id}
                   />
-                  <div className="-mt-10 flex justify-center">
-                    <img
-                      src={data?.image}
-                      className="h-20 w-20  rounded-full border-4 border-indigo-600 object-cover"
-                      alt={data?._id}
-                    />
-                  </div>
+                 <Link href={`/adminDashboard/manageUser/${data?._id}`}>
+                    <div className="-mt-10 flex justify-center">
+                        <img
+                          src={data?.image}
+                          className="h-20 w-20  rounded-full border-4 border-indigo-600 object-cover"
+                          alt={data?._id}
+                        />
+                      </div>
+                  </Link>
                 </div>
                 <div className=" p-6 text-center">
                   <div>
