@@ -160,14 +160,12 @@ const MainDetails = () => {
           }
         })
         .catch((e) => alert('Some thing went wrong !'))
-      dispatch(fetchUserData(user?.email))
     } else {
       alert('For folllow you need to login !')
     }
   }
   // report reason state here
   const [reportReason, setReportReason] = useState('')
-  console.log(reportReason)
   // report blog handler here
   const handleReport = () => {
     if (user?.email) {
@@ -205,12 +203,13 @@ const MainDetails = () => {
   // finding the matched email
   const [isMatched, setIsMatched] = useState()
   useEffect(() => {
+    dispatch(fetchUserData(user?.email))
     // finding the blogger id and the user following list if they match then we will disabled the following btn
     const match = userInfoFromDB?.following?.find((followerInfo) => {
       return blog?.blogger?.email === followerInfo?.email
     })
     setIsMatched(match)
-  }, [blog?.blogger?.email, userInfoFromDB?.following])
+  }, [blog?.blogger?.email, userInfoFromDB?.following, dispatch, user?.email])
 
   //
   const [isMatchedReport, setIsMatchedReport] = useState()
@@ -614,6 +613,12 @@ const MainDetails = () => {
                   {reportBlogReason[key]}
                 </button>
               ))}
+              <button
+                onClick={handleReport}
+                className="my-3 rounded-md bg-indigo-700 py-3 px-8 font-bold text-white hover:bg-indigo-600"
+              >
+                Report{' '}
+              </button>
             </Box>
           </Fade>
         </Modal>
