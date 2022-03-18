@@ -64,29 +64,29 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/">
-                      <a>
+                    <Link href="https://twitter.com">
+                      <a target="_blank">
                         <TwitterIcon />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/">
-                      <a>
+                    <Link href="https://www.pinterest.com">
+                      <a target="_blank">
                         <PinterestIcon />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/">
-                      <a>
+                    <Link href="https://www.linkedin.com/feed/">
+                      <a target="_blank">
                         <LinkedInIcon />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/">
-                      <a>
+                    <Link href="https://www.instagram.com">
+                      <a target="_blank">
                         <InstagramIcon />
                       </a>
                     </Link>

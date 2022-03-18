@@ -22,7 +22,7 @@ const AskQuestion = () => {
   // getting all blogs from redux here
   const blogs = useSelector(
     (state) => state?.reducers?.questions?.questions
-  ).slice(0, 3)
+  )?.slice(0, 3)
   //   blogs.reverse().slice(0, 6)
   console.log(blogs)
   return (
