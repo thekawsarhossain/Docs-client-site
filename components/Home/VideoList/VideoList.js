@@ -69,15 +69,18 @@ const VideoList = () => {
 
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className=" -mt-2 pb-2 font-medium ">Docky Video List</h2>
-            <ul className="bg-slate-100   dark:bg-gray-900">
+            <ul
+              style={{ height: '350px' }}
+              className="overflow-y-auto bg-slate-100  dark:bg-gray-900"
+            >
               {videos?.map((video) => (
-                <>
-                  <button
-                    key={video?._id}
-                    onClick={() => handleVideo(video?.video)}
-                  >
+                <div
+                  key={video?._id}
+                  className="m-2 rounded bg-slate-100 dark:bg-Docy-Dark"
+                >
+                  <button onClick={() => handleVideo(video?.video)}>
                     <>
-                      <li className="  mb-3 flex gap-4 p-4">
+                      <li className="mb-3 flex  gap-4 p-4">
                         <div>
                           <video
                             className="h-full w-24 rounded"
@@ -103,7 +106,7 @@ const VideoList = () => {
                       </li>
                     </>
                   </button>
-                </>
+                </div>
               ))}
             </ul>
           </div>
