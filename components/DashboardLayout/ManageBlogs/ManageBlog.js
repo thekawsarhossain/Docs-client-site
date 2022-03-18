@@ -1,43 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import DeleteIcon from '@mui/icons-material/Delete';
-
 const ManageBlog = () => {
-  // const blogs = useSelector((state) => state?.reducers?.blogs?.blogs);
-  const [blogs, setBlogs] = useState([])
-  // here users
-  useEffect(() => {
-
-    fetch(`https://polar-hamlet-38117.herokuapp.com/blogs`)
-      .then((res) => res.json())
-      .then((data) => setBlogs(data))
-  })
-  // here blogs delete
-  const handleDelete = id =>{
-    const proceed = window.confirm('Are you sure , you want to delete ?');
-    if(proceed){
-      const url =`https://polar-hamlet-38117.herokuapp.com/blog/${id}`
-      fetch(url,{
-          method: 'DELETE'
-  
-      })
-          .then(res => res.json())
-          .then(data =>{
-              if(data){
-               alert('Deleted successfully')
-               const remaining = blogs.filter(order => order._id !== id)
-               setBlogs(remaining)
-              }
-          })
-  }
-    
-  }
-
+  const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
   return (
     <div className="h-full bg-slate-100">
     <div className="grid grid-cols-12 gap-6">
-      {blogs?.map((blog) => (
+      {blogs.map((blog) => (
         <div key={blogs?._id} className="col-span-12 md:col-span-6 lg:col-span-3">
           <div className="flex items-center justify-center ">
             <div className=" rounded border border-gray-100 bg-white hover:shadow-lg dark:bg-Docy-Dark">
@@ -64,7 +32,7 @@ const ManageBlog = () => {
                   />
                 )}
               </div>
-               <div className="p-6  h-60">
+               <div className="p-6 h-40">
                <h3 className=" overflow-hidden  text-black dark:text-slate-50">
                 {blog?.title?.split(' ')?.slice(0, 8)?.join(' ')}
               </h3>
@@ -75,7 +43,6 @@ const ManageBlog = () => {
                   {blog?.blogger?.displayName}
                 </a>
               </p>
-               <button onClick={()=>handleDelete(blog?._id)} className='text-red-500  py-2 px-4'><DeleteIcon/></button>
                </div>
             </div>
           </div>

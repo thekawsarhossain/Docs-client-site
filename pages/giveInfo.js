@@ -5,11 +5,11 @@ import Navbar from '../components/Shared/Navbar/Navbar'
 import { Container } from '@mui/material'
 import Footer from '../components/Shared/Footer/Footer'
 import { fetchUserData } from '../Redux/Slices/userSlice'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const GiveInfo = () => {
   const userInfo = useSelector((state) => state?.reducers?.user?.currentUser)
-
+  console.log(userInfo?.email)
   // react redux hook here
   const dispatch = useDispatch()
 
@@ -17,7 +17,6 @@ const GiveInfo = () => {
   useEffect(() => {
     dispatch(fetchUserData(userInfo?.email))
   }, [dispatch, userInfo])
-
   const userInfoFromDB = useSelector(
     (state) => state?.reducers?.user?.userInfoFromDB
   )
