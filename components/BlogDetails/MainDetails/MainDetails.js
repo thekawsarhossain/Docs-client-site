@@ -4,6 +4,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
+import CheckIcon from '@mui/icons-material/Check'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
 import {
@@ -26,6 +27,16 @@ import FlagIcon from '@mui/icons-material/Flag'
 import Backdrop from '@mui/material/Backdrop'
 import Paper from '@mui/material/Paper'
 
+// report reasons here
+const reportBlogReasons = {
+  'For breaking the first rule': '1- For breaking the first rule',
+  'For breaking the second rule': '2- For breaking the second rule',
+  'For breaking the third rule': '3- For breaking the third rule',
+  'For breaking the fourth rule': '4- For breaking the fourth rule',
+  'For breaking the fifth rule': '5- For breaking the fifth rule',
+  'Something else ': '6- Something else ',
+}
+
 // modal style here
 const modalStyle = {
   color: '#000',
@@ -39,12 +50,6 @@ const modalStyle = {
   borderRadius: 3,
   boxShadow: 24,
   p: 4,
-}
-// modal content paper style here
-const paperStyle = {
-  margin: '10px 0',
-  padding: '10px',
-  fontWeight: 'bold',
 }
 
 const MainDetails = () => {
@@ -210,7 +215,6 @@ const MainDetails = () => {
   //
   const [isMatchedReport, setIsMatchedReport] = useState()
   useEffect(() => {
-
     // dispatch(fetchBlog(id))
 
     // finding the reported user and the match blog
@@ -219,7 +223,6 @@ const MainDetails = () => {
     })
     setIsMatchedReport(match)
   }, [blog?.reports, userInfoFromDB?.email, dispatch, id])
-
 
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
@@ -595,48 +598,23 @@ const MainDetails = () => {
           <Fade in={open}>
             <Box sx={modalStyle}>
               <h3 className="w-full">Why do you want to report this blog ? </h3>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="For breaking the first rule"
-              >
-                1 - For breaking the first rule
-              </button>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="For breaking the second rule"
-              >
-                2 - For breaking the second rule
-              </button>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="For breaking the third rule"
-              >
-                3 - For breaking the third rule
-              </button>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="For breaking the fourth rule"
-              >
-                4 - For breaking the fourth rule
-              </button>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="For breaking the fifth rule"
-              >
-                5 - For breaking the fifth rule
-              </button>
-              <button
-                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                onClick={(e) => setReportReason(e.target.value)}
-                value="Something else"
-              >
-                6 - Something else
-              </button>
+
+              {Object.keys(reportBlogReasons).map((key) => (
+                <button
+                  key={key}
+                  value={key}
+                  className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                  onClick={(e) => setReportReason(e.target.value)}
+                >
+                  {key === reportReason && (
+                    <span className="pr-2 text-green-600">
+                      <CheckIcon />
+                    </span>
+                  )}
+                  {reportBlogReasons[key]}
+                </button>
+              ))}
+
               <button
                 onClick={handleReport}
                 className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
