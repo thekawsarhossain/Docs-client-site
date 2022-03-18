@@ -12,10 +12,14 @@ import {
   ADD_TO_BLOG,
   ADD_TO_BLOGGER_DETAILS,
   fetchBlog,
+  REPORT_BLOG,
 } from '../../../Redux/Slices/blogSlice'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { fetchUserData } from '../../../Redux/Slices/userSlice'
+import {
+  ADD_TO_FOLLOWING,
+  fetchUserData,
+} from '../../../Redux/Slices/userSlice'
 import Link from 'next/link'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -131,7 +135,7 @@ const MainDetails = () => {
       })
         .then((res) => res.json())
         .then((result) => {})
-        .catch((e) => alert('Something went wrong !'))
+        .catch((e) => console.log('Something went wrong !'))
       dispatch(ADD_COMMENT(payload))
       reset()
     } else {
@@ -154,15 +158,16 @@ const MainDetails = () => {
         .then((res) => res.json())
         .then((result) => {
           if (result?.acknowledged) {
-            // dispatch(fetchUserData(user?.email))
+            // dispatch(ADD_TO_FOLLOWING(blogger))
             alert('started following !')
           } else {
             alert('there is an problem we found !')
           }
         })
         .catch((e) => alert('Some thing went wrong !'))
+      dispatch(ADD_TO_FOLLOWING(blogger))
 
-        .finally(dispatch(fetchUserData(user?.email)))
+      // .finally(dispatch(fetchUserData(user?.email)))
     } else {
       alert('For folllow you need to login !')
     }
@@ -190,11 +195,12 @@ const MainDetails = () => {
           .then((res) => res.json())
           .then((result) => {
             if (result?.acknowledged) {
+              // dispatch(REPORT_BLOG(payload))
               alert('reported successfully')
             }
           })
           .catch((e) => console.log(e.message))
-          .finally(dispatch(fetchBlog(id)))
+        dispatch(REPORT_BLOG(payload))
         setOpen(false)
       }
     } else {
@@ -215,8 +221,6 @@ const MainDetails = () => {
   //
   const [isMatchedReport, setIsMatchedReport] = useState()
   useEffect(() => {
-    // dispatch(fetchBlog(id))
-
     // finding the reported user and the match blog
     const match = blog?.reports?.find((report) => {
       return userInfoFromDB?.email === report?.reportedBy?.email
