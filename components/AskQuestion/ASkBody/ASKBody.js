@@ -64,8 +64,6 @@ const ASKBody = () => {
       (td) => td?.category === event.target.value
     )
     setAllBlogs(categoryWiseBlogs)
-    console.log(categoryWiseBlogs)
-    console.log(event.target.value)
   }
   return (
     <div>

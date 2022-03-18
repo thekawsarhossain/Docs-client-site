@@ -25,39 +25,20 @@ const DetailsHeroSection = () => {
           }}
         >
           <form action="#" className="">
-            <div className="relative flex justify-center">
-              <div className=" py-8 px-2">
-                <div>
-                  <div className="md:flex">
-                    <div className=" py-3">
-                      <div className="relative flex">
-                        <Container>
-                          <div className="font-bold text-white dark:text-white">
-                            <h1 className="pt-12 font-serif text-4xl">
-                              {blog?.title}
-                            </h1>
-                            <p className="pt-2 font-mono">
-                              Category: {blog?.category}
-                            </p>
-                            <div className="mt-3 flex pb-8">
-                              <Avatar
-                                alt="Remy Sharp"
-                                src={blog?.blogger?.image}
-                              />
-                              <p className="self-center pl-2">
-                                {' '}
-                                {blog?.blogger?.displayName} |{' '}
-                                {blog?.uploadDate} | {blog?.uploadTime}
-                              </p>
-                            </div>
-                          </div>
-                        </Container>
-                      </div>
-                    </div>
-                  </div>
+            <Container>
+              <div className="font-bold text-white dark:text-white">
+                <h1 className="pt-12 font-serif text-4xl">{blog?.title}</h1>
+                <p className="pt-2 font-mono">Category: {blog?.category}</p>
+                <div className="mt-3 flex pb-8">
+                  <Avatar alt="Remy Sharp" src={blog?.blogger?.image} />
+                  <p className="self-center pl-2">
+                    {' '}
+                    {blog?.blogger?.displayName} | {blog?.uploadDate} |{' '}
+                    {blog?.uploadTime}
+                  </p>
                 </div>
               </div>
-            </div>
+            </Container>
           </form>
         </div>
       </div>
