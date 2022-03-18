@@ -25,6 +25,28 @@ const ManageUsers = () => {
   })
 
 
+    // here users delete 
+    const handleDelete = id =>{
+      const proceed = window.confirm('Are you sure , you want to delete ?');
+      if(proceed){
+        const url =`https://polar-hamlet-38117.herokuapp.com/users/${id}`
+        fetch(url,{
+            method: 'DELETE'
+    
+        })
+            .then(res => res.json())
+            .then(data =>{
+                if(data){
+                 alert('Deleted successfully')
+                 const remaining = manageUsers.filter(order => order._id !== id)
+                 setManageUsers(remaining)
+                }
+            })
+    }
+      
+    }
+
+
   return (
     <Box>
       <Box sx={{ flexGrow: 1 }}>
