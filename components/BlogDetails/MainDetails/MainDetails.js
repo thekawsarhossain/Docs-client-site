@@ -2,7 +2,6 @@
 import { Avatar, Box, Container, Fade, Modal } from '@mui/material'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
-import CheckIcon from '@mui/icons-material/Check'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined'
 import { useForm } from 'react-hook-form'
@@ -26,7 +25,6 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import FlagIcon from '@mui/icons-material/Flag'
 import Backdrop from '@mui/material/Backdrop'
 import Paper from '@mui/material/Paper'
-import REPORT_REASON from '../../../messages/ReportReason'
 
 // modal style here
 const modalStyle = {
@@ -48,8 +46,6 @@ const paperStyle = {
   padding: '10px',
   fontWeight: 'bold',
 }
-
-const reportBlogReason = REPORT_REASON
 
 const MainDetails = () => {
   // react redux hook here
@@ -156,10 +152,11 @@ const MainDetails = () => {
             // dispatch(fetchUserData(user?.email))
             alert('started following !')
           } else {
-            alert('there is an problem we found, try again !')
+            alert('there is an problem we found !')
           }
         })
-        .catch((e) => alert('Some thing went wrong !'))
+        .catch((e) => alert(e.message))
+        .finally(dispatch(fetchUserData(user?.email)))
     } else {
       alert('For folllow you need to login !')
     }
@@ -179,7 +176,6 @@ const MainDetails = () => {
         fetch(
           `https://polar-hamlet-38117.herokuapp.com/blog/${blog?._id}/reportBlog`,
           {
-            // mode: 'no-cors',
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(payload),
@@ -188,8 +184,7 @@ const MainDetails = () => {
           .then((res) => res.json())
           .then((result) => {
             if (result?.acknowledged) {
-              // dispatch(fetchBlog(id))
-              alert('reported successfully')
+              dispatch(fetchBlog(id))
             }
           })
           .catch((e) => console.log(e.message))
@@ -203,24 +198,23 @@ const MainDetails = () => {
   // finding the matched email
   const [isMatched, setIsMatched] = useState()
   useEffect(() => {
-    dispatch(fetchUserData(user?.email))
     // finding the blogger id and the user following list if they match then we will disabled the following btn
     const match = userInfoFromDB?.following?.find((followerInfo) => {
       return blog?.blogger?.email === followerInfo?.email
     })
     setIsMatched(match)
-  }, [blog?.blogger?.email, userInfoFromDB?.following, dispatch, user?.email])
+  }, [blog?.blogger?.email, userInfoFromDB?.following])
 
   //
   const [isMatchedReport, setIsMatchedReport] = useState()
   useEffect(() => {
-    dispatch(fetchBlog(id))
     // finding the reported user and the match blog
     const match = blog?.reports?.find((report) => {
       return user?.email === report?.reportedBy?.email
     })
     setIsMatchedReport(match)
-  }, [blog?.reports, user?.email, dispatch, id])
+  }, [blog?.reports, user?.email])
+  console.log(isMatchedReport)
 
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
@@ -596,28 +590,53 @@ const MainDetails = () => {
           <Fade in={open}>
             <Box sx={modalStyle}>
               <h3 className="w-full">Why do you want to report this blog ? </h3>
-
-              {Object.keys(reportBlogReason).map((key) => (
-                <button
-                  className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
-                  onClick={(e) => setReportReason(e.target.value)}
-                  key={key}
-                  value={key}
-                >
-                  {key === reportReason && (
-                    <span className="pr-2 text-green-600">
-                      {' '}
-                      <CheckIcon />{' '}
-                    </span>
-                  )}
-                  {reportBlogReason[key]}
-                </button>
-              ))}
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the first rule"
+              >
+                1 - For breaking the first rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the second rule"
+              >
+                2 - For breaking the second rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the third rule"
+              >
+                3 - For breaking the third rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the fourth rule"
+              >
+                4 - For breaking the fourth rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="For breaking the fifth rule"
+              >
+                5 - For breaking the fifth rule
+              </button>
+              <button
+                className="my-2 w-full bg-gray-50 p-2 text-left font-semibold"
+                onClick={(e) => setReportReason(e.target.value)}
+                value="Something else"
+              >
+                6 - Something else
+              </button>
               <button
                 onClick={handleReport}
-                className="my-3 rounded-md bg-indigo-700 py-3 px-8 font-bold text-white hover:bg-indigo-600"
+                className="my-3 w-80 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
               >
-                Report{' '}
+                Report
               </button>
             </Box>
           </Fade>
