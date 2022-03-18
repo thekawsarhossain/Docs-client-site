@@ -8,44 +8,69 @@ const QDHeroSection = (props) => {
   return (
     <div>
       <Navbar></Navbar>
-      <div
-        className="bg-Docy-PaleGrey dark:bg-Docy-Dark"
-        style={{ minHeight: '310px' }}
-      >
-        <Container>
-          <div
-            style={{ minHeight: '300px' }}
-            className="flex w-full pt-12 text-Docy-Dark dark:text-white"
-          >
-            <div className="w-full self-center">
-              <div className="flex w-full justify-between pt-12">
-                <p className="font-mono text-red-400">
-                  {props?.question?.category}
-                </p>
-                <div className="mb-1 self-center">
-                  <Link href="/askQuestion">
-                    <a>
-                      <span className="text-1xl rounded-lg bg-orange-500 px-3 py-3  font-semibold text-Docy-Dark dark:text-white">
-                        Ask Question{' '}
-                        <span className="">
-                          <HelpOutlineIcon className="animate-pulse" />
-                        </span>
-                      </span>
-                    </a>
-                  </Link>
+      <div className="breadcrumb_area_three relative  bg-Docy-paleGeen text-Docy-Dark dark:bg-Docy-Dark dark:text-white">
+        <div
+          style={{
+            background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
+            padding: '60px 0 0px',
+            position: 'relative',
+          }}
+          className="breadcrumb_area overflow-hidden"
+        >
+          <Container>
+            <div
+              className="custom_container container"
+              style={{
+                width: '100%',
+                marginRight: 'auto',
+                marginLeft: 'auto',
+              }}
+            >
+              <form action="#" className="">
+                <div className="relative">
+                  <div className=" py-8 px-2">
+                    <div>
+                      <div className="">
+                        <div className=" py-3">
+                          <div className="relative flex">
+                            <div className="w-full self-center">
+                              <div className="flex w-full justify-between">
+                                <p className="font-mono text-red-400">
+                                  {props?.question?.category}
+                                </p>
+                                <div className="mb-1 self-center">
+                                  <Link href="/askQuestion">
+                                    <a>
+                                      <span className="text-1xl rounded-lg bg-orange-500 px-3 py-3  font-semibold text-Docy-Dark dark:text-white">
+                                        Ask Question{' '}
+                                        <span className="">
+                                          <HelpOutlineIcon className="animate-pulse" />
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </Link>
+                                </div>
+                              </div>
+                              <h1 className="pt-2 font-serif text-4xl">
+                                {props?.question?.title}
+                              </h1>
+                              <div className="mt-3 flex">
+                                <p className="self-center pb-8">
+                                  {props?.question?.uploadDate} |{' '}
+                                  {props?.question?.uploadTime}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <h1 className="pt-2 font-serif text-4xl">
-                {props?.question?.title}
-              </h1>
-              <div className="mt-3 flex">
-                <p className="self-center pb-8">
-                  {props?.question?.uploadDate} | {props?.question?.uploadTime}
-                </p>
-              </div>
+              </form>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
     </div>
   )
