@@ -27,7 +27,7 @@ const ManageUsers = () => {
       .then((data) => setManageUsers(data))
   })
 
-    // here users delete method
+    // here users delete 
     const handleDelete = id =>{
       const proceed = window.confirm('Are you sure , you want to delete ?');
       if(proceed){
