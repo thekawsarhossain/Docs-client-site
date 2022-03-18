@@ -57,11 +57,13 @@ const ManageBlog = () => {
                     alt=""
                   />
                 ) : (
+
                   <img
-                    className="z-50 -mt-6 h-14 w-14 rounded-full border-4 border-white shadow-lg"
-                    src="https://i.ibb.co/DMYmT3x/Generic-Profile.jpg"
+                    src={blog?.image}
+                    className=" h-full w-96  rounded-t object-cover shadow-lg"
                     alt=""
                   />
+
                 )}
               </div>
                <div className="p-6  h-60">
@@ -77,13 +79,13 @@ const ManageBlog = () => {
               </p>
                <button onClick={()=>handleDelete(blog?._id)} className='text-red-500  py-2 px-4'><DeleteIcon/></button>
                </div>
+
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-  );
+  )
 }
 
-export default ManageBlog;
+export default ManageBlog

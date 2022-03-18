@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 const RUser = () => {
   return (
-    <div className="col-span-12 mx-5 mt-6 lg:col-span-6">
+    <div className="col-span-12  mt-6 lg:col-span-6">
       <div className="shadow-xs w-full overflow-hidden rounded-lg">
         <div className="w-full overflow-x-auto">
           <table className="whitespace-no-wrap w-full">
             <thead>
-              <tr className="border-b bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+              <tr className="border-b bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-700 dark:bg-Docy-Dark dark:text-gray-400">
                 <th className="px-4 py-3">Client</th>
                 <th className="px-4 py-3">Amount</th>
                 <th className="px-4 py-3">Status</th>
@@ -14,7 +14,7 @@ const RUser = () => {
                 <th className="px-4 py-3">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y bg-white dark:divide-gray-700 dark:bg-gray-800">
+            <tbody className="divide-y bg-white dark:divide-gray-700 dark:bg-Docy-Dark">
               <tr className="text-gray-700 dark:text-gray-400">
                 <td className="px-4 py-3">
                   <div className="flex items-center text-sm">
@@ -620,7 +620,7 @@ const RUser = () => {
             </tbody>
           </table>
         </div>
-        <div className="grid border-t bg-gray-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:grid-cols-9">
+        <div className="grid border-t bg-gray-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-700 dark:bg-Docy-Dark dark:text-gray-400 sm:grid-cols-9">
           <span className="col-span-3 flex items-center">
             Showing 21-30 of 100
           </span>
