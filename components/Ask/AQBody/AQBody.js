@@ -57,7 +57,7 @@ const AQBody = (props) => {
   }
 
   const handleUpload = () => {
-    if (!title || !categoryName || !documentation || !tags) {
+    if (!title || !categoryName || !documentation || !tags[0]) {
       alert(
         'Title, Category selection, Documentation, Tags giving are required. If any of those missing you can not submit you blog or documentation. Please enter the data if anyone is missing. Thank you.'
       )
