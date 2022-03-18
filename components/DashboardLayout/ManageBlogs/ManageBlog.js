@@ -75,6 +75,7 @@ const ManageBlog = () => {
                   {blog?.blogger?.displayName}
                 </a>
               </p>
+              {/* here  delete  */}
                <button onClick={()=>handleDelete(blog?._id)} className='text-red-500  py-2 px-4'><DeleteIcon/></button>
                </div>
             </div>
