@@ -159,9 +159,9 @@ const CategoryBlog = () => {
                     <h1>No one posted in this category!</h1>
                   </div>
                 )}
+                <h3 className="pb-4">{id} category related</h3>
                 {currentPosts?.map((blog) => (
                   <div key={blog?._id}>
-                    <h3 className="pb-4">{id} category related</h3>
                     <Grid
                       className="mb-8"
                       container
