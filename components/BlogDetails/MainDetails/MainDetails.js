@@ -160,6 +160,7 @@ const MainDetails = () => {
           }
         })
         .catch((e) => alert('Some thing went wrong !'))
+        .finally(dispatch(fetchUserData(user?.email)))
     } else {
       alert('For folllow you need to login !')
     }
@@ -188,12 +189,12 @@ const MainDetails = () => {
           .then((res) => res.json())
           .then((result) => {
             if (result?.acknowledged) {
-              // dispatch(fetchBlog(id))
               alert('reported successfully')
             }
           })
           .catch((e) => console.log(e.message))
-          .finally(setOpen(false))
+          .finally(dispatch(fetchBlog(id)))
+        setOpen(false)
       }
     } else {
       alert('You have to login first for report !')
@@ -203,7 +204,6 @@ const MainDetails = () => {
   // finding the matched email
   const [isMatched, setIsMatched] = useState()
   useEffect(() => {
-    dispatch(fetchUserData(user?.email))
     // finding the blogger id and the user following list if they match then we will disabled the following btn
     const match = userInfoFromDB?.following?.find((followerInfo) => {
       return blog?.blogger?.email === followerInfo?.email
@@ -214,13 +214,13 @@ const MainDetails = () => {
   //
   const [isMatchedReport, setIsMatchedReport] = useState()
   useEffect(() => {
-    dispatch(fetchBlog(id))
+    // dispatch(fetchBlog(id))
     // finding the reported user and the match blog
     const match = blog?.reports?.find((report) => {
-      return user?.email === report?.reportedBy?.email
+      return userInfoFromDB?.email === report?.reportedBy?.email
     })
     setIsMatchedReport(match)
-  }, [blog?.reports, user?.email, dispatch, id])
+  }, [blog?.reports, userInfoFromDB?.email, dispatch, id])
 
   return (
     <div className="bg-slate-50 text-Docy-Dark dark:bg-Docy-AlmostBlack dark:text-white">
