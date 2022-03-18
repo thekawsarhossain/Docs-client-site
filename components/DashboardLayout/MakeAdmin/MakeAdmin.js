@@ -10,7 +10,7 @@ const MakeAdmin = () => {
 
   const handleSubmit = (e) => {
     const user = { email }
-    const url = `http://localhost:5000/users/${user}`
+    const url = `https://polar-hamlet-38117.herokuapp.com/users/${user}`
 
     fetch(url, {
       method: 'PUT',
