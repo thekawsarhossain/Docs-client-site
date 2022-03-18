@@ -192,14 +192,8 @@ const Navbar = () => {
               <a className="flex justify-center">
                 <img
                   style={{ height: 'fit-content' }}
-                  className="hidden w-40 dark:block"
+                  className=" w-40"
                   src="https://i.ibb.co/KspLSX3/docy-logo.png"
-                  alt=""
-                />
-                <img
-                  style={{ height: 'fit-content' }}
-                  className="block w-40 dark:hidden"
-                  src="https://i.ibb.co/Zx7g8yW/logo-2x-1.png"
                   alt=""
                 />
               </a>
