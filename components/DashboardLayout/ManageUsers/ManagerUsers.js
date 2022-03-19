@@ -46,6 +46,7 @@ const ManageUsers = () => {
 
   return (
     <Box>
+      {/* Showing users in table  */}
       <table className="block min-w-full border-collapse md:table">
         <thead className="block md:table-header-group">
           <tr className="border-grey-500 absolute -top-full -left-full block border md:relative md:top-auto md:left-auto md:table-row  md:border-none ">
