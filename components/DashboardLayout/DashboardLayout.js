@@ -17,12 +17,13 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
-import HomeSharpIcon from '@mui/icons-material/HomeSharp';
-import DashboardSharpIcon from '@mui/icons-material/DashboardSharp';
-import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
-import BookSharpIcon from '@mui/icons-material/BookSharp';
-import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp'
+import DashboardSharpIcon from '@mui/icons-material/DashboardSharp'
+import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp'
+import BookSharpIcon from '@mui/icons-material/BookSharp'
+import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp'
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
+import { useSelector } from 'react-redux'
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -33,62 +34,98 @@ function DashboardLayout(props) {
     setMobileOpen(!mobileOpen)
   }
 
+  const userInfoFromDB = useSelector(
+    (state) => state?.reducers?.user?.userInfoFromDB
+  )
+
   const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <div className="text-center mt-10 mb-4">
-            <div className="flex justify-center">
-              <img
-                src="https://live-production.wcms.abc-cdn.net.au/fc430b3393844cd39c05f28ab9d41de2?impolicy=wcms_crop_resize&cropH=1612&cropW=2418&xPos=7&yPos=0&width=862&height=575"
-                className="h-20 w-20 mb-3 rounded-full  p-2 object-cover"
-                alt="Admin logo"
-              />
-            </div>
-            <h3 className="text-lg font-bold">Admin</h3>
-            <p>admin@gmail.com</p>
-          </div>
-      <Divider />
-      <List sx={{ml:1}}>
+    <div className="h-full bg-slate-100 text-Docy-Dark dark:bg-Docy-DarkGray dark:text-white">
+      <div className="py-2">
+        <Link href="/">
+          <a className="flex justify-center">
+            <img
+              style={{ height: 'fit-content' }}
+              className="hidden w-40 dark:block"
+              src="https://i.ibb.co/KspLSX3/docy-logo.png"
+              alt=""
+            />
+            <img
+              style={{ height: 'fit-content' }}
+              className="block w-40 dark:hidden"
+              src="https://i.ibb.co/Zx7g8yW/logo-2x-1.png"
+              alt=""
+            />
+          </a>
+        </Link>
+      </div>
+      <hr style={{ marginTop: '-2px' }} />
+      <div className="mt-5 mb-4 text-center">
+        <div className="flex justify-center">
+          <img
+            src={userInfoFromDB.image}
+            className="mb-3 h-40 w-40 rounded-full  object-cover p-2"
+            alt="Admin logo"
+          />
+        </div>
+        <h3 className="text-lg font-bold">{userInfoFromDB.displayName}</h3>
+        <p>{userInfoFromDB.email}</p>
+      </div>
+      <hr style={{ marginTop: '-2px' }} />
+      <List sx={{ ml: 1 }}>
         <Link href="/">
           <a>
             <ListItem button>
-              <ListItemText> <HomeSharpIcon/> Home</ListItemText>
+              <ListItemText>
+                {' '}
+                <HomeSharpIcon /> Home
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard">
           <a>
             <ListItem button>
-              <ListItemText><DashboardSharpIcon/> Dashboard</ListItemText>
+              <ListItemText>
+                <DashboardSharpIcon /> Dashboard
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/manageUser">
           <a>
             <ListItem button>
-              <ListItemText><ManageAccountsSharpIcon/> Manage Users</ListItemText>
+              <ListItemText>
+                <ManageAccountsSharpIcon /> Manage Users
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/manageBlogs">
           <a>
             <ListItem button>
-              <ListItemText><BookSharpIcon/> Manage Blogs</ListItemText>
+              <ListItemText>
+                <BookSharpIcon /> Manage Blogs
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/emails">
           <a>
             <ListItem button>
-              <ListItemText> <MarkEmailUnreadSharpIcon/> Messages</ListItemText>
+              <ListItemText>
+                {' '}
+                <MarkEmailUnreadSharpIcon /> Messages
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
         <Link href="/adminDashboard/makeAdmin">
           <a>
             <ListItem button>
-              <ListItemText> <AdminPanelSettingsIcon/> Make Admin</ListItemText>
+              <ListItemText>
+                {' '}
+                <AdminPanelSettingsIcon /> Make Admin
+              </ListItemText>
             </ListItem>
           </a>
         </Link>
@@ -100,80 +137,82 @@ function DashboardLayout(props) {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+    <div className="bg-slate-50 dark:bg-black">
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+          }}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              Admin Dashboard
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          aria-label="mailbox folders"
+        >
+          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: drawerWidth,
+              },
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+            {drawer}
+          </Drawer>
+          <Drawer
+            variant="permanent"
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: drawerWidth,
+              },
+            }}
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box
+          component="main"
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-            },
+            flexGrow: 1,
+            p: 3,
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
           }}
         >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-            },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
+          <Toolbar />
+          <div>{children}</div>
+        </Box>
       </Box>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}
-      >
-        <Toolbar />
-        <div>{children}</div>
-      </Box>
-    </Box>
+    </div>
   )
 }
 
