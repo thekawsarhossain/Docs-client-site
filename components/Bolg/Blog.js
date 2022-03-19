@@ -112,9 +112,9 @@ const Blog = () => {
                       >
                         <a>
                           <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                            <p className="text-red-400">{blog.category}</p>
+                            <p className="text-red-400">{blog?.category}</p>
                             <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                              {blog.title}
+                              {blog?.title}
                             </h3>
                             <div className="items-center  justify-between md:flex">
                               <div className="mb-4 flex items-center">
@@ -174,9 +174,9 @@ const Blog = () => {
                       >
                         <a>
                           <div className=" min-h-72 bg-slate-100  px-6  py-5 hover:shadow dark:bg-Docy-DarkGray md:h-64 md:rounded">
-                            <p className="text-red-400">{blog.category}</p>
+                            <p className="text-red-400">{blog?.category}</p>
                             <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                              {blog.title}
+                              {blog?.title}
                             </h3>
                             <div className="items-center  justify-between md:flex">
                               <div className="mb-4 flex items-center">
@@ -213,7 +213,7 @@ const Blog = () => {
                 <div className="pb-6">
                   <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={blogs.length}
+                    totalPosts={blogs?.length}
                     paginate={paginate}
                   />
                 </div>
