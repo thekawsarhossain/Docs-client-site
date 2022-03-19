@@ -40,6 +40,9 @@ const userSlice = createSlice({
       state.userInfoFromDB = null
       state.error = ''
     },
+    ADD_TO_FOLLOWING: (state, action) => {
+      state.userInfoFromDB.following.push(action.payload)
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserData.fulfilled, (state, action) => {
@@ -52,6 +55,11 @@ const userSlice = createSlice({
   },
 })
 
-export const { ADD_USER, ADD_ERROR, SET_STATUS, REMOVE_USER } =
-  userSlice.actions
+export const {
+  ADD_USER,
+  ADD_ERROR,
+  SET_STATUS,
+  REMOVE_USER,
+  ADD_TO_FOLLOWING,
+} = userSlice.actions
 export default userSlice.reducer
