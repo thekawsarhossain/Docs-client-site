@@ -55,9 +55,9 @@ const pageNo = (props) => {
     // console.log(ExactItem)
     
     return (
-        <div>
+        <div >
             <DashboardLayout>
-            <div className='mt-4'>
+            <div className='mt-4 '>
               <Box sx={{ }}>
                    <div >
                    <img  className="relative w-full h-96  object-cover" src="https://images.unsplash.com/photo-1546900703-cf06143d1239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2050&q=80"  alt="banner" />

@@ -45,11 +45,11 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
     return (
 
 // here start user details
-    <div className='md:px-8 md:py-8'>
+    <div className='md:px-8 md:py-8 dark:bg-Docy-AlmostBlack'>
       <Box sx={{ flexGrow: 1 }}>
         <Grid className='m-2' container spacing={2}>
             <Grid item xs={12} md={4}>
-                      <div className='mt-10 shadow p-4 bg-slate-100 '>
+                      <div className='mt-10 shadow p-4 bg-slate-100 dark:bg-darkBlue dark:text-white text-black'>
                         <h6 className='font-bold'>About {info[0]?.displayName}</h6>
                <ul>
                            <hr className='mb-4'/>
@@ -65,8 +65,8 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                           
                          </div>
                          {/* here follower options */}
-                        <div className='my-8 bg-slate-100 dark:bg-Docy-Dark'>
-                            <Accordion  >
+                        <div className='my-8 bg-slate-100 dark:bg-darkBlue dark:text-white text-black'>
+                            <Accordion className='dark:bg-darkBlue dark:text-white text-black' >
                                 <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -97,7 +97,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                         </div>
                       {/* here following option */}
                       <div className='my-8 '>
-                            <Accordion >
+                            <Accordion  className='dark:bg-darkBlue dark:text-white text-black'>
                                 <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -130,7 +130,8 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
             </Grid>
             <Grid item xs={12} md={8}>
                <Container>
-               <h3 className='font-bold text-sm md:text-2xl w-96 mx-auto my-8  title'><span className='text-blue-600'>{info[0]?.displayName}</span> Posts</h3>
+               <h3 className='font-bold text-sm md:text-2xl w-96 mx-auto my-8  title  dark:text-white text-black'>
+                 <span className='text-blue-600'>{info[0]?.displayName}</span> Posts</h3>
                <hr />
             {blogData?.length == 0 ? <div>
               <h2 className='text-center mt-8 mb-10 text-red-500'>He did not upload any blog</h2>
@@ -148,7 +149,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                         <Link onClick={() => dispatch(ADD_TO_BLOG(blog))}
                   href={`/blog/${blog?._id}`}>
                           <a>
-                          <div className=' border hover:shadow  md:rounded  px-6 py-5 md:h-64 h-72'>
+                          <div className='dark:bg-darkBlue dark:text-white border hover:shadow  md:rounded  px-6 py-5 md:h-64 h-72'>
                             {/* <p className='text-red-600'>{blog?.title}</p> */}
                             <h3 className='font-bold pt-4 pb-10 hover:underline cursor-pointer '>{blog?.title} </h3>
                             <div className="md:flex  items-center justify-between">
