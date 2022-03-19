@@ -16,11 +16,11 @@ import GroupIcon from '@mui/icons-material/Group';
 export default function Index() {
   React.useEffect(() => {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['Mobile', 'Windows', 'Mac'],
       datasets: [
         {
           label: 'My First Dataset',
-          data: [300, 50, 100],
+          data: [200, 150, 100],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
@@ -34,8 +34,8 @@ export default function Index() {
       type: 'pie',
       data: data,
     }
-    var ctx = document.getElementById('PieChart').getContext('2d')
-    window.myLine = new Chart(ctx, config)
+    // var ctx = document.getElementById('PieChart').getContext('2d')
+    // window.myLine = new Chart(ctx, config)
   }, [])
 
   const canvasEl = useRef(null)
@@ -62,7 +62,7 @@ export default function Index() {
     gradient.addColorStop(0.65, colors.purple.quarter)
     gradient.addColorStop(1, colors.purple.zero)
 
-    const weight = [60.0, 60.2, 59.1, 61.4, 59.9, 60.2, 59.8, 58.6, 59.6, 59.2]
+    const weight = [75.0, 65.2, 70.1, 88.4, 90.9, 70.2, 79.8, 88.6, 60.6, 75.2]
 
     const labels = [
       'Week 1',
@@ -119,14 +119,14 @@ export default function Index() {
   },[])
   return (
     <DashboardLayout>
-      <div className="bg-slate-200 p-10">
-        <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+      <div className="bg-slate-200 dark:bg-Docy-DarkGray p-10">
+        <div className="grid grid-cols-1 gap-8 p-4  lg:grid-cols-2 xl:grid-cols-4">
         
 
           {/* <!-- Users card --> */}
-          <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
+          <div className=" flex h-28 items-center justify-between rounded-md bg-white dark:bg-darkBlue p-4 ">
             <div>
-              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 mb-2">
+              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 dark:text-white mb-2">
                 Users
               </h6>
               <span className="text-xl font-semibold rounded-md bg-green-100 px-2  py-px  text-green-500">
@@ -142,9 +142,9 @@ export default function Index() {
           </div>
 
           {/* <!-- blogs card --> */}
-          <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
+          <div className=" flex h-28 items-center justify-between rounded-md bg-white  dark:bg-darkBlue p-4">
             <div>
-              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 mb-2">
+              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 dark:text-white mb-2">
                 Blogs
               </h6>
               <span className="text-xl font-semibold rounded-md bg-green-100 px-2  py-px  text-green-500">{blogs?.length}</span>
@@ -157,9 +157,9 @@ export default function Index() {
           </div>
 
             {/* <!-- video card --> */}
-          <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
+          <div className="dark:bg-darkBlue flex h-28 items-center justify-between rounded-md bg-white  p-4">
             <div>
-              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 mb-2">
+              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider dark:text-white text-gray-500 mb-2">
               Total upload  Videos
               </h6>
               <span className="text-xl font-semibold rounded-md bg-green-100 px-2  py-px  text-green-500">{videos?.length}</span>
@@ -173,9 +173,9 @@ export default function Index() {
           </div>
 
           {/* <!-- QU card --> */}
-          <div className="dark:bg-darker flex h-28 items-center justify-between rounded-md bg-white p-4">
+          <div className="dark:bg-darkBlue flex h-28 items-center justify-between rounded-md bg-white p-4">
             <div>
-              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 mb-2">
+              <h6 className="dark:text-primary-light text-xs font-medium uppercase leading-none tracking-wider text-gray-500 dark:text-white mb-2">
               questions ?
               </h6>
               <span className="text-xl font-semibold rounded-md bg-green-100 px-2  py-px  text-green-500">{questions?.length}</span>
@@ -191,21 +191,21 @@ export default function Index() {
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-8">
             <div className="h-full w-full">
-              <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-gray-50 shadow-lg">
+              <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-gray-50 shadow-lg dark:bg-darkBlue">
                 <div className="mb-0 rounded-t bg-transparent px-4 py-3">
                   <div className="flex flex-wrap items-center">
                     <div className="relative w-full max-w-full flex-1 flex-grow">
-                      <h6 className="text-blueGray-100 mb-1 text-xs font-semibold uppercase">
+                      <h6 className="dark:text-white text-black mb-1 text-xs font-semibold uppercase">
                         Overview
                       </h6>
-                      <h2 className="text-xl font-semibold text-white">
+                      <h2 className="text-xl font-semibold dark:text-white text-black">
                         Sales value
                       </h2>
                     </div>
                   </div>
                 </div>
                 <div className="flex-auto p-4">
-                  <div className="relative h-96">
+                  <div className="relative h-96 ">
                
                     <canvas id="myChart" ref={canvasEl} height="100" />
                   </div>
@@ -216,7 +216,7 @@ export default function Index() {
 
           
           <div className="col-span-4">
-            <div className="relative mb-6 flex h-full w-full min-w-0 flex-col break-words rounded bg-gray-50 shadow-lg">
+            <div className="relative mb-6 flex h-full w-full min-w-0 flex-col break-words rounded bg-gray-50 dark:bg-darkBlue  shadow-lg">
               <canvas id="PieChart"></canvas>
               <div></div>
             </div>

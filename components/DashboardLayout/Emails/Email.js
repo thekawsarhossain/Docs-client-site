@@ -16,11 +16,11 @@ const Email = () => {
 
   return (
     <div>
-      <div className="flex w-full  bg-gray-200">
+      <div className="flex w-full ">
      
-        <div className="m-5 min-h-screen w-full  bg-white p-5 transition-all">
+        <div className="m-5 min-h-screen w-full   bg-slate-200 dark:bg-Docy-AlmostBlack p-5 transition-all">
           {emails?.map((email) => (
-            <button className="my-2  w-full  bg-gray-100 p-2 shadow hover:shadow-xl rounded"
+            <button className="my-2  w-full dark:text-white bg-white dark:bg-darkBlue p-2 shadow hover:shadow-xl rounded"
               onClick={() => dispatch(ADD_TO_EMAIL(email))}
               key={email?._id}
             >

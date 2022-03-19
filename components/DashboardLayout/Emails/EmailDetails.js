@@ -37,9 +37,9 @@ const EmailDetails = () => {
   return (
     <>
      <DashboardLayout>
-     <div className="flex w-full bg-gray-200">
+     <div className="flex w-full ">
         
-        <div className="m-5 min-h-screen w-full   bg-white p-5 text-gray-900 transition-all">
+        <div className="m-5 min-h-screen w-full shadow-lg   bg-white dark:bg-darkBlue p-5 text-gray-900 dark:text-white transition-all">
           
           <div className="mb-4 flex justify-between">
             <div>
@@ -64,12 +64,12 @@ const EmailDetails = () => {
               <p className="font-bold">{email?.sentDate}</p>
             </div>
           </div>
-          <div className="flex justify-center   bg-gray-200 py-8">
+          <div className="flex justify-center   bg-gray-200 dark:bg-gray-700 py-8">
             <div className=" w-3/5 ">
-              <p className=" mb-3 rounded bg-white px-8 py-4">
+              <p className=" mb-3 rounded bg-white dark:bg-slate-600 px-8 py-4">
                 <span className="font-bold">Subject:</span> {email?.subject}
               </p>
-              <p className="   rounded bg-white px-8 py-4">
+              <p className="   rounded bg-white dark:bg-slate-600 px-8 py-4">
                 <span className="font-bold">Message:</span> {email?.message}
               </p>
             </div>
@@ -102,12 +102,12 @@ const EmailDetails = () => {
               type="text"
               placeholder="Type your reply message here"
               name="message"
-              className="mt-4 w-2/4 bg-slate-100  rounded border border-gray-300 px-6 py-3"
+              className="mt-4 w-2/4 bg-slate-100 dark:bg-slate-700  rounded border border-gray-300 px-6 py-3"
             ></textarea>
 
             <button
               type="submit"
-              className="mt-4 flex items-center gap-2 rounded dark:text-gray-900  bg-slate-300 px-6 py-3 hover:bg-slate-400"
+              className="mt-4 flex items-center gap-2 rounded dark:text-white text-gray-900  bg-slate-300 dark:bg-slate-600 px-6 py-3 hover:bg-slate-400"
             >
               <BsFillReplyFill /> Reply
             </button>

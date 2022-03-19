@@ -2,19 +2,22 @@ import { useSelector } from 'react-redux'
 
 const RBlog = () => {
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
-  //  console.log(blogs);
   const reportedBlog = blogs?.filter((td) => td?.reports !== blogs?.reports)
-  //  console.log(reportedBlog)
+  // here delete method used
+
+   
+
   return (
+
     <div className="col-span-12 mx-2  mt-5 md:col-span-6">
+      <h2 className='text-center my-8 dark:text-white'>Reported Blogs</h2>
       <div>
-        <div className="block items-center divide-gray-100 sm:flex md:divide-x"></div>
         <div className="flex flex-col">
           <div className="overflow-x-auto">
             <div className="inline-block min-w-full align-middle">
               <div className="overflow-hidden shadow">
-                <table className="min-w-full table-fixed divide-y divide-gray-200">
-                  <thead className="bg-gray-100">
+                <table className="min-w-full table-fixed divide-y divide-gray-200 dark:bg-darkBlue">
+                  <thead className="bg-gray-100 dark:bg-darkBlue">
                     <tr>
                       <th
                         scope="col"
@@ -43,25 +46,26 @@ const RBlog = () => {
                       <th scope="col" className="p-4"></th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 bg-white">
+                  <tbody className="divide-y divide-gray-200 bg-white dark:bg-darkBlue ">
                     {reportedBlog?.map((blog) => (
-                      <tr key={blog?._id} className="hover:bg-gray-100">
+                      <tr key={blog?._id} className="hover:bg-gray-100 dark:hover:bg-gray-700">
                         <td className="whitespace-nowrap p-4 text-sm font-normal text-gray-500">
-                          <h4 className="  font-semibold text-gray-900">
+                          <h4 className="  font-semibold text-gray-900 dark:text-white">
                             {blog?.title?.slice(0, 40)} ....
                           </h4>
                         </td>
-                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                           {blog?.category}
                         </td>
-                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                           {blog?.reports?.length}
                         </td>
-                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
+                        <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                           {blog?.reports[0]?.reportReason}
                         </td>
                         <td className="space-x-2 whitespace-nowrap p-4">
                           <button
+                          
                             type="button"
                             data-modal-toggle="delete-product-modal"
                             className="inline-flex items-center rounded-lg bg-red-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-red-800 focus:ring-4 focus:ring-red-300"
