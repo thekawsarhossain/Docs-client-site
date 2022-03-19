@@ -23,6 +23,7 @@ import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
 import BookSharpIcon from '@mui/icons-material/BookSharp';
 import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import { useSelector } from 'react-redux'
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -33,6 +34,12 @@ function DashboardLayout(props) {
     setMobileOpen(!mobileOpen)
   }
 
+ // getting user info here
+ const userInfoFromDB = useSelector(
+   (state) => state?.reducers?.user?.userInfoFromDB
+ )
+
+
   const drawer = (
     <div>
       <Toolbar />
@@ -40,13 +47,13 @@ function DashboardLayout(props) {
       <div className="text-center mt-10 mb-4">
             <div className="flex justify-center">
               <img
-                src="https://live-production.wcms.abc-cdn.net.au/fc430b3393844cd39c05f28ab9d41de2?impolicy=wcms_crop_resize&cropH=1612&cropW=2418&xPos=7&yPos=0&width=862&height=575"
+                src={userInfoFromDB?.image}
                 className="h-20 w-20 mb-3 rounded-full  p-2 object-cover"
                 alt="Admin logo"
               />
             </div>
-            <h3 className="text-lg font-bold">Admin</h3>
-            <p>admin@gmail.com</p>
+            <h3 className="text-lg font-bold">{userInfoFromDB?.displayName}</h3>
+            <p>{userInfoFromDB?.email}</p>
           </div>
       <Divider />
       <List sx={{ml:1}}>
