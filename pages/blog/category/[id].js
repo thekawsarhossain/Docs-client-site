@@ -159,7 +159,10 @@ const CategoryBlog = () => {
                     <h1>No one posted in this category!</h1>
                   </div>
                 )}
-                <h3 className="pb-4">{id} category related</h3>
+                {currentPosts[0] && (
+                  <h3 className="pb-4">{id} category related</h3>
+                )}
+
                 {currentPosts?.map((blog) => (
                   <div key={blog?._id}>
                     <Grid
@@ -219,14 +222,13 @@ const CategoryBlog = () => {
                     </Grid>
                   </div>
                 ))}
-                  <div className="pb-6">
-                    <Pagination
-                      postsPerPage={postsPerPage}
-                      totalPosts={allBlogs.length}
-                      paginate={paginate}
-                    />
-                  </div>
-               
+                <div className="pb-6">
+                  <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={allBlogs.length}
+                    paginate={paginate}
+                  />
+                </div>
               </div>
             )}
           </div>

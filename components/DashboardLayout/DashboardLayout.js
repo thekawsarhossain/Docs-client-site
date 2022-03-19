@@ -24,6 +24,10 @@ import BookSharpIcon from '@mui/icons-material/BookSharp'
 import MarkEmailUnreadSharpIcon from '@mui/icons-material/MarkEmailUnreadSharp'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import { useSelector } from 'react-redux'
+import { useTheme } from 'next-themes'
+import Button from '@mui/material/Button'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -37,6 +41,50 @@ function DashboardLayout(props) {
   const userInfoFromDB = useSelector(
     (state) => state?.reducers?.user?.userInfoFromDB
   )
+
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+  const renderThemeChange = () => {
+    if (!mounted) return null
+
+    const curentTheme = theme === 'system' ? systemTheme : theme
+
+    if (curentTheme === 'dark') {
+      return (
+        <LightModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('light')}
+        />
+      )
+    } else {
+      return (
+        <DarkModeIcon
+          className="h-7 w-7"
+          role="button"
+          onClick={() => setTheme('dark')}
+        />
+      )
+    }
+  }
+
+  const [state, setState] = React.useState({
+    left: false,
+  })
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return
+    }
+
+    setState({ ...state, [anchor]: open })
+  }
 
   const drawer = (
     <div className="h-full bg-slate-100 text-Docy-Dark dark:bg-Docy-DarkGray dark:text-white">
@@ -70,7 +118,7 @@ function DashboardLayout(props) {
         <h3 className="text-lg font-bold">{userInfoFromDB.displayName}</h3>
         <p>{userInfoFromDB.email}</p>
       </div>
-      <hr style={{ marginTop: '-2px' }} />
+      <hr />
       <List sx={{ ml: 1 }}>
         <Link href="/">
           <a>
@@ -137,14 +185,15 @@ function DashboardLayout(props) {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <div className="bg-slate-50 dark:bg-black">
-      <Box sx={{ display: 'flex' }}>
+    <div className="h-full bg-slate-50 dark:bg-black">
+      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
         <AppBar
           position="fixed"
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
+            background: 'linearGradient( 60deg , #10b3d6 0%, #1d2746 100%)',
           }}
         >
           <Toolbar>
@@ -157,9 +206,12 @@ function DashboardLayout(props) {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Admin Dashboard
-            </Typography>
+            <div className="flex w-full justify-between">
+              <Typography variant="h6" noWrap component="div">
+                Admin Dashboard
+              </Typography>
+              <div className="float-left">{renderThemeChange()}</div>
+            </div>
           </Toolbar>
         </AppBar>
         <Box

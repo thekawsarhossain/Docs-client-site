@@ -70,7 +70,7 @@ const VideoList = () => {
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className=" -mt-2 pb-2 font-medium ">Docky Video List</h2>
             <ul
-              style={{ height: '350px' }}
+              style={{ height: '330px' }}
               className="overflow-y-auto bg-slate-300  dark:bg-gray-900"
             >
               {videos?.map((video) => (
@@ -87,7 +87,7 @@ const VideoList = () => {
                     className="flex rounded bg-slate-100 dark:bg-Docy-Dark"
                   >
                     <img
-                      className="h-32 w-32 rounded object-cover"
+                      className="h-28 w-28 rounded object-cover"
                       src={video?.image}
                       alt=""
                     />
