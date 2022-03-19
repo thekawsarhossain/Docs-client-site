@@ -1,15 +1,14 @@
-import { useSelector } from "react-redux"
+import { useSelector } from 'react-redux'
 
 const RBlog = () => {
   const blogs = useSelector((state) => state?.reducers?.blogs?.blogs)
-//  console.log(blogs);
- const reportedBlog = blogs?.filter((td) => td?.reports !== blogs.reports )
-//  console.log(reportedBlog)
+  //  console.log(blogs);
+  const reportedBlog = blogs?.filter((td) => td?.reports !== blogs?.reports)
+  //  console.log(reportedBlog)
   return (
     <div className="col-span-12 mx-2  mt-5 md:col-span-6">
-      <div >
-        <div className="block items-center divide-gray-100 sm:flex md:divide-x">
-        </div>
+      <div>
+        <div className="block items-center divide-gray-100 sm:flex md:divide-x"></div>
         <div className="flex flex-col">
           <div className="overflow-x-auto">
             <div className="inline-block min-w-full align-middle">
@@ -17,7 +16,6 @@ const RBlog = () => {
                 <table className="min-w-full table-fixed divide-y divide-gray-200">
                   <thead className="bg-gray-100">
                     <tr>
-                    
                       <th
                         scope="col"
                         className="p-4 text-left text-xs font-medium uppercase text-gray-500"
@@ -34,38 +32,35 @@ const RBlog = () => {
                         scope="col"
                         className="p-4 text-left text-xs font-medium uppercase text-gray-500"
                       >
-                       Total Report
+                        Total Report
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-left text-xs font-medium uppercase text-gray-500"
                       >
-                       Reason
+                        Reason
                       </th>
                       <th scope="col" className="p-4"></th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-
-                  {reportedBlog?.map(blog=>(
+                    {reportedBlog?.map((blog) => (
                       <tr key={blog?._id} className="hover:bg-gray-100">
-                      <td className="whitespace-nowrap p-4 text-sm font-normal text-gray-500">
+                        <td className="whitespace-nowrap p-4 text-sm font-normal text-gray-500">
                           <h4 className="  font-semibold text-gray-900">
-                          {blog?.title.slice(0,40)} ....
+                            {blog?.title?.slice(0, 40)} ....
                           </h4>
-                         
                         </td>
                         <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
                           {blog?.category}
                         </td>
                         <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
-                         {blog?.reports.length}
+                          {blog?.reports?.length}
                         </td>
                         <td className="whitespace-nowrap p-4 text-base font-medium text-gray-900">
-                        {blog?.reports[0].reportReason}
+                          {blog?.reports[0]?.reportReason}
                         </td>
                         <td className="space-x-2 whitespace-nowrap p-4">
-                         
                           <button
                             type="button"
                             data-modal-toggle="delete-product-modal"
@@ -87,7 +82,7 @@ const RBlog = () => {
                           </button>
                         </td>
                       </tr>
-                  ))}
+                    ))}
                     {/* {{ end -}} */}
                     {/* {{< /products.inline >}}                        */}
                   </tbody>
@@ -96,8 +91,6 @@ const RBlog = () => {
             </div>
           </div>
         </div>
-
-       
       </div>
     </div>
   )
