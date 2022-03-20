@@ -185,7 +185,7 @@ function DashboardLayout(props) {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <div className="h-full bg-slate-50 dark:bg-black">
+    <div className="h-full bg-slate-100 dark:bg-black">
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
         <AppBar
