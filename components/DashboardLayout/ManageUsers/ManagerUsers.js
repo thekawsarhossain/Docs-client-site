@@ -18,12 +18,35 @@ import DeleteIcon from '@mui/icons-material/Delete'
 
 const ManageUsers = () => {
   const [manageUsers, setManageUsers] = useState([])
+  const [success, setSuccess] = useState(false)
   // here users
   useEffect(() => {
     fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
   })
+
+  const handleSubmit = (email) => {
+    const user = { email }
+    const url = `https://polar-hamlet-38117.herokuapp.com/users/${user}`
+
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        window.alert('Are you really want to add new admin!!')
+        if (data.modifiedCount) {
+          setSuccess(true)
+        }
+      })
+    console.log(user)
+  }
 
   // here users delete
   const handleDelete = (id) => {
@@ -127,9 +150,27 @@ const ManageUsers = () => {
                 <span className="inline-block w-1/3 font-bold md:hidden">
                   Actions
                 </span>
-                <button className="mr-4 rounded border border-blue-500 bg-blue-500 py-1 px-2 font-bold text-white hover:bg-blue-700">
+                {data?.role === 'admin' ? (
+                  // <button className="my-3 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600">
+                  //   Following
+                  // </button>
+                  <button className="mr-4 cursor-not-allowed rounded border border-blue-500 bg-blue-500 py-1 px-2 font-bold text-white hover:bg-blue-700">
+                    Make Admin
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleSubmit(data.email)}
+                    className="mr-4 rounded border border-blue-500 bg-blue-500 py-1 px-2 font-bold text-white hover:bg-blue-700"
+                  >
+                    Make Admin
+                  </button>
+                )}
+                {/* <button
+                  onClick={() => handleSubmit(data.email)}
+                  className="mr-4 rounded border border-blue-500 bg-blue-500 py-1 px-2 font-bold text-white hover:bg-blue-700"
+                >
                   Make Admin
-                </button>
+                </button> */}
                 <button
                   className="rounded border border-red-500 bg-red-500 py-1 px-2 font-bold text-white hover:bg-red-700"
                   onClick={() => handleDelete(data?._id)}
