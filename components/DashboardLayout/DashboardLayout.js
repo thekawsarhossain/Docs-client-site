@@ -110,13 +110,13 @@ function DashboardLayout(props) {
       <div className="mt-5 mb-4 text-center">
         <div className="flex justify-center">
           <img
-            src={userInfoFromDB.image}
+            src={userInfoFromDB?.image}
             className="mb-3 h-40 w-40 rounded-full  object-cover p-2"
             alt="Admin logo"
           />
         </div>
-        <h3 className="text-lg font-bold">{userInfoFromDB.displayName}</h3>
-        <p>{userInfoFromDB.email}</p>
+        <h3 className="text-lg font-bold">{userInfoFromDB?.displayName}</h3>
+        <p>{userInfoFromDB?.email}</p>
       </div>
       <hr />
       <List sx={{ ml: 1 }}>

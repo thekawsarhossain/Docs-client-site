@@ -24,7 +24,7 @@ const ManageUsers = () => {
     fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => setManageUsers(data))
-  })
+  }, [])
 
   const handleSubmit = (email) => {
     const user = { email }
@@ -45,7 +45,6 @@ const ManageUsers = () => {
           setSuccess(true)
         }
       })
-    console.log(user)
   }
 
   // here users delete

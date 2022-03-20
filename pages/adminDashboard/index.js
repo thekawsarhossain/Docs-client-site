@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto'
 import RUser from '../../components/DashboardLayout/RUser/RUser'
 import RBlog from '../../components/DashboardLayout/RBlog/RBlog'
 import Review from '../../components/DashboardLayout/Review/Review'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Charts from '../../components/Chart/Chart'
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary'
 import BookIcon from '@mui/icons-material/Book'
@@ -25,6 +25,7 @@ import {
   BarChart,
   Bar,
 } from 'recharts'
+import { fetchUsers } from '../../Redux/Slices/userSlice'
 // import Review from '../../components/DashboardLayout/Review/Review'
 
 export default function Index() {
@@ -35,6 +36,17 @@ export default function Index() {
   )
 
   const videos = blogs?.filter((td) => td?.video !== '')
+
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data here
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [dispatch])
+
+  const users = useSelector((state) => state?.reducers?.user?.users)
+  console.log(users)
 
   // here users information
   const [manageUsers, setManageUsers] = useState([])
@@ -50,26 +62,25 @@ export default function Index() {
     },
     {
       State: 'Users',
-      Number: manageUsers.length,
+      Number: users?.length,
     },
     {
       State: 'Videos',
-      Number: videos.length,
+      Number: videos?.length,
     },
     {
       State: 'Blogs',
-      Number: blogs.length,
+      Number: blogs?.length,
     },
     {
       State: 'Questions',
-      Number: questions.length,
+      Number: questions?.length,
     },
     {
       State: '',
       Number: 0,
     },
   ]
-  console.log(Data)
   return (
     <DashboardLayout>
       <div>
@@ -82,7 +93,7 @@ export default function Index() {
                   Users
                 </h6>
                 <span className="rounded-md bg-green-100 px-2 py-px text-xl  font-semibold  text-green-500">
-                  {manageUsers.length}
+                  {users?.length}
                 </span>
               </div>
               <div>
