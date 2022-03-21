@@ -46,6 +46,9 @@ const userSlice = createSlice({
       state.userInfoFromDB = null
       state.error = ''
     },
+    DELETE_USER: (state, action) => {
+      state.users = state?.users?.filter((user) => user?._id !== action.payload)
+    },
     ADD_TO_FOLLOWING: (state, action) => {
       state.userInfoFromDB.following.push(action.payload)
     },
@@ -74,5 +77,6 @@ export const {
   SET_STATUS,
   REMOVE_USER,
   ADD_TO_FOLLOWING,
+  DELETE_USER,
 } = userSlice.actions
 export default userSlice.reducer
