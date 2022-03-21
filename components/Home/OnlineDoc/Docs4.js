@@ -11,7 +11,7 @@ const Docs4 = () => {
   useEffect(() => {
     fetch('./docs.json')
       .then((res) => res.json())
-      .then((data) => setDocs(data.slice(0, 6)))
+      .then((data) => setDocs(data.slice(12, 18)))
   }, [])
 
   return (
@@ -56,23 +56,10 @@ const Docs4 = () => {
                   md={6}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box
-                      sx={{
-                        background: '#424345',
-                        p: '15px',
-                        borderRadius: '10px',
-                      }}
-                    >
-                      <Image
-                        src={doc.docsImg}
-                        width="36"
-                        height="36"
-                        alt="img"
-                      ></Image>
-                    </Box>
+                    
                     <Box sx={{ ml: 3 }}>
-                      <Box className="docs-btn">
-                        <Link href="/documentation">{doc.docsTitle}</Link>
+                      <Box className="text-indigo-500 py-2">
+                        {doc.docsTitle} 
                       </Box>
                       <p>{doc.description}</p>
                     </Box>
