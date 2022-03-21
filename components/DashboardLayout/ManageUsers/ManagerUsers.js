@@ -15,16 +15,32 @@ import WifiIcon from '@mui/icons-material/Wifi'
 import { useEffect, useState } from 'react'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import DeleteIcon from '@mui/icons-material/Delete'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  DELETE_USER,
+  fetchUsers,
+  REMOVE_USER,
+} from '../../../Redux/Slices/userSlice'
 
 const ManageUsers = () => {
-  const [manageUsers, setManageUsers] = useState([])
+  // const [manageUsers, setManageUsers] = useState([])
   const [success, setSuccess] = useState(false)
   // here users
+  // useEffect(() => {
+  //   fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
+  //     .then((res) => res.json())
+  //     .then((data) => setManageUsers(data))
+  // }, [])
+
+  // react redux hook here
+  const dispatch = useDispatch()
+
+  // calling the redux thunk blogs api for data here
   useEffect(() => {
-    fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
-      .then((res) => res.json())
-      .then((data) => setManageUsers(data))
-  }, [])
+    dispatch(fetchUsers())
+  }, [dispatch])
+
+  const users = useSelector((state) => state?.reducers?.user?.users)
 
   const handleSubmit = (email) => {
     const user = { email }
@@ -40,7 +56,7 @@ const ManageUsers = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        window.alert('Are you really want to add new admin!!')
+        window.confirm('Are you really want to add new admin!!')
         if (data.modifiedCount) {
           setSuccess(true)
         }
@@ -48,21 +64,28 @@ const ManageUsers = () => {
   }
 
   // here users delete
-  const handleDelete = (id) => {
-    const proceed = window.confirm('Are you sure , you want to delete ?')
-    if (proceed) {
-      const url = `https://polar-hamlet-38117.herokuapp.com/users/${id}`
-      fetch(url, {
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) {
-            alert('Deleted successfully')
-            const remaining = manageUsers.filter((order) => order._id !== id)
-            setManageUsers(remaining)
+  const handleBlogDelete = async (id) => {
+    console.log(id)
+    const procced = window.confirm('Are you sure you want DELETE ?')
+
+    if (procced) {
+      try {
+        const response = await fetch(
+          `https://polar-hamlet-38117.herokuapp.com/users/${id}`,
+          {
+            method: 'DELETE',
+            header: { 'content-type': 'application/json' },
           }
-        })
+        )
+        const result = await response.json()
+        if (result?.acknowledged) {
+          dispatch(DELETE_USER(id))
+        } else {
+          alert('There is an error we found !')
+        }
+      } catch (e) {
+        alert(e.message)
+      }
     }
   }
 
@@ -90,10 +113,10 @@ const ManageUsers = () => {
           </tr>
         </thead>
         <tbody className="block md:table-row-group">
-          {manageUsers.map((data) => (
+          {users.map((data) => (
             <tr
               key={data?._id}
-              className="block border border-gray-900 bg-gray-300 md:table-row md:border-none"
+              className="block border border-gray-900 bg-gray-300 dark:bg-gray-600 dark:text-slate-200 md:table-row md:border-none"
             >
               <td className="md:border-grey-500 flex p-2 text-left md:table-cell md:border">
                 <span className="inline-block w-1/3 self-center font-bold md:hidden">
@@ -172,7 +195,7 @@ const ManageUsers = () => {
                 </button> */}
                 <button
                   className="rounded border border-red-500 bg-red-500 py-1 px-2 font-bold text-white hover:bg-red-700"
-                  onClick={() => handleDelete(data?._id)}
+                  onClick={() => handleBlogDelete(data?._id)}
                 >
                   Delete
                 </button>

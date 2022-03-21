@@ -48,13 +48,6 @@ export default function Index() {
   const users = useSelector((state) => state?.reducers?.user?.users)
   console.log(users)
 
-  // here users information
-  // const [manageUsers, setManageUsers] = useState([])
-  // useEffect(() => {
-  //   fetch(`https://polar-hamlet-38117.herokuapp.com/users`)
-  //     .then((res) => res.json())
-  //     .then((data) => setManageUsers(data))
-  // }, [])
   const Data = [
     {
       State: '',
