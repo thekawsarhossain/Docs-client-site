@@ -1,5 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const response = await fetch('https://polar-hamlet-38117.herokuapp.com/users')
+  const data = await response.json()
+  return data
+})
 // getting user info from DB
 export const fetchUserData = createAsyncThunk(
   'fetchUser/fetchUserData',
@@ -19,6 +24,7 @@ const userSlice = createSlice({
   initialState: {
     currentUser: null,
     userInfoFromDB: null,
+    users: null,
     error: '',
     status: false,
   },
@@ -45,6 +51,13 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      state.users = action.payload
+      state.status = true
+    })
+    builder.addCase(fetchUsers.pending, (state, action) => {
+      state.status = false
+    })
     builder.addCase(fetchUserData.fulfilled, (state, action) => {
       state.userInfoFromDB = action.payload
       state.status = true
