@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/link-passhref */
 import React, { useState, useEffect } from 'react'
 import Typography from '@mui/material/Typography'
@@ -56,7 +57,9 @@ const Docs1 = () => {
                   md={6}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                   
+                  <Box >
+                    <img src={doc.docsImg} className='docs-img' alt="" />
+                    </Box>
                     <Box sx={{ ml: 3 }}>
                        <Box>
                            <><p >{doc?.description}</p></>

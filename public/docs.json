@@ -24,7 +24,7 @@
   {
   "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2020/04/pin.png",
   "docsTitle":"Layouts",
-  "description":" We also want to give the whole site a theme-changing option."
+  "description":" We also want to give the whole site a theme-changing option.Here are the core features we currently have in our minds. "
   },
   {
   "docsImg":"https://wordpress-theme.spider-themes.net/docy-dark/wp-content/uploads/2019/04/notes.png",
@@ -35,6 +35,60 @@
   {
   "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
   "docsTitle":"FAQs",
-  "description":"Frequently asked questions and answers."
+  "description":"A user can post blogs, documentation including videos Users can write comments on blogs."
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"Users will have the option to manage their profiles as well. They can change their username and image also"
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"Dark mode & light mode Users also can search for blogs regarding any topic by searching by a keyword in the search bar."
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"Users can report to any user they want Users can  report to any user's blog if they want"
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"A normal user will be counted as a viewer. They can only browse the home page and blog page. For that, they don’t have to register or log in."
+  },
+  {
+  "docsImg":"https://wordpress-theme.spider-themes.net/docy/wp-content/uploads/2019/04/slack.png",
+  "docsTitle":"FAQs",
+  "description":"Users can ask any question on different kinds of topics. Users can answer the question of other users."
+  },
+
+  {
+  "docsTitle":"Next.js",
+  "description":"Production grade React applications that scale. The world's leading companies use Next.js by Vercel to build static and dynamic websites and web ..."
+  },
+
+  {
+  "docsTitle":"React.js",
+  "description":"React · Declarative. React makes it painless to create interactive UIs. · Component-Based. Build encapsulated components that manage their own state, then compose ..."
+  },
+  {
+
+  "docsTitle":"Vercel",
+  "description":"Vercel combines the best developer experience with an obsessive focus on end-user performance. Our platform enables frontend teams to do their best work."
+  },
+  {
+
+  "docsTitle":"Redux",
+  "description":"Redux ; Predictable. Redux helps you write applications that behave consistently ; Centralized. Centralizing your application's state and logic enables powerful ..."
+  },
+  {
+  "docsTitle":"Tawilwind css",
+  "description":"A utility-first CSS framework packed with classes like flex , pt-4 , text-center and rotate-90 that can be composed to build any design, directly in your markup ..."
+  },
+  {
+ 
+  "docsTitle":"Metarial UI",
+  "description":"MUI provides a simple, customizable, and accessible library of React components. Follow your own design system, or start with Material Design."
   }
 ]
