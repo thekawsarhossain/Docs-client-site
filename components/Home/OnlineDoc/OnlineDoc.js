@@ -53,7 +53,7 @@ const OnlineDoc = () => {
   }
 
   return (
-    <div className="slider py-16  ">
+    <div className=" slider py-10  ">
       <Container>
         <div className="mt-32 mb-20 text-center">
           <div className="docs-info">
@@ -61,7 +61,7 @@ const OnlineDoc = () => {
               The Best Online Documentation
             </h1>
             <p className="leading-6">
-              Loaded with awesome features like Documentation, Knowledgebase,{' '}
+              Loaded with awesome features like Documentation, Knowledgeable,{' '}
               <br />
               Forum & more!
             </p>
@@ -77,22 +77,22 @@ const OnlineDoc = () => {
             >
               <Tab
                 sx={{ color: `#2563eb!important` }}
-                label="Docy"
+                label="Goal"
                 {...a11yProps(0)}
               />
               <Tab
                 sx={{ color: `#2563eb!important` }}
-                label="Gullu"
+                label="Features"
                 {...a11yProps(1)}
               />
               <Tab
                 sx={{ color: `#2563eb!important` }}
-                label="Rogan"
+                label="Docs"
                 {...a11yProps(2)}
               />
               <Tab
                 sx={{ color: `#2563eb!important` }}
-                label="Sample"
+                label="Technology"
                 {...a11yProps(3)}
               />
             </Tabs>

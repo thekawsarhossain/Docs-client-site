@@ -30,7 +30,7 @@ const Docs3 = () => {
               alt="img"
             ></Image>
             <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
-              Rakibul Documentation
+              Docy Documentation
             </Typography>
             <Typography variant="p" sx={{ lineHeight: 2 }}>
               Spot of come to ever hand as lady meet on. Delicate contempt

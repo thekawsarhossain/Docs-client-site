@@ -29,7 +29,7 @@ const Docs2 = () => {
               alt="img"
             ></Image>
             <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
-              Docy Documentation
+              Docy Features
             </Typography>
             <Typography variant="p" sx={{ lineHeight: 2 }}>
               Docy is a powerful, responsive, and high-performance online
