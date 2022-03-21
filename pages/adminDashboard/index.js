@@ -26,6 +26,7 @@ import {
   Bar,
 } from 'recharts'
 import { fetchUsers } from '../../Redux/Slices/userSlice'
+import Email from '../../components/DashboardLayout/Emails/Email'
 // import Review from '../../components/DashboardLayout/Review/Review'
 
 export default function Index() {
@@ -77,7 +78,7 @@ export default function Index() {
   return (
     <DashboardLayout>
       <div>
-        <div className="bg-slate-200 p-4 dark:bg-Docy-DarkGray">
+        <div className="bg-slate-200 p-4 dark:bg-Docy-AlmostBlack">
           <div className="grid grid-cols-1 gap-8 p-4  lg:grid-cols-2 xl:grid-cols-4">
             {/* <!-- Users card --> */}
             <div className=" flex h-28 items-center justify-between rounded-md bg-white p-4 dark:bg-darkBlue ">
@@ -156,7 +157,7 @@ export default function Index() {
             {/* <Review /> */}
           </div>
         </div>
-        <div className="grid grid-cols-1 bg-slate-200 dark:bg-Docy-DarkGray">
+        <div className="grid grid-cols-1 bg-slate-200 dark:bg-Docy-AlmostBlack">
           <ResponsiveContainer width="100%" height="100%" aspect={3}>
             <AreaChart
               // width={500}
@@ -183,7 +184,9 @@ export default function Index() {
               />
             </AreaChart>
           </ResponsiveContainer>
+          <h3 className="text-semibold px-4 pt-20 dark:text-white">Messages</h3>
         </div>
+        <Email></Email>
       </div>
     </DashboardLayout>
   )
