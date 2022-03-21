@@ -30,7 +30,7 @@ const Docs4 = () => {
               alt="img"
             ></Image>
             <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
-              Sample User Guide
+              Docy Technology
             </Typography>
             <Typography variant="p" sx={{ lineHeight: 2 }}>
               Charles is a creative WordPress theme for saas, software, startup,
