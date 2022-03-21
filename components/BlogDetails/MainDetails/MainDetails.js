@@ -463,7 +463,12 @@ const MainDetails = () => {
                     Follow
                   </button>
                 ) : (
-                  ''
+                  <button
+                    disabled
+                    className="my-3 rounded-md bg-indigo-700 py-3 px-4 font-bold text-white hover:bg-indigo-600"
+                  >
+                    Followed by {userInfoFromDB?.followers?.length}
+                  </button>
                 )}
               </div>
             </div>
