@@ -82,7 +82,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                                         <Grid item xs={2} sm={12} md={12} key={person?._id}>
                                                <ul className='text-center '>
                                         <li className=''>
-                                           <div className="info flex items-center hover:bg-slate-100 p-2">
+                                           <div className="info flex items-center hover:bg-slate-100 hover:dark:bg-gray-500 p-2">
                                            <img className='w-12 h-12 rounded-full' src={person?.image} alt="" />
                                              <p className='font-bold ml-3'>{person?.name}</p></div>    
                                         </li>
@@ -113,7 +113,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                                         <Grid item xs={2} sm={12} md={12} key={person?._id}>
                                                <ul className='text-center '>
                                         <li className=''>
-                                           <div className="info flex items-center hover:bg-slate-100 p-2">
+                                           <div className="info flex items-center hover:bg-slate-100 hover:dark:bg-gray-500 p-2">
                                            <img className='w-12 h-12 rounded-full' src={person?.image} alt="" />
                                              <p className='font-bold ml-3'>{person?.name}</p></div>    
                                         </li>
@@ -132,7 +132,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                <Container>
                <h3 className='font-bold text-sm md:text-2xl w-96 mx-auto my-8  title  dark:text-white text-black'>
                  <span className='text-blue-600'>{info[0]?.displayName}</span> Posts</h3>
-               <hr />
+               <hr className='mb-6' />
             {blogData?.length == 0 ? <div>
               <h2 className='text-center mt-8 mb-10 text-red-500'>He did not upload any blog</h2>
               <img className='w-full mx-auto' src="https://e7.pngegg.com/pngimages/910/744/png-clipart-illustration-coque-apple-iphone-4s-oops-fond-speech-bubble-comics-text.png" alt="" />
@@ -143,7 +143,7 @@ const blogData = blogs.filter(dt => dt.blogger.email === email);
                 <Grid item xs={2} sm={4} md={12} key={blog?._id}>
                     <Grid  className="mb-8" container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         <Grid item xs={12} sm={6} md={4}>
-                          <img className='h-full' src={blog?.image} alt="" />
+                          <img className='w-full rounded h-64' src={blog?.image} alt="" />
                         </Grid>
                         <Grid item xs={12} sm={6} md={8}>
                         <Link onClick={() => dispatch(ADD_TO_BLOG(blog))}

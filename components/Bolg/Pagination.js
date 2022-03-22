@@ -12,10 +12,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <ul className="flex justify-center gap-2 p-2 mt-5">
         {pageNumbers.map((number) => (
           <li key={number} className="">
-            <a onClick={() => paginate(number)} href="#"
-className="flex items-center justify-center w-10 h-10 font-bold text-white border border-gray-500 rounded-full hover:bg-primary-600 bg-primary-500 ">
-              {number}
-            </a>
+            <a 
+             onClick={() => paginate(number)} 
+                className="cursor-pointer flex items-center justify-center w-10 h-10 font-bold dark:text-white border border-gray-500 rounded-full hover:bg-primary-600 bg-primary-500 ">
+                {number}
+          </a>
           </li>
         ))}
       </ul>
