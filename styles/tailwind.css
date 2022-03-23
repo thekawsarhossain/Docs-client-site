@@ -1092,6 +1092,9 @@ legend + * {
 #documentation p {
   margin-bottom: 30px;
 }
+#documentation ul > li {
+  list-style: decimal;
+}
 
 /* Sidebar css*/
 
