@@ -82,7 +82,7 @@ const CommunitiesCard = () => {
       <Container>
         <div
           style={{ marginTop: '-110px' }}
-          className="  rounded-xl bg-slate-100 dark:bg-darkBlue  "
+          className="  rounded-xl bg-slate-100 shadow-lg dark:bg-darkBlue  "
         >
           {/* grid system for the items here  */}
           <div className="grid grid-cols-1 lg:grid-cols-3">

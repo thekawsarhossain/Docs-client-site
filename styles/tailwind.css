@@ -316,6 +316,12 @@ button {
 .active-content {
   display: block;
 }
+
+.docs-img{
+  width: 120px;
+  height: 40px;
+
+}
 /* Forums */
 .Qu-btn a {
   background-color: #10b3d6;
