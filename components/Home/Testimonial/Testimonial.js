@@ -28,6 +28,7 @@ const Testimonial = () => {
   return (
     <div className="slider pb-24">
       <Container>
+        {/* here start slider part */}
         <Slider {...settings}>
           {sliders.map((slider) => (
             <div
