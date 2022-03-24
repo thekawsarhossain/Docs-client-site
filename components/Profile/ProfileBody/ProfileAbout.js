@@ -5,6 +5,7 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import MailIcon from '@mui/icons-material/Mail'
+import Link from 'next/link'
 const ProfileAbout = (props) => {
   return (
     <div>
@@ -72,17 +73,18 @@ const ProfileAbout = (props) => {
             data-original-title="Facebook"
             style={{ margin: '10px', padding: '0' }}
           >
-            <a
-              style={{
-                backgroundColor: '#3b5998',
-                transition: 'transform .2s ease-in-out',
-              }}
-              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
-              href="#"
-              target="_blank"
-            >
-              <FacebookOutlinedIcon />
-            </a>
+            <Link href={props?.userInfoFromDB?.facebook}>
+              <a
+                style={{
+                  backgroundColor: '#3b5998',
+                  transition: 'transform .2s ease-in-out',
+                }}
+                className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
+                target="_blank"
+              >
+                <FacebookOutlinedIcon />
+              </a>
+            </Link>
           </li>
           <li
             style={{ margin: '10px', padding: '0' }}
@@ -91,17 +93,18 @@ const ProfileAbout = (props) => {
             title=""
             data-original-title="Twitter"
           >
-            <a
-              style={{
-                backgroundColor: '#1da1f2',
-                transition: 'transform .2s ease-in-out',
-              }}
-              className=" block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
-              href="#"
-              target="_blank"
-            >
-              <TwitterIcon />
-            </a>
+            <Link href={props?.userInfoFromDB?.twitter}>
+              <a
+                style={{
+                  backgroundColor: '#1da1f2',
+                  transition: 'transform .2s ease-in-out',
+                }}
+                className=" block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
+                target="_blank"
+              >
+                <TwitterIcon />
+              </a>
+            </Link>
           </li>
           <li
             style={{ margin: '10px', padding: '0' }}
@@ -110,17 +113,18 @@ const ProfileAbout = (props) => {
             title=""
             data-original-title="Instagram"
           >
-            <a
-              style={{
-                backgroundColor: '#e1306c',
-                transition: 'transform .2s ease-in-out',
-              }}
-              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
-              href="#"
-              target="_blank"
-            >
-              <MailIcon />
-            </a>
+            <Link href={props?.userInfoFromDB?.instagram}>
+              <a
+                style={{
+                  backgroundColor: '#e1306c',
+                  transition: 'transform .2s ease-in-out',
+                }}
+                className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
+                target="_blank"
+              >
+                <MailIcon />
+              </a>
+            </Link>
           </li>
           <li
             style={{ margin: '10px', padding: '0' }}
@@ -129,17 +133,18 @@ const ProfileAbout = (props) => {
             title=""
             data-original-title="Vimeo"
           >
-            <a
-              style={{
-                backgroundColor: '#1da1f2',
-                transition: 'transform .2s ease-in-out',
-              }}
-              className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
-              href="#"
-              target="_blank"
-            >
-              <InstagramIcon />
-            </a>
+            <Link href={props?.userInfoFromDB?.linkedin}>
+              <a
+                style={{
+                  backgroundColor: '#1da1f2',
+                  transition: 'transform .2s ease-in-out',
+                }}
+                className="block h-9 w-9 rounded-full text-center text-lg leading-9 text-white"
+                target="_blank"
+              >
+                <InstagramIcon />
+              </a>
+            </Link>
           </li>
         </ul>
         <div className="clearfix"></div>
