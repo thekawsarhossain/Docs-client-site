@@ -28,7 +28,7 @@ import { useTheme } from 'next-themes'
 import Button from '@mui/material/Button'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
-import adminCheck from '../../HOC/withAdminCheck'
+
 const drawerWidth = 240
 
 function DashboardLayout(props) {
@@ -277,4 +277,4 @@ DashboardLayout.propTypes = {
   window: PropTypes.func,
 }
 
-export default adminCheck(DashboardLayout)
+export default DashboardLayout
