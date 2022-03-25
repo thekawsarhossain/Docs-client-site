@@ -5,6 +5,8 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import { Box, Container } from '@mui/material'
 import ContactBanner from './ContactBanner'
 import Footer from '../../Shared/Footer/Footer'
+import authCheck from '../../../HOC/withAuthCheck'
+
 const Contact = () => {
   const {
     handleSubmit,
@@ -205,4 +207,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default authCheck(Contact)
