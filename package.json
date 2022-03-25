@@ -42,6 +42,7 @@
     "next": "latest",
     "next-themes": "^0.1.1",
     "react": "^17.0.2",
+    "react-awesome-loaders": "^0.1.37",
     "react-dom": "^17.0.2",
     "react-draft-wysiwyg": "^1.14.7",
     "react-hook-form": "^7.27.0",

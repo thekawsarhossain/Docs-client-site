@@ -27,10 +27,7 @@ export default class AQTextEditor extends Component {
     return (
       <>
         <div className="">
-          {/* <h2 className="mb-2 text-xl text-Docy-Dark dark:text-white">
-            Include all the information someone would need to answer your
-            question🌝
-          </h2> */}
+        
           <FormHelperText sx={{ color: 'gray' }}>
             Include all the information someone would need to answer your
             question🌝
