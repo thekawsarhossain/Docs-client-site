@@ -34,7 +34,7 @@ const HomePage = () => {
       <HomeBlogList />
       <OnlineDoc />
       <AskQuestion />
-      <VideoList />
+      {/* <VideoList /> */}
       <Questions />
       <Testimonial />
       <FooterBanner />

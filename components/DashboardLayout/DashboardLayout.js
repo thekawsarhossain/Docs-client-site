@@ -131,7 +131,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard">
+        <Link href="/adminRMSAK">
           <a>
             <ListItem button>
               <ListItemText>
@@ -140,7 +140,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard/manageUser">
+        <Link href="/adminRMSAK/manageUser">
           <a>
             <ListItem button>
               <ListItemText>
@@ -149,7 +149,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard/manageBlogs">
+        <Link href="/adminRMSAK/manageBlogs">
           <a>
             <ListItem button>
               <ListItemText>
@@ -158,7 +158,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard/emails">
+        <Link href="/adminRMSAK/emails">
           <a>
             <ListItem button>
               <ListItemText>
@@ -168,7 +168,7 @@ function DashboardLayout(props) {
             </ListItem>
           </a>
         </Link>
-        <Link href="/adminDashboard/makeAdmin">
+        <Link href="/adminRMSAK/makeAdmin">
           <a>
             <ListItem button>
               <ListItemText>

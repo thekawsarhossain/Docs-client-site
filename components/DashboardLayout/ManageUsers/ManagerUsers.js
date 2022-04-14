@@ -123,7 +123,7 @@ const ManageUsers = () => {
                   User
                 </span>
                 <div className="self-center">
-                  <Link href={`/adminDashboard/manageUser/${data?._id}`}>
+                  <Link href={`/adminRMSAK/manageUser/${data?._id}`}>
                     <a>
                       <div className="flex items-center text-sm">
                         {/* <!-- Avatar with inset shadow --> */}
