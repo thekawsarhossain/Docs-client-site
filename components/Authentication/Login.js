@@ -7,13 +7,13 @@ import { useForm } from 'react-hook-form'
 import useFirebase from '../../Firebase/useFirebase'
 import GoogleIcon from '@mui/icons-material/Google'
 import { useSelector } from 'react-redux'
+
 const Login = () => {
   // getting loading status data here
   const status = useSelector((state) => state?.reducers?.user?.status)
 
   // router nextjs hook for routing
   const router = useRouter()
-  console.log(router)
 
   // getting register function from use firebase here
   const { signIn, signInWithGoogle } = useFirebase()
@@ -75,6 +75,7 @@ const Login = () => {
                 </Link>
               </h5>
             </div>
+
             <form
               className="register-form p-6"
               onSubmit={handleSubmit(submitHandler)}
@@ -120,27 +121,46 @@ const Login = () => {
               </label>
 
               <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="mb-6 w-full rounded bg-indigo-600 py-3 px-7 text-white"
-                  disabled={status ? true : false}
-                >
-                  Login
-                </button>
+                {!status ? (
+                  <button
+                    type="submit"
+                    className="mb-6 w-full rounded bg-indigo-600 py-3 px-7 text-white"
+                  >
+                    Login
+                  </button>
+                ) : (
+                  <button className="mb-6 w-full cursor-not-allowed rounded bg-indigo-600 py-3 px-7 text-white">
+                    <img
+                      src="https://i.ibb.co/Y2XCsHr/loading-2.gif"
+                      className="mx-auto w-12"
+                      alt="loadingImage"
+                    />
+                  </button>
+                )}
               </div>
             </form>
-            <button
-              className="mx-auto mb-6  flex cursor-pointer justify-center rounded-md bg-white  px-10 py-3 text-center font-semibold text-black  shadow "
-              onClick={() => signInWithGoogle(router)}
-              disabled={status ? true : false}
-            >
-              Continue with
-              <img
-                src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png"
-                alt="googleImage"
-                className="ml-2 w-6"
-              />
-            </button>
+            {!status ? (
+              <button
+                className="mx-auto mb-6  flex cursor-pointer justify-center rounded-md bg-white  px-10 py-3 text-center font-semibold text-black  shadow "
+                onClick={() => signInWithGoogle(router)}
+                disabled={status ? true : false}
+              >
+                Continue with
+                <img
+                  src="https://i.ibb.co/x7hBCcs/Google-G-Logo-svg-removebg-preview.png"
+                  alt="googleImage"
+                  className="ml-2 w-6"
+                />
+              </button>
+            ) : (
+              <button className="mx-auto mb-6 flex cursor-not-allowed justify-center rounded-md  bg-white px-10 py-3 text-center font-semibold text-black shadow">
+                <img
+                  src="https://i.ibb.co/Y2XCsHr/loading-2.gif"
+                  className="mx-auto w-12"
+                  alt="loadingImage"
+                />
+              </button>
+            )}
           </div>
         </div>
       </div>
