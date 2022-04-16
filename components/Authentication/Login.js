@@ -13,7 +13,6 @@ const Login = () => {
 
   // router nextjs hook for routing
   const router = useRouter()
-  console.log(router)
 
   // getting register function from use firebase here
   const { signIn, signInWithGoogle } = useFirebase()

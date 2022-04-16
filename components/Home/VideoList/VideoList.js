@@ -41,13 +41,11 @@ const VideoList = () => {
   // const videos = blogs?.filter((td) => td?.video !== '').slice(2, 5)
   const videos = blogs?.filter((td) => td?.video !== '')
   const video = blogs?.find((td) => td?.video !== '')
-  console.log(video?.video)
 
   const allVideos = videos?.slice(2, 5)
 
   //here default video
   const [videoList, setVideoList] = useState(video?.video)
-  console.log(videoList)
   // if (allVideos[0]) {
   //   setVideoList(allVideos[0]?.video)
   //   console.log(allVideos)

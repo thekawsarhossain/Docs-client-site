@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import Footer from '../Shared/Footer/Footer'
 import HeadSection from './HeaderSection/HeadSection'
-import dynamic from 'next/dynamic'
+import BackupIcon from '@mui/icons-material/Backup'
+import authCheck from '../../HOC/withAuthCheck'
 import InfoInput from './InfoInput/InfoInput'
-import Tags from './Tags/Tags'
+import Footer from '../Shared/Footer/Footer'
 import { Container } from '@mui/material'
 import { useSelector } from 'react-redux'
-import authCheck from '../../HOC/withAuthCheck'
-import BackupIcon from '@mui/icons-material/Backup'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
+import Tags from './Tags/Tags'
 
 const TextEditor = dynamic(() => import('./TextEditor/TextEditor.js'), {
   ssr: false,

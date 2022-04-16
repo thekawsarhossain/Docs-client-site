@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import HomePage from '../components/Home/Home/HomePage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Home() {
   return (
@@ -14,6 +16,17 @@ export default function Home() {
           referrerpolicy="no-referrer"
         />
       </Head>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <HomePage />
     </>
   )
