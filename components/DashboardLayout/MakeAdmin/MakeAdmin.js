@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Alert from '@mui/material/Alert';
+import Alert from '@mui/material/Alert'
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState('')
@@ -21,26 +21,31 @@ const MakeAdmin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-          console.log(data);
-          window.alert("Are you really want to add new admin!!");
+        console.log(data)
+        window.alert('Are you really want to add new admin!!')
         if (data.modifiedCount) {
           setEmail('')
           setSuccess(true)
         }
       })
-      
 
     e.preventDefault()
   }
 
   return (
-    <div className="flex justify-center items-center pt-32">
-      <div className="makeAdmin"
-      >
-        <h2 className='text-center pb-5'>Make An Admin</h2>
+    <div className="flex items-center justify-center pt-32">
+      <div className="makeAdmin">
+        <h2 className="pb-5 text-center dark:text-white">Make An Admin</h2>
         <form className=" flex gap-4" onSubmit={handleSubmit}>
-          <input className="w-full p-2 py-0 bg-white outline-none border-2 border-theme rounded" onBlur={handleOnBlur} type="email" />
-          <button type="submit" className="px-5 py-2 bg-theme hover:bg-theme-700 text-white rounded">
+          <input
+            className="w-full rounded border-2 border-theme bg-white p-2 py-0 outline-none"
+            onBlur={handleOnBlur}
+            type="email"
+          />
+          <button
+            type="submit"
+            className="rounded bg-theme px-5 py-2 text-white hover:bg-theme-700"
+          >
             Submit
           </button>
         </form>

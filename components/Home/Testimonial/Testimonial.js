@@ -28,6 +28,7 @@ const Testimonial = () => {
   return (
     <div className="slider pb-24">
       <Container>
+        {/* here start slider part */}
         <Slider {...settings}>
           {sliders.map((slider) => (
             <div
@@ -38,7 +39,7 @@ const Testimonial = () => {
                 <div className=" p-4 md:w-full lg:w-3/5 ">
                   <div className="flex flex-col p-4 sm:flex-row">
                     <div className="flex-grow text-Docy-Dark dark:text-white">
-                      <Typography variant="h4">{slider.title}</Typography>
+                      <p className=' md:text-3xl text-xl'>{slider.title}</p>
                       <h4 className="mt-6 font-bold text-Docy-Dark dark:text-white">
                         {slider.name}
                       </h4>

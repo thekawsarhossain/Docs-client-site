@@ -316,6 +316,12 @@ button {
 .active-content {
   display: block;
 }
+
+.docs-img{
+  width: 120px;
+  height: 40px;
+
+}
 /* Forums */
 .Qu-btn a {
   background-color: #10b3d6;
@@ -1091,6 +1097,9 @@ legend + * {
 #documentation h6,
 #documentation p {
   margin-bottom: 30px;
+}
+#documentation ul > li {
+  list-style: decimal;
 }
 
 /* Sidebar css*/

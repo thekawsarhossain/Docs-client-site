@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
+import Link from 'next/link'
 // import Image from 'next/image'
 
 const ProfileBanner = (props) => {

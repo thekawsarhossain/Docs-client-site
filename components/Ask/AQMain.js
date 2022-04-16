@@ -2,6 +2,7 @@ import Footer from '../Shared/Footer/Footer'
 import AQBanner from './AQBanner/AQBanner'
 import AQBody from './AQBody/AQBody'
 import { useRouter } from 'next/router'
+import authCheck from '../../HOC/withAuthCheck'
 
 const AQMain = () => {
   // router nextjs hook for routing
@@ -31,4 +32,4 @@ const AQMain = () => {
   )
 }
 
-export default AQMain
+export default authCheck(AQMain)

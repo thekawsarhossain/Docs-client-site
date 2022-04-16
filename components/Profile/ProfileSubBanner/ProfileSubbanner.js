@@ -78,16 +78,15 @@ const ProfileSubbanner = () => {
                   paddingRight: '10px',
                 }}
               >
-                <WatchLaterIcon />
-                <Link href="/" className="date">
-                  <a>
-                    <i
-                      style={{ paddingRight: '10px' }}
-                      className="fa-regular fa-timer"
-                    ></i>
-                    Updated on March 03, 2020
-                  </a>
-                </Link>
+                <div>
+                  <Link href="/blogUpload">
+                    <a>
+                      <span className="text-1xl rounded-lg bg-cyan-600 px-3 py-3  font-semibold text-Docy-Dark dark:text-white">
+                        Upload Blog
+                      </span>
+                    </a>
+                  </Link>
+                </div>
               </Box>
             </div>
           </div>

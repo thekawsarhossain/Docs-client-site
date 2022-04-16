@@ -101,24 +101,10 @@ const ProfileFllowing = (props) => {
               >
                 <a style={{ textDecoration: 'none', boxShadow: 'none' }}>
                   <img
-                    className="avatar"
+                    style={{ height: '100px', width: '100px' }}
+                    className="mr-2 rounded-full"
                     src={follower.image}
-                    width="100"
-                    height="100"
                     alt=""
-                    style={{
-                      borderRadius: '100%',
-                      width: ' 60px',
-                      textDecoration: 'none',
-                      boxShadow: 'none',
-                      color: '#fff',
-                      backgroundColor: '#adb5bd',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '1rem',
-                      height: 'auto',
-                    }}
                   />
                 </a>
               </div>

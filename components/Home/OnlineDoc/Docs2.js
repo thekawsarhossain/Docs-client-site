@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
@@ -11,7 +12,7 @@ const Docs2 = () => {
   useEffect(() => {
     fetch('./docs.json')
       .then((res) => res.json())
-      .then((data) => setDocs(data.slice(0, 6)))
+      .then((data) => setDocs(data.slice(6,12)))
   }, [])
   return (
     <div>
@@ -29,7 +30,7 @@ const Docs2 = () => {
               alt="img"
             ></Image>
             <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
-              Docy Documentation
+              Docy Features
             </Typography>
             <Typography variant="p" sx={{ lineHeight: 2 }}>
               Docy is a powerful, responsive, and high-performance online
@@ -55,24 +56,10 @@ const Docs2 = () => {
                   md={6}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box
-                      sx={{
-                        background: '#424345',
-                        p: '15px',
-                        borderRadius: '10px',
-                      }}
-                    >
-                      <Image
-                        src={doc.docsImg}
-                        width="36"
-                        height="36"
-                        alt="img"
-                      ></Image>
+                  <Box >
+                    <img src={doc.docsImg} className='docs-img' alt="" />
                     </Box>
                     <Box sx={{ ml: 3 }}>
-                      <Box className="docs-btn">
-                        <Link href="/documentation">{doc.docsTitle}</Link>
-                      </Box>
                       <p>{doc.description}</p>
                     </Box>
                   </Box>

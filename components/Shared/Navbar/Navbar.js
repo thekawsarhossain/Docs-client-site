@@ -123,7 +123,7 @@ const Navbar = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link href="/adminDashboard">
+        <Link href="/adminRMSAK">
           <ListItem button>
             <ListItemText>
               <span>Dashboard</span>
@@ -228,7 +228,7 @@ const Navbar = () => {
                   </a>
                 </Link>
                 {user?.email && userInfoFromDB?.role === 'admin' && (
-                  <Link href="/adminDashboard">
+                  <Link href="/adminRMSAK">
                     <a className="link-item">
                       <span>Dashboard</span>
                       <span className="link-hover left-1/2 h-0.5 w-0"></span>

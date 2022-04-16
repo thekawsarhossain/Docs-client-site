@@ -46,20 +46,6 @@ const ProfileBlogs = (props) => {
   return (
     <div className=" my-5">
       <div>
-        {/* <div className="mb-8">
-          <p className="flex justify-center ">
-            <input
-              style={{ minHeight: '30px' }}
-              placeholder="Search"
-              className="rounded-l-lg border py-1 px-2 text-2xl dark:text-white"
-              type="text"
-              onChange={props.searchText.bind(this)}
-            />
-            <button className="self-center rounded-r-lg bg-slate-400 px-3 py-2">
-              <SearchIcon />
-            </button>
-          </p>
-        </div> */}
         <form
           style={{
             boxShadow: '0 0 2rem 0 rgb(136 152 170 / 15%)',
@@ -171,7 +157,7 @@ const ProfileBlogs = (props) => {
                 >
                   <a>
                     <h3 className="cursor-pointer pt-4 pb-10 font-bold hover:underline ">
-                      {blog.title}
+                      {blog?.title}
                     </h3>
                   </a>
                 </Link>

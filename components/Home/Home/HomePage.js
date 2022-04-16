@@ -27,14 +27,14 @@ const HomePage = () => {
   }, [dispatch, userInfo])
 
   return (
-    <div>
+    <div className="bg-slate-50 dark:bg-Docy-AlmostBlack">
       <Navbar />
       <HeroSection />
       {/* <CommunitiesCard /> */}
       <HomeBlogList />
       <OnlineDoc />
       <AskQuestion />
-      <VideoList />
+      {/* <VideoList /> */}
       <Questions />
       <Testimonial />
       <FooterBanner />

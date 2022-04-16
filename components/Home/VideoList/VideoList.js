@@ -57,7 +57,7 @@ const VideoList = () => {
   }
 
   return (
-    <div className="video-List ">
+    <div className="bg-slate-100  dark:bg-Docy-DarkGray">
       <Container sx={{ py: 15 }}>
         <div className=" grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-7">
@@ -68,42 +68,49 @@ const VideoList = () => {
           <div className="col-span-12 text-Docy-Dark dark:text-white md:col-span-5">
             <h2 className=" -mt-2 pb-2 font-medium ">Docky Video List</h2>
             <ul
-              style={{ height: '350px' }}
-              className="overflow-y-auto bg-slate-100  dark:bg-gray-900"
+              style={{ height: '330px' }}
+              className="overflow-y-auto bg-slate-300  dark:bg-gray-900"
             >
               {videos?.map((video) => (
                 <div
                   key={video?._id}
                   className="m-2 rounded bg-slate-100 dark:bg-Docy-Dark"
                 >
-                  <button onClick={() => handleVideo(video?.video)}>
-                    <>
-                      <li className="mb-3 flex  gap-4 p-4">
-                        <div>
-                          <video
-                            className="h-full w-24 rounded"
-                            src={video?.video}
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <h5 className=" pb-2  text-black dark:text-gray-300">
-                            {video?.title?.split(' ').slice(0, 6).join(' ')}...
-                          </h5>
-                          <div className=" flex justify-between  text-sm text-gray-500">
-                            <div className="flex items-center gap-2">
-                              <PersonIcon className=" text-sm" />
-                              {video?.blogger?.displayName?.split(' ')[0]}
-                            </div>
-                            <div className="items flex gap-2">
-                              <DateRangeIcon className="text-sm" />
-                              {video?.uploadDate}
-                            </div>
+                  {/* <button
+                    className="m-0 h-full p-0"
+                  
+                  > */}
+                  <div
+                    onClick={() => handleVideo(video?.video)}
+                    className="flex rounded bg-slate-100 dark:bg-Docy-Dark"
+                  >
+                    <img
+                      className="h-28 w-28 rounded object-cover"
+                      src={video?.image}
+                      alt=""
+                    />
+                    <button className="w-full">
+                      <div className="px-2 text-left ">
+                        <p className="cursor-pointer font-medium hover:underline">
+                          {/* {otherPost?.title} */}
+                          {video?.title?.length > 40
+                            ? video?.title?.slice(0, 40) + '...'
+                            : video?.title}
+                        </p>
+                        <div className=" flex justify-between  text-sm text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <PersonIcon className=" text-sm" />
+                            {video?.blogger?.displayName?.split(' ')[0]}
+                          </div>
+                          <div className="items flex gap-1">
+                            <DateRangeIcon className="text-sm" />
+                            {video?.uploadDate}
                           </div>
                         </div>
-                      </li>
-                    </>
-                  </button>
+                      </div>
+                    </button>
+                  </div>
+                  {/* </button> */}
                 </div>
               ))}
             </ul>

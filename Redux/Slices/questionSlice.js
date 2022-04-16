@@ -42,7 +42,7 @@ const questionsSlice = createSlice({
       state.error = ''
     },
     ADD_ANSWER: (state, action) => {
-      state.question.answers.push(action.payload)
+      state?.question?.answers?.push(action.payload)
       state.error = ''
     },
     DELETE_QUESTION: (state, action) => {
